@@ -1,0 +1,114 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertNeonAuthUsersSyncObject
+  fields:
+    - name: deletedAt
+      type: Timestamptz
+    - name: rawJson
+      type: Json!
+    - name: updatedAt
+      type: Timestamptz
+  graphql:
+    typeName: InsertNeonAuthUsersSyncObject
+    inputTypeName: InsertNeonAuthUsersSyncObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_neon_auth_users_sync_object
+      fieldMapping:
+        deletedAt:
+          column:
+            name: deleted_at
+        rawJson:
+          column:
+            name: raw_json
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertNeonAuthUsersSyncObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - deletedAt
+          - rawJson
+          - updatedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertNeonAuthUsersSyncResponse
+  description: Responses from the 'insert_neon_auth_users_sync' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[NeonAuthUsersSync!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertNeonAuthUsersSyncResponse
+    inputTypeName: InsertNeonAuthUsersSyncResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_neon_auth_users_sync_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertNeonAuthUsersSyncResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertNeonAuthUsersSync
+  outputType: InsertNeonAuthUsersSyncResponse!
+  arguments:
+    - name: objects
+      type: "[InsertNeonAuthUsersSyncObject!]!"
+    - name: postCheck
+      type: NeonAuthUsersSyncBoolExp
+      description: Insert permission predicate over the 'neon_auth_users_sync' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_neon_auth_users_sync
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertNeonAuthUsersSync
+    rootFieldKind: Mutation
+  description: Insert into the neon_auth_users_sync table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertNeonAuthUsersSync
+  permissions:
+    - role: admin
+      allowExecution: true
+

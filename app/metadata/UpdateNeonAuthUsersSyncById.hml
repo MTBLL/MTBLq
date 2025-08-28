@@ -1,0 +1,223 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNeonAuthUsersSyncDeletedAt
+  description: Update the 'deleted_at' column in the 'neon_auth_users_sync' collection
+  fields:
+    - name: set
+      type: Timestamptz
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNeonAuthUsersSyncDeletedAt
+    inputTypeName: UpdateColumnNeonAuthUsersSyncDeletedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_neon_auth_users_sync_deleted_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNeonAuthUsersSyncDeletedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNeonAuthUsersSyncRawJson
+  description: Update the 'raw_json' column in the 'neon_auth_users_sync' collection
+  fields:
+    - name: set
+      type: Json!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNeonAuthUsersSyncRawJson
+    inputTypeName: UpdateColumnNeonAuthUsersSyncRawJsonInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_neon_auth_users_sync_raw_json
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNeonAuthUsersSyncRawJson
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnNeonAuthUsersSyncUpdatedAt
+  description: Update the 'updated_at' column in the 'neon_auth_users_sync' collection
+  fields:
+    - name: set
+      type: Timestamptz
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnNeonAuthUsersSyncUpdatedAt
+    inputTypeName: UpdateColumnNeonAuthUsersSyncUpdatedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_neon_auth_users_sync_updated_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnNeonAuthUsersSyncUpdatedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateNeonAuthUsersSyncByIdUpdateColumns
+  description: Update the columns of the 'neon_auth_users_sync' collection
+  fields:
+    - name: deletedAt
+      type: UpdateColumnNeonAuthUsersSyncDeletedAt
+      description: Update the 'deleted_at' column in the 'neon_auth_users_sync' collection.
+    - name: rawJson
+      type: UpdateColumnNeonAuthUsersSyncRawJson
+      description: Update the 'raw_json' column in the 'neon_auth_users_sync' collection.
+    - name: updatedAt
+      type: UpdateColumnNeonAuthUsersSyncUpdatedAt
+      description: Update the 'updated_at' column in the 'neon_auth_users_sync' collection.
+  graphql:
+    typeName: UpdateNeonAuthUsersSyncByIdUpdateColumns
+    inputTypeName: UpdateNeonAuthUsersSyncByIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_neon_auth_users_sync_by_id_update_columns
+      fieldMapping:
+        deletedAt:
+          column:
+            name: deleted_at
+        rawJson:
+          column:
+            name: raw_json
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateNeonAuthUsersSyncByIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - deletedAt
+          - rawJson
+          - updatedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateNeonAuthUsersSyncByIdResponse
+  description: Responses from the 'update_neon_auth_users_sync_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[NeonAuthUsersSync!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdateNeonAuthUsersSyncByIdResponse
+    inputTypeName: UpdateNeonAuthUsersSyncByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_neon_auth_users_sync_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateNeonAuthUsersSyncByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdateNeonAuthUsersSyncById
+  outputType: UpdateNeonAuthUsersSyncByIdResponse!
+  arguments:
+    - name: keyId
+      type: String_1!
+    - name: postCheck
+      type: NeonAuthUsersSyncBoolExp
+      description: Update permission post-condition predicate over the
+        'neon_auth_users_sync' collection
+    - name: preCheck
+      type: NeonAuthUsersSyncBoolExp
+      description: Update permission pre-condition predicate over the
+        'neon_auth_users_sync' collection
+    - name: updateColumns
+      type: UpdateNeonAuthUsersSyncByIdUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_neon_auth_users_sync_by_id
+    argumentMapping:
+      keyId: key_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updateNeonAuthUsersSyncById
+    rootFieldKind: Mutation
+  description: Update any row on the 'neon_auth_users_sync' collection using the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdateNeonAuthUsersSyncById
+  permissions:
+    - role: admin
+      allowExecution: true
+

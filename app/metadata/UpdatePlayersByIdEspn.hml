@@ -1,0 +1,1391 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersActive
+  description: Update the 'active' column in the 'players' collection
+  fields:
+    - name: set
+      type: Boolean_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersActive
+    inputTypeName: UpdateColumnPlayersActiveInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_active
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersActive
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersBats
+  description: Update the 'bats' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersBats
+    inputTypeName: UpdateColumnPlayersBatsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_bats
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersBats
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersBirthPlace
+  description: Update the 'birth_place' column in the 'players' collection
+  fields:
+    - name: set
+      type: Json
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersBirthPlace
+    inputTypeName: UpdateColumnPlayersBirthPlaceInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_birth_place
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersBirthPlace
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersCreatedAt
+  description: Update the 'created_at' column in the 'players' collection
+  fields:
+    - name: set
+      type: Timestamp
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersCreatedAt
+    inputTypeName: UpdateColumnPlayersCreatedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_created_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersCreatedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersDateOfBirth
+  description: Update the 'date_of_birth' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersDateOfBirth
+    inputTypeName: UpdateColumnPlayersDateOfBirthInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_date_of_birth
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersDateOfBirth
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersDebutYear
+  description: Update the 'debut_year' column in the 'players' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersDebutYear
+    inputTypeName: UpdateColumnPlayersDebutYearInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_debut_year
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersDebutYear
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersDisplayHeight
+  description: Update the 'display_height' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersDisplayHeight
+    inputTypeName: UpdateColumnPlayersDisplayHeightInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_display_height
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersDisplayHeight
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersDisplayName
+  description: Update the 'display_name' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersDisplayName
+    inputTypeName: UpdateColumnPlayersDisplayNameInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_display_name
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersDisplayName
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersDisplayWeight
+  description: Update the 'display_weight' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersDisplayWeight
+    inputTypeName: UpdateColumnPlayersDisplayWeightInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_display_weight
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersDisplayWeight
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersEligibleSlots
+  description: Update the 'eligible_slots' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersEligibleSlots
+    inputTypeName: UpdateColumnPlayersEligibleSlotsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_eligible_slots
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersEligibleSlots
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersFangraphsApiRoute
+  description: Update the 'fangraphs_api_route' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersFangraphsApiRoute
+    inputTypeName: UpdateColumnPlayersFangraphsApiRouteInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_fangraphs_api_route
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersFangraphsApiRoute
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersFirstName
+  description: Update the 'first_name' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersFirstName
+    inputTypeName: UpdateColumnPlayersFirstNameInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_first_name
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersFirstName
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersHeadshot
+  description: Update the 'headshot' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersHeadshot
+    inputTypeName: UpdateColumnPlayersHeadshotInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_headshot
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersHeadshot
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersHeight
+  description: Update the 'height' column in the 'players' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersHeight
+    inputTypeName: UpdateColumnPlayersHeightInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_height
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersHeight
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersIdEspn
+  description: Update the 'id_espn' column in the 'players' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersIdEspn
+    inputTypeName: UpdateColumnPlayersIdEspnInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_id_espn
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersIdEspn
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersIdFangraphs
+  description: Update the 'id_fangraphs' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersIdFangraphs
+    inputTypeName: UpdateColumnPlayersIdFangraphsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_id_fangraphs
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersIdFangraphs
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersIdXmlbam
+  description: Update the 'id_xmlbam' column in the 'players' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersIdXmlbam
+    inputTypeName: UpdateColumnPlayersIdXmlbamInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_id_xmlbam
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersIdXmlbam
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersInjured
+  description: Update the 'injured' column in the 'players' collection
+  fields:
+    - name: set
+      type: Boolean_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersInjured
+    inputTypeName: UpdateColumnPlayersInjuredInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_injured
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersInjured
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersInjuryStatus
+  description: Update the 'injury_status' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersInjuryStatus
+    inputTypeName: UpdateColumnPlayersInjuryStatusInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_injury_status
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersInjuryStatus
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersJersey
+  description: Update the 'jersey' column in the 'players' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersJersey
+    inputTypeName: UpdateColumnPlayersJerseyInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_jersey
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersJersey
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersLastName
+  description: Update the 'last_name' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersLastName
+    inputTypeName: UpdateColumnPlayersLastNameInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_last_name
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersLastName
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersName
+  description: Update the 'name' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersName
+    inputTypeName: UpdateColumnPlayersNameInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_name
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersName
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersNameAscii
+  description: Update the 'name_ascii' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersNameAscii
+    inputTypeName: UpdateColumnPlayersNameAsciiInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_name_ascii
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersNameAscii
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersNameNonascii
+  description: Update the 'name_nonascii' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersNameNonascii
+    inputTypeName: UpdateColumnPlayersNameNonasciiInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_name_nonascii
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersNameNonascii
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersNickname
+  description: Update the 'nickname' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersNickname
+    inputTypeName: UpdateColumnPlayersNicknameInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_nickname
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersNickname
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersPrimaryPosition
+  description: Update the 'primary_position' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersPrimaryPosition
+    inputTypeName: UpdateColumnPlayersPrimaryPositionInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_primary_position
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersPrimaryPosition
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersProTeam
+  description: Update the 'pro_team' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersProTeam
+    inputTypeName: UpdateColumnPlayersProTeamInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_pro_team
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersProTeam
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersShortName
+  description: Update the 'short_name' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersShortName
+    inputTypeName: UpdateColumnPlayersShortNameInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_short_name
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersShortName
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersSlugEspn
+  description: Update the 'slug_espn' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersSlugEspn
+    inputTypeName: UpdateColumnPlayersSlugEspnInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_slug_espn
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersSlugEspn
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersSlugFangraphs
+  description: Update the 'slug_fangraphs' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersSlugFangraphs
+    inputTypeName: UpdateColumnPlayersSlugFangraphsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_slug_fangraphs
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersSlugFangraphs
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersStatus
+  description: Update the 'status' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersStatus
+    inputTypeName: UpdateColumnPlayersStatusInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_status
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersStatus
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersThrows
+  description: Update the 'throws' column in the 'players' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersThrows
+    inputTypeName: UpdateColumnPlayersThrowsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_throws
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersThrows
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayersWeight
+  description: Update the 'weight' column in the 'players' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersWeight
+    inputTypeName: UpdateColumnPlayersWeightInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_weight
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersWeight
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayersByIdEspnUpdateColumns
+  description: Update the columns of the 'players' collection
+  fields:
+    - name: active
+      type: UpdateColumnPlayersActive
+      description: Update the 'active' column in the 'players' collection.
+    - name: bats
+      type: UpdateColumnPlayersBats
+      description: Update the 'bats' column in the 'players' collection.
+    - name: birthPlace
+      type: UpdateColumnPlayersBirthPlace
+      description: Update the 'birth_place' column in the 'players' collection.
+    - name: createdAt
+      type: UpdateColumnPlayersCreatedAt
+      description: Update the 'created_at' column in the 'players' collection.
+    - name: dateOfBirth
+      type: UpdateColumnPlayersDateOfBirth
+      description: Update the 'date_of_birth' column in the 'players' collection.
+    - name: debutYear
+      type: UpdateColumnPlayersDebutYear
+      description: Update the 'debut_year' column in the 'players' collection.
+    - name: displayHeight
+      type: UpdateColumnPlayersDisplayHeight
+      description: Update the 'display_height' column in the 'players' collection.
+    - name: displayName
+      type: UpdateColumnPlayersDisplayName
+      description: Update the 'display_name' column in the 'players' collection.
+    - name: displayWeight
+      type: UpdateColumnPlayersDisplayWeight
+      description: Update the 'display_weight' column in the 'players' collection.
+    - name: eligibleSlots
+      type: UpdateColumnPlayersEligibleSlots
+      description: Update the 'eligible_slots' column in the 'players' collection.
+    - name: fangraphsApiRoute
+      type: UpdateColumnPlayersFangraphsApiRoute
+      description: Update the 'fangraphs_api_route' column in the 'players' collection.
+    - name: firstName
+      type: UpdateColumnPlayersFirstName
+      description: Update the 'first_name' column in the 'players' collection.
+    - name: headshot
+      type: UpdateColumnPlayersHeadshot
+      description: Update the 'headshot' column in the 'players' collection.
+    - name: height
+      type: UpdateColumnPlayersHeight
+      description: Update the 'height' column in the 'players' collection.
+    - name: idEspn
+      type: UpdateColumnPlayersIdEspn
+      description: Update the 'id_espn' column in the 'players' collection.
+    - name: idFangraphs
+      type: UpdateColumnPlayersIdFangraphs
+      description: Update the 'id_fangraphs' column in the 'players' collection.
+    - name: idXmlbam
+      type: UpdateColumnPlayersIdXmlbam
+      description: Update the 'id_xmlbam' column in the 'players' collection.
+    - name: injured
+      type: UpdateColumnPlayersInjured
+      description: Update the 'injured' column in the 'players' collection.
+    - name: injuryStatus
+      type: UpdateColumnPlayersInjuryStatus
+      description: Update the 'injury_status' column in the 'players' collection.
+    - name: jersey
+      type: UpdateColumnPlayersJersey
+      description: Update the 'jersey' column in the 'players' collection.
+    - name: lastName
+      type: UpdateColumnPlayersLastName
+      description: Update the 'last_name' column in the 'players' collection.
+    - name: name
+      type: UpdateColumnPlayersName
+      description: Update the 'name' column in the 'players' collection.
+    - name: nameAscii
+      type: UpdateColumnPlayersNameAscii
+      description: Update the 'name_ascii' column in the 'players' collection.
+    - name: nameNonascii
+      type: UpdateColumnPlayersNameNonascii
+      description: Update the 'name_nonascii' column in the 'players' collection.
+    - name: nickname
+      type: UpdateColumnPlayersNickname
+      description: Update the 'nickname' column in the 'players' collection.
+    - name: primaryPosition
+      type: UpdateColumnPlayersPrimaryPosition
+      description: Update the 'primary_position' column in the 'players' collection.
+    - name: proTeam
+      type: UpdateColumnPlayersProTeam
+      description: Update the 'pro_team' column in the 'players' collection.
+    - name: shortName
+      type: UpdateColumnPlayersShortName
+      description: Update the 'short_name' column in the 'players' collection.
+    - name: slugEspn
+      type: UpdateColumnPlayersSlugEspn
+      description: Update the 'slug_espn' column in the 'players' collection.
+    - name: slugFangraphs
+      type: UpdateColumnPlayersSlugFangraphs
+      description: Update the 'slug_fangraphs' column in the 'players' collection.
+    - name: status
+      type: UpdateColumnPlayersStatus
+      description: Update the 'status' column in the 'players' collection.
+    - name: throws
+      type: UpdateColumnPlayersThrows
+      description: Update the 'throws' column in the 'players' collection.
+    - name: weight
+      type: UpdateColumnPlayersWeight
+      description: Update the 'weight' column in the 'players' collection.
+  graphql:
+    typeName: UpdatePlayersByIdEspnUpdateColumns
+    inputTypeName: UpdatePlayersByIdEspnUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_players_by_id_espn_update_columns
+      fieldMapping:
+        active:
+          column:
+            name: active
+        bats:
+          column:
+            name: bats
+        birthPlace:
+          column:
+            name: birth_place
+        createdAt:
+          column:
+            name: created_at
+        dateOfBirth:
+          column:
+            name: date_of_birth
+        debutYear:
+          column:
+            name: debut_year
+        displayHeight:
+          column:
+            name: display_height
+        displayName:
+          column:
+            name: display_name
+        displayWeight:
+          column:
+            name: display_weight
+        eligibleSlots:
+          column:
+            name: eligible_slots
+        fangraphsApiRoute:
+          column:
+            name: fangraphs_api_route
+        firstName:
+          column:
+            name: first_name
+        headshot:
+          column:
+            name: headshot
+        height:
+          column:
+            name: height
+        idEspn:
+          column:
+            name: id_espn
+        idFangraphs:
+          column:
+            name: id_fangraphs
+        idXmlbam:
+          column:
+            name: id_xmlbam
+        injured:
+          column:
+            name: injured
+        injuryStatus:
+          column:
+            name: injury_status
+        jersey:
+          column:
+            name: jersey
+        lastName:
+          column:
+            name: last_name
+        name:
+          column:
+            name: name
+        nameAscii:
+          column:
+            name: name_ascii
+        nameNonascii:
+          column:
+            name: name_nonascii
+        nickname:
+          column:
+            name: nickname
+        primaryPosition:
+          column:
+            name: primary_position
+        proTeam:
+          column:
+            name: pro_team
+        shortName:
+          column:
+            name: short_name
+        slugEspn:
+          column:
+            name: slug_espn
+        slugFangraphs:
+          column:
+            name: slug_fangraphs
+        status:
+          column:
+            name: status
+        throws:
+          column:
+            name: throws
+        weight:
+          column:
+            name: weight
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayersByIdEspnUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - active
+          - bats
+          - birthPlace
+          - createdAt
+          - dateOfBirth
+          - debutYear
+          - displayHeight
+          - displayName
+          - displayWeight
+          - eligibleSlots
+          - fangraphsApiRoute
+          - firstName
+          - headshot
+          - height
+          - idEspn
+          - idFangraphs
+          - idXmlbam
+          - injured
+          - injuryStatus
+          - jersey
+          - lastName
+          - name
+          - nameAscii
+          - nameNonascii
+          - nickname
+          - primaryPosition
+          - proTeam
+          - shortName
+          - slugEspn
+          - slugFangraphs
+          - status
+          - throws
+          - weight
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayersByIdEspnResponse
+  description: Responses from the 'update_players_by_id_espn' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Players!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdatePlayersByIdEspnResponse
+    inputTypeName: UpdatePlayersByIdEspnResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_players_by_id_espn_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayersByIdEspnResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdatePlayersByIdEspn
+  outputType: UpdatePlayersByIdEspnResponse!
+  arguments:
+    - name: keyIdEspn
+      type: Int32!
+    - name: postCheck
+      type: PlayersBoolExp
+      description: Update permission post-condition predicate over the 'players' collection
+    - name: preCheck
+      type: PlayersBoolExp
+      description: Update permission pre-condition predicate over the 'players' collection
+    - name: updateColumns
+      type: UpdatePlayersByIdEspnUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_players_by_id_espn
+    argumentMapping:
+      keyIdEspn: key_id_espn
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updatePlayersByIdEspn
+    rootFieldKind: Mutation
+  description: Update any row on the 'players' collection using the 'id_espn' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdatePlayersByIdEspn
+  permissions:
+    - role: admin
+      allowExecution: true
+

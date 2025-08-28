@@ -1,0 +1,19 @@
+kind: Subgraph
+version: v2
+definition:
+  name: app
+  generator:
+    rootPath: .
+    namingConvention: graphql
+  includePaths:
+    - metadata
+  envMapping:
+    APP_NEON_MTBL_AUTHORIZATION_HEADER:
+      fromEnv: APP_NEON_MTBL_AUTHORIZATION_HEADER
+    APP_NEON_MTBL_READ_URL:
+      fromEnv: APP_NEON_MTBL_READ_URL
+    APP_NEON_MTBL_WRITE_URL:
+      fromEnv: APP_NEON_MTBL_WRITE_URL
+  connectors:
+    - path: connector/neon_mtbl/connector.yaml
+      connectorLinkName: neon_mtbl

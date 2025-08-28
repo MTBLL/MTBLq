@@ -1,0 +1,505 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: Players
+  fields:
+    - name: active
+      type: Boolean_1
+    - name: bats
+      type: String_1
+    - name: birthPlace
+      type: Json
+    - name: createdAt
+      type: Timestamp
+    - name: dateOfBirth
+      type: String_1
+    - name: debutYear
+      type: Int32
+    - name: displayHeight
+      type: String_1
+    - name: displayName
+      type: String_1
+    - name: displayWeight
+      type: String_1
+    - name: eligibleSlots
+      type: String_1
+    - name: fangraphsApiRoute
+      type: String_1
+    - name: firstName
+      type: String_1
+    - name: headshot
+      type: String_1
+    - name: height
+      type: Int32
+    - name: idEspn
+      type: Int32!
+    - name: idFangraphs
+      type: String_1
+    - name: idXmlbam
+      type: Int32
+    - name: injured
+      type: Boolean_1
+    - name: injuryStatus
+      type: String_1
+    - name: jersey
+      type: Int32
+    - name: lastName
+      type: String_1
+    - name: name
+      type: String_1
+    - name: nameAscii
+      type: String_1
+    - name: nameNonascii
+      type: String_1
+    - name: nickname
+      type: String_1
+    - name: primaryPosition
+      type: String_1
+    - name: proTeam
+      type: String_1
+    - name: shortName
+      type: String_1
+    - name: slugEspn
+      type: String_1
+    - name: slugFangraphs
+      type: String_1
+    - name: status
+      type: String_1
+    - name: throws
+      type: String_1
+    - name: weight
+      type: Bigdecimal
+  graphql:
+    typeName: Players
+    inputTypeName: PlayersInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: players
+      fieldMapping:
+        active:
+          column:
+            name: active
+        bats:
+          column:
+            name: bats
+        birthPlace:
+          column:
+            name: birth_place
+        createdAt:
+          column:
+            name: created_at
+        dateOfBirth:
+          column:
+            name: date_of_birth
+        debutYear:
+          column:
+            name: debut_year
+        displayHeight:
+          column:
+            name: display_height
+        displayName:
+          column:
+            name: display_name
+        displayWeight:
+          column:
+            name: display_weight
+        eligibleSlots:
+          column:
+            name: eligible_slots
+        fangraphsApiRoute:
+          column:
+            name: fangraphs_api_route
+        firstName:
+          column:
+            name: first_name
+        headshot:
+          column:
+            name: headshot
+        height:
+          column:
+            name: height
+        idEspn:
+          column:
+            name: id_espn
+        idFangraphs:
+          column:
+            name: id_fangraphs
+        idXmlbam:
+          column:
+            name: id_xmlbam
+        injured:
+          column:
+            name: injured
+        injuryStatus:
+          column:
+            name: injury_status
+        jersey:
+          column:
+            name: jersey
+        lastName:
+          column:
+            name: last_name
+        name:
+          column:
+            name: name
+        nameAscii:
+          column:
+            name: name_ascii
+        nameNonascii:
+          column:
+            name: name_nonascii
+        nickname:
+          column:
+            name: nickname
+        primaryPosition:
+          column:
+            name: primary_position
+        proTeam:
+          column:
+            name: pro_team
+        shortName:
+          column:
+            name: short_name
+        slugEspn:
+          column:
+            name: slug_espn
+        slugFangraphs:
+          column:
+            name: slug_fangraphs
+        status:
+          column:
+            name: status
+        throws:
+          column:
+            name: throws
+        weight:
+          column:
+            name: weight
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: Players
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - active
+          - bats
+          - birthPlace
+          - createdAt
+          - dateOfBirth
+          - debutYear
+          - displayHeight
+          - displayName
+          - displayWeight
+          - eligibleSlots
+          - fangraphsApiRoute
+          - firstName
+          - headshot
+          - height
+          - idEspn
+          - idFangraphs
+          - idXmlbam
+          - injured
+          - injuryStatus
+          - jersey
+          - lastName
+          - name
+          - nameAscii
+          - nameNonascii
+          - nickname
+          - primaryPosition
+          - proTeam
+          - shortName
+          - slugEspn
+          - slugFangraphs
+          - status
+          - throws
+          - weight
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: PlayersBoolExp
+  operand:
+    object:
+      type: Players
+      comparableFields:
+        - fieldName: active
+          booleanExpressionType: BoolBoolExp
+        - fieldName: bats
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: birthPlace
+          booleanExpressionType: JsonbBoolExp
+        - fieldName: createdAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: dateOfBirth
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: debutYear
+          booleanExpressionType: Int4BoolExp
+        - fieldName: displayHeight
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: displayName
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: displayWeight
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: eligibleSlots
+          booleanExpressionType: TextBoolExp
+        - fieldName: fangraphsApiRoute
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: firstName
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: headshot
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: height
+          booleanExpressionType: Int4BoolExp
+        - fieldName: idEspn
+          booleanExpressionType: Int4BoolExp
+        - fieldName: idFangraphs
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: idXmlbam
+          booleanExpressionType: Int4BoolExp
+        - fieldName: injured
+          booleanExpressionType: BoolBoolExp
+        - fieldName: injuryStatus
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: jersey
+          booleanExpressionType: Int4BoolExp
+        - fieldName: lastName
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: name
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: nameAscii
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: nameNonascii
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: nickname
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: primaryPosition
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: proTeam
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: shortName
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: slugEspn
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: slugFangraphs
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: status
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: throws
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: weight
+          booleanExpressionType: NumericBoolExp
+      comparableRelationships: []
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: PlayersBoolExp
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: PlayersAggExp
+  operand:
+    object:
+      aggregatedType: Players
+      aggregatableFields:
+        - fieldName: active
+          aggregateExpression: BoolAggExp
+        - fieldName: bats
+          aggregateExpression: VarcharAggExp
+        - fieldName: birthPlace
+          aggregateExpression: JsonbAggExp
+        - fieldName: createdAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: dateOfBirth
+          aggregateExpression: VarcharAggExp
+        - fieldName: debutYear
+          aggregateExpression: Int4AggExp
+        - fieldName: displayHeight
+          aggregateExpression: VarcharAggExp
+        - fieldName: displayName
+          aggregateExpression: VarcharAggExp
+        - fieldName: displayWeight
+          aggregateExpression: VarcharAggExp
+        - fieldName: eligibleSlots
+          aggregateExpression: TextAggExp
+        - fieldName: fangraphsApiRoute
+          aggregateExpression: VarcharAggExp
+        - fieldName: firstName
+          aggregateExpression: VarcharAggExp
+        - fieldName: headshot
+          aggregateExpression: VarcharAggExp
+        - fieldName: height
+          aggregateExpression: Int4AggExp
+        - fieldName: idEspn
+          aggregateExpression: Int4AggExp
+        - fieldName: idFangraphs
+          aggregateExpression: VarcharAggExp
+        - fieldName: idXmlbam
+          aggregateExpression: Int4AggExp
+        - fieldName: injured
+          aggregateExpression: BoolAggExp
+        - fieldName: injuryStatus
+          aggregateExpression: VarcharAggExp
+        - fieldName: jersey
+          aggregateExpression: Int4AggExp
+        - fieldName: lastName
+          aggregateExpression: VarcharAggExp
+        - fieldName: name
+          aggregateExpression: VarcharAggExp
+        - fieldName: nameAscii
+          aggregateExpression: VarcharAggExp
+        - fieldName: nameNonascii
+          aggregateExpression: VarcharAggExp
+        - fieldName: nickname
+          aggregateExpression: VarcharAggExp
+        - fieldName: primaryPosition
+          aggregateExpression: VarcharAggExp
+        - fieldName: proTeam
+          aggregateExpression: VarcharAggExp
+        - fieldName: shortName
+          aggregateExpression: VarcharAggExp
+        - fieldName: slugEspn
+          aggregateExpression: VarcharAggExp
+        - fieldName: slugFangraphs
+          aggregateExpression: VarcharAggExp
+        - fieldName: status
+          aggregateExpression: VarcharAggExp
+        - fieldName: throws
+          aggregateExpression: VarcharAggExp
+        - fieldName: weight
+          aggregateExpression: NumericAggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: PlayersAggExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: PlayersOrderByExp
+  operand:
+    object:
+      orderedType: Players
+      orderableFields:
+        - fieldName: active
+          orderByExpression: Boolean1OrderByExp
+        - fieldName: bats
+          orderByExpression: String1OrderByExp
+        - fieldName: birthPlace
+          orderByExpression: JsonOrderByExp
+        - fieldName: createdAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: dateOfBirth
+          orderByExpression: String1OrderByExp
+        - fieldName: debutYear
+          orderByExpression: Int32OrderByExp
+        - fieldName: displayHeight
+          orderByExpression: String1OrderByExp
+        - fieldName: displayName
+          orderByExpression: String1OrderByExp
+        - fieldName: displayWeight
+          orderByExpression: String1OrderByExp
+        - fieldName: eligibleSlots
+          orderByExpression: String1OrderByExp
+        - fieldName: fangraphsApiRoute
+          orderByExpression: String1OrderByExp
+        - fieldName: firstName
+          orderByExpression: String1OrderByExp
+        - fieldName: headshot
+          orderByExpression: String1OrderByExp
+        - fieldName: height
+          orderByExpression: Int32OrderByExp
+        - fieldName: idEspn
+          orderByExpression: Int32OrderByExp
+        - fieldName: idFangraphs
+          orderByExpression: String1OrderByExp
+        - fieldName: idXmlbam
+          orderByExpression: Int32OrderByExp
+        - fieldName: injured
+          orderByExpression: Boolean1OrderByExp
+        - fieldName: injuryStatus
+          orderByExpression: String1OrderByExp
+        - fieldName: jersey
+          orderByExpression: Int32OrderByExp
+        - fieldName: lastName
+          orderByExpression: String1OrderByExp
+        - fieldName: name
+          orderByExpression: String1OrderByExp
+        - fieldName: nameAscii
+          orderByExpression: String1OrderByExp
+        - fieldName: nameNonascii
+          orderByExpression: String1OrderByExp
+        - fieldName: nickname
+          orderByExpression: String1OrderByExp
+        - fieldName: primaryPosition
+          orderByExpression: String1OrderByExp
+        - fieldName: proTeam
+          orderByExpression: String1OrderByExp
+        - fieldName: shortName
+          orderByExpression: String1OrderByExp
+        - fieldName: slugEspn
+          orderByExpression: String1OrderByExp
+        - fieldName: slugFangraphs
+          orderByExpression: String1OrderByExp
+        - fieldName: status
+          orderByExpression: String1OrderByExp
+        - fieldName: throws
+          orderByExpression: String1OrderByExp
+        - fieldName: weight
+          orderByExpression: BigdecimalOrderByExp
+      orderableRelationships: []
+  graphql:
+    expressionTypeName: PlayersOrderByExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: Players
+  objectType: Players
+  source:
+    dataConnectorName: neon_mtbl
+    collection: players
+  filterExpressionType: PlayersBoolExp
+  aggregateExpression: PlayersAggExp
+  orderByExpression: PlayersOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: players
+      subscription:
+        rootField: players
+    selectUniques:
+      - queryRootField: playersByIdEspn
+        uniqueIdentifier:
+          - idEspn
+        subscription:
+          rootField: playersByIdEspn
+    filterInputTypeName: PlayersFilterInput
+    aggregate:
+      queryRootField: playersAggregate
+      subscription:
+        rootField: playersAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: Players
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+

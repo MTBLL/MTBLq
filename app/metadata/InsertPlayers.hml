@@ -1,0 +1,294 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPlayersObject
+  fields:
+    - name: active
+      type: Boolean_1
+    - name: bats
+      type: String_1
+    - name: birthPlace
+      type: Json
+    - name: createdAt
+      type: Timestamp
+    - name: dateOfBirth
+      type: String_1
+    - name: debutYear
+      type: Int32
+    - name: displayHeight
+      type: String_1
+    - name: displayName
+      type: String_1
+    - name: displayWeight
+      type: String_1
+    - name: eligibleSlots
+      type: String_1
+    - name: fangraphsApiRoute
+      type: String_1
+    - name: firstName
+      type: String_1
+    - name: headshot
+      type: String_1
+    - name: height
+      type: Int32
+    - name: idEspn
+      type: Int32!
+    - name: idFangraphs
+      type: String_1
+    - name: idXmlbam
+      type: Int32
+    - name: injured
+      type: Boolean_1
+    - name: injuryStatus
+      type: String_1
+    - name: jersey
+      type: Int32
+    - name: lastName
+      type: String_1
+    - name: name
+      type: String_1
+    - name: nameAscii
+      type: String_1
+    - name: nameNonascii
+      type: String_1
+    - name: nickname
+      type: String_1
+    - name: primaryPosition
+      type: String_1
+    - name: proTeam
+      type: String_1
+    - name: shortName
+      type: String_1
+    - name: slugEspn
+      type: String_1
+    - name: slugFangraphs
+      type: String_1
+    - name: status
+      type: String_1
+    - name: throws
+      type: String_1
+    - name: weight
+      type: Bigdecimal
+  graphql:
+    typeName: InsertPlayersObject
+    inputTypeName: InsertPlayersObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_players_object
+      fieldMapping:
+        active:
+          column:
+            name: active
+        bats:
+          column:
+            name: bats
+        birthPlace:
+          column:
+            name: birth_place
+        createdAt:
+          column:
+            name: created_at
+        dateOfBirth:
+          column:
+            name: date_of_birth
+        debutYear:
+          column:
+            name: debut_year
+        displayHeight:
+          column:
+            name: display_height
+        displayName:
+          column:
+            name: display_name
+        displayWeight:
+          column:
+            name: display_weight
+        eligibleSlots:
+          column:
+            name: eligible_slots
+        fangraphsApiRoute:
+          column:
+            name: fangraphs_api_route
+        firstName:
+          column:
+            name: first_name
+        headshot:
+          column:
+            name: headshot
+        height:
+          column:
+            name: height
+        idEspn:
+          column:
+            name: id_espn
+        idFangraphs:
+          column:
+            name: id_fangraphs
+        idXmlbam:
+          column:
+            name: id_xmlbam
+        injured:
+          column:
+            name: injured
+        injuryStatus:
+          column:
+            name: injury_status
+        jersey:
+          column:
+            name: jersey
+        lastName:
+          column:
+            name: last_name
+        name:
+          column:
+            name: name
+        nameAscii:
+          column:
+            name: name_ascii
+        nameNonascii:
+          column:
+            name: name_nonascii
+        nickname:
+          column:
+            name: nickname
+        primaryPosition:
+          column:
+            name: primary_position
+        proTeam:
+          column:
+            name: pro_team
+        shortName:
+          column:
+            name: short_name
+        slugEspn:
+          column:
+            name: slug_espn
+        slugFangraphs:
+          column:
+            name: slug_fangraphs
+        status:
+          column:
+            name: status
+        throws:
+          column:
+            name: throws
+        weight:
+          column:
+            name: weight
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPlayersObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - active
+          - bats
+          - birthPlace
+          - createdAt
+          - dateOfBirth
+          - debutYear
+          - displayHeight
+          - displayName
+          - displayWeight
+          - eligibleSlots
+          - fangraphsApiRoute
+          - firstName
+          - headshot
+          - height
+          - idEspn
+          - idFangraphs
+          - idXmlbam
+          - injured
+          - injuryStatus
+          - jersey
+          - lastName
+          - name
+          - nameAscii
+          - nameNonascii
+          - nickname
+          - primaryPosition
+          - proTeam
+          - shortName
+          - slugEspn
+          - slugFangraphs
+          - status
+          - throws
+          - weight
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPlayersResponse
+  description: Responses from the 'insert_players' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Players!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertPlayersResponse
+    inputTypeName: InsertPlayersResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_players_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPlayersResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertPlayers
+  outputType: InsertPlayersResponse!
+  arguments:
+    - name: objects
+      type: "[InsertPlayersObject!]!"
+    - name: postCheck
+      type: PlayersBoolExp
+      description: Insert permission predicate over the 'players' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_players
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertPlayers
+    rootFieldKind: Mutation
+  description: Insert into the players table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertPlayers
+  permissions:
+    - role: admin
+      allowExecution: true
+

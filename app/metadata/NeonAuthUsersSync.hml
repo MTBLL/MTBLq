@@ -1,0 +1,193 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: NeonAuthUsersSync
+  fields:
+    - name: createdAt
+      type: Timestamptz
+    - name: deletedAt
+      type: Timestamptz
+    - name: email
+      type: String_1
+    - name: id
+      type: String_1!
+    - name: name
+      type: String_1
+    - name: rawJson
+      type: Json!
+    - name: updatedAt
+      type: Timestamptz
+  graphql:
+    typeName: NeonAuthUsersSync
+    inputTypeName: NeonAuthUsersSyncInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: neon_auth_users_sync
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        deletedAt:
+          column:
+            name: deleted_at
+        email:
+          column:
+            name: email
+        id:
+          column:
+            name: id
+        name:
+          column:
+            name: name
+        rawJson:
+          column:
+            name: raw_json
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: NeonAuthUsersSync
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - deletedAt
+          - email
+          - id
+          - name
+          - rawJson
+          - updatedAt
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: NeonAuthUsersSyncBoolExp
+  operand:
+    object:
+      type: NeonAuthUsersSync
+      comparableFields:
+        - fieldName: createdAt
+          booleanExpressionType: TimestamptzBoolExp
+        - fieldName: deletedAt
+          booleanExpressionType: TimestamptzBoolExp
+        - fieldName: email
+          booleanExpressionType: TextBoolExp
+        - fieldName: id
+          booleanExpressionType: TextBoolExp
+        - fieldName: name
+          booleanExpressionType: TextBoolExp
+        - fieldName: rawJson
+          booleanExpressionType: JsonbBoolExp
+        - fieldName: updatedAt
+          booleanExpressionType: TimestamptzBoolExp
+      comparableRelationships: []
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: NeonAuthUsersSyncBoolExp
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: NeonAuthUsersSyncAggExp
+  operand:
+    object:
+      aggregatedType: NeonAuthUsersSync
+      aggregatableFields:
+        - fieldName: createdAt
+          aggregateExpression: TimestamptzAggExp
+        - fieldName: deletedAt
+          aggregateExpression: TimestamptzAggExp
+        - fieldName: email
+          aggregateExpression: TextAggExp
+        - fieldName: id
+          aggregateExpression: TextAggExp
+        - fieldName: name
+          aggregateExpression: TextAggExp
+        - fieldName: rawJson
+          aggregateExpression: JsonbAggExp
+        - fieldName: updatedAt
+          aggregateExpression: TimestamptzAggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: NeonAuthUsersSyncAggExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: NeonAuthUsersSyncOrderByExp
+  operand:
+    object:
+      orderedType: NeonAuthUsersSync
+      orderableFields:
+        - fieldName: createdAt
+          orderByExpression: TimestamptzOrderByExp
+        - fieldName: deletedAt
+          orderByExpression: TimestamptzOrderByExp
+        - fieldName: email
+          orderByExpression: String1OrderByExp
+        - fieldName: id
+          orderByExpression: String1OrderByExp
+        - fieldName: name
+          orderByExpression: String1OrderByExp
+        - fieldName: rawJson
+          orderByExpression: JsonOrderByExp
+        - fieldName: updatedAt
+          orderByExpression: TimestamptzOrderByExp
+      orderableRelationships: []
+  graphql:
+    expressionTypeName: NeonAuthUsersSyncOrderByExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: NeonAuthUsersSync
+  objectType: NeonAuthUsersSync
+  source:
+    dataConnectorName: neon_mtbl
+    collection: neon_auth_users_sync
+  filterExpressionType: NeonAuthUsersSyncBoolExp
+  aggregateExpression: NeonAuthUsersSyncAggExp
+  orderByExpression: NeonAuthUsersSyncOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: neonAuthUsersSync
+      subscription:
+        rootField: neonAuthUsersSync
+    selectUniques:
+      - queryRootField: neonAuthUsersSyncById
+        uniqueIdentifier:
+          - id
+        subscription:
+          rootField: neonAuthUsersSyncById
+    filterInputTypeName: NeonAuthUsersSyncFilterInput
+    aggregate:
+      queryRootField: neonAuthUsersSyncAggregate
+      subscription:
+        rootField: neonAuthUsersSyncAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: NeonAuthUsersSync
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+

@@ -1,0 +1,72 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeleteNeonAuthUsersSyncByIdResponse
+  description: Responses from the 'delete_neon_auth_users_sync_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[NeonAuthUsersSync!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeleteNeonAuthUsersSyncByIdResponse
+    inputTypeName: DeleteNeonAuthUsersSyncByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_neon_auth_users_sync_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeleteNeonAuthUsersSyncByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeleteNeonAuthUsersSyncById
+  outputType: DeleteNeonAuthUsersSyncByIdResponse!
+  arguments:
+    - name: keyId
+      type: String_1!
+    - name: preCheck
+      type: NeonAuthUsersSyncBoolExp
+      description: Delete permission predicate over the 'neon_auth_users_sync' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_neon_auth_users_sync_by_id
+    argumentMapping:
+      keyId: key_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deleteNeonAuthUsersSyncById
+    rootFieldKind: Mutation
+  description: Delete any row on the 'neon_auth_users_sync' collection using the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeleteNeonAuthUsersSyncById
+  permissions:
+    - role: admin
+      allowExecution: true
+

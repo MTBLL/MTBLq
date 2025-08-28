@@ -1,0 +1,1972 @@
+kind: DataConnectorLink
+version: v1
+definition:
+  name: neon_mtbl
+  url:
+    readWriteUrls:
+      read:
+        valueFromEnv: APP_NEON_MTBL_READ_URL
+      write:
+        valueFromEnv: APP_NEON_MTBL_WRITE_URL
+  headers:
+    Authorization:
+      valueFromEnv: APP_NEON_MTBL_AUTHORIZATION_HEADER
+  schema:
+    version: v0.2
+    schema:
+      capabilities:
+        query:
+          aggregates:
+            count_scalar_type: int8
+      collections:
+        - arguments: {}
+          name: neon_auth_users_sync
+          type: neon_auth_users_sync
+          uniqueness_constraints:
+            users_sync_pkey:
+              unique_columns:
+                - id
+        - arguments: {}
+          name: players
+          type: players
+          uniqueness_constraints:
+            players_pkey:
+              unique_columns:
+                - id_espn
+      functions: []
+      object_types:
+        delete_neon_auth_users_sync_by_id_response:
+          description: Responses from the 'delete_neon_auth_users_sync_by_id' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                name: int4
+                type: named
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                element_type:
+                  name: neon_auth_users_sync
+                  type: named
+                type: array
+          foreign_keys: {}
+        delete_players_by_id_espn_response:
+          description: Responses from the 'delete_players_by_id_espn' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                name: int4
+                type: named
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                element_type:
+                  name: players
+                  type: named
+                type: array
+          foreign_keys: {}
+        insert_neon_auth_users_sync_object:
+          fields:
+            deleted_at:
+              type:
+                type: nullable
+                underlying_type:
+                  name: timestamptz
+                  type: named
+            raw_json:
+              type:
+                name: jsonb
+                type: named
+            updated_at:
+              type:
+                type: nullable
+                underlying_type:
+                  name: timestamptz
+                  type: named
+          foreign_keys: {}
+        insert_neon_auth_users_sync_response:
+          description: Responses from the 'insert_neon_auth_users_sync' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                name: int4
+                type: named
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                element_type:
+                  name: neon_auth_users_sync
+                  type: named
+                type: array
+          foreign_keys: {}
+        insert_players_object:
+          fields:
+            active:
+              type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+            bats:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            birth_place:
+              type:
+                type: nullable
+                underlying_type:
+                  name: jsonb
+                  type: named
+            created_at:
+              type:
+                type: nullable
+                underlying_type:
+                  name: timestamp
+                  type: named
+            date_of_birth:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            debut_year:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            display_height:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            display_name:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            display_weight:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            eligible_slots:
+              type:
+                type: nullable
+                underlying_type:
+                  name: text
+                  type: named
+            fangraphs_api_route:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            first_name:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            headshot:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            height:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            id_espn:
+              type:
+                name: int4
+                type: named
+            id_fangraphs:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            id_xmlbam:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            injured:
+              type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+            injury_status:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            jersey:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            last_name:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            name:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            name_ascii:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            name_nonascii:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            nickname:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            primary_position:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            pro_team:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            short_name:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            slug_espn:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            slug_fangraphs:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            status:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            throws:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            weight:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+          foreign_keys: {}
+        insert_players_response:
+          description: Responses from the 'insert_players' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                name: int4
+                type: named
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                element_type:
+                  name: players
+                  type: named
+                type: array
+          foreign_keys: {}
+        neon_auth_users_sync:
+          fields:
+            created_at:
+              type:
+                type: nullable
+                underlying_type:
+                  name: timestamptz
+                  type: named
+            deleted_at:
+              type:
+                type: nullable
+                underlying_type:
+                  name: timestamptz
+                  type: named
+            email:
+              type:
+                type: nullable
+                underlying_type:
+                  name: text
+                  type: named
+            id:
+              type:
+                name: text
+                type: named
+            name:
+              type:
+                type: nullable
+                underlying_type:
+                  name: text
+                  type: named
+            raw_json:
+              type:
+                name: jsonb
+                type: named
+            updated_at:
+              type:
+                type: nullable
+                underlying_type:
+                  name: timestamptz
+                  type: named
+          foreign_keys: {}
+        players:
+          fields:
+            active:
+              type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+            bats:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            birth_place:
+              type:
+                type: nullable
+                underlying_type:
+                  name: jsonb
+                  type: named
+            created_at:
+              type:
+                type: nullable
+                underlying_type:
+                  name: timestamp
+                  type: named
+            date_of_birth:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            debut_year:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            display_height:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            display_name:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            display_weight:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            eligible_slots:
+              type:
+                type: nullable
+                underlying_type:
+                  name: text
+                  type: named
+            fangraphs_api_route:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            first_name:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            headshot:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            height:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            id_espn:
+              type:
+                name: int4
+                type: named
+            id_fangraphs:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            id_xmlbam:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            injured:
+              type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+            injury_status:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            jersey:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            last_name:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            name:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            name_ascii:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            name_nonascii:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            nickname:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            primary_position:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            pro_team:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            short_name:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            slug_espn:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            slug_fangraphs:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            status:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            throws:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            weight:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+          foreign_keys: {}
+        update_column_neon_auth_users_sync_deleted_at:
+          description: Update the 'deleted_at' column in the 'neon_auth_users_sync' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: timestamptz
+                  type: named
+          foreign_keys: {}
+        update_column_neon_auth_users_sync_raw_json:
+          description: Update the 'raw_json' column in the 'neon_auth_users_sync' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                name: jsonb
+                type: named
+          foreign_keys: {}
+        update_column_neon_auth_users_sync_updated_at:
+          description: Update the 'updated_at' column in the 'neon_auth_users_sync' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: timestamptz
+                  type: named
+          foreign_keys: {}
+        update_column_players_active:
+          description: Update the 'active' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+          foreign_keys: {}
+        update_column_players_bats:
+          description: Update the 'bats' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_birth_place:
+          description: Update the 'birth_place' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: jsonb
+                  type: named
+          foreign_keys: {}
+        update_column_players_created_at:
+          description: Update the 'created_at' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: timestamp
+                  type: named
+          foreign_keys: {}
+        update_column_players_date_of_birth:
+          description: Update the 'date_of_birth' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_debut_year:
+          description: Update the 'debut_year' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+          foreign_keys: {}
+        update_column_players_display_height:
+          description: Update the 'display_height' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_display_name:
+          description: Update the 'display_name' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_display_weight:
+          description: Update the 'display_weight' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_eligible_slots:
+          description: Update the 'eligible_slots' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: text
+                  type: named
+          foreign_keys: {}
+        update_column_players_fangraphs_api_route:
+          description: Update the 'fangraphs_api_route' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_first_name:
+          description: Update the 'first_name' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_headshot:
+          description: Update the 'headshot' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_height:
+          description: Update the 'height' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+          foreign_keys: {}
+        update_column_players_id_espn:
+          description: Update the 'id_espn' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                name: int4
+                type: named
+          foreign_keys: {}
+        update_column_players_id_fangraphs:
+          description: Update the 'id_fangraphs' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_id_xmlbam:
+          description: Update the 'id_xmlbam' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+          foreign_keys: {}
+        update_column_players_injured:
+          description: Update the 'injured' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+          foreign_keys: {}
+        update_column_players_injury_status:
+          description: Update the 'injury_status' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_jersey:
+          description: Update the 'jersey' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+          foreign_keys: {}
+        update_column_players_last_name:
+          description: Update the 'last_name' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_name:
+          description: Update the 'name' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_name_ascii:
+          description: Update the 'name_ascii' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_name_nonascii:
+          description: Update the 'name_nonascii' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_nickname:
+          description: Update the 'nickname' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_primary_position:
+          description: Update the 'primary_position' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_pro_team:
+          description: Update the 'pro_team' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_short_name:
+          description: Update the 'short_name' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_slug_espn:
+          description: Update the 'slug_espn' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_slug_fangraphs:
+          description: Update the 'slug_fangraphs' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_status:
+          description: Update the 'status' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_throws:
+          description: Update the 'throws' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_players_weight:
+          description: Update the 'weight' column in the 'players' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+          foreign_keys: {}
+        update_neon_auth_users_sync_by_id_response:
+          description: Responses from the 'update_neon_auth_users_sync_by_id' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                name: int4
+                type: named
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                element_type:
+                  name: neon_auth_users_sync
+                  type: named
+                type: array
+          foreign_keys: {}
+        update_neon_auth_users_sync_by_id_update_columns:
+          description: Update the columns of the 'neon_auth_users_sync' collection
+          fields:
+            deleted_at:
+              description: Update the 'deleted_at' column in the 'neon_auth_users_sync' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_neon_auth_users_sync_deleted_at
+                  type: named
+            raw_json:
+              description: Update the 'raw_json' column in the 'neon_auth_users_sync' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_neon_auth_users_sync_raw_json
+                  type: named
+            updated_at:
+              description: Update the 'updated_at' column in the 'neon_auth_users_sync' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_neon_auth_users_sync_updated_at
+                  type: named
+          foreign_keys: {}
+        update_players_by_id_espn_response:
+          description: Responses from the 'update_players_by_id_espn' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                name: int4
+                type: named
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                element_type:
+                  name: players
+                  type: named
+                type: array
+          foreign_keys: {}
+        update_players_by_id_espn_update_columns:
+          description: Update the columns of the 'players' collection
+          fields:
+            active:
+              description: Update the 'active' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_active
+                  type: named
+            bats:
+              description: Update the 'bats' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_bats
+                  type: named
+            birth_place:
+              description: Update the 'birth_place' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_birth_place
+                  type: named
+            created_at:
+              description: Update the 'created_at' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_created_at
+                  type: named
+            date_of_birth:
+              description: Update the 'date_of_birth' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_date_of_birth
+                  type: named
+            debut_year:
+              description: Update the 'debut_year' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_debut_year
+                  type: named
+            display_height:
+              description: Update the 'display_height' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_display_height
+                  type: named
+            display_name:
+              description: Update the 'display_name' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_display_name
+                  type: named
+            display_weight:
+              description: Update the 'display_weight' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_display_weight
+                  type: named
+            eligible_slots:
+              description: Update the 'eligible_slots' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_eligible_slots
+                  type: named
+            fangraphs_api_route:
+              description: Update the 'fangraphs_api_route' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_fangraphs_api_route
+                  type: named
+            first_name:
+              description: Update the 'first_name' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_first_name
+                  type: named
+            headshot:
+              description: Update the 'headshot' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_headshot
+                  type: named
+            height:
+              description: Update the 'height' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_height
+                  type: named
+            id_espn:
+              description: Update the 'id_espn' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_id_espn
+                  type: named
+            id_fangraphs:
+              description: Update the 'id_fangraphs' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_id_fangraphs
+                  type: named
+            id_xmlbam:
+              description: Update the 'id_xmlbam' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_id_xmlbam
+                  type: named
+            injured:
+              description: Update the 'injured' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_injured
+                  type: named
+            injury_status:
+              description: Update the 'injury_status' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_injury_status
+                  type: named
+            jersey:
+              description: Update the 'jersey' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_jersey
+                  type: named
+            last_name:
+              description: Update the 'last_name' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_last_name
+                  type: named
+            name:
+              description: Update the 'name' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_name
+                  type: named
+            name_ascii:
+              description: Update the 'name_ascii' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_name_ascii
+                  type: named
+            name_nonascii:
+              description: Update the 'name_nonascii' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_name_nonascii
+                  type: named
+            nickname:
+              description: Update the 'nickname' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_nickname
+                  type: named
+            primary_position:
+              description: Update the 'primary_position' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_primary_position
+                  type: named
+            pro_team:
+              description: Update the 'pro_team' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_pro_team
+                  type: named
+            short_name:
+              description: Update the 'short_name' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_short_name
+                  type: named
+            slug_espn:
+              description: Update the 'slug_espn' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_slug_espn
+                  type: named
+            slug_fangraphs:
+              description: Update the 'slug_fangraphs' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_slug_fangraphs
+                  type: named
+            status:
+              description: Update the 'status' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_status
+                  type: named
+            throws:
+              description: Update the 'throws' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_throws
+                  type: named
+            weight:
+              description: Update the 'weight' column in the 'players' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_players_weight
+                  type: named
+          foreign_keys: {}
+      procedures:
+        - arguments:
+            key_id:
+              type:
+                name: text
+                type: named
+            pre_check:
+              description: Delete permission predicate over the 'neon_auth_users_sync' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: neon_auth_users_sync
+                  type: predicate
+          description: Delete any row on the 'neon_auth_users_sync' collection using the 'id' key
+          name: delete_neon_auth_users_sync_by_id
+          result_type:
+            name: delete_neon_auth_users_sync_by_id_response
+            type: named
+        - arguments:
+            key_id_espn:
+              type:
+                name: int4
+                type: named
+            pre_check:
+              description: Delete permission predicate over the 'players' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: players
+                  type: predicate
+          description: Delete any row on the 'players' collection using the 'id_espn' key
+          name: delete_players_by_id_espn
+          result_type:
+            name: delete_players_by_id_espn_response
+            type: named
+        - arguments:
+            objects:
+              type:
+                element_type:
+                  name: insert_neon_auth_users_sync_object
+                  type: named
+                type: array
+            post_check:
+              description: Insert permission predicate over the 'neon_auth_users_sync' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: neon_auth_users_sync
+                  type: predicate
+          description: Insert into the neon_auth_users_sync table
+          name: insert_neon_auth_users_sync
+          result_type:
+            name: insert_neon_auth_users_sync_response
+            type: named
+        - arguments:
+            objects:
+              type:
+                element_type:
+                  name: insert_players_object
+                  type: named
+                type: array
+            post_check:
+              description: Insert permission predicate over the 'players' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: players
+                  type: predicate
+          description: Insert into the players table
+          name: insert_players
+          result_type:
+            name: insert_players_response
+            type: named
+        - arguments:
+            key_id:
+              type:
+                name: text
+                type: named
+            post_check:
+              description: Update permission post-condition predicate over the 'neon_auth_users_sync' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: neon_auth_users_sync
+                  type: predicate
+            pre_check:
+              description: Update permission pre-condition predicate over the 'neon_auth_users_sync' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: neon_auth_users_sync
+                  type: predicate
+            update_columns:
+              type:
+                name: update_neon_auth_users_sync_by_id_update_columns
+                type: named
+          description: Update any row on the 'neon_auth_users_sync' collection using the 'id' key
+          name: update_neon_auth_users_sync_by_id
+          result_type:
+            name: update_neon_auth_users_sync_by_id_response
+            type: named
+        - arguments:
+            key_id_espn:
+              type:
+                name: int4
+                type: named
+            post_check:
+              description: Update permission post-condition predicate over the 'players' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: players
+                  type: predicate
+            pre_check:
+              description: Update permission pre-condition predicate over the 'players' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: players
+                  type: predicate
+            update_columns:
+              type:
+                name: update_players_by_id_espn_update_columns
+                type: named
+          description: Update any row on the 'players' collection using the 'id_espn' key
+          name: update_players_by_id_espn
+          result_type:
+            name: update_players_by_id_espn_response
+            type: named
+      request_arguments: null
+      scalar_types:
+        bool:
+          aggregate_functions:
+            bool_and:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+              type: custom
+            bool_or:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+              type: custom
+            every:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+              type: custom
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              type: greater_than
+            _gte:
+              type: greater_than_or_equal
+            _in:
+              type: in
+            _lt:
+              type: less_than
+            _lte:
+              type: less_than_or_equal
+            _neq:
+              argument_type:
+                name: bool
+                type: named
+              type: custom
+          extraction_functions: {}
+          representation:
+            type: boolean
+        int4:
+          aggregate_functions:
+            avg:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            bit_and:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+              type: custom
+            bit_or:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+              type: custom
+            bit_xor:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+              type: custom
+            max:
+              type: max
+            min:
+              type: min
+            stddev:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            stddev_pop:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            stddev_samp:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            sum:
+              result_type: int8
+              type: sum
+            var_pop:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            var_samp:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            variance:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              type: greater_than
+            _gte:
+              type: greater_than_or_equal
+            _in:
+              type: in
+            _lt:
+              type: less_than
+            _lte:
+              type: less_than_or_equal
+            _neq:
+              argument_type:
+                name: int4
+                type: named
+              type: custom
+          extraction_functions: {}
+          representation:
+            type: int32
+        int8:
+          aggregate_functions:
+            avg:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            bit_and:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: int8
+                  type: named
+              type: custom
+            bit_or:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: int8
+                  type: named
+              type: custom
+            bit_xor:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: int8
+                  type: named
+              type: custom
+            max:
+              type: max
+            min:
+              type: min
+            stddev:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            stddev_pop:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            stddev_samp:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            sum:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            var_pop:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            var_samp:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            variance:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              type: greater_than
+            _gte:
+              type: greater_than_or_equal
+            _in:
+              type: in
+            _lt:
+              type: less_than
+            _lte:
+              type: less_than_or_equal
+            _neq:
+              argument_type:
+                name: int8
+                type: named
+              type: custom
+          extraction_functions: {}
+          representation:
+            type: int64
+        jsonb:
+          aggregate_functions: {}
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              type: greater_than
+            _gte:
+              type: greater_than_or_equal
+            _in:
+              type: in
+            _lt:
+              type: less_than
+            _lte:
+              type: less_than_or_equal
+            _neq:
+              argument_type:
+                name: jsonb
+                type: named
+              type: custom
+            jsonb_contained:
+              argument_type:
+                name: jsonb
+                type: named
+              type: custom
+            jsonb_contains:
+              argument_type:
+                name: jsonb
+                type: named
+              type: custom
+            jsonb_exists:
+              argument_type:
+                name: text
+                type: named
+              type: custom
+          extraction_functions: {}
+          representation:
+            type: json
+        numeric:
+          aggregate_functions:
+            avg:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            max:
+              type: max
+            min:
+              type: min
+            stddev:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            stddev_pop:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            stddev_samp:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            sum:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            var_pop:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            var_samp:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+            variance:
+              result_type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+              type: custom
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              type: greater_than
+            _gte:
+              type: greater_than_or_equal
+            _in:
+              type: in
+            _lt:
+              type: less_than
+            _lte:
+              type: less_than_or_equal
+            _neq:
+              argument_type:
+                name: numeric
+                type: named
+              type: custom
+          extraction_functions: {}
+          representation:
+            type: bigdecimal
+        text:
+          aggregate_functions:
+            max:
+              type: max
+            min:
+              type: min
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              type: greater_than
+            _gte:
+              type: greater_than_or_equal
+            _ilike:
+              argument_type:
+                name: text
+                type: named
+              type: custom
+            _in:
+              type: in
+            _iregex:
+              argument_type:
+                name: text
+                type: named
+              type: custom
+            _like:
+              argument_type:
+                name: text
+                type: named
+              type: custom
+            _lt:
+              type: less_than
+            _lte:
+              type: less_than_or_equal
+            _neq:
+              argument_type:
+                name: text
+                type: named
+              type: custom
+            _nilike:
+              argument_type:
+                name: text
+                type: named
+              type: custom
+            _niregex:
+              argument_type:
+                name: text
+                type: named
+              type: custom
+            _nlike:
+              argument_type:
+                name: text
+                type: named
+              type: custom
+            _nregex:
+              argument_type:
+                name: text
+                type: named
+              type: custom
+            _regex:
+              argument_type:
+                name: text
+                type: named
+              type: custom
+            starts_with:
+              argument_type:
+                name: text
+                type: named
+              type: custom
+            ts_match_tt:
+              argument_type:
+                name: text
+                type: named
+              type: custom
+          extraction_functions: {}
+          representation:
+            type: string
+        timestamp:
+          aggregate_functions:
+            max:
+              type: max
+            min:
+              type: min
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              type: greater_than
+            _gte:
+              type: greater_than_or_equal
+            _in:
+              type: in
+            _lt:
+              type: less_than
+            _lte:
+              type: less_than_or_equal
+            _neq:
+              argument_type:
+                name: timestamp
+                type: named
+              type: custom
+          extraction_functions: {}
+          representation:
+            type: timestamp
+        timestamptz:
+          aggregate_functions:
+            max:
+              type: max
+            min:
+              type: min
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              type: greater_than
+            _gte:
+              type: greater_than_or_equal
+            _in:
+              type: in
+            _lt:
+              type: less_than
+            _lte:
+              type: less_than_or_equal
+            _neq:
+              argument_type:
+                name: timestamptz
+                type: named
+              type: custom
+          extraction_functions: {}
+          representation:
+            type: timestamptz
+        varchar:
+          aggregate_functions:
+            max:
+              type: max
+            min:
+              type: min
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              type: greater_than
+            _gte:
+              type: greater_than_or_equal
+            _ilike:
+              argument_type:
+                name: varchar
+                type: named
+              type: custom
+            _in:
+              type: in
+            _iregex:
+              argument_type:
+                name: varchar
+                type: named
+              type: custom
+            _like:
+              argument_type:
+                name: varchar
+                type: named
+              type: custom
+            _lt:
+              type: less_than
+            _lte:
+              type: less_than_or_equal
+            _neq:
+              argument_type:
+                name: varchar
+                type: named
+              type: custom
+            _nilike:
+              argument_type:
+                name: varchar
+                type: named
+              type: custom
+            _niregex:
+              argument_type:
+                name: varchar
+                type: named
+              type: custom
+            _nlike:
+              argument_type:
+                name: varchar
+                type: named
+              type: custom
+            _nregex:
+              argument_type:
+                name: varchar
+                type: named
+              type: custom
+            _regex:
+              argument_type:
+                name: varchar
+                type: named
+              type: custom
+            starts_with:
+              argument_type:
+                name: varchar
+                type: named
+              type: custom
+            ts_match_tt:
+              argument_type:
+                name: varchar
+                type: named
+              type: custom
+          extraction_functions: {}
+          representation:
+            type: string
+    capabilities:
+      capabilities:
+        mutation:
+          explain: {}
+          transactional: {}
+        query:
+          aggregates: {}
+          exists:
+            nested_collections: {}
+          explain: {}
+          nested_fields:
+            aggregates: {}
+            filter_by: {}
+            order_by: {}
+          variables: {}
+        relationships:
+          nested:
+            array: {}
+          order_by_aggregate: {}
+          relation_comparisons: {}
+      version: 0.2.4

@@ -1,0 +1,72 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeletePlayersByIdEspnResponse
+  description: Responses from the 'delete_players_by_id_espn' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Players!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeletePlayersByIdEspnResponse
+    inputTypeName: DeletePlayersByIdEspnResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_players_by_id_espn_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeletePlayersByIdEspnResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeletePlayersByIdEspn
+  outputType: DeletePlayersByIdEspnResponse!
+  arguments:
+    - name: keyIdEspn
+      type: Int32!
+    - name: preCheck
+      type: PlayersBoolExp
+      description: Delete permission predicate over the 'players' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_players_by_id_espn
+    argumentMapping:
+      keyIdEspn: key_id_espn
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deletePlayersByIdEspn
+    rootFieldKind: Mutation
+  description: Delete any row on the 'players' collection using the 'id_espn' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeletePlayersByIdEspn
+  permissions:
+    - role: admin
+      allowExecution: true
+

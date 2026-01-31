@@ -1,0 +1,81 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeletePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodResponse
+  description: Responses from the
+    'delete_player_stats_batting_by_player_id_and_season_id_and_stat_period'
+    procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerStatsBatting!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeletePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodResponse
+    inputTypeName: DeletePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_player_stats_batting_by_player_id_and_season_id_and_stat_period_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeletePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeletePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriod
+  outputType: DeletePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodResponse!
+  arguments:
+    - name: keyPlayerId
+      type: Int32!
+    - name: keySeasonId
+      type: Int32!
+    - name: keyStatPeriod
+      type: String_1
+    - name: preCheck
+      type: PlayerStatsBattingBoolExp
+      description: Delete permission predicate over the 'player_stats_batting' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_player_stats_batting_by_player_id_and_season_id_and_stat_period
+    argumentMapping:
+      keyPlayerId: key_player_id
+      keySeasonId: key_season_id
+      keyStatPeriod: key_stat_period
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deletePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriod
+    rootFieldKind: Mutation
+  description: Delete any row on the 'player_stats_batting' collection using the
+    'player_id', 'season_id' and 'stat_period' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeletePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriod
+  permissions:
+    - role: admin
+      allowExecution: true
+

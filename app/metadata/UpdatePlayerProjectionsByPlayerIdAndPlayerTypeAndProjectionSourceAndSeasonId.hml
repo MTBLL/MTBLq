@@ -1,0 +1,175 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdUpdateColumns
+  description: Update the columns of the 'player_projections' collection
+  fields:
+    - name: createdAt
+      type: UpdateColumnPlayerProjectionsCreatedAt
+      description: Update the 'created_at' column in the 'player_projections' collection.
+    - name: id
+      type: UpdateColumnPlayerProjectionsId
+      description: Update the 'id' column in the 'player_projections' collection.
+    - name: playerId
+      type: UpdateColumnPlayerProjectionsPlayerId
+      description: Update the 'player_id' column in the 'player_projections' collection.
+    - name: playerType
+      type: UpdateColumnPlayerProjectionsPlayerType
+      description: Update the 'player_type' column in the 'player_projections' collection.
+    - name: projectionSource
+      type: UpdateColumnPlayerProjectionsProjectionSource
+      description: Update the 'projection_source' column in the 'player_projections'
+        collection.
+    - name: projections
+      type: UpdateColumnPlayerProjectionsProjections
+      description: Update the 'projections' column in the 'player_projections' collection.
+    - name: seasonId
+      type: UpdateColumnPlayerProjectionsSeasonId
+      description: Update the 'season_id' column in the 'player_projections' collection.
+    - name: updatedAt
+      type: UpdateColumnPlayerProjectionsUpdatedAt
+      description: Update the 'updated_at' column in the 'player_projections' collection.
+  graphql:
+    typeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdUpdateColumns
+    inputTypeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_projections_by_player_id_and_player_type_and_projection_source_and_season_id_update_columns
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        id:
+          column:
+            name: id
+        playerId:
+          column:
+            name: player_id
+        playerType:
+          column:
+            name: player_type
+        projectionSource:
+          column:
+            name: projection_source
+        projections:
+          column:
+            name: projections
+        seasonId:
+          column:
+            name: season_id
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - id
+          - playerId
+          - playerType
+          - projectionSource
+          - projections
+          - seasonId
+          - updatedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponse
+  description: Responses from the
+    'update_player_projections_by_player_id_and_player_type_and_projection_source_and_season_id'
+    procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerProjections!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponse
+    inputTypeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_projections_by_player_id_and_player_type_and_projection_source_and_season_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonId
+  outputType: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponse!
+  arguments:
+    - name: keyPlayerId
+      type: Int32!
+    - name: keyPlayerType
+      type: String_1!
+    - name: keyProjectionSource
+      type: String_1
+    - name: keySeasonId
+      type: Int32!
+    - name: postCheck
+      type: PlayerProjectionsBoolExp
+      description: Update permission post-condition predicate over the
+        'player_projections' collection
+    - name: preCheck
+      type: PlayerProjectionsBoolExp
+      description: Update permission pre-condition predicate over the
+        'player_projections' collection
+    - name: updateColumns
+      type: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_player_projections_by_player_id_and_player_type_and_projection_source_and_season_id
+    argumentMapping:
+      keyPlayerId: key_player_id
+      keyPlayerType: key_player_type
+      keyProjectionSource: key_projection_source
+      keySeasonId: key_season_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonId
+    rootFieldKind: Mutation
+  description: Update any row on the 'player_projections' collection using the
+    'player_id', 'player_type', 'projection_source' and 'season_id' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonId
+  permissions:
+    - role: admin
+      allowExecution: true
+

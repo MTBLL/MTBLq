@@ -1,0 +1,84 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeletePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponse
+  description: Responses from the
+    'delete_player_projections_by_player_id_and_player_type_and_projection_source_and_season_id'
+    procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerProjections!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeletePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponse
+    inputTypeName: DeletePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_player_projections_by_player_id_and_player_type_and_projection_source_and_season_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeletePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeletePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonId
+  outputType: DeletePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponse!
+  arguments:
+    - name: keyPlayerId
+      type: Int32!
+    - name: keyPlayerType
+      type: String_1!
+    - name: keyProjectionSource
+      type: String_1
+    - name: keySeasonId
+      type: Int32!
+    - name: preCheck
+      type: PlayerProjectionsBoolExp
+      description: Delete permission predicate over the 'player_projections' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_player_projections_by_player_id_and_player_type_and_projection_source_and_season_id
+    argumentMapping:
+      keyPlayerId: key_player_id
+      keyPlayerType: key_player_type
+      keyProjectionSource: key_projection_source
+      keySeasonId: key_season_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deletePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonId
+    rootFieldKind: Mutation
+  description: Delete any row on the 'player_projections' collection using the
+    'player_id', 'player_type', 'projection_source' and 'season_id' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeletePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonId
+  permissions:
+    - role: admin
+      allowExecution: true
+

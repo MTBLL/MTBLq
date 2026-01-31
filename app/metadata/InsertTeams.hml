@@ -1,0 +1,222 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertTeamsObject
+  fields:
+    - name: acquisitions
+      type: Int32
+    - name: budgetRemaining
+      type: Int32
+    - name: budgetSpent
+      type: Int32
+    - name: createdAt
+      type: Timestamp
+    - name: drops
+      type: Int32
+    - name: gamesBack
+      type: Bigdecimal
+    - name: leagueId
+      type: Int32!
+    - name: losses
+      type: Int32
+    - name: owners
+      type: Json
+    - name: primaryOwner
+      type: String_1
+    - name: seasonId
+      type: Int32!
+    - name: teamAbbrev
+      type: String_1
+    - name: teamId
+      type: Int32!
+    - name: teamLogo
+      type: String_1
+    - name: teamName
+      type: String_1
+    - name: ties
+      type: Int32
+    - name: trades
+      type: Int32
+    - name: updatedAt
+      type: Timestamp
+    - name: waiverRank
+      type: Int32
+    - name: winPercentage
+      type: Bigdecimal
+    - name: wins
+      type: Int32
+  graphql:
+    typeName: InsertTeamsObject
+    inputTypeName: InsertTeamsObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_teams_object
+      fieldMapping:
+        acquisitions:
+          column:
+            name: acquisitions
+        budgetRemaining:
+          column:
+            name: budget_remaining
+        budgetSpent:
+          column:
+            name: budget_spent
+        createdAt:
+          column:
+            name: created_at
+        drops:
+          column:
+            name: drops
+        gamesBack:
+          column:
+            name: games_back
+        leagueId:
+          column:
+            name: league_id
+        losses:
+          column:
+            name: losses
+        owners:
+          column:
+            name: owners
+        primaryOwner:
+          column:
+            name: primary_owner
+        seasonId:
+          column:
+            name: season_id
+        teamAbbrev:
+          column:
+            name: team_abbrev
+        teamId:
+          column:
+            name: team_id
+        teamLogo:
+          column:
+            name: team_logo
+        teamName:
+          column:
+            name: team_name
+        ties:
+          column:
+            name: ties
+        trades:
+          column:
+            name: trades
+        updatedAt:
+          column:
+            name: updated_at
+        waiverRank:
+          column:
+            name: waiver_rank
+        winPercentage:
+          column:
+            name: win_percentage
+        wins:
+          column:
+            name: wins
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertTeamsObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - acquisitions
+          - budgetRemaining
+          - budgetSpent
+          - createdAt
+          - drops
+          - gamesBack
+          - leagueId
+          - losses
+          - owners
+          - primaryOwner
+          - seasonId
+          - teamAbbrev
+          - teamId
+          - teamLogo
+          - teamName
+          - ties
+          - trades
+          - updatedAt
+          - waiverRank
+          - winPercentage
+          - wins
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertTeamsResponse
+  description: Responses from the 'insert_teams' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Teams!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertTeamsResponse
+    inputTypeName: InsertTeamsResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_teams_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertTeamsResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertTeams
+  outputType: InsertTeamsResponse!
+  arguments:
+    - name: objects
+      type: "[InsertTeamsObject!]!"
+    - name: postCheck
+      type: TeamsBoolExp
+      description: Insert permission predicate over the 'teams' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_teams
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertTeams
+    rootFieldKind: Mutation
+  description: Insert into the teams table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertTeams
+  permissions:
+    - role: admin
+      allowExecution: true
+

@@ -1,0 +1,233 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: PlayerProjections
+  fields:
+    - name: createdAt
+      type: Timestamp
+    - name: id
+      type: Int32!
+    - name: playerId
+      type: Int32!
+    - name: playerType
+      type: String_1!
+    - name: projectionSource
+      type: String_1
+    - name: projections
+      type: Json!
+    - name: seasonId
+      type: Int32!
+    - name: updatedAt
+      type: Timestamp
+  graphql:
+    typeName: PlayerProjections
+    inputTypeName: PlayerProjectionsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: player_projections
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        id:
+          column:
+            name: id
+        playerId:
+          column:
+            name: player_id
+        playerType:
+          column:
+            name: player_type
+        projectionSource:
+          column:
+            name: projection_source
+        projections:
+          column:
+            name: projections
+        seasonId:
+          column:
+            name: season_id
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: PlayerProjections
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - id
+          - playerId
+          - playerType
+          - projectionSource
+          - projections
+          - seasonId
+          - updatedAt
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: PlayerProjectionsAggExp
+  operand:
+    object:
+      aggregatedType: PlayerProjections
+      aggregatableFields:
+        - fieldName: createdAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: id
+          aggregateExpression: Int4AggExp
+        - fieldName: playerId
+          aggregateExpression: Int4AggExp
+        - fieldName: playerType
+          aggregateExpression: VarcharAggExp
+        - fieldName: projectionSource
+          aggregateExpression: VarcharAggExp
+        - fieldName: projections
+          aggregateExpression: JsonbAggExp
+        - fieldName: seasonId
+          aggregateExpression: Int4AggExp
+        - fieldName: updatedAt
+          aggregateExpression: TimestampAggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: PlayerProjectionsAggExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: PlayerProjections
+  objectType: PlayerProjections
+  source:
+    dataConnectorName: neon_mtbl
+    collection: player_projections
+  filterExpressionType: PlayerProjectionsBoolExp
+  aggregateExpression: PlayerProjectionsAggExp
+  orderByExpression: PlayerProjectionsOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: playerProjections
+      subscription:
+        rootField: playerProjections
+    selectUniques:
+      - queryRootField: playerProjectionsById
+        uniqueIdentifier:
+          - id
+        subscription:
+          rootField: playerProjectionsById
+      - queryRootField: playerProjectionsByPlayerProjectionsPlayerIdSeasonIdProjectionSourcePlKey
+        uniqueIdentifier:
+          - playerId
+          - playerType
+          - projectionSource
+          - seasonId
+        subscription:
+          rootField: playerProjectionsByPlayerProjectionsPlayerIdSeasonIdProjectionSourcePlKey
+    filterInputTypeName: PlayerProjectionsFilterInput
+    aggregate:
+      queryRootField: playerProjectionsAggregate
+      subscription:
+        rootField: playerProjectionsAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: PlayerProjections
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: player
+  sourceType: PlayerProjections
+  target:
+    model:
+      name: Players
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: playerId
+      target:
+        modelField:
+          - fieldName: idEspn
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: PlayerProjectionsBoolExp
+  operand:
+    object:
+      type: PlayerProjections
+      comparableFields:
+        - fieldName: createdAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: id
+          booleanExpressionType: Int4BoolExp
+        - fieldName: playerId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: playerType
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: projectionSource
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: projections
+          booleanExpressionType: JsonbBoolExp
+        - fieldName: seasonId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: updatedAt
+          booleanExpressionType: TimestampBoolExp
+      comparableRelationships:
+        - relationshipName: player
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: PlayerProjectionsBoolExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: PlayerProjectionsOrderByExp
+  operand:
+    object:
+      orderedType: PlayerProjections
+      orderableFields:
+        - fieldName: createdAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: id
+          orderByExpression: Int32OrderByExp
+        - fieldName: playerId
+          orderByExpression: Int32OrderByExp
+        - fieldName: playerType
+          orderByExpression: String1OrderByExp
+        - fieldName: projectionSource
+          orderByExpression: String1OrderByExp
+        - fieldName: projections
+          orderByExpression: JsonOrderByExp
+        - fieldName: seasonId
+          orderByExpression: Int32OrderByExp
+        - fieldName: updatedAt
+          orderByExpression: TimestampOrderByExp
+      orderableRelationships:
+        - relationshipName: player
+  graphql:
+    expressionTypeName: PlayerProjectionsOrderByExp
+

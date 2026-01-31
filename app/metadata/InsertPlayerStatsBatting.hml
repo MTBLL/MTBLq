@@ -1,0 +1,486 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPlayerStatsBattingObject
+  fields:
+    - name: ab
+      type: Bigdecimal
+    - name: avg
+      type: Bigdecimal
+    - name: babip
+      type: Bigdecimal
+    - name: bb
+      type: Bigdecimal
+    - name: bbPct
+      type: Bigdecimal
+    - name: bBdist
+      type: Int32
+    - name: cs
+      type: Bigdecimal
+    - name: g
+      type: Bigdecimal
+    - name: gdp
+      type: Bigdecimal
+    - name: h
+      type: Bigdecimal
+    - name: hbp
+      type: Bigdecimal
+    - name: hr
+      type: Bigdecimal
+    - name: ibb
+      type: Bigdecimal
+    - name: iso
+      type: Bigdecimal
+    - name: kPct
+      type: Bigdecimal
+    - name: kdist
+      type: Int32
+    - name: obp
+      type: Bigdecimal
+    - name: ops
+      type: Bigdecimal
+    - name: pa
+      type: Bigdecimal
+    - name: r
+      type: Bigdecimal
+    - name: rbi
+      type: Bigdecimal
+    - name: sac
+      type: Bigdecimal
+    - name: sb
+      type: Bigdecimal
+    - name: sbn
+      type: Bigdecimal
+    - name: sf
+      type: Bigdecimal
+    - name: slg
+      type: Bigdecimal
+    - name: so
+      type: Bigdecimal
+    - name: tb
+      type: Bigdecimal
+    - name: xbh
+      type: Bigdecimal
+    - name: adjExitVelo
+      type: Bigdecimal
+    - name: attackAngle
+      type: Bigdecimal
+    - name: attackDir
+      type: Bigdecimal
+    - name: barrelRate
+      type: Bigdecimal
+    - name: barrelsPerBbePct
+      type: Bigdecimal
+    - name: barrelsPerPaPct
+      type: Bigdecimal
+    - name: barrelsTotal
+      type: Int32
+    - name: batSpeed
+      type: Bigdecimal
+    - name: batterRunValuePer100
+      type: Bigdecimal
+    - name: createdAt
+      type: Timestamp
+    - name: doubles
+      type: Bigdecimal
+    - name: exitVelo
+      type: Bigdecimal
+    - name: hardHitRate
+      type: Bigdecimal
+    - name: hardhitPct
+      type: Bigdecimal
+    - name: id
+      type: Int32
+    - name: launchAngle
+      type: Bigdecimal
+    - name: playerId
+      type: Int32!
+    - name: seasonId
+      type: Int32!
+    - name: singles
+      type: Bigdecimal
+    - name: statPeriod
+      type: String_1
+    - name: swingLength
+      type: Bigdecimal
+    - name: swingMissPct
+      type: Bigdecimal
+    - name: swingPathTilt
+      type: Bigdecimal
+    - name: swings
+      type: Int32
+    - name: takes
+      type: Int32
+    - name: triples
+      type: Bigdecimal
+    - name: updatedAt
+      type: Timestamp
+    - name: wOba
+      type: Bigdecimal
+    - name: whiffs
+      type: Int32
+    - name: xAvg
+      type: Bigdecimal
+    - name: xAvGdiff
+      type: Bigdecimal
+    - name: xObp
+      type: Bigdecimal
+    - name: xObPdiff
+      type: Bigdecimal
+    - name: xSlg
+      type: Bigdecimal
+    - name: xSlGdiff
+      type: Bigdecimal
+    - name: xwOba
+      type: Bigdecimal
+  graphql:
+    typeName: InsertPlayerStatsBattingObject
+    inputTypeName: InsertPlayerStatsBattingObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_player_stats_batting_object
+      fieldMapping:
+        ab:
+          column:
+            name: AB
+        avg:
+          column:
+            name: AVG
+        babip:
+          column:
+            name: BABIP
+        bb:
+          column:
+            name: BB
+        bbPct:
+          column:
+            name: BB_pct
+        bBdist:
+          column:
+            name: BBdist
+        cs:
+          column:
+            name: CS
+        g:
+          column:
+            name: G
+        gdp:
+          column:
+            name: GDP
+        h:
+          column:
+            name: H
+        hbp:
+          column:
+            name: HBP
+        hr:
+          column:
+            name: HR
+        ibb:
+          column:
+            name: IBB
+        iso:
+          column:
+            name: ISO
+        kPct:
+          column:
+            name: K_pct
+        kdist:
+          column:
+            name: Kdist
+        obp:
+          column:
+            name: OBP
+        ops:
+          column:
+            name: OPS
+        pa:
+          column:
+            name: PA
+        r:
+          column:
+            name: R
+        rbi:
+          column:
+            name: RBI
+        sac:
+          column:
+            name: SAC
+        sb:
+          column:
+            name: SB
+        sbn:
+          column:
+            name: SBN
+        sf:
+          column:
+            name: SF
+        slg:
+          column:
+            name: SLG
+        so:
+          column:
+            name: SO
+        tb:
+          column:
+            name: TB
+        xbh:
+          column:
+            name: XBH
+        adjExitVelo:
+          column:
+            name: adj_exit_velo
+        attackAngle:
+          column:
+            name: attack_angle
+        attackDir:
+          column:
+            name: attack_dir
+        barrelRate:
+          column:
+            name: barrel_rate
+        barrelsPerBbePct:
+          column:
+            name: barrels_per_bbe_pct
+        barrelsPerPaPct:
+          column:
+            name: barrels_per_pa_pct
+        barrelsTotal:
+          column:
+            name: barrels_total
+        batSpeed:
+          column:
+            name: bat_speed
+        batterRunValuePer100:
+          column:
+            name: batter_run_value_per_100
+        createdAt:
+          column:
+            name: created_at
+        doubles:
+          column:
+            name: doubles
+        exitVelo:
+          column:
+            name: exit_velo
+        hardHitRate:
+          column:
+            name: hard_hit_rate
+        hardhitPct:
+          column:
+            name: hardhit_pct
+        id:
+          column:
+            name: id
+        launchAngle:
+          column:
+            name: launch_angle
+        playerId:
+          column:
+            name: player_id
+        seasonId:
+          column:
+            name: season_id
+        singles:
+          column:
+            name: singles
+        statPeriod:
+          column:
+            name: stat_period
+        swingLength:
+          column:
+            name: swing_length
+        swingMissPct:
+          column:
+            name: swing_miss_pct
+        swingPathTilt:
+          column:
+            name: swing_path_tilt
+        swings:
+          column:
+            name: swings
+        takes:
+          column:
+            name: takes
+        triples:
+          column:
+            name: triples
+        updatedAt:
+          column:
+            name: updated_at
+        wOba:
+          column:
+            name: wOBA
+        whiffs:
+          column:
+            name: whiffs
+        xAvg:
+          column:
+            name: xAVG
+        xAvGdiff:
+          column:
+            name: xAVGdiff
+        xObp:
+          column:
+            name: xOBP
+        xObPdiff:
+          column:
+            name: xOBPdiff
+        xSlg:
+          column:
+            name: xSLG
+        xSlGdiff:
+          column:
+            name: xSLGdiff
+        xwOba:
+          column:
+            name: xwOBA
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPlayerStatsBattingObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - ab
+          - avg
+          - babip
+          - bb
+          - bbPct
+          - bBdist
+          - cs
+          - g
+          - gdp
+          - h
+          - hbp
+          - hr
+          - ibb
+          - iso
+          - kPct
+          - kdist
+          - obp
+          - ops
+          - pa
+          - r
+          - rbi
+          - sac
+          - sb
+          - sbn
+          - sf
+          - slg
+          - so
+          - tb
+          - xbh
+          - adjExitVelo
+          - attackAngle
+          - attackDir
+          - barrelRate
+          - barrelsPerBbePct
+          - barrelsPerPaPct
+          - barrelsTotal
+          - batSpeed
+          - batterRunValuePer100
+          - createdAt
+          - doubles
+          - exitVelo
+          - hardHitRate
+          - hardhitPct
+          - id
+          - launchAngle
+          - playerId
+          - seasonId
+          - singles
+          - statPeriod
+          - swingLength
+          - swingMissPct
+          - swingPathTilt
+          - swings
+          - takes
+          - triples
+          - updatedAt
+          - wOba
+          - whiffs
+          - xAvg
+          - xAvGdiff
+          - xObp
+          - xObPdiff
+          - xSlg
+          - xSlGdiff
+          - xwOba
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPlayerStatsBattingResponse
+  description: Responses from the 'insert_player_stats_batting' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerStatsBatting!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertPlayerStatsBattingResponse
+    inputTypeName: InsertPlayerStatsBattingResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_player_stats_batting_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPlayerStatsBattingResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertPlayerStatsBatting
+  outputType: InsertPlayerStatsBattingResponse!
+  arguments:
+    - name: objects
+      type: "[InsertPlayerStatsBattingObject!]!"
+    - name: postCheck
+      type: PlayerStatsBattingBoolExp
+      description: Insert permission predicate over the 'player_stats_batting' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_player_stats_batting
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertPlayerStatsBatting
+    rootFieldKind: Mutation
+  description: Insert into the player_stats_batting table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertPlayerStatsBatting
+  permissions:
+    - role: admin
+      allowExecution: true
+

@@ -1,0 +1,72 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeleteTeamsByTeamIdResponse
+  description: Responses from the 'delete_teams_by_team_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Teams!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeleteTeamsByTeamIdResponse
+    inputTypeName: DeleteTeamsByTeamIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_teams_by_team_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeleteTeamsByTeamIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeleteTeamsByTeamId
+  outputType: DeleteTeamsByTeamIdResponse!
+  arguments:
+    - name: keyTeamId
+      type: Int32!
+    - name: preCheck
+      type: TeamsBoolExp
+      description: Delete permission predicate over the 'teams' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_teams_by_team_id
+    argumentMapping:
+      keyTeamId: key_team_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deleteTeamsByTeamId
+    rootFieldKind: Mutation
+  description: Delete any row on the 'teams' collection using the 'team_id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeleteTeamsByTeamId
+  permissions:
+    - role: admin
+      allowExecution: true
+

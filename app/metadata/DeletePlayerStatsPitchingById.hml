@@ -1,0 +1,72 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeletePlayerStatsPitchingByIdResponse
+  description: Responses from the 'delete_player_stats_pitching_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerStatsPitching!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeletePlayerStatsPitchingByIdResponse
+    inputTypeName: DeletePlayerStatsPitchingByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_player_stats_pitching_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeletePlayerStatsPitchingByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeletePlayerStatsPitchingById
+  outputType: DeletePlayerStatsPitchingByIdResponse!
+  arguments:
+    - name: keyId
+      type: Int32!
+    - name: preCheck
+      type: PlayerStatsPitchingBoolExp
+      description: Delete permission predicate over the 'player_stats_pitching' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_player_stats_pitching_by_id
+    argumentMapping:
+      keyId: key_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deletePlayerStatsPitchingById
+    rootFieldKind: Mutation
+  description: Delete any row on the 'player_stats_pitching' collection using the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeletePlayerStatsPitchingById
+  permissions:
+    - role: admin
+      allowExecution: true
+

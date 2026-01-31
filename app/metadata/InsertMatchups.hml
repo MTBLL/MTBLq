@@ -1,0 +1,168 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertMatchupsObject
+  fields:
+    - name: createdAt
+      type: Timestamp
+    - name: isByeWeek
+      type: Boolean_1
+    - name: isPlayoff
+      type: Boolean_1
+    - name: leagueId
+      type: Int32!
+    - name: matchupId
+      type: Int32!
+    - name: periodId
+      type: Int32!
+    - name: seasonId
+      type: Int32!
+    - name: team1Id
+      type: Int32
+    - name: team1Score
+      type: String_1
+    - name: team2Id
+      type: Int32
+    - name: team2Score
+      type: String_1
+    - name: winnerId
+      type: Int32
+  graphql:
+    typeName: InsertMatchupsObject
+    inputTypeName: InsertMatchupsObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_matchups_object
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        isByeWeek:
+          column:
+            name: is_bye_week
+        isPlayoff:
+          column:
+            name: is_playoff
+        leagueId:
+          column:
+            name: league_id
+        matchupId:
+          column:
+            name: matchup_id
+        periodId:
+          column:
+            name: period_id
+        seasonId:
+          column:
+            name: season_id
+        team1Id:
+          column:
+            name: team1_id
+        team1Score:
+          column:
+            name: team1_score
+        team2Id:
+          column:
+            name: team2_id
+        team2Score:
+          column:
+            name: team2_score
+        winnerId:
+          column:
+            name: winner_id
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertMatchupsObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - isByeWeek
+          - isPlayoff
+          - leagueId
+          - matchupId
+          - periodId
+          - seasonId
+          - team1Id
+          - team1Score
+          - team2Id
+          - team2Score
+          - winnerId
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertMatchupsResponse
+  description: Responses from the 'insert_matchups' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Matchups!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertMatchupsResponse
+    inputTypeName: InsertMatchupsResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_matchups_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertMatchupsResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertMatchups
+  outputType: InsertMatchupsResponse!
+  arguments:
+    - name: objects
+      type: "[InsertMatchupsObject!]!"
+    - name: postCheck
+      type: MatchupsBoolExp
+      description: Insert permission predicate over the 'matchups' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_matchups
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertMatchups
+    rootFieldKind: Mutation
+  description: Insert into the matchups table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertMatchups
+  permissions:
+    - role: admin
+      allowExecution: true
+

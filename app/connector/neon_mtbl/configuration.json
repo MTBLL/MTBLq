@@ -16,6 +16,327 @@
   },
   "metadata": {
     "tables": {
+      "league_scoring_categories": {
+        "schemaName": "public",
+        "tableName": "league_scoring_categories",
+        "columns": {
+          "created_at": {
+            "name": "created_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "is_reverse": {
+            "name": "is_reverse",
+            "type": {
+              "scalarType": "bool"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "league_id": {
+            "name": "league_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "sort_order": {
+            "name": "sort_order",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "stat_id": {
+            "name": "stat_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "stat_name": {
+            "name": "stat_name",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "stat_type": {
+            "name": "stat_type",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "league_scoring_categories_league_id_stat_type_stat_id_key": [
+            "league_id",
+            "stat_id",
+            "stat_type"
+          ],
+          "league_scoring_categories_pkey": [
+            "id"
+          ]
+        },
+        "foreignRelations": {
+          "league_scoring_categories_league_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "leagues",
+            "columnMapping": {
+              "league_id": "league_id"
+            }
+          }
+        },
+        "description": null
+      },
+      "leagues": {
+        "schemaName": "public",
+        "tableName": "leagues",
+        "columns": {
+          "acquisition_budget": {
+            "name": "acquisition_budget",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "created_at": {
+            "name": "created_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "draft_auction_budget": {
+            "name": "draft_auction_budget",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "league_id": {
+            "name": "league_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "num_teams": {
+            "name": "num_teams",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "roster_settings": {
+            "name": "roster_settings",
+            "type": {
+              "scalarType": "jsonb"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "scoring_period_id": {
+            "name": "scoring_period_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "season_id": {
+            "name": "season_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "updated_at": {
+            "name": "updated_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "leagues_pkey": [
+            "league_id"
+          ]
+        },
+        "foreignRelations": {},
+        "description": null
+      },
+      "matchups": {
+        "schemaName": "public",
+        "tableName": "matchups",
+        "columns": {
+          "created_at": {
+            "name": "created_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "is_bye_week": {
+            "name": "is_bye_week",
+            "type": {
+              "scalarType": "bool"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "is_playoff": {
+            "name": "is_playoff",
+            "type": {
+              "scalarType": "bool"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "league_id": {
+            "name": "league_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "matchup_id": {
+            "name": "matchup_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "period_id": {
+            "name": "period_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "season_id": {
+            "name": "season_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "team1_id": {
+            "name": "team1_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "team1_score": {
+            "name": "team1_score",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "team2_id": {
+            "name": "team2_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "team2_score": {
+            "name": "team2_score",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "winner_id": {
+            "name": "winner_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "matchups_pkey": [
+            "matchup_id"
+          ]
+        },
+        "foreignRelations": {
+          "matchups_league_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "leagues",
+            "columnMapping": {
+              "league_id": "league_id"
+            }
+          },
+          "matchups_team1_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "teams",
+            "columnMapping": {
+              "team1_id": "team_id"
+            }
+          },
+          "matchups_team2_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "teams",
+            "columnMapping": {
+              "team2_id": "team_id"
+            }
+          },
+          "matchups_winner_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "teams",
+            "columnMapping": {
+              "winner_id": "team_id"
+            }
+          }
+        },
+        "description": null
+      },
       "neon_auth_users_sync": {
         "schemaName": "neon_auth",
         "tableName": "users_sync",
@@ -93,6 +414,1499 @@
         "foreignRelations": {},
         "description": null
       },
+      "player_fantasy_assignments": {
+        "schemaName": "public",
+        "tableName": "player_fantasy_assignments",
+        "columns": {
+          "created_at": {
+            "name": "created_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "draft_pick": {
+            "name": "draft_pick",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "draft_round": {
+            "name": "draft_round",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "draft_value": {
+            "name": "draft_value",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "league_id": {
+            "name": "league_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "player_id": {
+            "name": "player_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "season_id": {
+            "name": "season_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "team_id": {
+            "name": "team_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "updated_at": {
+            "name": "updated_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "player_fantasy_assignments_pkey": [
+            "id"
+          ],
+          "player_fantasy_assignments_player_id_league_id_season_id_key": [
+            "league_id",
+            "player_id",
+            "season_id"
+          ]
+        },
+        "foreignRelations": {
+          "player_fantasy_assignments_league_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "leagues",
+            "columnMapping": {
+              "league_id": "league_id"
+            }
+          },
+          "player_fantasy_assignments_player_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "players",
+            "columnMapping": {
+              "player_id": "id_espn"
+            }
+          },
+          "player_fantasy_assignments_team_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "teams",
+            "columnMapping": {
+              "team_id": "team_id"
+            }
+          }
+        },
+        "description": null
+      },
+      "player_projections": {
+        "schemaName": "public",
+        "tableName": "player_projections",
+        "columns": {
+          "created_at": {
+            "name": "created_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "player_id": {
+            "name": "player_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "player_type": {
+            "name": "player_type",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "projection_source": {
+            "name": "projection_source",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "projections": {
+            "name": "projections",
+            "type": {
+              "scalarType": "jsonb"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "season_id": {
+            "name": "season_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "updated_at": {
+            "name": "updated_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "player_projections_pkey": [
+            "id"
+          ],
+          "player_projections_player_id_season_id_projection_source_pl_key": [
+            "player_id",
+            "player_type",
+            "projection_source",
+            "season_id"
+          ]
+        },
+        "foreignRelations": {
+          "player_projections_player_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "players",
+            "columnMapping": {
+              "player_id": "id_espn"
+            }
+          }
+        },
+        "description": null
+      },
+      "player_stats_batting": {
+        "schemaName": "public",
+        "tableName": "player_stats_batting",
+        "columns": {
+          "AB": {
+            "name": "AB",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "AVG": {
+            "name": "AVG",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "BABIP": {
+            "name": "BABIP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "BB": {
+            "name": "BB",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "BB_pct": {
+            "name": "BB_pct",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "BBdist": {
+            "name": "BBdist",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "CS": {
+            "name": "CS",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "G": {
+            "name": "G",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "GDP": {
+            "name": "GDP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "H": {
+            "name": "H",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "HBP": {
+            "name": "HBP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "HR": {
+            "name": "HR",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "IBB": {
+            "name": "IBB",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "ISO": {
+            "name": "ISO",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "K_pct": {
+            "name": "K_pct",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "Kdist": {
+            "name": "Kdist",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "OBP": {
+            "name": "OBP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "OPS": {
+            "name": "OPS",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "PA": {
+            "name": "PA",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "R": {
+            "name": "R",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "RBI": {
+            "name": "RBI",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "SAC": {
+            "name": "SAC",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "SB": {
+            "name": "SB",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "SBN": {
+            "name": "SBN",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "SF": {
+            "name": "SF",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "SLG": {
+            "name": "SLG",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "SO": {
+            "name": "SO",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "TB": {
+            "name": "TB",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "XBH": {
+            "name": "XBH",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "adj_exit_velo": {
+            "name": "adj_exit_velo",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "attack_angle": {
+            "name": "attack_angle",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "attack_dir": {
+            "name": "attack_dir",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "barrel_rate": {
+            "name": "barrel_rate",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "barrels_per_bbe_pct": {
+            "name": "barrels_per_bbe_pct",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "barrels_per_pa_pct": {
+            "name": "barrels_per_pa_pct",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "barrels_total": {
+            "name": "barrels_total",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "bat_speed": {
+            "name": "bat_speed",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "batter_run_value_per_100": {
+            "name": "batter_run_value_per_100",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "created_at": {
+            "name": "created_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "doubles": {
+            "name": "doubles",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "exit_velo": {
+            "name": "exit_velo",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "hard_hit_rate": {
+            "name": "hard_hit_rate",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "hardhit_pct": {
+            "name": "hardhit_pct",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "launch_angle": {
+            "name": "launch_angle",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "player_id": {
+            "name": "player_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "season_id": {
+            "name": "season_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "singles": {
+            "name": "singles",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "stat_period": {
+            "name": "stat_period",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "swing_length": {
+            "name": "swing_length",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "swing_miss_pct": {
+            "name": "swing_miss_pct",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "swing_path_tilt": {
+            "name": "swing_path_tilt",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "swings": {
+            "name": "swings",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "takes": {
+            "name": "takes",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "triples": {
+            "name": "triples",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "updated_at": {
+            "name": "updated_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "wOBA": {
+            "name": "wOBA",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "whiffs": {
+            "name": "whiffs",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "xAVG": {
+            "name": "xAVG",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "xAVGdiff": {
+            "name": "xAVGdiff",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "xOBP": {
+            "name": "xOBP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "xOBPdiff": {
+            "name": "xOBPdiff",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "xSLG": {
+            "name": "xSLG",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "xSLGdiff": {
+            "name": "xSLGdiff",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "xwOBA": {
+            "name": "xwOBA",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "player_stats_batting_pkey": [
+            "id"
+          ],
+          "player_stats_batting_player_id_season_id_stat_period_key": [
+            "player_id",
+            "season_id",
+            "stat_period"
+          ]
+        },
+        "foreignRelations": {
+          "player_stats_batting_player_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "players",
+            "columnMapping": {
+              "player_id": "id_espn"
+            }
+          }
+        },
+        "description": null
+      },
+      "player_stats_pitching": {
+        "schemaName": "public",
+        "tableName": "player_stats_pitching",
+        "columns": {
+          "BB": {
+            "name": "BB",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "BK": {
+            "name": "BK",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "BLSV": {
+            "name": "BLSV",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "ER": {
+            "name": "ER",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "ERA": {
+            "name": "ERA",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "GP": {
+            "name": "GP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "GS": {
+            "name": "GS",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "H": {
+            "name": "H",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "HBP": {
+            "name": "HBP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "HLD": {
+            "name": "HLD",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "HR": {
+            "name": "HR",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "IBB": {
+            "name": "IBB",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "IP": {
+            "name": "IP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "K": {
+            "name": "K",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "L": {
+            "name": "L",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "OBA": {
+            "name": "OBA",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "OOBP": {
+            "name": "OOBP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "OUTS": {
+            "name": "OUTS",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "QS": {
+            "name": "QS",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "R": {
+            "name": "R",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "SV": {
+            "name": "SV",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "SVHD": {
+            "name": "SVHD",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "SVO": {
+            "name": "SVO",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "SV_pct": {
+            "name": "SV_pct",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "TBF": {
+            "name": "TBF",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "W": {
+            "name": "W",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "WHIP": {
+            "name": "WHIP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "WP": {
+            "name": "WP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "WPCT": {
+            "name": "WPCT",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "adj_exit_velo": {
+            "name": "adj_exit_velo",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "arm_angle": {
+            "name": "arm_angle",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "bb_per_9": {
+            "name": "bb_per_9",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "break_x_arm_side": {
+            "name": "break_x_arm_side",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "break_x_batter_in": {
+            "name": "break_x_batter_in",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "break_z": {
+            "name": "break_z",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "created_at": {
+            "name": "created_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "eff_min_vel": {
+            "name": "eff_min_vel",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "exit_velo": {
+            "name": "exit_velo",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "induced_break_z": {
+            "name": "induced_break_z",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "k_bb_ratio": {
+            "name": "k_bb_ratio",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "k_per_9": {
+            "name": "k_per_9",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "launch_angle": {
+            "name": "launch_angle",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "percieved_velo": {
+            "name": "percieved_velo",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pitcher_run_exp": {
+            "name": "pitcher_run_exp",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pitcher_run_value_per_100": {
+            "name": "pitcher_run_value_per_100",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "player_id": {
+            "name": "player_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "release_extension": {
+            "name": "release_extension",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "release_pos_x": {
+            "name": "release_pos_x",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "release_pos_z": {
+            "name": "release_pos_z",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "season_id": {
+            "name": "season_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "spin_rate": {
+            "name": "spin_rate",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "stat_period": {
+            "name": "stat_period",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "swing_miss_pct": {
+            "name": "swing_miss_pct",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "swings": {
+            "name": "swings",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "takes": {
+            "name": "takes",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "updated_at": {
+            "name": "updated_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "velo": {
+            "name": "velo",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "whiffs": {
+            "name": "whiffs",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "xAVG": {
+            "name": "xAVG",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "xAVGdiff": {
+            "name": "xAVGdiff",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "xOBP": {
+            "name": "xOBP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "xOBPdiff": {
+            "name": "xOBPdiff",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "xSLG": {
+            "name": "xSLG",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "xSLGdiff": {
+            "name": "xSLGdiff",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "xwOBA": {
+            "name": "xwOBA",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "player_stats_pitching_pkey": [
+            "id"
+          ],
+          "player_stats_pitching_player_id_season_id_stat_period_key": [
+            "player_id",
+            "season_id",
+            "stat_period"
+          ]
+        },
+        "foreignRelations": {
+          "player_stats_pitching_player_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "players",
+            "columnMapping": {
+              "player_id": "id_espn"
+            }
+          }
+        },
+        "description": null
+      },
+      "player_valuation_details": {
+        "schemaName": "public",
+        "tableName": "player_valuation_details",
+        "columns": {
+          "dollar_value": {
+            "name": "dollar_value",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "stat_category": {
+            "name": "stat_category",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "valuation_id": {
+            "name": "valuation_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "z_score": {
+            "name": "z_score",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "player_valuation_details_pkey": [
+            "id"
+          ],
+          "player_valuation_details_valuation_id_stat_category_key": [
+            "stat_category",
+            "valuation_id"
+          ]
+        },
+        "foreignRelations": {
+          "player_valuation_details_valuation_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "player_valuations",
+            "columnMapping": {
+              "valuation_id": "id"
+            }
+          }
+        },
+        "description": null
+      },
+      "player_valuations": {
+        "schemaName": "public",
+        "tableName": "player_valuations",
+        "columns": {
+          "created_at": {
+            "name": "created_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "player_id": {
+            "name": "player_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "primary_position": {
+            "name": "primary_position",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "season_id": {
+            "name": "season_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "tier": {
+            "name": "tier",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "total_dollars": {
+            "name": "total_dollars",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "total_z": {
+            "name": "total_z",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "updated_at": {
+            "name": "updated_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "player_valuations_pkey": [
+            "id"
+          ],
+          "player_valuations_player_id_season_id_primary_position_key": [
+            "player_id",
+            "primary_position",
+            "season_id"
+          ]
+        },
+        "foreignRelations": {
+          "player_valuations_player_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "players",
+            "columnMapping": {
+              "player_id": "id_espn"
+            }
+          }
+        },
+        "description": null
+      },
       "players": {
         "schemaName": "public",
         "tableName": "players",
@@ -133,7 +1947,7 @@
           "date_of_birth": {
             "name": "date_of_birth",
             "type": {
-              "scalarType": "varchar"
+              "scalarType": "date"
             },
             "nullable": "nullable",
             "description": null
@@ -154,14 +1968,6 @@
             "nullable": "nullable",
             "description": null
           },
-          "display_name": {
-            "name": "display_name",
-            "type": {
-              "scalarType": "varchar"
-            },
-            "nullable": "nullable",
-            "description": null
-          },
           "display_weight": {
             "name": "display_weight",
             "type": {
@@ -173,7 +1979,7 @@
           "eligible_slots": {
             "name": "eligible_slots",
             "type": {
-              "scalarType": "text"
+              "scalarType": "jsonb"
             },
             "nullable": "nullable",
             "description": null
@@ -271,27 +2077,11 @@
             "type": {
               "scalarType": "varchar"
             },
-            "nullable": "nullable",
+            "nullable": "nonNullable",
             "description": null
           },
           "name_ascii": {
             "name": "name_ascii",
-            "type": {
-              "scalarType": "varchar"
-            },
-            "nullable": "nullable",
-            "description": null
-          },
-          "name_nonascii": {
-            "name": "name_nonascii",
-            "type": {
-              "scalarType": "varchar"
-            },
-            "nullable": "nullable",
-            "description": null
-          },
-          "nickname": {
-            "name": "nickname",
             "type": {
               "scalarType": "varchar"
             },
@@ -314,24 +2104,8 @@
             "nullable": "nullable",
             "description": null
           },
-          "short_name": {
-            "name": "short_name",
-            "type": {
-              "scalarType": "varchar"
-            },
-            "nullable": "nullable",
-            "description": null
-          },
-          "slug_espn": {
-            "name": "slug_espn",
-            "type": {
-              "scalarType": "varchar"
-            },
-            "nullable": "nullable",
-            "description": null
-          },
-          "slug_fangraphs": {
-            "name": "slug_fangraphs",
+          "slug": {
+            "name": "slug",
             "type": {
               "scalarType": "varchar"
             },
@@ -354,6 +2128,15 @@
             "nullable": "nullable",
             "description": null
           },
+          "updated_at": {
+            "name": "updated_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
           "weight": {
             "name": "weight",
             "type": {
@@ -369,6 +2152,335 @@
           ]
         },
         "foreignRelations": {},
+        "description": null
+      },
+      "roster_slots": {
+        "schemaName": "public",
+        "tableName": "roster_slots",
+        "columns": {
+          "acquisition_date": {
+            "name": "acquisition_date",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "acquisition_type": {
+            "name": "acquisition_type",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "created_at": {
+            "name": "created_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "keeper_value": {
+            "name": "keeper_value",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "league_id": {
+            "name": "league_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "lineup_slot": {
+            "name": "lineup_slot",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "player_id": {
+            "name": "player_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "season_id": {
+            "name": "season_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "team_id": {
+            "name": "team_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "updated_at": {
+            "name": "updated_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "roster_slots_pkey": [
+            "id"
+          ],
+          "roster_slots_team_id_player_id_season_id_key": [
+            "player_id",
+            "season_id",
+            "team_id"
+          ]
+        },
+        "foreignRelations": {
+          "roster_slots_league_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "leagues",
+            "columnMapping": {
+              "league_id": "league_id"
+            }
+          },
+          "roster_slots_player_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "players",
+            "columnMapping": {
+              "player_id": "id_espn"
+            }
+          },
+          "roster_slots_team_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "teams",
+            "columnMapping": {
+              "team_id": "team_id"
+            }
+          }
+        },
+        "description": null
+      },
+      "teams": {
+        "schemaName": "public",
+        "tableName": "teams",
+        "columns": {
+          "acquisitions": {
+            "name": "acquisitions",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "budget_remaining": {
+            "name": "budget_remaining",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "budget_spent": {
+            "name": "budget_spent",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "created_at": {
+            "name": "created_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "drops": {
+            "name": "drops",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "games_back": {
+            "name": "games_back",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "league_id": {
+            "name": "league_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "losses": {
+            "name": "losses",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "owners": {
+            "name": "owners",
+            "type": {
+              "scalarType": "jsonb"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "primary_owner": {
+            "name": "primary_owner",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "season_id": {
+            "name": "season_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "team_abbrev": {
+            "name": "team_abbrev",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "team_id": {
+            "name": "team_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "team_logo": {
+            "name": "team_logo",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "team_name": {
+            "name": "team_name",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "ties": {
+            "name": "ties",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "trades": {
+            "name": "trades",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "updated_at": {
+            "name": "updated_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "waiver_rank": {
+            "name": "waiver_rank",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "win_percentage": {
+            "name": "win_percentage",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "wins": {
+            "name": "wins",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "teams_pkey": [
+            "team_id"
+          ]
+        },
+        "foreignRelations": {
+          "teams_league_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "leagues",
+            "columnMapping": {
+              "league_id": "league_id"
+            }
+          }
+        },
         "description": null
       }
     },
@@ -434,6 +2546,64 @@
             }
           },
           "typeRepresentation": "boolean"
+        },
+        "date": {
+          "typeName": "date",
+          "schemaName": "pg_catalog",
+          "description": null,
+          "aggregateFunctions": {
+            "max": {
+              "returnType": "date"
+            },
+            "min": {
+              "returnType": "date"
+            }
+          },
+          "comparisonOperators": {
+            "_eq": {
+              "operatorName": "=",
+              "operatorKind": "equal",
+              "argumentType": "date",
+              "isInfix": true
+            },
+            "_gt": {
+              "operatorName": ">",
+              "operatorKind": "greaterThan",
+              "argumentType": "date",
+              "isInfix": true
+            },
+            "_gte": {
+              "operatorName": ">=",
+              "operatorKind": "greaterThanOrEqual",
+              "argumentType": "date",
+              "isInfix": true
+            },
+            "_in": {
+              "operatorName": "IN",
+              "operatorKind": "in",
+              "argumentType": "date",
+              "isInfix": true
+            },
+            "_lt": {
+              "operatorName": "<",
+              "operatorKind": "lessThan",
+              "argumentType": "date",
+              "isInfix": true
+            },
+            "_lte": {
+              "operatorName": "<=",
+              "operatorKind": "lessThanOrEqual",
+              "argumentType": "date",
+              "isInfix": true
+            },
+            "_neq": {
+              "operatorName": "<>",
+              "operatorKind": "custom",
+              "argumentType": "date",
+              "isInfix": true
+            }
+          },
+          "typeRepresentation": "date"
         },
         "int4": {
           "typeName": "int4",

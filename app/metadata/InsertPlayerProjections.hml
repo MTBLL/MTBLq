@@ -1,0 +1,144 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPlayerProjectionsObject
+  fields:
+    - name: createdAt
+      type: Timestamp
+    - name: id
+      type: Int32
+    - name: playerId
+      type: Int32!
+    - name: playerType
+      type: String_1!
+    - name: projectionSource
+      type: String_1
+    - name: projections
+      type: Json!
+    - name: seasonId
+      type: Int32!
+    - name: updatedAt
+      type: Timestamp
+  graphql:
+    typeName: InsertPlayerProjectionsObject
+    inputTypeName: InsertPlayerProjectionsObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_player_projections_object
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        id:
+          column:
+            name: id
+        playerId:
+          column:
+            name: player_id
+        playerType:
+          column:
+            name: player_type
+        projectionSource:
+          column:
+            name: projection_source
+        projections:
+          column:
+            name: projections
+        seasonId:
+          column:
+            name: season_id
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPlayerProjectionsObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - id
+          - playerId
+          - playerType
+          - projectionSource
+          - projections
+          - seasonId
+          - updatedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPlayerProjectionsResponse
+  description: Responses from the 'insert_player_projections' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerProjections!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertPlayerProjectionsResponse
+    inputTypeName: InsertPlayerProjectionsResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_player_projections_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPlayerProjectionsResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertPlayerProjections
+  outputType: InsertPlayerProjectionsResponse!
+  arguments:
+    - name: objects
+      type: "[InsertPlayerProjectionsObject!]!"
+    - name: postCheck
+      type: PlayerProjectionsBoolExp
+      description: Insert permission predicate over the 'player_projections' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_player_projections
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertPlayerProjections
+    rootFieldKind: Mutation
+  description: Insert into the player_projections table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertPlayerProjections
+  permissions:
+    - role: admin
+      allowExecution: true
+

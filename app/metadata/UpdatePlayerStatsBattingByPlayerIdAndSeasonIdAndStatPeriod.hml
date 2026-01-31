@@ -1,0 +1,581 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodUpdateColumns
+  description: Update the columns of the 'player_stats_batting' collection
+  fields:
+    - name: ab
+      type: UpdateColumnPlayerStatsBattingAb
+      description: Update the 'AB' column in the 'player_stats_batting' collection.
+    - name: avg
+      type: UpdateColumnPlayerStatsBattingAvg
+      description: Update the 'AVG' column in the 'player_stats_batting' collection.
+    - name: babip
+      type: UpdateColumnPlayerStatsBattingBabip
+      description: Update the 'BABIP' column in the 'player_stats_batting' collection.
+    - name: bb
+      type: UpdateColumnPlayerStatsBattingBb
+      description: Update the 'BB' column in the 'player_stats_batting' collection.
+    - name: bbPct
+      type: UpdateColumnPlayerStatsBattingBbPct
+      description: Update the 'BB_pct' column in the 'player_stats_batting' collection.
+    - name: bBdist
+      type: UpdateColumnPlayerStatsBattingBBdist
+      description: Update the 'BBdist' column in the 'player_stats_batting' collection.
+    - name: cs
+      type: UpdateColumnPlayerStatsBattingCs
+      description: Update the 'CS' column in the 'player_stats_batting' collection.
+    - name: g
+      type: UpdateColumnPlayerStatsBattingG
+      description: Update the 'G' column in the 'player_stats_batting' collection.
+    - name: gdp
+      type: UpdateColumnPlayerStatsBattingGdp
+      description: Update the 'GDP' column in the 'player_stats_batting' collection.
+    - name: h
+      type: UpdateColumnPlayerStatsBattingH
+      description: Update the 'H' column in the 'player_stats_batting' collection.
+    - name: hbp
+      type: UpdateColumnPlayerStatsBattingHbp
+      description: Update the 'HBP' column in the 'player_stats_batting' collection.
+    - name: hr
+      type: UpdateColumnPlayerStatsBattingHr
+      description: Update the 'HR' column in the 'player_stats_batting' collection.
+    - name: ibb
+      type: UpdateColumnPlayerStatsBattingIbb
+      description: Update the 'IBB' column in the 'player_stats_batting' collection.
+    - name: iso
+      type: UpdateColumnPlayerStatsBattingIso
+      description: Update the 'ISO' column in the 'player_stats_batting' collection.
+    - name: kPct
+      type: UpdateColumnPlayerStatsBattingKPct
+      description: Update the 'K_pct' column in the 'player_stats_batting' collection.
+    - name: kdist
+      type: UpdateColumnPlayerStatsBattingKdist
+      description: Update the 'Kdist' column in the 'player_stats_batting' collection.
+    - name: obp
+      type: UpdateColumnPlayerStatsBattingObp
+      description: Update the 'OBP' column in the 'player_stats_batting' collection.
+    - name: ops
+      type: UpdateColumnPlayerStatsBattingOps
+      description: Update the 'OPS' column in the 'player_stats_batting' collection.
+    - name: pa
+      type: UpdateColumnPlayerStatsBattingPa
+      description: Update the 'PA' column in the 'player_stats_batting' collection.
+    - name: r
+      type: UpdateColumnPlayerStatsBattingR
+      description: Update the 'R' column in the 'player_stats_batting' collection.
+    - name: rbi
+      type: UpdateColumnPlayerStatsBattingRbi
+      description: Update the 'RBI' column in the 'player_stats_batting' collection.
+    - name: sac
+      type: UpdateColumnPlayerStatsBattingSac
+      description: Update the 'SAC' column in the 'player_stats_batting' collection.
+    - name: sb
+      type: UpdateColumnPlayerStatsBattingSb
+      description: Update the 'SB' column in the 'player_stats_batting' collection.
+    - name: sbn
+      type: UpdateColumnPlayerStatsBattingSbn
+      description: Update the 'SBN' column in the 'player_stats_batting' collection.
+    - name: sf
+      type: UpdateColumnPlayerStatsBattingSf
+      description: Update the 'SF' column in the 'player_stats_batting' collection.
+    - name: slg
+      type: UpdateColumnPlayerStatsBattingSlg
+      description: Update the 'SLG' column in the 'player_stats_batting' collection.
+    - name: so
+      type: UpdateColumnPlayerStatsBattingSo
+      description: Update the 'SO' column in the 'player_stats_batting' collection.
+    - name: tb
+      type: UpdateColumnPlayerStatsBattingTb
+      description: Update the 'TB' column in the 'player_stats_batting' collection.
+    - name: xbh
+      type: UpdateColumnPlayerStatsBattingXbh
+      description: Update the 'XBH' column in the 'player_stats_batting' collection.
+    - name: adjExitVelo
+      type: UpdateColumnPlayerStatsBattingAdjExitVelo
+      description: Update the 'adj_exit_velo' column in the 'player_stats_batting'
+        collection.
+    - name: attackAngle
+      type: UpdateColumnPlayerStatsBattingAttackAngle
+      description: Update the 'attack_angle' column in the 'player_stats_batting'
+        collection.
+    - name: attackDir
+      type: UpdateColumnPlayerStatsBattingAttackDir
+      description: Update the 'attack_dir' column in the 'player_stats_batting' collection.
+    - name: barrelRate
+      type: UpdateColumnPlayerStatsBattingBarrelRate
+      description: Update the 'barrel_rate' column in the 'player_stats_batting' collection.
+    - name: barrelsPerBbePct
+      type: UpdateColumnPlayerStatsBattingBarrelsPerBbePct
+      description: Update the 'barrels_per_bbe_pct' column in the
+        'player_stats_batting' collection.
+    - name: barrelsPerPaPct
+      type: UpdateColumnPlayerStatsBattingBarrelsPerPaPct
+      description: Update the 'barrels_per_pa_pct' column in the
+        'player_stats_batting' collection.
+    - name: barrelsTotal
+      type: UpdateColumnPlayerStatsBattingBarrelsTotal
+      description: Update the 'barrels_total' column in the 'player_stats_batting'
+        collection.
+    - name: batSpeed
+      type: UpdateColumnPlayerStatsBattingBatSpeed
+      description: Update the 'bat_speed' column in the 'player_stats_batting' collection.
+    - name: batterRunValuePer100
+      type: UpdateColumnPlayerStatsBattingBatterRunValuePer100
+      description: Update the 'batter_run_value_per_100' column in the
+        'player_stats_batting' collection.
+    - name: createdAt
+      type: UpdateColumnPlayerStatsBattingCreatedAt
+      description: Update the 'created_at' column in the 'player_stats_batting' collection.
+    - name: doubles
+      type: UpdateColumnPlayerStatsBattingDoubles
+      description: Update the 'doubles' column in the 'player_stats_batting' collection.
+    - name: exitVelo
+      type: UpdateColumnPlayerStatsBattingExitVelo
+      description: Update the 'exit_velo' column in the 'player_stats_batting' collection.
+    - name: hardHitRate
+      type: UpdateColumnPlayerStatsBattingHardHitRate
+      description: Update the 'hard_hit_rate' column in the 'player_stats_batting'
+        collection.
+    - name: hardhitPct
+      type: UpdateColumnPlayerStatsBattingHardhitPct
+      description: Update the 'hardhit_pct' column in the 'player_stats_batting' collection.
+    - name: id
+      type: UpdateColumnPlayerStatsBattingId
+      description: Update the 'id' column in the 'player_stats_batting' collection.
+    - name: launchAngle
+      type: UpdateColumnPlayerStatsBattingLaunchAngle
+      description: Update the 'launch_angle' column in the 'player_stats_batting'
+        collection.
+    - name: playerId
+      type: UpdateColumnPlayerStatsBattingPlayerId
+      description: Update the 'player_id' column in the 'player_stats_batting' collection.
+    - name: seasonId
+      type: UpdateColumnPlayerStatsBattingSeasonId
+      description: Update the 'season_id' column in the 'player_stats_batting' collection.
+    - name: singles
+      type: UpdateColumnPlayerStatsBattingSingles
+      description: Update the 'singles' column in the 'player_stats_batting' collection.
+    - name: statPeriod
+      type: UpdateColumnPlayerStatsBattingStatPeriod
+      description: Update the 'stat_period' column in the 'player_stats_batting' collection.
+    - name: swingLength
+      type: UpdateColumnPlayerStatsBattingSwingLength
+      description: Update the 'swing_length' column in the 'player_stats_batting'
+        collection.
+    - name: swingMissPct
+      type: UpdateColumnPlayerStatsBattingSwingMissPct
+      description: Update the 'swing_miss_pct' column in the 'player_stats_batting'
+        collection.
+    - name: swingPathTilt
+      type: UpdateColumnPlayerStatsBattingSwingPathTilt
+      description: Update the 'swing_path_tilt' column in the 'player_stats_batting'
+        collection.
+    - name: swings
+      type: UpdateColumnPlayerStatsBattingSwings
+      description: Update the 'swings' column in the 'player_stats_batting' collection.
+    - name: takes
+      type: UpdateColumnPlayerStatsBattingTakes
+      description: Update the 'takes' column in the 'player_stats_batting' collection.
+    - name: triples
+      type: UpdateColumnPlayerStatsBattingTriples
+      description: Update the 'triples' column in the 'player_stats_batting' collection.
+    - name: updatedAt
+      type: UpdateColumnPlayerStatsBattingUpdatedAt
+      description: Update the 'updated_at' column in the 'player_stats_batting' collection.
+    - name: wOba
+      type: UpdateColumnPlayerStatsBattingWOba
+      description: Update the 'wOBA' column in the 'player_stats_batting' collection.
+    - name: whiffs
+      type: UpdateColumnPlayerStatsBattingWhiffs
+      description: Update the 'whiffs' column in the 'player_stats_batting' collection.
+    - name: xAvg
+      type: UpdateColumnPlayerStatsBattingXAvg
+      description: Update the 'xAVG' column in the 'player_stats_batting' collection.
+    - name: xAvGdiff
+      type: UpdateColumnPlayerStatsBattingXAvGdiff
+      description: Update the 'xAVGdiff' column in the 'player_stats_batting' collection.
+    - name: xObp
+      type: UpdateColumnPlayerStatsBattingXObp
+      description: Update the 'xOBP' column in the 'player_stats_batting' collection.
+    - name: xObPdiff
+      type: UpdateColumnPlayerStatsBattingXObPdiff
+      description: Update the 'xOBPdiff' column in the 'player_stats_batting' collection.
+    - name: xSlg
+      type: UpdateColumnPlayerStatsBattingXSlg
+      description: Update the 'xSLG' column in the 'player_stats_batting' collection.
+    - name: xSlGdiff
+      type: UpdateColumnPlayerStatsBattingXSlGdiff
+      description: Update the 'xSLGdiff' column in the 'player_stats_batting' collection.
+    - name: xwOba
+      type: UpdateColumnPlayerStatsBattingXwOba
+      description: Update the 'xwOBA' column in the 'player_stats_batting' collection.
+  graphql:
+    typeName: UpdatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodUpdateColumns
+    inputTypeName: UpdatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_stats_batting_by_player_id_and_season_id_and_stat_period_update_columns
+      fieldMapping:
+        ab:
+          column:
+            name: AB
+        avg:
+          column:
+            name: AVG
+        babip:
+          column:
+            name: BABIP
+        bb:
+          column:
+            name: BB
+        bbPct:
+          column:
+            name: BB_pct
+        bBdist:
+          column:
+            name: BBdist
+        cs:
+          column:
+            name: CS
+        g:
+          column:
+            name: G
+        gdp:
+          column:
+            name: GDP
+        h:
+          column:
+            name: H
+        hbp:
+          column:
+            name: HBP
+        hr:
+          column:
+            name: HR
+        ibb:
+          column:
+            name: IBB
+        iso:
+          column:
+            name: ISO
+        kPct:
+          column:
+            name: K_pct
+        kdist:
+          column:
+            name: Kdist
+        obp:
+          column:
+            name: OBP
+        ops:
+          column:
+            name: OPS
+        pa:
+          column:
+            name: PA
+        r:
+          column:
+            name: R
+        rbi:
+          column:
+            name: RBI
+        sac:
+          column:
+            name: SAC
+        sb:
+          column:
+            name: SB
+        sbn:
+          column:
+            name: SBN
+        sf:
+          column:
+            name: SF
+        slg:
+          column:
+            name: SLG
+        so:
+          column:
+            name: SO
+        tb:
+          column:
+            name: TB
+        xbh:
+          column:
+            name: XBH
+        adjExitVelo:
+          column:
+            name: adj_exit_velo
+        attackAngle:
+          column:
+            name: attack_angle
+        attackDir:
+          column:
+            name: attack_dir
+        barrelRate:
+          column:
+            name: barrel_rate
+        barrelsPerBbePct:
+          column:
+            name: barrels_per_bbe_pct
+        barrelsPerPaPct:
+          column:
+            name: barrels_per_pa_pct
+        barrelsTotal:
+          column:
+            name: barrels_total
+        batSpeed:
+          column:
+            name: bat_speed
+        batterRunValuePer100:
+          column:
+            name: batter_run_value_per_100
+        createdAt:
+          column:
+            name: created_at
+        doubles:
+          column:
+            name: doubles
+        exitVelo:
+          column:
+            name: exit_velo
+        hardHitRate:
+          column:
+            name: hard_hit_rate
+        hardhitPct:
+          column:
+            name: hardhit_pct
+        id:
+          column:
+            name: id
+        launchAngle:
+          column:
+            name: launch_angle
+        playerId:
+          column:
+            name: player_id
+        seasonId:
+          column:
+            name: season_id
+        singles:
+          column:
+            name: singles
+        statPeriod:
+          column:
+            name: stat_period
+        swingLength:
+          column:
+            name: swing_length
+        swingMissPct:
+          column:
+            name: swing_miss_pct
+        swingPathTilt:
+          column:
+            name: swing_path_tilt
+        swings:
+          column:
+            name: swings
+        takes:
+          column:
+            name: takes
+        triples:
+          column:
+            name: triples
+        updatedAt:
+          column:
+            name: updated_at
+        wOba:
+          column:
+            name: wOBA
+        whiffs:
+          column:
+            name: whiffs
+        xAvg:
+          column:
+            name: xAVG
+        xAvGdiff:
+          column:
+            name: xAVGdiff
+        xObp:
+          column:
+            name: xOBP
+        xObPdiff:
+          column:
+            name: xOBPdiff
+        xSlg:
+          column:
+            name: xSLG
+        xSlGdiff:
+          column:
+            name: xSLGdiff
+        xwOba:
+          column:
+            name: xwOBA
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - ab
+          - avg
+          - babip
+          - bb
+          - bbPct
+          - bBdist
+          - cs
+          - g
+          - gdp
+          - h
+          - hbp
+          - hr
+          - ibb
+          - iso
+          - kPct
+          - kdist
+          - obp
+          - ops
+          - pa
+          - r
+          - rbi
+          - sac
+          - sb
+          - sbn
+          - sf
+          - slg
+          - so
+          - tb
+          - xbh
+          - adjExitVelo
+          - attackAngle
+          - attackDir
+          - barrelRate
+          - barrelsPerBbePct
+          - barrelsPerPaPct
+          - barrelsTotal
+          - batSpeed
+          - batterRunValuePer100
+          - createdAt
+          - doubles
+          - exitVelo
+          - hardHitRate
+          - hardhitPct
+          - id
+          - launchAngle
+          - playerId
+          - seasonId
+          - singles
+          - statPeriod
+          - swingLength
+          - swingMissPct
+          - swingPathTilt
+          - swings
+          - takes
+          - triples
+          - updatedAt
+          - wOba
+          - whiffs
+          - xAvg
+          - xAvGdiff
+          - xObp
+          - xObPdiff
+          - xSlg
+          - xSlGdiff
+          - xwOba
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodResponse
+  description: Responses from the
+    'update_player_stats_batting_by_player_id_and_season_id_and_stat_period'
+    procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerStatsBatting!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodResponse
+    inputTypeName: UpdatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_stats_batting_by_player_id_and_season_id_and_stat_period_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriod
+  outputType: UpdatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodResponse!
+  arguments:
+    - name: keyPlayerId
+      type: Int32!
+    - name: keySeasonId
+      type: Int32!
+    - name: keyStatPeriod
+      type: String_1
+    - name: postCheck
+      type: PlayerStatsBattingBoolExp
+      description: Update permission post-condition predicate over the
+        'player_stats_batting' collection
+    - name: preCheck
+      type: PlayerStatsBattingBoolExp
+      description: Update permission pre-condition predicate over the
+        'player_stats_batting' collection
+    - name: updateColumns
+      type: UpdatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_player_stats_batting_by_player_id_and_season_id_and_stat_period
+    argumentMapping:
+      keyPlayerId: key_player_id
+      keySeasonId: key_season_id
+      keyStatPeriod: key_stat_period
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriod
+    rootFieldKind: Mutation
+  description: Update any row on the 'player_stats_batting' collection using the
+    'player_id', 'season_id' and 'stat_period' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriod
+  permissions:
+    - role: admin
+      allowExecution: true
+

@@ -1,0 +1,179 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdUpdateColumns
+  description: Update the columns of the 'player_valuations' collection
+  fields:
+    - name: createdAt
+      type: UpdateColumnPlayerValuationsCreatedAt
+      description: Update the 'created_at' column in the 'player_valuations' collection.
+    - name: id
+      type: UpdateColumnPlayerValuationsId
+      description: Update the 'id' column in the 'player_valuations' collection.
+    - name: playerId
+      type: UpdateColumnPlayerValuationsPlayerId
+      description: Update the 'player_id' column in the 'player_valuations' collection.
+    - name: primaryPosition
+      type: UpdateColumnPlayerValuationsPrimaryPosition
+      description: Update the 'primary_position' column in the 'player_valuations'
+        collection.
+    - name: seasonId
+      type: UpdateColumnPlayerValuationsSeasonId
+      description: Update the 'season_id' column in the 'player_valuations' collection.
+    - name: tier
+      type: UpdateColumnPlayerValuationsTier
+      description: Update the 'tier' column in the 'player_valuations' collection.
+    - name: totalDollars
+      type: UpdateColumnPlayerValuationsTotalDollars
+      description: Update the 'total_dollars' column in the 'player_valuations' collection.
+    - name: totalZ
+      type: UpdateColumnPlayerValuationsTotalZ
+      description: Update the 'total_z' column in the 'player_valuations' collection.
+    - name: updatedAt
+      type: UpdateColumnPlayerValuationsUpdatedAt
+      description: Update the 'updated_at' column in the 'player_valuations' collection.
+  graphql:
+    typeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdUpdateColumns
+    inputTypeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_valuations_by_player_id_and_primary_position_and_season_id_update_columns
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        id:
+          column:
+            name: id
+        playerId:
+          column:
+            name: player_id
+        primaryPosition:
+          column:
+            name: primary_position
+        seasonId:
+          column:
+            name: season_id
+        tier:
+          column:
+            name: tier
+        totalDollars:
+          column:
+            name: total_dollars
+        totalZ:
+          column:
+            name: total_z
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - id
+          - playerId
+          - primaryPosition
+          - seasonId
+          - tier
+          - totalDollars
+          - totalZ
+          - updatedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse
+  description: Responses from the
+    'update_player_valuations_by_player_id_and_primary_position_and_season_id'
+    procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerValuations!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse
+    inputTypeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_valuations_by_player_id_and_primary_position_and_season_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonId
+  outputType: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse!
+  arguments:
+    - name: keyPlayerId
+      type: Int32!
+    - name: keyPrimaryPosition
+      type: String_1!
+    - name: keySeasonId
+      type: Int32!
+    - name: postCheck
+      type: PlayerValuationsBoolExp
+      description: Update permission post-condition predicate over the
+        'player_valuations' collection
+    - name: preCheck
+      type: PlayerValuationsBoolExp
+      description: Update permission pre-condition predicate over the
+        'player_valuations' collection
+    - name: updateColumns
+      type: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_player_valuations_by_player_id_and_primary_position_and_season_id
+    argumentMapping:
+      keyPlayerId: key_player_id
+      keyPrimaryPosition: key_primary_position
+      keySeasonId: key_season_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonId
+    rootFieldKind: Mutation
+  description: Update any row on the 'player_valuations' collection using the
+    'player_id', 'primary_position' and 'season_id' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonId
+  permissions:
+    - role: admin
+      allowExecution: true
+

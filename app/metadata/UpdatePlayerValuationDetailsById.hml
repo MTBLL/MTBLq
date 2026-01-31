@@ -1,0 +1,306 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerValuationDetailsDollarValue
+  description: Update the 'dollar_value' column in the 'player_valuation_details' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerValuationDetailsDollarValue
+    inputTypeName: UpdateColumnPlayerValuationDetailsDollarValueInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_valuation_details_dollar_value
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerValuationDetailsDollarValue
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerValuationDetailsId
+  description: Update the 'id' column in the 'player_valuation_details' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerValuationDetailsId
+    inputTypeName: UpdateColumnPlayerValuationDetailsIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_valuation_details_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerValuationDetailsId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerValuationDetailsStatCategory
+  description: Update the 'stat_category' column in the 'player_valuation_details'
+    collection
+  fields:
+    - name: set
+      type: String_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerValuationDetailsStatCategory
+    inputTypeName: UpdateColumnPlayerValuationDetailsStatCategoryInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_valuation_details_stat_category
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerValuationDetailsStatCategory
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerValuationDetailsValuationId
+  description: Update the 'valuation_id' column in the 'player_valuation_details' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerValuationDetailsValuationId
+    inputTypeName: UpdateColumnPlayerValuationDetailsValuationIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_valuation_details_valuation_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerValuationDetailsValuationId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerValuationDetailsZScore
+  description: Update the 'z_score' column in the 'player_valuation_details' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerValuationDetailsZScore
+    inputTypeName: UpdateColumnPlayerValuationDetailsZScoreInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_valuation_details_z_score
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerValuationDetailsZScore
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerValuationDetailsByIdUpdateColumns
+  description: Update the columns of the 'player_valuation_details' collection
+  fields:
+    - name: dollarValue
+      type: UpdateColumnPlayerValuationDetailsDollarValue
+      description: Update the 'dollar_value' column in the 'player_valuation_details'
+        collection.
+    - name: id
+      type: UpdateColumnPlayerValuationDetailsId
+      description: Update the 'id' column in the 'player_valuation_details' collection.
+    - name: statCategory
+      type: UpdateColumnPlayerValuationDetailsStatCategory
+      description: Update the 'stat_category' column in the 'player_valuation_details'
+        collection.
+    - name: valuationId
+      type: UpdateColumnPlayerValuationDetailsValuationId
+      description: Update the 'valuation_id' column in the 'player_valuation_details'
+        collection.
+    - name: zScore
+      type: UpdateColumnPlayerValuationDetailsZScore
+      description: Update the 'z_score' column in the 'player_valuation_details' collection.
+  graphql:
+    typeName: UpdatePlayerValuationDetailsByIdUpdateColumns
+    inputTypeName: UpdatePlayerValuationDetailsByIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_valuation_details_by_id_update_columns
+      fieldMapping:
+        dollarValue:
+          column:
+            name: dollar_value
+        id:
+          column:
+            name: id
+        statCategory:
+          column:
+            name: stat_category
+        valuationId:
+          column:
+            name: valuation_id
+        zScore:
+          column:
+            name: z_score
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerValuationDetailsByIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - dollarValue
+          - id
+          - statCategory
+          - valuationId
+          - zScore
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerValuationDetailsByIdResponse
+  description: Responses from the 'update_player_valuation_details_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerValuationDetails!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdatePlayerValuationDetailsByIdResponse
+    inputTypeName: UpdatePlayerValuationDetailsByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_valuation_details_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerValuationDetailsByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdatePlayerValuationDetailsById
+  outputType: UpdatePlayerValuationDetailsByIdResponse!
+  arguments:
+    - name: keyId
+      type: Int32!
+    - name: postCheck
+      type: PlayerValuationDetailsBoolExp
+      description: Update permission post-condition predicate over the
+        'player_valuation_details' collection
+    - name: preCheck
+      type: PlayerValuationDetailsBoolExp
+      description: Update permission pre-condition predicate over the
+        'player_valuation_details' collection
+    - name: updateColumns
+      type: UpdatePlayerValuationDetailsByIdUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_player_valuation_details_by_id
+    argumentMapping:
+      keyId: key_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updatePlayerValuationDetailsById
+    rootFieldKind: Mutation
+  description: Update any row on the 'player_valuation_details' collection using
+    the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdatePlayerValuationDetailsById
+  permissions:
+    - role: admin
+      allowExecution: true
+

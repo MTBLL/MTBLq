@@ -1,0 +1,72 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeleteLeaguesByLeagueIdResponse
+  description: Responses from the 'delete_leagues_by_league_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Leagues!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeleteLeaguesByLeagueIdResponse
+    inputTypeName: DeleteLeaguesByLeagueIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_leagues_by_league_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeleteLeaguesByLeagueIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeleteLeaguesByLeagueId
+  outputType: DeleteLeaguesByLeagueIdResponse!
+  arguments:
+    - name: keyLeagueId
+      type: Int32!
+    - name: preCheck
+      type: LeaguesBoolExp
+      description: Delete permission predicate over the 'leagues' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_leagues_by_league_id
+    argumentMapping:
+      keyLeagueId: key_league_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deleteLeaguesByLeagueId
+    rootFieldKind: Mutation
+  description: Delete any row on the 'leagues' collection using the 'league_id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeleteLeaguesByLeagueId
+  permissions:
+    - role: admin
+      allowExecution: true
+

@@ -1,0 +1,492 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPlayerStatsPitchingObject
+  fields:
+    - name: bb
+      type: Bigdecimal
+    - name: bk
+      type: Bigdecimal
+    - name: blsv
+      type: Bigdecimal
+    - name: er
+      type: Bigdecimal
+    - name: era
+      type: Bigdecimal
+    - name: gp
+      type: Bigdecimal
+    - name: gs
+      type: Bigdecimal
+    - name: h
+      type: Bigdecimal
+    - name: hbp
+      type: Bigdecimal
+    - name: hld
+      type: Bigdecimal
+    - name: hr
+      type: Bigdecimal
+    - name: ibb
+      type: Bigdecimal
+    - name: ip
+      type: Bigdecimal
+    - name: k
+      type: Bigdecimal
+    - name: l
+      type: Bigdecimal
+    - name: oba
+      type: Bigdecimal
+    - name: oobp
+      type: Bigdecimal
+    - name: outs
+      type: Bigdecimal
+    - name: qs
+      type: Bigdecimal
+    - name: r
+      type: Bigdecimal
+    - name: sv
+      type: Bigdecimal
+    - name: svPct
+      type: Bigdecimal
+    - name: svhd
+      type: Bigdecimal
+    - name: svo
+      type: Bigdecimal
+    - name: tbf
+      type: Bigdecimal
+    - name: w
+      type: Bigdecimal
+    - name: whip
+      type: Bigdecimal
+    - name: wp
+      type: Bigdecimal
+    - name: wpct
+      type: Bigdecimal
+    - name: adjExitVelo
+      type: Bigdecimal
+    - name: armAngle
+      type: Bigdecimal
+    - name: bbPer9
+      type: Bigdecimal
+    - name: breakXArmSide
+      type: Bigdecimal
+    - name: breakXBatterIn
+      type: Bigdecimal
+    - name: breakZ
+      type: Bigdecimal
+    - name: createdAt
+      type: Timestamp
+    - name: effMinVel
+      type: Bigdecimal
+    - name: exitVelo
+      type: Bigdecimal
+    - name: id
+      type: Int32
+    - name: inducedBreakZ
+      type: Bigdecimal
+    - name: kBbRatio
+      type: Bigdecimal
+    - name: kPer9
+      type: Bigdecimal
+    - name: launchAngle
+      type: Bigdecimal
+    - name: percievedVelo
+      type: Bigdecimal
+    - name: pitcherRunExp
+      type: Bigdecimal
+    - name: pitcherRunValuePer100
+      type: Bigdecimal
+    - name: playerId
+      type: Int32!
+    - name: releaseExtension
+      type: Bigdecimal
+    - name: releasePosX
+      type: Bigdecimal
+    - name: releasePosZ
+      type: Bigdecimal
+    - name: seasonId
+      type: Int32!
+    - name: spinRate
+      type: Bigdecimal
+    - name: statPeriod
+      type: String_1
+    - name: swingMissPct
+      type: Bigdecimal
+    - name: swings
+      type: Int32
+    - name: takes
+      type: Int32
+    - name: updatedAt
+      type: Timestamp
+    - name: velo
+      type: Bigdecimal
+    - name: whiffs
+      type: Int32
+    - name: xAvg
+      type: Bigdecimal
+    - name: xAvGdiff
+      type: Bigdecimal
+    - name: xObp
+      type: Bigdecimal
+    - name: xObPdiff
+      type: Bigdecimal
+    - name: xSlg
+      type: Bigdecimal
+    - name: xSlGdiff
+      type: Bigdecimal
+    - name: xwOba
+      type: Bigdecimal
+  graphql:
+    typeName: InsertPlayerStatsPitchingObject
+    inputTypeName: InsertPlayerStatsPitchingObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_player_stats_pitching_object
+      fieldMapping:
+        bb:
+          column:
+            name: BB
+        bk:
+          column:
+            name: BK
+        blsv:
+          column:
+            name: BLSV
+        er:
+          column:
+            name: ER
+        era:
+          column:
+            name: ERA
+        gp:
+          column:
+            name: GP
+        gs:
+          column:
+            name: GS
+        h:
+          column:
+            name: H
+        hbp:
+          column:
+            name: HBP
+        hld:
+          column:
+            name: HLD
+        hr:
+          column:
+            name: HR
+        ibb:
+          column:
+            name: IBB
+        ip:
+          column:
+            name: IP
+        k:
+          column:
+            name: K
+        l:
+          column:
+            name: L
+        oba:
+          column:
+            name: OBA
+        oobp:
+          column:
+            name: OOBP
+        outs:
+          column:
+            name: OUTS
+        qs:
+          column:
+            name: QS
+        r:
+          column:
+            name: R
+        sv:
+          column:
+            name: SV
+        svPct:
+          column:
+            name: SV_pct
+        svhd:
+          column:
+            name: SVHD
+        svo:
+          column:
+            name: SVO
+        tbf:
+          column:
+            name: TBF
+        w:
+          column:
+            name: W
+        whip:
+          column:
+            name: WHIP
+        wp:
+          column:
+            name: WP
+        wpct:
+          column:
+            name: WPCT
+        adjExitVelo:
+          column:
+            name: adj_exit_velo
+        armAngle:
+          column:
+            name: arm_angle
+        bbPer9:
+          column:
+            name: bb_per_9
+        breakXArmSide:
+          column:
+            name: break_x_arm_side
+        breakXBatterIn:
+          column:
+            name: break_x_batter_in
+        breakZ:
+          column:
+            name: break_z
+        createdAt:
+          column:
+            name: created_at
+        effMinVel:
+          column:
+            name: eff_min_vel
+        exitVelo:
+          column:
+            name: exit_velo
+        id:
+          column:
+            name: id
+        inducedBreakZ:
+          column:
+            name: induced_break_z
+        kBbRatio:
+          column:
+            name: k_bb_ratio
+        kPer9:
+          column:
+            name: k_per_9
+        launchAngle:
+          column:
+            name: launch_angle
+        percievedVelo:
+          column:
+            name: percieved_velo
+        pitcherRunExp:
+          column:
+            name: pitcher_run_exp
+        pitcherRunValuePer100:
+          column:
+            name: pitcher_run_value_per_100
+        playerId:
+          column:
+            name: player_id
+        releaseExtension:
+          column:
+            name: release_extension
+        releasePosX:
+          column:
+            name: release_pos_x
+        releasePosZ:
+          column:
+            name: release_pos_z
+        seasonId:
+          column:
+            name: season_id
+        spinRate:
+          column:
+            name: spin_rate
+        statPeriod:
+          column:
+            name: stat_period
+        swingMissPct:
+          column:
+            name: swing_miss_pct
+        swings:
+          column:
+            name: swings
+        takes:
+          column:
+            name: takes
+        updatedAt:
+          column:
+            name: updated_at
+        velo:
+          column:
+            name: velo
+        whiffs:
+          column:
+            name: whiffs
+        xAvg:
+          column:
+            name: xAVG
+        xAvGdiff:
+          column:
+            name: xAVGdiff
+        xObp:
+          column:
+            name: xOBP
+        xObPdiff:
+          column:
+            name: xOBPdiff
+        xSlg:
+          column:
+            name: xSLG
+        xSlGdiff:
+          column:
+            name: xSLGdiff
+        xwOba:
+          column:
+            name: xwOBA
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPlayerStatsPitchingObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - bb
+          - bk
+          - blsv
+          - er
+          - era
+          - gp
+          - gs
+          - h
+          - hbp
+          - hld
+          - hr
+          - ibb
+          - ip
+          - k
+          - l
+          - oba
+          - oobp
+          - outs
+          - qs
+          - r
+          - sv
+          - svPct
+          - svhd
+          - svo
+          - tbf
+          - w
+          - whip
+          - wp
+          - wpct
+          - adjExitVelo
+          - armAngle
+          - bbPer9
+          - breakXArmSide
+          - breakXBatterIn
+          - breakZ
+          - createdAt
+          - effMinVel
+          - exitVelo
+          - id
+          - inducedBreakZ
+          - kBbRatio
+          - kPer9
+          - launchAngle
+          - percievedVelo
+          - pitcherRunExp
+          - pitcherRunValuePer100
+          - playerId
+          - releaseExtension
+          - releasePosX
+          - releasePosZ
+          - seasonId
+          - spinRate
+          - statPeriod
+          - swingMissPct
+          - swings
+          - takes
+          - updatedAt
+          - velo
+          - whiffs
+          - xAvg
+          - xAvGdiff
+          - xObp
+          - xObPdiff
+          - xSlg
+          - xSlGdiff
+          - xwOba
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPlayerStatsPitchingResponse
+  description: Responses from the 'insert_player_stats_pitching' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerStatsPitching!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertPlayerStatsPitchingResponse
+    inputTypeName: InsertPlayerStatsPitchingResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_player_stats_pitching_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPlayerStatsPitchingResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertPlayerStatsPitching
+  outputType: InsertPlayerStatsPitchingResponse!
+  arguments:
+    - name: objects
+      type: "[InsertPlayerStatsPitchingObject!]!"
+    - name: postCheck
+      type: PlayerStatsPitchingBoolExp
+      description: Insert permission predicate over the 'player_stats_pitching' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_player_stats_pitching
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertPlayerStatsPitching
+    rootFieldKind: Mutation
+  description: Insert into the player_stats_pitching table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertPlayerStatsPitching
+  permissions:
+    - role: admin
+      allowExecution: true
+

@@ -1,0 +1,232 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: LeagueScoringCategories
+  fields:
+    - name: createdAt
+      type: Timestamp
+    - name: id
+      type: Int32!
+    - name: isReverse
+      type: Boolean_1
+    - name: leagueId
+      type: Int32!
+    - name: sortOrder
+      type: Int32
+    - name: statId
+      type: Int32!
+    - name: statName
+      type: String_1!
+    - name: statType
+      type: String_1!
+  graphql:
+    typeName: LeagueScoringCategories
+    inputTypeName: LeagueScoringCategoriesInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: league_scoring_categories
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        id:
+          column:
+            name: id
+        isReverse:
+          column:
+            name: is_reverse
+        leagueId:
+          column:
+            name: league_id
+        sortOrder:
+          column:
+            name: sort_order
+        statId:
+          column:
+            name: stat_id
+        statName:
+          column:
+            name: stat_name
+        statType:
+          column:
+            name: stat_type
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: LeagueScoringCategories
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - id
+          - isReverse
+          - leagueId
+          - sortOrder
+          - statId
+          - statName
+          - statType
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: LeagueScoringCategoriesAggExp
+  operand:
+    object:
+      aggregatedType: LeagueScoringCategories
+      aggregatableFields:
+        - fieldName: createdAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: id
+          aggregateExpression: Int4AggExp
+        - fieldName: isReverse
+          aggregateExpression: BoolAggExp
+        - fieldName: leagueId
+          aggregateExpression: Int4AggExp
+        - fieldName: sortOrder
+          aggregateExpression: Int4AggExp
+        - fieldName: statId
+          aggregateExpression: Int4AggExp
+        - fieldName: statName
+          aggregateExpression: VarcharAggExp
+        - fieldName: statType
+          aggregateExpression: VarcharAggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: LeagueScoringCategoriesAggExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: LeagueScoringCategories
+  objectType: LeagueScoringCategories
+  source:
+    dataConnectorName: neon_mtbl
+    collection: league_scoring_categories
+  filterExpressionType: LeagueScoringCategoriesBoolExp
+  aggregateExpression: LeagueScoringCategoriesAggExp
+  orderByExpression: LeagueScoringCategoriesOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: leagueScoringCategories
+      subscription:
+        rootField: leagueScoringCategories
+    selectUniques:
+      - queryRootField: leagueScoringCategoriesByLeagueScoringCategoriesLeagueIdStatTypeStatIdKey
+        uniqueIdentifier:
+          - leagueId
+          - statId
+          - statType
+        subscription:
+          rootField: leagueScoringCategoriesByLeagueScoringCategoriesLeagueIdStatTypeStatIdKey
+      - queryRootField: leagueScoringCategoriesById
+        uniqueIdentifier:
+          - id
+        subscription:
+          rootField: leagueScoringCategoriesById
+    filterInputTypeName: LeagueScoringCategoriesFilterInput
+    aggregate:
+      queryRootField: leagueScoringCategoriesAggregate
+      subscription:
+        rootField: leagueScoringCategoriesAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: LeagueScoringCategories
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: league
+  sourceType: LeagueScoringCategories
+  target:
+    model:
+      name: Leagues
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: leagueId
+      target:
+        modelField:
+          - fieldName: leagueId
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: LeagueScoringCategoriesBoolExp
+  operand:
+    object:
+      type: LeagueScoringCategories
+      comparableFields:
+        - fieldName: createdAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: id
+          booleanExpressionType: Int4BoolExp
+        - fieldName: isReverse
+          booleanExpressionType: BoolBoolExp
+        - fieldName: leagueId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: sortOrder
+          booleanExpressionType: Int4BoolExp
+        - fieldName: statId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: statName
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: statType
+          booleanExpressionType: VarcharBoolExp
+      comparableRelationships:
+        - relationshipName: league
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: LeagueScoringCategoriesBoolExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: LeagueScoringCategoriesOrderByExp
+  operand:
+    object:
+      orderedType: LeagueScoringCategories
+      orderableFields:
+        - fieldName: createdAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: id
+          orderByExpression: Int32OrderByExp
+        - fieldName: isReverse
+          orderByExpression: Boolean1OrderByExp
+        - fieldName: leagueId
+          orderByExpression: Int32OrderByExp
+        - fieldName: sortOrder
+          orderByExpression: Int32OrderByExp
+        - fieldName: statId
+          orderByExpression: Int32OrderByExp
+        - fieldName: statName
+          orderByExpression: String1OrderByExp
+        - fieldName: statType
+          orderByExpression: String1OrderByExp
+      orderableRelationships:
+        - relationshipName: league
+  graphql:
+    expressionTypeName: LeagueScoringCategoriesOrderByExp
+

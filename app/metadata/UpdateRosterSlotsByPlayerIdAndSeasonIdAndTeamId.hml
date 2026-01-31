@@ -1,0 +1,191 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateRosterSlotsByPlayerIdAndSeasonIdAndTeamIdUpdateColumns
+  description: Update the columns of the 'roster_slots' collection
+  fields:
+    - name: acquisitionDate
+      type: UpdateColumnRosterSlotsAcquisitionDate
+      description: Update the 'acquisition_date' column in the 'roster_slots' collection.
+    - name: acquisitionType
+      type: UpdateColumnRosterSlotsAcquisitionType
+      description: Update the 'acquisition_type' column in the 'roster_slots' collection.
+    - name: createdAt
+      type: UpdateColumnRosterSlotsCreatedAt
+      description: Update the 'created_at' column in the 'roster_slots' collection.
+    - name: id
+      type: UpdateColumnRosterSlotsId
+      description: Update the 'id' column in the 'roster_slots' collection.
+    - name: keeperValue
+      type: UpdateColumnRosterSlotsKeeperValue
+      description: Update the 'keeper_value' column in the 'roster_slots' collection.
+    - name: leagueId
+      type: UpdateColumnRosterSlotsLeagueId
+      description: Update the 'league_id' column in the 'roster_slots' collection.
+    - name: lineupSlot
+      type: UpdateColumnRosterSlotsLineupSlot
+      description: Update the 'lineup_slot' column in the 'roster_slots' collection.
+    - name: playerId
+      type: UpdateColumnRosterSlotsPlayerId
+      description: Update the 'player_id' column in the 'roster_slots' collection.
+    - name: seasonId
+      type: UpdateColumnRosterSlotsSeasonId
+      description: Update the 'season_id' column in the 'roster_slots' collection.
+    - name: teamId
+      type: UpdateColumnRosterSlotsTeamId
+      description: Update the 'team_id' column in the 'roster_slots' collection.
+    - name: updatedAt
+      type: UpdateColumnRosterSlotsUpdatedAt
+      description: Update the 'updated_at' column in the 'roster_slots' collection.
+  graphql:
+    typeName: UpdateRosterSlotsByPlayerIdAndSeasonIdAndTeamIdUpdateColumns
+    inputTypeName: UpdateRosterSlotsByPlayerIdAndSeasonIdAndTeamIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_roster_slots_by_player_id_and_season_id_and_team_id_update_columns
+      fieldMapping:
+        acquisitionDate:
+          column:
+            name: acquisition_date
+        acquisitionType:
+          column:
+            name: acquisition_type
+        createdAt:
+          column:
+            name: created_at
+        id:
+          column:
+            name: id
+        keeperValue:
+          column:
+            name: keeper_value
+        leagueId:
+          column:
+            name: league_id
+        lineupSlot:
+          column:
+            name: lineup_slot
+        playerId:
+          column:
+            name: player_id
+        seasonId:
+          column:
+            name: season_id
+        teamId:
+          column:
+            name: team_id
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateRosterSlotsByPlayerIdAndSeasonIdAndTeamIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - acquisitionDate
+          - acquisitionType
+          - createdAt
+          - id
+          - keeperValue
+          - leagueId
+          - lineupSlot
+          - playerId
+          - seasonId
+          - teamId
+          - updatedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateRosterSlotsByPlayerIdAndSeasonIdAndTeamIdResponse
+  description: Responses from the
+    'update_roster_slots_by_player_id_and_season_id_and_team_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[RosterSlots!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdateRosterSlotsByPlayerIdAndSeasonIdAndTeamIdResponse
+    inputTypeName: UpdateRosterSlotsByPlayerIdAndSeasonIdAndTeamIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_roster_slots_by_player_id_and_season_id_and_team_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateRosterSlotsByPlayerIdAndSeasonIdAndTeamIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdateRosterSlotsByPlayerIdAndSeasonIdAndTeamId
+  outputType: UpdateRosterSlotsByPlayerIdAndSeasonIdAndTeamIdResponse!
+  arguments:
+    - name: keyPlayerId
+      type: Int32!
+    - name: keySeasonId
+      type: Int32!
+    - name: keyTeamId
+      type: Int32!
+    - name: postCheck
+      type: RosterSlotsBoolExp
+      description: Update permission post-condition predicate over the 'roster_slots'
+        collection
+    - name: preCheck
+      type: RosterSlotsBoolExp
+      description: Update permission pre-condition predicate over the 'roster_slots'
+        collection
+    - name: updateColumns
+      type: UpdateRosterSlotsByPlayerIdAndSeasonIdAndTeamIdUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_roster_slots_by_player_id_and_season_id_and_team_id
+    argumentMapping:
+      keyPlayerId: key_player_id
+      keySeasonId: key_season_id
+      keyTeamId: key_team_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updateRosterSlotsByPlayerIdAndSeasonIdAndTeamId
+    rootFieldKind: Mutation
+  description: Update any row on the 'roster_slots' collection using the
+    'player_id', 'season_id' and 'team_id' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdateRosterSlotsByPlayerIdAndSeasonIdAndTeamId
+  permissions:
+    - role: admin
+      allowExecution: true
+

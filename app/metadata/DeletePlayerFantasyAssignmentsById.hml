@@ -1,0 +1,74 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeletePlayerFantasyAssignmentsByIdResponse
+  description: Responses from the 'delete_player_fantasy_assignments_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerFantasyAssignments!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeletePlayerFantasyAssignmentsByIdResponse
+    inputTypeName: DeletePlayerFantasyAssignmentsByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_player_fantasy_assignments_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeletePlayerFantasyAssignmentsByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeletePlayerFantasyAssignmentsById
+  outputType: DeletePlayerFantasyAssignmentsByIdResponse!
+  arguments:
+    - name: keyId
+      type: Int32!
+    - name: preCheck
+      type: PlayerFantasyAssignmentsBoolExp
+      description: Delete permission predicate over the 'player_fantasy_assignments'
+        collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_player_fantasy_assignments_by_id
+    argumentMapping:
+      keyId: key_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deletePlayerFantasyAssignmentsById
+    rootFieldKind: Mutation
+  description: Delete any row on the 'player_fantasy_assignments' collection using
+    the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeletePlayerFantasyAssignmentsById
+  permissions:
+    - role: admin
+      allowExecution: true
+

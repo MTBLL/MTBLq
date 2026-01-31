@@ -1,0 +1,916 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: PlayerStatsBatting
+  fields:
+    - name: ab
+      type: Bigdecimal
+    - name: avg
+      type: Bigdecimal
+    - name: babip
+      type: Bigdecimal
+    - name: bb
+      type: Bigdecimal
+    - name: bbPct
+      type: Bigdecimal
+    - name: bBdist
+      type: Int32
+    - name: cs
+      type: Bigdecimal
+    - name: g
+      type: Bigdecimal
+    - name: gdp
+      type: Bigdecimal
+    - name: h
+      type: Bigdecimal
+    - name: hbp
+      type: Bigdecimal
+    - name: hr
+      type: Bigdecimal
+    - name: ibb
+      type: Bigdecimal
+    - name: iso
+      type: Bigdecimal
+    - name: kPct
+      type: Bigdecimal
+    - name: kdist
+      type: Int32
+    - name: obp
+      type: Bigdecimal
+    - name: ops
+      type: Bigdecimal
+    - name: pa
+      type: Bigdecimal
+    - name: r
+      type: Bigdecimal
+    - name: rbi
+      type: Bigdecimal
+    - name: sac
+      type: Bigdecimal
+    - name: sb
+      type: Bigdecimal
+    - name: sbn
+      type: Bigdecimal
+    - name: sf
+      type: Bigdecimal
+    - name: slg
+      type: Bigdecimal
+    - name: so
+      type: Bigdecimal
+    - name: tb
+      type: Bigdecimal
+    - name: xbh
+      type: Bigdecimal
+    - name: adjExitVelo
+      type: Bigdecimal
+    - name: attackAngle
+      type: Bigdecimal
+    - name: attackDir
+      type: Bigdecimal
+    - name: barrelRate
+      type: Bigdecimal
+    - name: barrelsPerBbePct
+      type: Bigdecimal
+    - name: barrelsPerPaPct
+      type: Bigdecimal
+    - name: barrelsTotal
+      type: Int32
+    - name: batSpeed
+      type: Bigdecimal
+    - name: batterRunValuePer100
+      type: Bigdecimal
+    - name: createdAt
+      type: Timestamp
+    - name: doubles
+      type: Bigdecimal
+    - name: exitVelo
+      type: Bigdecimal
+    - name: hardHitRate
+      type: Bigdecimal
+    - name: hardhitPct
+      type: Bigdecimal
+    - name: id
+      type: Int32!
+    - name: launchAngle
+      type: Bigdecimal
+    - name: playerId
+      type: Int32!
+    - name: seasonId
+      type: Int32!
+    - name: singles
+      type: Bigdecimal
+    - name: statPeriod
+      type: String_1
+    - name: swingLength
+      type: Bigdecimal
+    - name: swingMissPct
+      type: Bigdecimal
+    - name: swingPathTilt
+      type: Bigdecimal
+    - name: swings
+      type: Int32
+    - name: takes
+      type: Int32
+    - name: triples
+      type: Bigdecimal
+    - name: updatedAt
+      type: Timestamp
+    - name: wOba
+      type: Bigdecimal
+    - name: whiffs
+      type: Int32
+    - name: xAvg
+      type: Bigdecimal
+    - name: xAvGdiff
+      type: Bigdecimal
+    - name: xObp
+      type: Bigdecimal
+    - name: xObPdiff
+      type: Bigdecimal
+    - name: xSlg
+      type: Bigdecimal
+    - name: xSlGdiff
+      type: Bigdecimal
+    - name: xwOba
+      type: Bigdecimal
+  graphql:
+    typeName: PlayerStatsBatting
+    inputTypeName: PlayerStatsBattingInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: player_stats_batting
+      fieldMapping:
+        ab:
+          column:
+            name: AB
+        avg:
+          column:
+            name: AVG
+        babip:
+          column:
+            name: BABIP
+        bb:
+          column:
+            name: BB
+        bbPct:
+          column:
+            name: BB_pct
+        bBdist:
+          column:
+            name: BBdist
+        cs:
+          column:
+            name: CS
+        g:
+          column:
+            name: G
+        gdp:
+          column:
+            name: GDP
+        h:
+          column:
+            name: H
+        hbp:
+          column:
+            name: HBP
+        hr:
+          column:
+            name: HR
+        ibb:
+          column:
+            name: IBB
+        iso:
+          column:
+            name: ISO
+        kPct:
+          column:
+            name: K_pct
+        kdist:
+          column:
+            name: Kdist
+        obp:
+          column:
+            name: OBP
+        ops:
+          column:
+            name: OPS
+        pa:
+          column:
+            name: PA
+        r:
+          column:
+            name: R
+        rbi:
+          column:
+            name: RBI
+        sac:
+          column:
+            name: SAC
+        sb:
+          column:
+            name: SB
+        sbn:
+          column:
+            name: SBN
+        sf:
+          column:
+            name: SF
+        slg:
+          column:
+            name: SLG
+        so:
+          column:
+            name: SO
+        tb:
+          column:
+            name: TB
+        xbh:
+          column:
+            name: XBH
+        adjExitVelo:
+          column:
+            name: adj_exit_velo
+        attackAngle:
+          column:
+            name: attack_angle
+        attackDir:
+          column:
+            name: attack_dir
+        barrelRate:
+          column:
+            name: barrel_rate
+        barrelsPerBbePct:
+          column:
+            name: barrels_per_bbe_pct
+        barrelsPerPaPct:
+          column:
+            name: barrels_per_pa_pct
+        barrelsTotal:
+          column:
+            name: barrels_total
+        batSpeed:
+          column:
+            name: bat_speed
+        batterRunValuePer100:
+          column:
+            name: batter_run_value_per_100
+        createdAt:
+          column:
+            name: created_at
+        doubles:
+          column:
+            name: doubles
+        exitVelo:
+          column:
+            name: exit_velo
+        hardHitRate:
+          column:
+            name: hard_hit_rate
+        hardhitPct:
+          column:
+            name: hardhit_pct
+        id:
+          column:
+            name: id
+        launchAngle:
+          column:
+            name: launch_angle
+        playerId:
+          column:
+            name: player_id
+        seasonId:
+          column:
+            name: season_id
+        singles:
+          column:
+            name: singles
+        statPeriod:
+          column:
+            name: stat_period
+        swingLength:
+          column:
+            name: swing_length
+        swingMissPct:
+          column:
+            name: swing_miss_pct
+        swingPathTilt:
+          column:
+            name: swing_path_tilt
+        swings:
+          column:
+            name: swings
+        takes:
+          column:
+            name: takes
+        triples:
+          column:
+            name: triples
+        updatedAt:
+          column:
+            name: updated_at
+        wOba:
+          column:
+            name: wOBA
+        whiffs:
+          column:
+            name: whiffs
+        xAvg:
+          column:
+            name: xAVG
+        xAvGdiff:
+          column:
+            name: xAVGdiff
+        xObp:
+          column:
+            name: xOBP
+        xObPdiff:
+          column:
+            name: xOBPdiff
+        xSlg:
+          column:
+            name: xSLG
+        xSlGdiff:
+          column:
+            name: xSLGdiff
+        xwOba:
+          column:
+            name: xwOBA
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: PlayerStatsBatting
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - ab
+          - avg
+          - babip
+          - bb
+          - bbPct
+          - bBdist
+          - cs
+          - g
+          - gdp
+          - h
+          - hbp
+          - hr
+          - ibb
+          - iso
+          - kPct
+          - kdist
+          - obp
+          - ops
+          - pa
+          - r
+          - rbi
+          - sac
+          - sb
+          - sbn
+          - sf
+          - slg
+          - so
+          - tb
+          - xbh
+          - adjExitVelo
+          - attackAngle
+          - attackDir
+          - barrelRate
+          - barrelsPerBbePct
+          - barrelsPerPaPct
+          - barrelsTotal
+          - batSpeed
+          - batterRunValuePer100
+          - createdAt
+          - doubles
+          - exitVelo
+          - hardHitRate
+          - hardhitPct
+          - id
+          - launchAngle
+          - playerId
+          - seasonId
+          - singles
+          - statPeriod
+          - swingLength
+          - swingMissPct
+          - swingPathTilt
+          - swings
+          - takes
+          - triples
+          - updatedAt
+          - wOba
+          - whiffs
+          - xAvg
+          - xAvGdiff
+          - xObp
+          - xObPdiff
+          - xSlg
+          - xSlGdiff
+          - xwOba
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: PlayerStatsBattingAggExp
+  operand:
+    object:
+      aggregatedType: PlayerStatsBatting
+      aggregatableFields:
+        - fieldName: ab
+          aggregateExpression: NumericAggExp
+        - fieldName: avg
+          aggregateExpression: NumericAggExp
+        - fieldName: babip
+          aggregateExpression: NumericAggExp
+        - fieldName: bb
+          aggregateExpression: NumericAggExp
+        - fieldName: bbPct
+          aggregateExpression: NumericAggExp
+        - fieldName: bBdist
+          aggregateExpression: Int4AggExp
+        - fieldName: cs
+          aggregateExpression: NumericAggExp
+        - fieldName: g
+          aggregateExpression: NumericAggExp
+        - fieldName: gdp
+          aggregateExpression: NumericAggExp
+        - fieldName: h
+          aggregateExpression: NumericAggExp
+        - fieldName: hbp
+          aggregateExpression: NumericAggExp
+        - fieldName: hr
+          aggregateExpression: NumericAggExp
+        - fieldName: ibb
+          aggregateExpression: NumericAggExp
+        - fieldName: iso
+          aggregateExpression: NumericAggExp
+        - fieldName: kPct
+          aggregateExpression: NumericAggExp
+        - fieldName: kdist
+          aggregateExpression: Int4AggExp
+        - fieldName: obp
+          aggregateExpression: NumericAggExp
+        - fieldName: ops
+          aggregateExpression: NumericAggExp
+        - fieldName: pa
+          aggregateExpression: NumericAggExp
+        - fieldName: r
+          aggregateExpression: NumericAggExp
+        - fieldName: rbi
+          aggregateExpression: NumericAggExp
+        - fieldName: sac
+          aggregateExpression: NumericAggExp
+        - fieldName: sb
+          aggregateExpression: NumericAggExp
+        - fieldName: sbn
+          aggregateExpression: NumericAggExp
+        - fieldName: sf
+          aggregateExpression: NumericAggExp
+        - fieldName: slg
+          aggregateExpression: NumericAggExp
+        - fieldName: so
+          aggregateExpression: NumericAggExp
+        - fieldName: tb
+          aggregateExpression: NumericAggExp
+        - fieldName: xbh
+          aggregateExpression: NumericAggExp
+        - fieldName: adjExitVelo
+          aggregateExpression: NumericAggExp
+        - fieldName: attackAngle
+          aggregateExpression: NumericAggExp
+        - fieldName: attackDir
+          aggregateExpression: NumericAggExp
+        - fieldName: barrelRate
+          aggregateExpression: NumericAggExp
+        - fieldName: barrelsPerBbePct
+          aggregateExpression: NumericAggExp
+        - fieldName: barrelsPerPaPct
+          aggregateExpression: NumericAggExp
+        - fieldName: barrelsTotal
+          aggregateExpression: Int4AggExp
+        - fieldName: batSpeed
+          aggregateExpression: NumericAggExp
+        - fieldName: batterRunValuePer100
+          aggregateExpression: NumericAggExp
+        - fieldName: createdAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: doubles
+          aggregateExpression: NumericAggExp
+        - fieldName: exitVelo
+          aggregateExpression: NumericAggExp
+        - fieldName: hardHitRate
+          aggregateExpression: NumericAggExp
+        - fieldName: hardhitPct
+          aggregateExpression: NumericAggExp
+        - fieldName: id
+          aggregateExpression: Int4AggExp
+        - fieldName: launchAngle
+          aggregateExpression: NumericAggExp
+        - fieldName: playerId
+          aggregateExpression: Int4AggExp
+        - fieldName: seasonId
+          aggregateExpression: Int4AggExp
+        - fieldName: singles
+          aggregateExpression: NumericAggExp
+        - fieldName: statPeriod
+          aggregateExpression: VarcharAggExp
+        - fieldName: swingLength
+          aggregateExpression: NumericAggExp
+        - fieldName: swingMissPct
+          aggregateExpression: NumericAggExp
+        - fieldName: swingPathTilt
+          aggregateExpression: NumericAggExp
+        - fieldName: swings
+          aggregateExpression: Int4AggExp
+        - fieldName: takes
+          aggregateExpression: Int4AggExp
+        - fieldName: triples
+          aggregateExpression: NumericAggExp
+        - fieldName: updatedAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: wOba
+          aggregateExpression: NumericAggExp
+        - fieldName: whiffs
+          aggregateExpression: Int4AggExp
+        - fieldName: xAvg
+          aggregateExpression: NumericAggExp
+        - fieldName: xAvGdiff
+          aggregateExpression: NumericAggExp
+        - fieldName: xObp
+          aggregateExpression: NumericAggExp
+        - fieldName: xObPdiff
+          aggregateExpression: NumericAggExp
+        - fieldName: xSlg
+          aggregateExpression: NumericAggExp
+        - fieldName: xSlGdiff
+          aggregateExpression: NumericAggExp
+        - fieldName: xwOba
+          aggregateExpression: NumericAggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: PlayerStatsBattingAggExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: PlayerStatsBatting
+  objectType: PlayerStatsBatting
+  source:
+    dataConnectorName: neon_mtbl
+    collection: player_stats_batting
+  filterExpressionType: PlayerStatsBattingBoolExp
+  aggregateExpression: PlayerStatsBattingAggExp
+  orderByExpression: PlayerStatsBattingOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: playerStatsBatting
+      subscription:
+        rootField: playerStatsBatting
+    selectUniques:
+      - queryRootField: playerStatsBattingById
+        uniqueIdentifier:
+          - id
+        subscription:
+          rootField: playerStatsBattingById
+      - queryRootField: playerStatsBattingByPlayerStatsBattingPlayerIdSeasonIdStatPeriodKey
+        uniqueIdentifier:
+          - playerId
+          - seasonId
+          - statPeriod
+        subscription:
+          rootField: playerStatsBattingByPlayerStatsBattingPlayerIdSeasonIdStatPeriodKey
+    filterInputTypeName: PlayerStatsBattingFilterInput
+    aggregate:
+      queryRootField: playerStatsBattingAggregate
+      subscription:
+        rootField: playerStatsBattingAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: PlayerStatsBatting
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: player
+  sourceType: PlayerStatsBatting
+  target:
+    model:
+      name: Players
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: playerId
+      target:
+        modelField:
+          - fieldName: idEspn
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: PlayerStatsBattingBoolExp
+  operand:
+    object:
+      type: PlayerStatsBatting
+      comparableFields:
+        - fieldName: ab
+          booleanExpressionType: NumericBoolExp
+        - fieldName: avg
+          booleanExpressionType: NumericBoolExp
+        - fieldName: babip
+          booleanExpressionType: NumericBoolExp
+        - fieldName: bb
+          booleanExpressionType: NumericBoolExp
+        - fieldName: bbPct
+          booleanExpressionType: NumericBoolExp
+        - fieldName: bBdist
+          booleanExpressionType: Int4BoolExp
+        - fieldName: cs
+          booleanExpressionType: NumericBoolExp
+        - fieldName: g
+          booleanExpressionType: NumericBoolExp
+        - fieldName: gdp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: h
+          booleanExpressionType: NumericBoolExp
+        - fieldName: hbp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: hr
+          booleanExpressionType: NumericBoolExp
+        - fieldName: ibb
+          booleanExpressionType: NumericBoolExp
+        - fieldName: iso
+          booleanExpressionType: NumericBoolExp
+        - fieldName: kPct
+          booleanExpressionType: NumericBoolExp
+        - fieldName: kdist
+          booleanExpressionType: Int4BoolExp
+        - fieldName: obp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: ops
+          booleanExpressionType: NumericBoolExp
+        - fieldName: pa
+          booleanExpressionType: NumericBoolExp
+        - fieldName: r
+          booleanExpressionType: NumericBoolExp
+        - fieldName: rbi
+          booleanExpressionType: NumericBoolExp
+        - fieldName: sac
+          booleanExpressionType: NumericBoolExp
+        - fieldName: sb
+          booleanExpressionType: NumericBoolExp
+        - fieldName: sbn
+          booleanExpressionType: NumericBoolExp
+        - fieldName: sf
+          booleanExpressionType: NumericBoolExp
+        - fieldName: slg
+          booleanExpressionType: NumericBoolExp
+        - fieldName: so
+          booleanExpressionType: NumericBoolExp
+        - fieldName: tb
+          booleanExpressionType: NumericBoolExp
+        - fieldName: xbh
+          booleanExpressionType: NumericBoolExp
+        - fieldName: adjExitVelo
+          booleanExpressionType: NumericBoolExp
+        - fieldName: attackAngle
+          booleanExpressionType: NumericBoolExp
+        - fieldName: attackDir
+          booleanExpressionType: NumericBoolExp
+        - fieldName: barrelRate
+          booleanExpressionType: NumericBoolExp
+        - fieldName: barrelsPerBbePct
+          booleanExpressionType: NumericBoolExp
+        - fieldName: barrelsPerPaPct
+          booleanExpressionType: NumericBoolExp
+        - fieldName: barrelsTotal
+          booleanExpressionType: Int4BoolExp
+        - fieldName: batSpeed
+          booleanExpressionType: NumericBoolExp
+        - fieldName: batterRunValuePer100
+          booleanExpressionType: NumericBoolExp
+        - fieldName: createdAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: doubles
+          booleanExpressionType: NumericBoolExp
+        - fieldName: exitVelo
+          booleanExpressionType: NumericBoolExp
+        - fieldName: hardHitRate
+          booleanExpressionType: NumericBoolExp
+        - fieldName: hardhitPct
+          booleanExpressionType: NumericBoolExp
+        - fieldName: id
+          booleanExpressionType: Int4BoolExp
+        - fieldName: launchAngle
+          booleanExpressionType: NumericBoolExp
+        - fieldName: playerId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: seasonId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: singles
+          booleanExpressionType: NumericBoolExp
+        - fieldName: statPeriod
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: swingLength
+          booleanExpressionType: NumericBoolExp
+        - fieldName: swingMissPct
+          booleanExpressionType: NumericBoolExp
+        - fieldName: swingPathTilt
+          booleanExpressionType: NumericBoolExp
+        - fieldName: swings
+          booleanExpressionType: Int4BoolExp
+        - fieldName: takes
+          booleanExpressionType: Int4BoolExp
+        - fieldName: triples
+          booleanExpressionType: NumericBoolExp
+        - fieldName: updatedAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: wOba
+          booleanExpressionType: NumericBoolExp
+        - fieldName: whiffs
+          booleanExpressionType: Int4BoolExp
+        - fieldName: xAvg
+          booleanExpressionType: NumericBoolExp
+        - fieldName: xAvGdiff
+          booleanExpressionType: NumericBoolExp
+        - fieldName: xObp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: xObPdiff
+          booleanExpressionType: NumericBoolExp
+        - fieldName: xSlg
+          booleanExpressionType: NumericBoolExp
+        - fieldName: xSlGdiff
+          booleanExpressionType: NumericBoolExp
+        - fieldName: xwOba
+          booleanExpressionType: NumericBoolExp
+      comparableRelationships:
+        - relationshipName: player
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: PlayerStatsBattingBoolExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: PlayerStatsBattingOrderByExp
+  operand:
+    object:
+      orderedType: PlayerStatsBatting
+      orderableFields:
+        - fieldName: ab
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: avg
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: babip
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: bb
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: bbPct
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: bBdist
+          orderByExpression: Int32OrderByExp
+        - fieldName: cs
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: g
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: gdp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: h
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: hbp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: hr
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: ibb
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: iso
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: kPct
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: kdist
+          orderByExpression: Int32OrderByExp
+        - fieldName: obp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: ops
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: pa
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: r
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: rbi
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: sac
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: sb
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: sbn
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: sf
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: slg
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: so
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: tb
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: xbh
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: adjExitVelo
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: attackAngle
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: attackDir
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: barrelRate
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: barrelsPerBbePct
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: barrelsPerPaPct
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: barrelsTotal
+          orderByExpression: Int32OrderByExp
+        - fieldName: batSpeed
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: batterRunValuePer100
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: createdAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: doubles
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: exitVelo
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: hardHitRate
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: hardhitPct
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: id
+          orderByExpression: Int32OrderByExp
+        - fieldName: launchAngle
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: playerId
+          orderByExpression: Int32OrderByExp
+        - fieldName: seasonId
+          orderByExpression: Int32OrderByExp
+        - fieldName: singles
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: statPeriod
+          orderByExpression: String1OrderByExp
+        - fieldName: swingLength
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: swingMissPct
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: swingPathTilt
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: swings
+          orderByExpression: Int32OrderByExp
+        - fieldName: takes
+          orderByExpression: Int32OrderByExp
+        - fieldName: triples
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: updatedAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: wOba
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: whiffs
+          orderByExpression: Int32OrderByExp
+        - fieldName: xAvg
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: xAvGdiff
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: xObp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: xObPdiff
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: xSlg
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: xSlGdiff
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: xwOba
+          orderByExpression: BigdecimalOrderByExp
+      orderableRelationships:
+        - relationshipName: player
+  graphql:
+    expressionTypeName: PlayerStatsBattingOrderByExp
+

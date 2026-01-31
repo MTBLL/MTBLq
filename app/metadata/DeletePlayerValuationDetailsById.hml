@@ -1,0 +1,74 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeletePlayerValuationDetailsByIdResponse
+  description: Responses from the 'delete_player_valuation_details_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerValuationDetails!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeletePlayerValuationDetailsByIdResponse
+    inputTypeName: DeletePlayerValuationDetailsByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_player_valuation_details_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeletePlayerValuationDetailsByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeletePlayerValuationDetailsById
+  outputType: DeletePlayerValuationDetailsByIdResponse!
+  arguments:
+    - name: keyId
+      type: Int32!
+    - name: preCheck
+      type: PlayerValuationDetailsBoolExp
+      description: Delete permission predicate over the 'player_valuation_details'
+        collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_player_valuation_details_by_id
+    argumentMapping:
+      keyId: key_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deletePlayerValuationDetailsById
+    rootFieldKind: Mutation
+  description: Delete any row on the 'player_valuation_details' collection using
+    the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeletePlayerValuationDetailsById
+  permissions:
+    - role: admin
+      allowExecution: true
+

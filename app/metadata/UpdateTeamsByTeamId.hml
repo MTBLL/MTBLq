@@ -1,0 +1,923 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsAcquisitions
+  description: Update the 'acquisitions' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsAcquisitions
+    inputTypeName: UpdateColumnTeamsAcquisitionsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_acquisitions
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsAcquisitions
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsBudgetRemaining
+  description: Update the 'budget_remaining' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsBudgetRemaining
+    inputTypeName: UpdateColumnTeamsBudgetRemainingInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_budget_remaining
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsBudgetRemaining
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsBudgetSpent
+  description: Update the 'budget_spent' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsBudgetSpent
+    inputTypeName: UpdateColumnTeamsBudgetSpentInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_budget_spent
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsBudgetSpent
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsCreatedAt
+  description: Update the 'created_at' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Timestamp
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsCreatedAt
+    inputTypeName: UpdateColumnTeamsCreatedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_created_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsCreatedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsDrops
+  description: Update the 'drops' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsDrops
+    inputTypeName: UpdateColumnTeamsDropsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_drops
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsDrops
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsGamesBack
+  description: Update the 'games_back' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsGamesBack
+    inputTypeName: UpdateColumnTeamsGamesBackInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_games_back
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsGamesBack
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsLeagueId
+  description: Update the 'league_id' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsLeagueId
+    inputTypeName: UpdateColumnTeamsLeagueIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_league_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsLeagueId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsLosses
+  description: Update the 'losses' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsLosses
+    inputTypeName: UpdateColumnTeamsLossesInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_losses
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsLosses
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsOwners
+  description: Update the 'owners' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Json
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsOwners
+    inputTypeName: UpdateColumnTeamsOwnersInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_owners
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsOwners
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsPrimaryOwner
+  description: Update the 'primary_owner' column in the 'teams' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsPrimaryOwner
+    inputTypeName: UpdateColumnTeamsPrimaryOwnerInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_primary_owner
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsPrimaryOwner
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsSeasonId
+  description: Update the 'season_id' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsSeasonId
+    inputTypeName: UpdateColumnTeamsSeasonIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_season_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsSeasonId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsTeamAbbrev
+  description: Update the 'team_abbrev' column in the 'teams' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsTeamAbbrev
+    inputTypeName: UpdateColumnTeamsTeamAbbrevInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_team_abbrev
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsTeamAbbrev
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsTeamId
+  description: Update the 'team_id' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsTeamId
+    inputTypeName: UpdateColumnTeamsTeamIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_team_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsTeamId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsTeamLogo
+  description: Update the 'team_logo' column in the 'teams' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsTeamLogo
+    inputTypeName: UpdateColumnTeamsTeamLogoInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_team_logo
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsTeamLogo
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsTeamName
+  description: Update the 'team_name' column in the 'teams' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsTeamName
+    inputTypeName: UpdateColumnTeamsTeamNameInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_team_name
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsTeamName
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsTies
+  description: Update the 'ties' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsTies
+    inputTypeName: UpdateColumnTeamsTiesInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_ties
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsTies
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsTrades
+  description: Update the 'trades' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsTrades
+    inputTypeName: UpdateColumnTeamsTradesInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_trades
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsTrades
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsUpdatedAt
+  description: Update the 'updated_at' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Timestamp
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsUpdatedAt
+    inputTypeName: UpdateColumnTeamsUpdatedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_updated_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsUpdatedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsWaiverRank
+  description: Update the 'waiver_rank' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsWaiverRank
+    inputTypeName: UpdateColumnTeamsWaiverRankInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_waiver_rank
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsWaiverRank
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsWinPercentage
+  description: Update the 'win_percentage' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsWinPercentage
+    inputTypeName: UpdateColumnTeamsWinPercentageInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_win_percentage
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsWinPercentage
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnTeamsWins
+  description: Update the 'wins' column in the 'teams' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnTeamsWins
+    inputTypeName: UpdateColumnTeamsWinsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_teams_wins
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnTeamsWins
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateTeamsByTeamIdUpdateColumns
+  description: Update the columns of the 'teams' collection
+  fields:
+    - name: acquisitions
+      type: UpdateColumnTeamsAcquisitions
+      description: Update the 'acquisitions' column in the 'teams' collection.
+    - name: budgetRemaining
+      type: UpdateColumnTeamsBudgetRemaining
+      description: Update the 'budget_remaining' column in the 'teams' collection.
+    - name: budgetSpent
+      type: UpdateColumnTeamsBudgetSpent
+      description: Update the 'budget_spent' column in the 'teams' collection.
+    - name: createdAt
+      type: UpdateColumnTeamsCreatedAt
+      description: Update the 'created_at' column in the 'teams' collection.
+    - name: drops
+      type: UpdateColumnTeamsDrops
+      description: Update the 'drops' column in the 'teams' collection.
+    - name: gamesBack
+      type: UpdateColumnTeamsGamesBack
+      description: Update the 'games_back' column in the 'teams' collection.
+    - name: leagueId
+      type: UpdateColumnTeamsLeagueId
+      description: Update the 'league_id' column in the 'teams' collection.
+    - name: losses
+      type: UpdateColumnTeamsLosses
+      description: Update the 'losses' column in the 'teams' collection.
+    - name: owners
+      type: UpdateColumnTeamsOwners
+      description: Update the 'owners' column in the 'teams' collection.
+    - name: primaryOwner
+      type: UpdateColumnTeamsPrimaryOwner
+      description: Update the 'primary_owner' column in the 'teams' collection.
+    - name: seasonId
+      type: UpdateColumnTeamsSeasonId
+      description: Update the 'season_id' column in the 'teams' collection.
+    - name: teamAbbrev
+      type: UpdateColumnTeamsTeamAbbrev
+      description: Update the 'team_abbrev' column in the 'teams' collection.
+    - name: teamId
+      type: UpdateColumnTeamsTeamId
+      description: Update the 'team_id' column in the 'teams' collection.
+    - name: teamLogo
+      type: UpdateColumnTeamsTeamLogo
+      description: Update the 'team_logo' column in the 'teams' collection.
+    - name: teamName
+      type: UpdateColumnTeamsTeamName
+      description: Update the 'team_name' column in the 'teams' collection.
+    - name: ties
+      type: UpdateColumnTeamsTies
+      description: Update the 'ties' column in the 'teams' collection.
+    - name: trades
+      type: UpdateColumnTeamsTrades
+      description: Update the 'trades' column in the 'teams' collection.
+    - name: updatedAt
+      type: UpdateColumnTeamsUpdatedAt
+      description: Update the 'updated_at' column in the 'teams' collection.
+    - name: waiverRank
+      type: UpdateColumnTeamsWaiverRank
+      description: Update the 'waiver_rank' column in the 'teams' collection.
+    - name: winPercentage
+      type: UpdateColumnTeamsWinPercentage
+      description: Update the 'win_percentage' column in the 'teams' collection.
+    - name: wins
+      type: UpdateColumnTeamsWins
+      description: Update the 'wins' column in the 'teams' collection.
+  graphql:
+    typeName: UpdateTeamsByTeamIdUpdateColumns
+    inputTypeName: UpdateTeamsByTeamIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_teams_by_team_id_update_columns
+      fieldMapping:
+        acquisitions:
+          column:
+            name: acquisitions
+        budgetRemaining:
+          column:
+            name: budget_remaining
+        budgetSpent:
+          column:
+            name: budget_spent
+        createdAt:
+          column:
+            name: created_at
+        drops:
+          column:
+            name: drops
+        gamesBack:
+          column:
+            name: games_back
+        leagueId:
+          column:
+            name: league_id
+        losses:
+          column:
+            name: losses
+        owners:
+          column:
+            name: owners
+        primaryOwner:
+          column:
+            name: primary_owner
+        seasonId:
+          column:
+            name: season_id
+        teamAbbrev:
+          column:
+            name: team_abbrev
+        teamId:
+          column:
+            name: team_id
+        teamLogo:
+          column:
+            name: team_logo
+        teamName:
+          column:
+            name: team_name
+        ties:
+          column:
+            name: ties
+        trades:
+          column:
+            name: trades
+        updatedAt:
+          column:
+            name: updated_at
+        waiverRank:
+          column:
+            name: waiver_rank
+        winPercentage:
+          column:
+            name: win_percentage
+        wins:
+          column:
+            name: wins
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateTeamsByTeamIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - acquisitions
+          - budgetRemaining
+          - budgetSpent
+          - createdAt
+          - drops
+          - gamesBack
+          - leagueId
+          - losses
+          - owners
+          - primaryOwner
+          - seasonId
+          - teamAbbrev
+          - teamId
+          - teamLogo
+          - teamName
+          - ties
+          - trades
+          - updatedAt
+          - waiverRank
+          - winPercentage
+          - wins
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateTeamsByTeamIdResponse
+  description: Responses from the 'update_teams_by_team_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Teams!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdateTeamsByTeamIdResponse
+    inputTypeName: UpdateTeamsByTeamIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_teams_by_team_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateTeamsByTeamIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdateTeamsByTeamId
+  outputType: UpdateTeamsByTeamIdResponse!
+  arguments:
+    - name: keyTeamId
+      type: Int32!
+    - name: postCheck
+      type: TeamsBoolExp
+      description: Update permission post-condition predicate over the 'teams' collection
+    - name: preCheck
+      type: TeamsBoolExp
+      description: Update permission pre-condition predicate over the 'teams' collection
+    - name: updateColumns
+      type: UpdateTeamsByTeamIdUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_teams_by_team_id
+    argumentMapping:
+      keyTeamId: key_team_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updateTeamsByTeamId
+    rootFieldKind: Mutation
+  description: Update any row on the 'teams' collection using the 'team_id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdateTeamsByTeamId
+  permissions:
+    - role: admin
+      allowExecution: true
+

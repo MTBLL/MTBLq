@@ -1,0 +1,928 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: PlayerStatsPitching
+  fields:
+    - name: bb
+      type: Bigdecimal
+    - name: bk
+      type: Bigdecimal
+    - name: blsv
+      type: Bigdecimal
+    - name: er
+      type: Bigdecimal
+    - name: era
+      type: Bigdecimal
+    - name: gp
+      type: Bigdecimal
+    - name: gs
+      type: Bigdecimal
+    - name: h
+      type: Bigdecimal
+    - name: hbp
+      type: Bigdecimal
+    - name: hld
+      type: Bigdecimal
+    - name: hr
+      type: Bigdecimal
+    - name: ibb
+      type: Bigdecimal
+    - name: ip
+      type: Bigdecimal
+    - name: k
+      type: Bigdecimal
+    - name: l
+      type: Bigdecimal
+    - name: oba
+      type: Bigdecimal
+    - name: oobp
+      type: Bigdecimal
+    - name: outs
+      type: Bigdecimal
+    - name: qs
+      type: Bigdecimal
+    - name: r
+      type: Bigdecimal
+    - name: sv
+      type: Bigdecimal
+    - name: svPct
+      type: Bigdecimal
+    - name: svhd
+      type: Bigdecimal
+    - name: svo
+      type: Bigdecimal
+    - name: tbf
+      type: Bigdecimal
+    - name: w
+      type: Bigdecimal
+    - name: whip
+      type: Bigdecimal
+    - name: wp
+      type: Bigdecimal
+    - name: wpct
+      type: Bigdecimal
+    - name: adjExitVelo
+      type: Bigdecimal
+    - name: armAngle
+      type: Bigdecimal
+    - name: bbPer9
+      type: Bigdecimal
+    - name: breakXArmSide
+      type: Bigdecimal
+    - name: breakXBatterIn
+      type: Bigdecimal
+    - name: breakZ
+      type: Bigdecimal
+    - name: createdAt
+      type: Timestamp
+    - name: effMinVel
+      type: Bigdecimal
+    - name: exitVelo
+      type: Bigdecimal
+    - name: id
+      type: Int32!
+    - name: inducedBreakZ
+      type: Bigdecimal
+    - name: kBbRatio
+      type: Bigdecimal
+    - name: kPer9
+      type: Bigdecimal
+    - name: launchAngle
+      type: Bigdecimal
+    - name: percievedVelo
+      type: Bigdecimal
+    - name: pitcherRunExp
+      type: Bigdecimal
+    - name: pitcherRunValuePer100
+      type: Bigdecimal
+    - name: playerId
+      type: Int32!
+    - name: releaseExtension
+      type: Bigdecimal
+    - name: releasePosX
+      type: Bigdecimal
+    - name: releasePosZ
+      type: Bigdecimal
+    - name: seasonId
+      type: Int32!
+    - name: spinRate
+      type: Bigdecimal
+    - name: statPeriod
+      type: String_1
+    - name: swingMissPct
+      type: Bigdecimal
+    - name: swings
+      type: Int32
+    - name: takes
+      type: Int32
+    - name: updatedAt
+      type: Timestamp
+    - name: velo
+      type: Bigdecimal
+    - name: whiffs
+      type: Int32
+    - name: xAvg
+      type: Bigdecimal
+    - name: xAvGdiff
+      type: Bigdecimal
+    - name: xObp
+      type: Bigdecimal
+    - name: xObPdiff
+      type: Bigdecimal
+    - name: xSlg
+      type: Bigdecimal
+    - name: xSlGdiff
+      type: Bigdecimal
+    - name: xwOba
+      type: Bigdecimal
+  graphql:
+    typeName: PlayerStatsPitching
+    inputTypeName: PlayerStatsPitchingInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: player_stats_pitching
+      fieldMapping:
+        bb:
+          column:
+            name: BB
+        bk:
+          column:
+            name: BK
+        blsv:
+          column:
+            name: BLSV
+        er:
+          column:
+            name: ER
+        era:
+          column:
+            name: ERA
+        gp:
+          column:
+            name: GP
+        gs:
+          column:
+            name: GS
+        h:
+          column:
+            name: H
+        hbp:
+          column:
+            name: HBP
+        hld:
+          column:
+            name: HLD
+        hr:
+          column:
+            name: HR
+        ibb:
+          column:
+            name: IBB
+        ip:
+          column:
+            name: IP
+        k:
+          column:
+            name: K
+        l:
+          column:
+            name: L
+        oba:
+          column:
+            name: OBA
+        oobp:
+          column:
+            name: OOBP
+        outs:
+          column:
+            name: OUTS
+        qs:
+          column:
+            name: QS
+        r:
+          column:
+            name: R
+        sv:
+          column:
+            name: SV
+        svPct:
+          column:
+            name: SV_pct
+        svhd:
+          column:
+            name: SVHD
+        svo:
+          column:
+            name: SVO
+        tbf:
+          column:
+            name: TBF
+        w:
+          column:
+            name: W
+        whip:
+          column:
+            name: WHIP
+        wp:
+          column:
+            name: WP
+        wpct:
+          column:
+            name: WPCT
+        adjExitVelo:
+          column:
+            name: adj_exit_velo
+        armAngle:
+          column:
+            name: arm_angle
+        bbPer9:
+          column:
+            name: bb_per_9
+        breakXArmSide:
+          column:
+            name: break_x_arm_side
+        breakXBatterIn:
+          column:
+            name: break_x_batter_in
+        breakZ:
+          column:
+            name: break_z
+        createdAt:
+          column:
+            name: created_at
+        effMinVel:
+          column:
+            name: eff_min_vel
+        exitVelo:
+          column:
+            name: exit_velo
+        id:
+          column:
+            name: id
+        inducedBreakZ:
+          column:
+            name: induced_break_z
+        kBbRatio:
+          column:
+            name: k_bb_ratio
+        kPer9:
+          column:
+            name: k_per_9
+        launchAngle:
+          column:
+            name: launch_angle
+        percievedVelo:
+          column:
+            name: percieved_velo
+        pitcherRunExp:
+          column:
+            name: pitcher_run_exp
+        pitcherRunValuePer100:
+          column:
+            name: pitcher_run_value_per_100
+        playerId:
+          column:
+            name: player_id
+        releaseExtension:
+          column:
+            name: release_extension
+        releasePosX:
+          column:
+            name: release_pos_x
+        releasePosZ:
+          column:
+            name: release_pos_z
+        seasonId:
+          column:
+            name: season_id
+        spinRate:
+          column:
+            name: spin_rate
+        statPeriod:
+          column:
+            name: stat_period
+        swingMissPct:
+          column:
+            name: swing_miss_pct
+        swings:
+          column:
+            name: swings
+        takes:
+          column:
+            name: takes
+        updatedAt:
+          column:
+            name: updated_at
+        velo:
+          column:
+            name: velo
+        whiffs:
+          column:
+            name: whiffs
+        xAvg:
+          column:
+            name: xAVG
+        xAvGdiff:
+          column:
+            name: xAVGdiff
+        xObp:
+          column:
+            name: xOBP
+        xObPdiff:
+          column:
+            name: xOBPdiff
+        xSlg:
+          column:
+            name: xSLG
+        xSlGdiff:
+          column:
+            name: xSLGdiff
+        xwOba:
+          column:
+            name: xwOBA
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: PlayerStatsPitching
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - bb
+          - bk
+          - blsv
+          - er
+          - era
+          - gp
+          - gs
+          - h
+          - hbp
+          - hld
+          - hr
+          - ibb
+          - ip
+          - k
+          - l
+          - oba
+          - oobp
+          - outs
+          - qs
+          - r
+          - sv
+          - svPct
+          - svhd
+          - svo
+          - tbf
+          - w
+          - whip
+          - wp
+          - wpct
+          - adjExitVelo
+          - armAngle
+          - bbPer9
+          - breakXArmSide
+          - breakXBatterIn
+          - breakZ
+          - createdAt
+          - effMinVel
+          - exitVelo
+          - id
+          - inducedBreakZ
+          - kBbRatio
+          - kPer9
+          - launchAngle
+          - percievedVelo
+          - pitcherRunExp
+          - pitcherRunValuePer100
+          - playerId
+          - releaseExtension
+          - releasePosX
+          - releasePosZ
+          - seasonId
+          - spinRate
+          - statPeriod
+          - swingMissPct
+          - swings
+          - takes
+          - updatedAt
+          - velo
+          - whiffs
+          - xAvg
+          - xAvGdiff
+          - xObp
+          - xObPdiff
+          - xSlg
+          - xSlGdiff
+          - xwOba
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: PlayerStatsPitchingAggExp
+  operand:
+    object:
+      aggregatedType: PlayerStatsPitching
+      aggregatableFields:
+        - fieldName: bb
+          aggregateExpression: NumericAggExp
+        - fieldName: bk
+          aggregateExpression: NumericAggExp
+        - fieldName: blsv
+          aggregateExpression: NumericAggExp
+        - fieldName: er
+          aggregateExpression: NumericAggExp
+        - fieldName: era
+          aggregateExpression: NumericAggExp
+        - fieldName: gp
+          aggregateExpression: NumericAggExp
+        - fieldName: gs
+          aggregateExpression: NumericAggExp
+        - fieldName: h
+          aggregateExpression: NumericAggExp
+        - fieldName: hbp
+          aggregateExpression: NumericAggExp
+        - fieldName: hld
+          aggregateExpression: NumericAggExp
+        - fieldName: hr
+          aggregateExpression: NumericAggExp
+        - fieldName: ibb
+          aggregateExpression: NumericAggExp
+        - fieldName: ip
+          aggregateExpression: NumericAggExp
+        - fieldName: k
+          aggregateExpression: NumericAggExp
+        - fieldName: l
+          aggregateExpression: NumericAggExp
+        - fieldName: oba
+          aggregateExpression: NumericAggExp
+        - fieldName: oobp
+          aggregateExpression: NumericAggExp
+        - fieldName: outs
+          aggregateExpression: NumericAggExp
+        - fieldName: qs
+          aggregateExpression: NumericAggExp
+        - fieldName: r
+          aggregateExpression: NumericAggExp
+        - fieldName: sv
+          aggregateExpression: NumericAggExp
+        - fieldName: svPct
+          aggregateExpression: NumericAggExp
+        - fieldName: svhd
+          aggregateExpression: NumericAggExp
+        - fieldName: svo
+          aggregateExpression: NumericAggExp
+        - fieldName: tbf
+          aggregateExpression: NumericAggExp
+        - fieldName: w
+          aggregateExpression: NumericAggExp
+        - fieldName: whip
+          aggregateExpression: NumericAggExp
+        - fieldName: wp
+          aggregateExpression: NumericAggExp
+        - fieldName: wpct
+          aggregateExpression: NumericAggExp
+        - fieldName: adjExitVelo
+          aggregateExpression: NumericAggExp
+        - fieldName: armAngle
+          aggregateExpression: NumericAggExp
+        - fieldName: bbPer9
+          aggregateExpression: NumericAggExp
+        - fieldName: breakXArmSide
+          aggregateExpression: NumericAggExp
+        - fieldName: breakXBatterIn
+          aggregateExpression: NumericAggExp
+        - fieldName: breakZ
+          aggregateExpression: NumericAggExp
+        - fieldName: createdAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: effMinVel
+          aggregateExpression: NumericAggExp
+        - fieldName: exitVelo
+          aggregateExpression: NumericAggExp
+        - fieldName: id
+          aggregateExpression: Int4AggExp
+        - fieldName: inducedBreakZ
+          aggregateExpression: NumericAggExp
+        - fieldName: kBbRatio
+          aggregateExpression: NumericAggExp
+        - fieldName: kPer9
+          aggregateExpression: NumericAggExp
+        - fieldName: launchAngle
+          aggregateExpression: NumericAggExp
+        - fieldName: percievedVelo
+          aggregateExpression: NumericAggExp
+        - fieldName: pitcherRunExp
+          aggregateExpression: NumericAggExp
+        - fieldName: pitcherRunValuePer100
+          aggregateExpression: NumericAggExp
+        - fieldName: playerId
+          aggregateExpression: Int4AggExp
+        - fieldName: releaseExtension
+          aggregateExpression: NumericAggExp
+        - fieldName: releasePosX
+          aggregateExpression: NumericAggExp
+        - fieldName: releasePosZ
+          aggregateExpression: NumericAggExp
+        - fieldName: seasonId
+          aggregateExpression: Int4AggExp
+        - fieldName: spinRate
+          aggregateExpression: NumericAggExp
+        - fieldName: statPeriod
+          aggregateExpression: VarcharAggExp
+        - fieldName: swingMissPct
+          aggregateExpression: NumericAggExp
+        - fieldName: swings
+          aggregateExpression: Int4AggExp
+        - fieldName: takes
+          aggregateExpression: Int4AggExp
+        - fieldName: updatedAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: velo
+          aggregateExpression: NumericAggExp
+        - fieldName: whiffs
+          aggregateExpression: Int4AggExp
+        - fieldName: xAvg
+          aggregateExpression: NumericAggExp
+        - fieldName: xAvGdiff
+          aggregateExpression: NumericAggExp
+        - fieldName: xObp
+          aggregateExpression: NumericAggExp
+        - fieldName: xObPdiff
+          aggregateExpression: NumericAggExp
+        - fieldName: xSlg
+          aggregateExpression: NumericAggExp
+        - fieldName: xSlGdiff
+          aggregateExpression: NumericAggExp
+        - fieldName: xwOba
+          aggregateExpression: NumericAggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: PlayerStatsPitchingAggExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: PlayerStatsPitching
+  objectType: PlayerStatsPitching
+  source:
+    dataConnectorName: neon_mtbl
+    collection: player_stats_pitching
+  filterExpressionType: PlayerStatsPitchingBoolExp
+  aggregateExpression: PlayerStatsPitchingAggExp
+  orderByExpression: PlayerStatsPitchingOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: playerStatsPitching
+      subscription:
+        rootField: playerStatsPitching
+    selectUniques:
+      - queryRootField: playerStatsPitchingById
+        uniqueIdentifier:
+          - id
+        subscription:
+          rootField: playerStatsPitchingById
+      - queryRootField: playerStatsPitchingByPlayerStatsPitchingPlayerIdSeasonIdStatPeriodKey
+        uniqueIdentifier:
+          - playerId
+          - seasonId
+          - statPeriod
+        subscription:
+          rootField: playerStatsPitchingByPlayerStatsPitchingPlayerIdSeasonIdStatPeriodKey
+    filterInputTypeName: PlayerStatsPitchingFilterInput
+    aggregate:
+      queryRootField: playerStatsPitchingAggregate
+      subscription:
+        rootField: playerStatsPitchingAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: PlayerStatsPitching
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: player
+  sourceType: PlayerStatsPitching
+  target:
+    model:
+      name: Players
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: playerId
+      target:
+        modelField:
+          - fieldName: idEspn
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: PlayerStatsPitchingBoolExp
+  operand:
+    object:
+      type: PlayerStatsPitching
+      comparableFields:
+        - fieldName: bb
+          booleanExpressionType: NumericBoolExp
+        - fieldName: bk
+          booleanExpressionType: NumericBoolExp
+        - fieldName: blsv
+          booleanExpressionType: NumericBoolExp
+        - fieldName: er
+          booleanExpressionType: NumericBoolExp
+        - fieldName: era
+          booleanExpressionType: NumericBoolExp
+        - fieldName: gp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: gs
+          booleanExpressionType: NumericBoolExp
+        - fieldName: h
+          booleanExpressionType: NumericBoolExp
+        - fieldName: hbp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: hld
+          booleanExpressionType: NumericBoolExp
+        - fieldName: hr
+          booleanExpressionType: NumericBoolExp
+        - fieldName: ibb
+          booleanExpressionType: NumericBoolExp
+        - fieldName: ip
+          booleanExpressionType: NumericBoolExp
+        - fieldName: k
+          booleanExpressionType: NumericBoolExp
+        - fieldName: l
+          booleanExpressionType: NumericBoolExp
+        - fieldName: oba
+          booleanExpressionType: NumericBoolExp
+        - fieldName: oobp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: outs
+          booleanExpressionType: NumericBoolExp
+        - fieldName: qs
+          booleanExpressionType: NumericBoolExp
+        - fieldName: r
+          booleanExpressionType: NumericBoolExp
+        - fieldName: sv
+          booleanExpressionType: NumericBoolExp
+        - fieldName: svPct
+          booleanExpressionType: NumericBoolExp
+        - fieldName: svhd
+          booleanExpressionType: NumericBoolExp
+        - fieldName: svo
+          booleanExpressionType: NumericBoolExp
+        - fieldName: tbf
+          booleanExpressionType: NumericBoolExp
+        - fieldName: w
+          booleanExpressionType: NumericBoolExp
+        - fieldName: whip
+          booleanExpressionType: NumericBoolExp
+        - fieldName: wp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: wpct
+          booleanExpressionType: NumericBoolExp
+        - fieldName: adjExitVelo
+          booleanExpressionType: NumericBoolExp
+        - fieldName: armAngle
+          booleanExpressionType: NumericBoolExp
+        - fieldName: bbPer9
+          booleanExpressionType: NumericBoolExp
+        - fieldName: breakXArmSide
+          booleanExpressionType: NumericBoolExp
+        - fieldName: breakXBatterIn
+          booleanExpressionType: NumericBoolExp
+        - fieldName: breakZ
+          booleanExpressionType: NumericBoolExp
+        - fieldName: createdAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: effMinVel
+          booleanExpressionType: NumericBoolExp
+        - fieldName: exitVelo
+          booleanExpressionType: NumericBoolExp
+        - fieldName: id
+          booleanExpressionType: Int4BoolExp
+        - fieldName: inducedBreakZ
+          booleanExpressionType: NumericBoolExp
+        - fieldName: kBbRatio
+          booleanExpressionType: NumericBoolExp
+        - fieldName: kPer9
+          booleanExpressionType: NumericBoolExp
+        - fieldName: launchAngle
+          booleanExpressionType: NumericBoolExp
+        - fieldName: percievedVelo
+          booleanExpressionType: NumericBoolExp
+        - fieldName: pitcherRunExp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: pitcherRunValuePer100
+          booleanExpressionType: NumericBoolExp
+        - fieldName: playerId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: releaseExtension
+          booleanExpressionType: NumericBoolExp
+        - fieldName: releasePosX
+          booleanExpressionType: NumericBoolExp
+        - fieldName: releasePosZ
+          booleanExpressionType: NumericBoolExp
+        - fieldName: seasonId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: spinRate
+          booleanExpressionType: NumericBoolExp
+        - fieldName: statPeriod
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: swingMissPct
+          booleanExpressionType: NumericBoolExp
+        - fieldName: swings
+          booleanExpressionType: Int4BoolExp
+        - fieldName: takes
+          booleanExpressionType: Int4BoolExp
+        - fieldName: updatedAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: velo
+          booleanExpressionType: NumericBoolExp
+        - fieldName: whiffs
+          booleanExpressionType: Int4BoolExp
+        - fieldName: xAvg
+          booleanExpressionType: NumericBoolExp
+        - fieldName: xAvGdiff
+          booleanExpressionType: NumericBoolExp
+        - fieldName: xObp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: xObPdiff
+          booleanExpressionType: NumericBoolExp
+        - fieldName: xSlg
+          booleanExpressionType: NumericBoolExp
+        - fieldName: xSlGdiff
+          booleanExpressionType: NumericBoolExp
+        - fieldName: xwOba
+          booleanExpressionType: NumericBoolExp
+      comparableRelationships:
+        - relationshipName: player
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: PlayerStatsPitchingBoolExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: PlayerStatsPitchingOrderByExp
+  operand:
+    object:
+      orderedType: PlayerStatsPitching
+      orderableFields:
+        - fieldName: bb
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: bk
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: blsv
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: er
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: era
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: gp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: gs
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: h
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: hbp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: hld
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: hr
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: ibb
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: ip
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: k
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: l
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: oba
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: oobp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: outs
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: qs
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: r
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: sv
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: svPct
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: svhd
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: svo
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: tbf
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: w
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: whip
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: wp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: wpct
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: adjExitVelo
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: armAngle
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: bbPer9
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: breakXArmSide
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: breakXBatterIn
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: breakZ
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: createdAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: effMinVel
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: exitVelo
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: id
+          orderByExpression: Int32OrderByExp
+        - fieldName: inducedBreakZ
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: kBbRatio
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: kPer9
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: launchAngle
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: percievedVelo
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: pitcherRunExp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: pitcherRunValuePer100
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: playerId
+          orderByExpression: Int32OrderByExp
+        - fieldName: releaseExtension
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: releasePosX
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: releasePosZ
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: seasonId
+          orderByExpression: Int32OrderByExp
+        - fieldName: spinRate
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: statPeriod
+          orderByExpression: String1OrderByExp
+        - fieldName: swingMissPct
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: swings
+          orderByExpression: Int32OrderByExp
+        - fieldName: takes
+          orderByExpression: Int32OrderByExp
+        - fieldName: updatedAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: velo
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: whiffs
+          orderByExpression: Int32OrderByExp
+        - fieldName: xAvg
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: xAvGdiff
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: xObp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: xObPdiff
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: xSlg
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: xSlGdiff
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: xwOba
+          orderByExpression: BigdecimalOrderByExp
+      orderableRelationships:
+        - relationshipName: player
+  graphql:
+    expressionTypeName: PlayerStatsPitchingOrderByExp
+

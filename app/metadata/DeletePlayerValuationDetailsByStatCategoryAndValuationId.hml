@@ -1,0 +1,79 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeletePlayerValuationDetailsByStatCategoryAndValuationIdResponse
+  description: Responses from the
+    'delete_player_valuation_details_by_stat_category_and_valuation_id'
+    procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerValuationDetails!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeletePlayerValuationDetailsByStatCategoryAndValuationIdResponse
+    inputTypeName: DeletePlayerValuationDetailsByStatCategoryAndValuationIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_player_valuation_details_by_stat_category_and_valuation_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeletePlayerValuationDetailsByStatCategoryAndValuationIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeletePlayerValuationDetailsByStatCategoryAndValuationId
+  outputType: DeletePlayerValuationDetailsByStatCategoryAndValuationIdResponse!
+  arguments:
+    - name: keyStatCategory
+      type: String_1!
+    - name: keyValuationId
+      type: Int32!
+    - name: preCheck
+      type: PlayerValuationDetailsBoolExp
+      description: Delete permission predicate over the 'player_valuation_details'
+        collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_player_valuation_details_by_stat_category_and_valuation_id
+    argumentMapping:
+      keyStatCategory: key_stat_category
+      keyValuationId: key_valuation_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deletePlayerValuationDetailsByStatCategoryAndValuationId
+    rootFieldKind: Mutation
+  description: Delete any row on the 'player_valuation_details' collection using
+    the 'stat_category' and 'valuation_id' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeletePlayerValuationDetailsByStatCategoryAndValuationId
+  permissions:
+    - role: admin
+      allowExecution: true
+

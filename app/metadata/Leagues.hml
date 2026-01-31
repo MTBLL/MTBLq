@@ -1,0 +1,332 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: Leagues
+  fields:
+    - name: acquisitionBudget
+      type: Int32
+    - name: createdAt
+      type: Timestamp
+    - name: draftAuctionBudget
+      type: Int32
+    - name: leagueId
+      type: Int32!
+    - name: numTeams
+      type: Int32
+    - name: rosterSettings
+      type: Json
+    - name: scoringPeriodId
+      type: Int32
+    - name: seasonId
+      type: Int32!
+    - name: updatedAt
+      type: Timestamp
+  graphql:
+    typeName: Leagues
+    inputTypeName: LeaguesInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: leagues
+      fieldMapping:
+        acquisitionBudget:
+          column:
+            name: acquisition_budget
+        createdAt:
+          column:
+            name: created_at
+        draftAuctionBudget:
+          column:
+            name: draft_auction_budget
+        leagueId:
+          column:
+            name: league_id
+        numTeams:
+          column:
+            name: num_teams
+        rosterSettings:
+          column:
+            name: roster_settings
+        scoringPeriodId:
+          column:
+            name: scoring_period_id
+        seasonId:
+          column:
+            name: season_id
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: Leagues
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - acquisitionBudget
+          - createdAt
+          - draftAuctionBudget
+          - leagueId
+          - numTeams
+          - rosterSettings
+          - scoringPeriodId
+          - seasonId
+          - updatedAt
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: LeaguesAggExp
+  operand:
+    object:
+      aggregatedType: Leagues
+      aggregatableFields:
+        - fieldName: acquisitionBudget
+          aggregateExpression: Int4AggExp
+        - fieldName: createdAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: draftAuctionBudget
+          aggregateExpression: Int4AggExp
+        - fieldName: leagueId
+          aggregateExpression: Int4AggExp
+        - fieldName: numTeams
+          aggregateExpression: Int4AggExp
+        - fieldName: rosterSettings
+          aggregateExpression: JsonbAggExp
+        - fieldName: scoringPeriodId
+          aggregateExpression: Int4AggExp
+        - fieldName: seasonId
+          aggregateExpression: Int4AggExp
+        - fieldName: updatedAt
+          aggregateExpression: TimestampAggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: LeaguesAggExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: LeaguesOrderByExp
+  operand:
+    object:
+      orderedType: Leagues
+      orderableFields:
+        - fieldName: acquisitionBudget
+          orderByExpression: Int32OrderByExp
+        - fieldName: createdAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: draftAuctionBudget
+          orderByExpression: Int32OrderByExp
+        - fieldName: leagueId
+          orderByExpression: Int32OrderByExp
+        - fieldName: numTeams
+          orderByExpression: Int32OrderByExp
+        - fieldName: rosterSettings
+          orderByExpression: JsonOrderByExp
+        - fieldName: scoringPeriodId
+          orderByExpression: Int32OrderByExp
+        - fieldName: seasonId
+          orderByExpression: Int32OrderByExp
+        - fieldName: updatedAt
+          orderByExpression: TimestampOrderByExp
+      orderableRelationships: []
+  graphql:
+    expressionTypeName: LeaguesOrderByExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: Leagues
+  objectType: Leagues
+  source:
+    dataConnectorName: neon_mtbl
+    collection: leagues
+  filterExpressionType: LeaguesBoolExp
+  aggregateExpression: LeaguesAggExp
+  orderByExpression: LeaguesOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: leagues
+      subscription:
+        rootField: leagues
+    selectUniques:
+      - queryRootField: leaguesByLeagueId
+        uniqueIdentifier:
+          - leagueId
+        subscription:
+          rootField: leaguesByLeagueId
+    filterInputTypeName: LeaguesFilterInput
+    aggregate:
+      queryRootField: leaguesAggregate
+      subscription:
+        rootField: leaguesAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: Leagues
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: leagueScoringCategories
+  sourceType: Leagues
+  target:
+    model:
+      name: LeagueScoringCategories
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: LeagueScoringCategoriesAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: leagueId
+      target:
+        modelField:
+          - fieldName: leagueId
+  graphql:
+    aggregateFieldName: leagueScoringCategoriesAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: matchups
+  sourceType: Leagues
+  target:
+    model:
+      name: Matchups
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: MatchupsAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: leagueId
+      target:
+        modelField:
+          - fieldName: leagueId
+  graphql:
+    aggregateFieldName: matchupsAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: playerFantasyAssignments
+  sourceType: Leagues
+  target:
+    model:
+      name: PlayerFantasyAssignments
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: PlayerFantasyAssignmentsAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: leagueId
+      target:
+        modelField:
+          - fieldName: leagueId
+  graphql:
+    aggregateFieldName: playerFantasyAssignmentsAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: rosterSlots
+  sourceType: Leagues
+  target:
+    model:
+      name: RosterSlots
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: RosterSlotsAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: leagueId
+      target:
+        modelField:
+          - fieldName: leagueId
+  graphql:
+    aggregateFieldName: rosterSlotsAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: teams
+  sourceType: Leagues
+  target:
+    model:
+      name: Teams
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: TeamsAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: leagueId
+      target:
+        modelField:
+          - fieldName: leagueId
+  graphql:
+    aggregateFieldName: teamsAggregate
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: LeaguesBoolExp
+  operand:
+    object:
+      type: Leagues
+      comparableFields:
+        - fieldName: acquisitionBudget
+          booleanExpressionType: Int4BoolExp
+        - fieldName: createdAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: draftAuctionBudget
+          booleanExpressionType: Int4BoolExp
+        - fieldName: leagueId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: numTeams
+          booleanExpressionType: Int4BoolExp
+        - fieldName: rosterSettings
+          booleanExpressionType: JsonbBoolExp
+        - fieldName: scoringPeriodId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: seasonId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: updatedAt
+          booleanExpressionType: TimestampBoolExp
+      comparableRelationships:
+        - relationshipName: leagueScoringCategories
+        - relationshipName: matchups
+        - relationshipName: playerFantasyAssignments
+        - relationshipName: rosterSlots
+        - relationshipName: teams
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: LeaguesBoolExp
+

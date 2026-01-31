@@ -1,0 +1,591 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriodUpdateColumns
+  description: Update the columns of the 'player_stats_pitching' collection
+  fields:
+    - name: bb
+      type: UpdateColumnPlayerStatsPitchingBb
+      description: Update the 'BB' column in the 'player_stats_pitching' collection.
+    - name: bk
+      type: UpdateColumnPlayerStatsPitchingBk
+      description: Update the 'BK' column in the 'player_stats_pitching' collection.
+    - name: blsv
+      type: UpdateColumnPlayerStatsPitchingBlsv
+      description: Update the 'BLSV' column in the 'player_stats_pitching' collection.
+    - name: er
+      type: UpdateColumnPlayerStatsPitchingEr
+      description: Update the 'ER' column in the 'player_stats_pitching' collection.
+    - name: era
+      type: UpdateColumnPlayerStatsPitchingEra
+      description: Update the 'ERA' column in the 'player_stats_pitching' collection.
+    - name: gp
+      type: UpdateColumnPlayerStatsPitchingGp
+      description: Update the 'GP' column in the 'player_stats_pitching' collection.
+    - name: gs
+      type: UpdateColumnPlayerStatsPitchingGs
+      description: Update the 'GS' column in the 'player_stats_pitching' collection.
+    - name: h
+      type: UpdateColumnPlayerStatsPitchingH
+      description: Update the 'H' column in the 'player_stats_pitching' collection.
+    - name: hbp
+      type: UpdateColumnPlayerStatsPitchingHbp
+      description: Update the 'HBP' column in the 'player_stats_pitching' collection.
+    - name: hld
+      type: UpdateColumnPlayerStatsPitchingHld
+      description: Update the 'HLD' column in the 'player_stats_pitching' collection.
+    - name: hr
+      type: UpdateColumnPlayerStatsPitchingHr
+      description: Update the 'HR' column in the 'player_stats_pitching' collection.
+    - name: ibb
+      type: UpdateColumnPlayerStatsPitchingIbb
+      description: Update the 'IBB' column in the 'player_stats_pitching' collection.
+    - name: ip
+      type: UpdateColumnPlayerStatsPitchingIp
+      description: Update the 'IP' column in the 'player_stats_pitching' collection.
+    - name: k
+      type: UpdateColumnPlayerStatsPitchingK
+      description: Update the 'K' column in the 'player_stats_pitching' collection.
+    - name: l
+      type: UpdateColumnPlayerStatsPitchingL
+      description: Update the 'L' column in the 'player_stats_pitching' collection.
+    - name: oba
+      type: UpdateColumnPlayerStatsPitchingOba
+      description: Update the 'OBA' column in the 'player_stats_pitching' collection.
+    - name: oobp
+      type: UpdateColumnPlayerStatsPitchingOobp
+      description: Update the 'OOBP' column in the 'player_stats_pitching' collection.
+    - name: outs
+      type: UpdateColumnPlayerStatsPitchingOuts
+      description: Update the 'OUTS' column in the 'player_stats_pitching' collection.
+    - name: qs
+      type: UpdateColumnPlayerStatsPitchingQs
+      description: Update the 'QS' column in the 'player_stats_pitching' collection.
+    - name: r
+      type: UpdateColumnPlayerStatsPitchingR
+      description: Update the 'R' column in the 'player_stats_pitching' collection.
+    - name: sv
+      type: UpdateColumnPlayerStatsPitchingSv
+      description: Update the 'SV' column in the 'player_stats_pitching' collection.
+    - name: svPct
+      type: UpdateColumnPlayerStatsPitchingSvPct
+      description: Update the 'SV_pct' column in the 'player_stats_pitching' collection.
+    - name: svhd
+      type: UpdateColumnPlayerStatsPitchingSvhd
+      description: Update the 'SVHD' column in the 'player_stats_pitching' collection.
+    - name: svo
+      type: UpdateColumnPlayerStatsPitchingSvo
+      description: Update the 'SVO' column in the 'player_stats_pitching' collection.
+    - name: tbf
+      type: UpdateColumnPlayerStatsPitchingTbf
+      description: Update the 'TBF' column in the 'player_stats_pitching' collection.
+    - name: w
+      type: UpdateColumnPlayerStatsPitchingW
+      description: Update the 'W' column in the 'player_stats_pitching' collection.
+    - name: whip
+      type: UpdateColumnPlayerStatsPitchingWhip
+      description: Update the 'WHIP' column in the 'player_stats_pitching' collection.
+    - name: wp
+      type: UpdateColumnPlayerStatsPitchingWp
+      description: Update the 'WP' column in the 'player_stats_pitching' collection.
+    - name: wpct
+      type: UpdateColumnPlayerStatsPitchingWpct
+      description: Update the 'WPCT' column in the 'player_stats_pitching' collection.
+    - name: adjExitVelo
+      type: UpdateColumnPlayerStatsPitchingAdjExitVelo
+      description: Update the 'adj_exit_velo' column in the 'player_stats_pitching'
+        collection.
+    - name: armAngle
+      type: UpdateColumnPlayerStatsPitchingArmAngle
+      description: Update the 'arm_angle' column in the 'player_stats_pitching' collection.
+    - name: bbPer9
+      type: UpdateColumnPlayerStatsPitchingBbPer9
+      description: Update the 'bb_per_9' column in the 'player_stats_pitching' collection.
+    - name: breakXArmSide
+      type: UpdateColumnPlayerStatsPitchingBreakXArmSide
+      description: Update the 'break_x_arm_side' column in the 'player_stats_pitching'
+        collection.
+    - name: breakXBatterIn
+      type: UpdateColumnPlayerStatsPitchingBreakXBatterIn
+      description: Update the 'break_x_batter_in' column in the
+        'player_stats_pitching' collection.
+    - name: breakZ
+      type: UpdateColumnPlayerStatsPitchingBreakZ
+      description: Update the 'break_z' column in the 'player_stats_pitching' collection.
+    - name: createdAt
+      type: UpdateColumnPlayerStatsPitchingCreatedAt
+      description: Update the 'created_at' column in the 'player_stats_pitching' collection.
+    - name: effMinVel
+      type: UpdateColumnPlayerStatsPitchingEffMinVel
+      description: Update the 'eff_min_vel' column in the 'player_stats_pitching'
+        collection.
+    - name: exitVelo
+      type: UpdateColumnPlayerStatsPitchingExitVelo
+      description: Update the 'exit_velo' column in the 'player_stats_pitching' collection.
+    - name: id
+      type: UpdateColumnPlayerStatsPitchingId
+      description: Update the 'id' column in the 'player_stats_pitching' collection.
+    - name: inducedBreakZ
+      type: UpdateColumnPlayerStatsPitchingInducedBreakZ
+      description: Update the 'induced_break_z' column in the 'player_stats_pitching'
+        collection.
+    - name: kBbRatio
+      type: UpdateColumnPlayerStatsPitchingKBbRatio
+      description: Update the 'k_bb_ratio' column in the 'player_stats_pitching' collection.
+    - name: kPer9
+      type: UpdateColumnPlayerStatsPitchingKPer9
+      description: Update the 'k_per_9' column in the 'player_stats_pitching' collection.
+    - name: launchAngle
+      type: UpdateColumnPlayerStatsPitchingLaunchAngle
+      description: Update the 'launch_angle' column in the 'player_stats_pitching'
+        collection.
+    - name: percievedVelo
+      type: UpdateColumnPlayerStatsPitchingPercievedVelo
+      description: Update the 'percieved_velo' column in the 'player_stats_pitching'
+        collection.
+    - name: pitcherRunExp
+      type: UpdateColumnPlayerStatsPitchingPitcherRunExp
+      description: Update the 'pitcher_run_exp' column in the 'player_stats_pitching'
+        collection.
+    - name: pitcherRunValuePer100
+      type: UpdateColumnPlayerStatsPitchingPitcherRunValuePer100
+      description: Update the 'pitcher_run_value_per_100' column in the
+        'player_stats_pitching' collection.
+    - name: playerId
+      type: UpdateColumnPlayerStatsPitchingPlayerId
+      description: Update the 'player_id' column in the 'player_stats_pitching' collection.
+    - name: releaseExtension
+      type: UpdateColumnPlayerStatsPitchingReleaseExtension
+      description: Update the 'release_extension' column in the
+        'player_stats_pitching' collection.
+    - name: releasePosX
+      type: UpdateColumnPlayerStatsPitchingReleasePosX
+      description: Update the 'release_pos_x' column in the 'player_stats_pitching'
+        collection.
+    - name: releasePosZ
+      type: UpdateColumnPlayerStatsPitchingReleasePosZ
+      description: Update the 'release_pos_z' column in the 'player_stats_pitching'
+        collection.
+    - name: seasonId
+      type: UpdateColumnPlayerStatsPitchingSeasonId
+      description: Update the 'season_id' column in the 'player_stats_pitching' collection.
+    - name: spinRate
+      type: UpdateColumnPlayerStatsPitchingSpinRate
+      description: Update the 'spin_rate' column in the 'player_stats_pitching' collection.
+    - name: statPeriod
+      type: UpdateColumnPlayerStatsPitchingStatPeriod
+      description: Update the 'stat_period' column in the 'player_stats_pitching'
+        collection.
+    - name: swingMissPct
+      type: UpdateColumnPlayerStatsPitchingSwingMissPct
+      description: Update the 'swing_miss_pct' column in the 'player_stats_pitching'
+        collection.
+    - name: swings
+      type: UpdateColumnPlayerStatsPitchingSwings
+      description: Update the 'swings' column in the 'player_stats_pitching' collection.
+    - name: takes
+      type: UpdateColumnPlayerStatsPitchingTakes
+      description: Update the 'takes' column in the 'player_stats_pitching' collection.
+    - name: updatedAt
+      type: UpdateColumnPlayerStatsPitchingUpdatedAt
+      description: Update the 'updated_at' column in the 'player_stats_pitching' collection.
+    - name: velo
+      type: UpdateColumnPlayerStatsPitchingVelo
+      description: Update the 'velo' column in the 'player_stats_pitching' collection.
+    - name: whiffs
+      type: UpdateColumnPlayerStatsPitchingWhiffs
+      description: Update the 'whiffs' column in the 'player_stats_pitching' collection.
+    - name: xAvg
+      type: UpdateColumnPlayerStatsPitchingXAvg
+      description: Update the 'xAVG' column in the 'player_stats_pitching' collection.
+    - name: xAvGdiff
+      type: UpdateColumnPlayerStatsPitchingXAvGdiff
+      description: Update the 'xAVGdiff' column in the 'player_stats_pitching' collection.
+    - name: xObp
+      type: UpdateColumnPlayerStatsPitchingXObp
+      description: Update the 'xOBP' column in the 'player_stats_pitching' collection.
+    - name: xObPdiff
+      type: UpdateColumnPlayerStatsPitchingXObPdiff
+      description: Update the 'xOBPdiff' column in the 'player_stats_pitching' collection.
+    - name: xSlg
+      type: UpdateColumnPlayerStatsPitchingXSlg
+      description: Update the 'xSLG' column in the 'player_stats_pitching' collection.
+    - name: xSlGdiff
+      type: UpdateColumnPlayerStatsPitchingXSlGdiff
+      description: Update the 'xSLGdiff' column in the 'player_stats_pitching' collection.
+    - name: xwOba
+      type: UpdateColumnPlayerStatsPitchingXwOba
+      description: Update the 'xwOBA' column in the 'player_stats_pitching' collection.
+  graphql:
+    typeName: UpdatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriodUpdateColumns
+    inputTypeName: UpdatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriodUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_stats_pitching_by_player_id_and_season_id_and_stat_period_update_columns
+      fieldMapping:
+        bb:
+          column:
+            name: BB
+        bk:
+          column:
+            name: BK
+        blsv:
+          column:
+            name: BLSV
+        er:
+          column:
+            name: ER
+        era:
+          column:
+            name: ERA
+        gp:
+          column:
+            name: GP
+        gs:
+          column:
+            name: GS
+        h:
+          column:
+            name: H
+        hbp:
+          column:
+            name: HBP
+        hld:
+          column:
+            name: HLD
+        hr:
+          column:
+            name: HR
+        ibb:
+          column:
+            name: IBB
+        ip:
+          column:
+            name: IP
+        k:
+          column:
+            name: K
+        l:
+          column:
+            name: L
+        oba:
+          column:
+            name: OBA
+        oobp:
+          column:
+            name: OOBP
+        outs:
+          column:
+            name: OUTS
+        qs:
+          column:
+            name: QS
+        r:
+          column:
+            name: R
+        sv:
+          column:
+            name: SV
+        svPct:
+          column:
+            name: SV_pct
+        svhd:
+          column:
+            name: SVHD
+        svo:
+          column:
+            name: SVO
+        tbf:
+          column:
+            name: TBF
+        w:
+          column:
+            name: W
+        whip:
+          column:
+            name: WHIP
+        wp:
+          column:
+            name: WP
+        wpct:
+          column:
+            name: WPCT
+        adjExitVelo:
+          column:
+            name: adj_exit_velo
+        armAngle:
+          column:
+            name: arm_angle
+        bbPer9:
+          column:
+            name: bb_per_9
+        breakXArmSide:
+          column:
+            name: break_x_arm_side
+        breakXBatterIn:
+          column:
+            name: break_x_batter_in
+        breakZ:
+          column:
+            name: break_z
+        createdAt:
+          column:
+            name: created_at
+        effMinVel:
+          column:
+            name: eff_min_vel
+        exitVelo:
+          column:
+            name: exit_velo
+        id:
+          column:
+            name: id
+        inducedBreakZ:
+          column:
+            name: induced_break_z
+        kBbRatio:
+          column:
+            name: k_bb_ratio
+        kPer9:
+          column:
+            name: k_per_9
+        launchAngle:
+          column:
+            name: launch_angle
+        percievedVelo:
+          column:
+            name: percieved_velo
+        pitcherRunExp:
+          column:
+            name: pitcher_run_exp
+        pitcherRunValuePer100:
+          column:
+            name: pitcher_run_value_per_100
+        playerId:
+          column:
+            name: player_id
+        releaseExtension:
+          column:
+            name: release_extension
+        releasePosX:
+          column:
+            name: release_pos_x
+        releasePosZ:
+          column:
+            name: release_pos_z
+        seasonId:
+          column:
+            name: season_id
+        spinRate:
+          column:
+            name: spin_rate
+        statPeriod:
+          column:
+            name: stat_period
+        swingMissPct:
+          column:
+            name: swing_miss_pct
+        swings:
+          column:
+            name: swings
+        takes:
+          column:
+            name: takes
+        updatedAt:
+          column:
+            name: updated_at
+        velo:
+          column:
+            name: velo
+        whiffs:
+          column:
+            name: whiffs
+        xAvg:
+          column:
+            name: xAVG
+        xAvGdiff:
+          column:
+            name: xAVGdiff
+        xObp:
+          column:
+            name: xOBP
+        xObPdiff:
+          column:
+            name: xOBPdiff
+        xSlg:
+          column:
+            name: xSLG
+        xSlGdiff:
+          column:
+            name: xSLGdiff
+        xwOba:
+          column:
+            name: xwOBA
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriodUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - bb
+          - bk
+          - blsv
+          - er
+          - era
+          - gp
+          - gs
+          - h
+          - hbp
+          - hld
+          - hr
+          - ibb
+          - ip
+          - k
+          - l
+          - oba
+          - oobp
+          - outs
+          - qs
+          - r
+          - sv
+          - svPct
+          - svhd
+          - svo
+          - tbf
+          - w
+          - whip
+          - wp
+          - wpct
+          - adjExitVelo
+          - armAngle
+          - bbPer9
+          - breakXArmSide
+          - breakXBatterIn
+          - breakZ
+          - createdAt
+          - effMinVel
+          - exitVelo
+          - id
+          - inducedBreakZ
+          - kBbRatio
+          - kPer9
+          - launchAngle
+          - percievedVelo
+          - pitcherRunExp
+          - pitcherRunValuePer100
+          - playerId
+          - releaseExtension
+          - releasePosX
+          - releasePosZ
+          - seasonId
+          - spinRate
+          - statPeriod
+          - swingMissPct
+          - swings
+          - takes
+          - updatedAt
+          - velo
+          - whiffs
+          - xAvg
+          - xAvGdiff
+          - xObp
+          - xObPdiff
+          - xSlg
+          - xSlGdiff
+          - xwOba
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriodResponse
+  description: Responses from the
+    'update_player_stats_pitching_by_player_id_and_season_id_and_stat_period'
+    procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerStatsPitching!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriodResponse
+    inputTypeName: UpdatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriodResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_stats_pitching_by_player_id_and_season_id_and_stat_period_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriodResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriod
+  outputType: UpdatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriodResponse!
+  arguments:
+    - name: keyPlayerId
+      type: Int32!
+    - name: keySeasonId
+      type: Int32!
+    - name: keyStatPeriod
+      type: String_1
+    - name: postCheck
+      type: PlayerStatsPitchingBoolExp
+      description: Update permission post-condition predicate over the
+        'player_stats_pitching' collection
+    - name: preCheck
+      type: PlayerStatsPitchingBoolExp
+      description: Update permission pre-condition predicate over the
+        'player_stats_pitching' collection
+    - name: updateColumns
+      type: UpdatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriodUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_player_stats_pitching_by_player_id_and_season_id_and_stat_period
+    argumentMapping:
+      keyPlayerId: key_player_id
+      keySeasonId: key_season_id
+      keyStatPeriod: key_stat_period
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriod
+    rootFieldKind: Mutation
+  description: Update any row on the 'player_stats_pitching' collection using the
+    'player_id', 'season_id' and 'stat_period' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriod
+  permissions:
+    - role: admin
+      allowExecution: true
+

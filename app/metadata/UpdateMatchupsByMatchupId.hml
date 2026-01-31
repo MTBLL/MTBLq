@@ -1,0 +1,572 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsCreatedAt
+  description: Update the 'created_at' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: Timestamp
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsCreatedAt
+    inputTypeName: UpdateColumnMatchupsCreatedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_created_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsCreatedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsIsByeWeek
+  description: Update the 'is_bye_week' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: Boolean_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsIsByeWeek
+    inputTypeName: UpdateColumnMatchupsIsByeWeekInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_is_bye_week
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsIsByeWeek
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsIsPlayoff
+  description: Update the 'is_playoff' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: Boolean_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsIsPlayoff
+    inputTypeName: UpdateColumnMatchupsIsPlayoffInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_is_playoff
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsIsPlayoff
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsLeagueId
+  description: Update the 'league_id' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsLeagueId
+    inputTypeName: UpdateColumnMatchupsLeagueIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_league_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsLeagueId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsMatchupId
+  description: Update the 'matchup_id' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsMatchupId
+    inputTypeName: UpdateColumnMatchupsMatchupIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_matchup_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsMatchupId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsPeriodId
+  description: Update the 'period_id' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsPeriodId
+    inputTypeName: UpdateColumnMatchupsPeriodIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_period_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsPeriodId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsSeasonId
+  description: Update the 'season_id' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsSeasonId
+    inputTypeName: UpdateColumnMatchupsSeasonIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_season_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsSeasonId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsTeam1Id
+  description: Update the 'team1_id' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsTeam1Id
+    inputTypeName: UpdateColumnMatchupsTeam1IdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_team1_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsTeam1Id
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsTeam1Score
+  description: Update the 'team1_score' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsTeam1Score
+    inputTypeName: UpdateColumnMatchupsTeam1ScoreInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_team1_score
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsTeam1Score
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsTeam2Id
+  description: Update the 'team2_id' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsTeam2Id
+    inputTypeName: UpdateColumnMatchupsTeam2IdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_team2_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsTeam2Id
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsTeam2Score
+  description: Update the 'team2_score' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsTeam2Score
+    inputTypeName: UpdateColumnMatchupsTeam2ScoreInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_team2_score
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsTeam2Score
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsWinnerId
+  description: Update the 'winner_id' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsWinnerId
+    inputTypeName: UpdateColumnMatchupsWinnerIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_winner_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsWinnerId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateMatchupsByMatchupIdUpdateColumns
+  description: Update the columns of the 'matchups' collection
+  fields:
+    - name: createdAt
+      type: UpdateColumnMatchupsCreatedAt
+      description: Update the 'created_at' column in the 'matchups' collection.
+    - name: isByeWeek
+      type: UpdateColumnMatchupsIsByeWeek
+      description: Update the 'is_bye_week' column in the 'matchups' collection.
+    - name: isPlayoff
+      type: UpdateColumnMatchupsIsPlayoff
+      description: Update the 'is_playoff' column in the 'matchups' collection.
+    - name: leagueId
+      type: UpdateColumnMatchupsLeagueId
+      description: Update the 'league_id' column in the 'matchups' collection.
+    - name: matchupId
+      type: UpdateColumnMatchupsMatchupId
+      description: Update the 'matchup_id' column in the 'matchups' collection.
+    - name: periodId
+      type: UpdateColumnMatchupsPeriodId
+      description: Update the 'period_id' column in the 'matchups' collection.
+    - name: seasonId
+      type: UpdateColumnMatchupsSeasonId
+      description: Update the 'season_id' column in the 'matchups' collection.
+    - name: team1Id
+      type: UpdateColumnMatchupsTeam1Id
+      description: Update the 'team1_id' column in the 'matchups' collection.
+    - name: team1Score
+      type: UpdateColumnMatchupsTeam1Score
+      description: Update the 'team1_score' column in the 'matchups' collection.
+    - name: team2Id
+      type: UpdateColumnMatchupsTeam2Id
+      description: Update the 'team2_id' column in the 'matchups' collection.
+    - name: team2Score
+      type: UpdateColumnMatchupsTeam2Score
+      description: Update the 'team2_score' column in the 'matchups' collection.
+    - name: winnerId
+      type: UpdateColumnMatchupsWinnerId
+      description: Update the 'winner_id' column in the 'matchups' collection.
+  graphql:
+    typeName: UpdateMatchupsByMatchupIdUpdateColumns
+    inputTypeName: UpdateMatchupsByMatchupIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_matchups_by_matchup_id_update_columns
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        isByeWeek:
+          column:
+            name: is_bye_week
+        isPlayoff:
+          column:
+            name: is_playoff
+        leagueId:
+          column:
+            name: league_id
+        matchupId:
+          column:
+            name: matchup_id
+        periodId:
+          column:
+            name: period_id
+        seasonId:
+          column:
+            name: season_id
+        team1Id:
+          column:
+            name: team1_id
+        team1Score:
+          column:
+            name: team1_score
+        team2Id:
+          column:
+            name: team2_id
+        team2Score:
+          column:
+            name: team2_score
+        winnerId:
+          column:
+            name: winner_id
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateMatchupsByMatchupIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - isByeWeek
+          - isPlayoff
+          - leagueId
+          - matchupId
+          - periodId
+          - seasonId
+          - team1Id
+          - team1Score
+          - team2Id
+          - team2Score
+          - winnerId
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateMatchupsByMatchupIdResponse
+  description: Responses from the 'update_matchups_by_matchup_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Matchups!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdateMatchupsByMatchupIdResponse
+    inputTypeName: UpdateMatchupsByMatchupIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_matchups_by_matchup_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateMatchupsByMatchupIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdateMatchupsByMatchupId
+  outputType: UpdateMatchupsByMatchupIdResponse!
+  arguments:
+    - name: keyMatchupId
+      type: Int32!
+    - name: postCheck
+      type: MatchupsBoolExp
+      description: Update permission post-condition predicate over the 'matchups' collection
+    - name: preCheck
+      type: MatchupsBoolExp
+      description: Update permission pre-condition predicate over the 'matchups' collection
+    - name: updateColumns
+      type: UpdateMatchupsByMatchupIdUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_matchups_by_matchup_id
+    argumentMapping:
+      keyMatchupId: key_matchup_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updateMatchupsByMatchupId
+    rootFieldKind: Mutation
+  description: Update any row on the 'matchups' collection using the 'matchup_id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdateMatchupsByMatchupId
+  permissions:
+    - role: admin
+      allowExecution: true
+

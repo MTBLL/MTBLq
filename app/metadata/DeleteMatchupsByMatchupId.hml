@@ -1,0 +1,72 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeleteMatchupsByMatchupIdResponse
+  description: Responses from the 'delete_matchups_by_matchup_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Matchups!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeleteMatchupsByMatchupIdResponse
+    inputTypeName: DeleteMatchupsByMatchupIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_matchups_by_matchup_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeleteMatchupsByMatchupIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeleteMatchupsByMatchupId
+  outputType: DeleteMatchupsByMatchupIdResponse!
+  arguments:
+    - name: keyMatchupId
+      type: Int32!
+    - name: preCheck
+      type: MatchupsBoolExp
+      description: Delete permission predicate over the 'matchups' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_matchups_by_matchup_id
+    argumentMapping:
+      keyMatchupId: key_matchup_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deleteMatchupsByMatchupId
+    rootFieldKind: Mutation
+  description: Delete any row on the 'matchups' collection using the 'matchup_id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeleteMatchupsByMatchupId
+  permissions:
+    - role: admin
+      allowExecution: true
+

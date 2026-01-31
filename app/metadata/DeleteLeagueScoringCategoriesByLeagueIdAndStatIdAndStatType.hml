@@ -1,0 +1,82 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeleteLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeResponse
+  description: Responses from the
+    'delete_league_scoring_categories_by_league_id_and_stat_id_and_stat_type'
+    procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[LeagueScoringCategories!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeleteLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeResponse
+    inputTypeName: DeleteLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_league_scoring_categories_by_league_id_and_stat_id_and_stat_type_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeleteLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeleteLeagueScoringCategoriesByLeagueIdAndStatIdAndStatType
+  outputType: DeleteLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeResponse!
+  arguments:
+    - name: keyLeagueId
+      type: Int32!
+    - name: keyStatId
+      type: Int32!
+    - name: keyStatType
+      type: String_1!
+    - name: preCheck
+      type: LeagueScoringCategoriesBoolExp
+      description: Delete permission predicate over the 'league_scoring_categories'
+        collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_league_scoring_categories_by_league_id_and_stat_id_and_stat_type
+    argumentMapping:
+      keyLeagueId: key_league_id
+      keyStatId: key_stat_id
+      keyStatType: key_stat_type
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deleteLeagueScoringCategoriesByLeagueIdAndStatIdAndStatType
+    rootFieldKind: Mutation
+  description: Delete any row on the 'league_scoring_categories' collection using
+    the 'league_id', 'stat_id' and 'stat_type' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeleteLeagueScoringCategoriesByLeagueIdAndStatIdAndStatType
+  permissions:
+    - role: admin
+      allowExecution: true
+

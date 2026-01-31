@@ -1,0 +1,80 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeleteRosterSlotsByPlayerIdAndSeasonIdAndTeamIdResponse
+  description: Responses from the
+    'delete_roster_slots_by_player_id_and_season_id_and_team_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[RosterSlots!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeleteRosterSlotsByPlayerIdAndSeasonIdAndTeamIdResponse
+    inputTypeName: DeleteRosterSlotsByPlayerIdAndSeasonIdAndTeamIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_roster_slots_by_player_id_and_season_id_and_team_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeleteRosterSlotsByPlayerIdAndSeasonIdAndTeamIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeleteRosterSlotsByPlayerIdAndSeasonIdAndTeamId
+  outputType: DeleteRosterSlotsByPlayerIdAndSeasonIdAndTeamIdResponse!
+  arguments:
+    - name: keyPlayerId
+      type: Int32!
+    - name: keySeasonId
+      type: Int32!
+    - name: keyTeamId
+      type: Int32!
+    - name: preCheck
+      type: RosterSlotsBoolExp
+      description: Delete permission predicate over the 'roster_slots' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_roster_slots_by_player_id_and_season_id_and_team_id
+    argumentMapping:
+      keyPlayerId: key_player_id
+      keySeasonId: key_season_id
+      keyTeamId: key_team_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deleteRosterSlotsByPlayerIdAndSeasonIdAndTeamId
+    rootFieldKind: Mutation
+  description: Delete any row on the 'roster_slots' collection using the
+    'player_id', 'season_id' and 'team_id' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeleteRosterSlotsByPlayerIdAndSeasonIdAndTeamId
+  permissions:
+    - role: admin
+      allowExecution: true
+

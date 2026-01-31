@@ -13,17 +13,15 @@ definition:
     - name: createdAt
       type: Timestamp
     - name: dateOfBirth
-      type: String_1
+      type: Date
     - name: debutYear
       type: Int32
     - name: displayHeight
       type: String_1
-    - name: displayName
-      type: String_1
     - name: displayWeight
       type: String_1
     - name: eligibleSlots
-      type: String_1
+      type: Json
     - name: fangraphsApiRoute
       type: String_1
     - name: firstName
@@ -47,27 +45,21 @@ definition:
     - name: lastName
       type: String_1
     - name: name
-      type: String_1
+      type: String_1!
     - name: nameAscii
-      type: String_1
-    - name: nameNonascii
-      type: String_1
-    - name: nickname
       type: String_1
     - name: primaryPosition
       type: String_1
     - name: proTeam
       type: String_1
-    - name: shortName
-      type: String_1
-    - name: slugEspn
-      type: String_1
-    - name: slugFangraphs
+    - name: slug
       type: String_1
     - name: status
       type: String_1
     - name: throws
       type: String_1
+    - name: updatedAt
+      type: Timestamp
     - name: weight
       type: Bigdecimal
   graphql:
@@ -98,9 +90,6 @@ definition:
         displayHeight:
           column:
             name: display_height
-        displayName:
-          column:
-            name: display_name
         displayWeight:
           column:
             name: display_weight
@@ -146,33 +135,24 @@ definition:
         nameAscii:
           column:
             name: name_ascii
-        nameNonascii:
-          column:
-            name: name_nonascii
-        nickname:
-          column:
-            name: nickname
         primaryPosition:
           column:
             name: primary_position
         proTeam:
           column:
             name: pro_team
-        shortName:
+        slug:
           column:
-            name: short_name
-        slugEspn:
-          column:
-            name: slug_espn
-        slugFangraphs:
-          column:
-            name: slug_fangraphs
+            name: slug
         status:
           column:
             name: status
         throws:
           column:
             name: throws
+        updatedAt:
+          column:
+            name: updated_at
         weight:
           column:
             name: weight
@@ -193,7 +173,6 @@ definition:
           - dateOfBirth
           - debutYear
           - displayHeight
-          - displayName
           - displayWeight
           - eligibleSlots
           - fangraphsApiRoute
@@ -209,15 +188,12 @@ definition:
           - lastName
           - name
           - nameAscii
-          - nameNonascii
-          - nickname
           - primaryPosition
           - proTeam
-          - shortName
-          - slugEspn
-          - slugFangraphs
+          - slug
           - status
           - throws
+          - updatedAt
           - weight
 
 ---

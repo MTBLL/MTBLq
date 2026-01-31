@@ -1,0 +1,333 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: Matchups
+  fields:
+    - name: createdAt
+      type: Timestamp
+    - name: isByeWeek
+      type: Boolean_1
+    - name: isPlayoff
+      type: Boolean_1
+    - name: leagueId
+      type: Int32!
+    - name: matchupId
+      type: Int32!
+    - name: periodId
+      type: Int32!
+    - name: seasonId
+      type: Int32!
+    - name: team1Id
+      type: Int32
+    - name: team1Score
+      type: String_1
+    - name: team2Id
+      type: Int32
+    - name: team2Score
+      type: String_1
+    - name: winnerId
+      type: Int32
+  graphql:
+    typeName: Matchups
+    inputTypeName: MatchupsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: matchups
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        isByeWeek:
+          column:
+            name: is_bye_week
+        isPlayoff:
+          column:
+            name: is_playoff
+        leagueId:
+          column:
+            name: league_id
+        matchupId:
+          column:
+            name: matchup_id
+        periodId:
+          column:
+            name: period_id
+        seasonId:
+          column:
+            name: season_id
+        team1Id:
+          column:
+            name: team1_id
+        team1Score:
+          column:
+            name: team1_score
+        team2Id:
+          column:
+            name: team2_id
+        team2Score:
+          column:
+            name: team2_score
+        winnerId:
+          column:
+            name: winner_id
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: Matchups
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - isByeWeek
+          - isPlayoff
+          - leagueId
+          - matchupId
+          - periodId
+          - seasonId
+          - team1Id
+          - team1Score
+          - team2Id
+          - team2Score
+          - winnerId
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: MatchupsAggExp
+  operand:
+    object:
+      aggregatedType: Matchups
+      aggregatableFields:
+        - fieldName: createdAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: isByeWeek
+          aggregateExpression: BoolAggExp
+        - fieldName: isPlayoff
+          aggregateExpression: BoolAggExp
+        - fieldName: leagueId
+          aggregateExpression: Int4AggExp
+        - fieldName: matchupId
+          aggregateExpression: Int4AggExp
+        - fieldName: periodId
+          aggregateExpression: Int4AggExp
+        - fieldName: seasonId
+          aggregateExpression: Int4AggExp
+        - fieldName: team1Id
+          aggregateExpression: Int4AggExp
+        - fieldName: team1Score
+          aggregateExpression: VarcharAggExp
+        - fieldName: team2Id
+          aggregateExpression: Int4AggExp
+        - fieldName: team2Score
+          aggregateExpression: VarcharAggExp
+        - fieldName: winnerId
+          aggregateExpression: Int4AggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: MatchupsAggExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: Matchups
+  objectType: Matchups
+  source:
+    dataConnectorName: neon_mtbl
+    collection: matchups
+  filterExpressionType: MatchupsBoolExp
+  aggregateExpression: MatchupsAggExp
+  orderByExpression: MatchupsOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: matchups
+      subscription:
+        rootField: matchups
+    selectUniques:
+      - queryRootField: matchupsByMatchupId
+        uniqueIdentifier:
+          - matchupId
+        subscription:
+          rootField: matchupsByMatchupId
+    filterInputTypeName: MatchupsFilterInput
+    aggregate:
+      queryRootField: matchupsAggregate
+      subscription:
+        rootField: matchupsAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: Matchups
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: league
+  sourceType: Matchups
+  target:
+    model:
+      name: Leagues
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: leagueId
+      target:
+        modelField:
+          - fieldName: leagueId
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: team
+  sourceType: Matchups
+  target:
+    model:
+      name: Teams
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: team1Id
+      target:
+        modelField:
+          - fieldName: teamId
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: teamByTeam2Id
+  sourceType: Matchups
+  target:
+    model:
+      name: Teams
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: team2Id
+      target:
+        modelField:
+          - fieldName: teamId
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: teamByWinnerId
+  sourceType: Matchups
+  target:
+    model:
+      name: Teams
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: winnerId
+      target:
+        modelField:
+          - fieldName: teamId
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: MatchupsBoolExp
+  operand:
+    object:
+      type: Matchups
+      comparableFields:
+        - fieldName: createdAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: isByeWeek
+          booleanExpressionType: BoolBoolExp
+        - fieldName: isPlayoff
+          booleanExpressionType: BoolBoolExp
+        - fieldName: leagueId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: matchupId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: periodId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: seasonId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: team1Id
+          booleanExpressionType: Int4BoolExp
+        - fieldName: team1Score
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: team2Id
+          booleanExpressionType: Int4BoolExp
+        - fieldName: team2Score
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: winnerId
+          booleanExpressionType: Int4BoolExp
+      comparableRelationships:
+        - relationshipName: league
+        - relationshipName: team
+        - relationshipName: teamByTeam2Id
+        - relationshipName: teamByWinnerId
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: MatchupsBoolExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: MatchupsOrderByExp
+  operand:
+    object:
+      orderedType: Matchups
+      orderableFields:
+        - fieldName: createdAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: isByeWeek
+          orderByExpression: Boolean1OrderByExp
+        - fieldName: isPlayoff
+          orderByExpression: Boolean1OrderByExp
+        - fieldName: leagueId
+          orderByExpression: Int32OrderByExp
+        - fieldName: matchupId
+          orderByExpression: Int32OrderByExp
+        - fieldName: periodId
+          orderByExpression: Int32OrderByExp
+        - fieldName: seasonId
+          orderByExpression: Int32OrderByExp
+        - fieldName: team1Id
+          orderByExpression: Int32OrderByExp
+        - fieldName: team1Score
+          orderByExpression: String1OrderByExp
+        - fieldName: team2Id
+          orderByExpression: Int32OrderByExp
+        - fieldName: team2Score
+          orderByExpression: String1OrderByExp
+        - fieldName: winnerId
+          orderByExpression: Int32OrderByExp
+      orderableRelationships:
+        - relationshipName: league
+        - relationshipName: team
+        - relationshipName: teamByTeam2Id
+        - relationshipName: teamByWinnerId
+  graphql:
+    expressionTypeName: MatchupsOrderByExp
+

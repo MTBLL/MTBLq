@@ -1,0 +1,72 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeletePlayerValuationsByIdResponse
+  description: Responses from the 'delete_player_valuations_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerValuations!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeletePlayerValuationsByIdResponse
+    inputTypeName: DeletePlayerValuationsByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_player_valuations_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeletePlayerValuationsByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeletePlayerValuationsById
+  outputType: DeletePlayerValuationsByIdResponse!
+  arguments:
+    - name: keyId
+      type: Int32!
+    - name: preCheck
+      type: PlayerValuationsBoolExp
+      description: Delete permission predicate over the 'player_valuations' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_player_valuations_by_id
+    argumentMapping:
+      keyId: key_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deletePlayerValuationsById
+    rootFieldKind: Mutation
+  description: Delete any row on the 'player_valuations' collection using the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeletePlayerValuationsById
+  permissions:
+    - role: admin
+      allowExecution: true
+

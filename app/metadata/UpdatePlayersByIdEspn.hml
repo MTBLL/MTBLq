@@ -134,7 +134,7 @@ definition:
   description: Update the 'date_of_birth' column in the 'players' collection
   fields:
     - name: set
-      type: String_1
+      type: Date
       description: Set the column to this value
   graphql:
     typeName: UpdateColumnPlayersDateOfBirth
@@ -226,38 +226,6 @@ definition:
 kind: ObjectType
 version: v1
 definition:
-  name: UpdateColumnPlayersDisplayName
-  description: Update the 'display_name' column in the 'players' collection
-  fields:
-    - name: set
-      type: String_1
-      description: Set the column to this value
-  graphql:
-    typeName: UpdateColumnPlayersDisplayName
-    inputTypeName: UpdateColumnPlayersDisplayNameInput
-  dataConnectorTypeMapping:
-    - dataConnectorName: neon_mtbl
-      dataConnectorObjectType: update_column_players_display_name
-      fieldMapping:
-        set:
-          column:
-            name: _set
-
----
-kind: TypePermissions
-version: v1
-definition:
-  typeName: UpdateColumnPlayersDisplayName
-  permissions:
-    - role: admin
-      output:
-        allowedFields:
-          - set
-
----
-kind: ObjectType
-version: v1
-definition:
   name: UpdateColumnPlayersDisplayWeight
   description: Update the 'display_weight' column in the 'players' collection
   fields:
@@ -294,7 +262,7 @@ definition:
   description: Update the 'eligible_slots' column in the 'players' collection
   fields:
     - name: set
-      type: String_1
+      type: Json
       description: Set the column to this value
   graphql:
     typeName: UpdateColumnPlayersEligibleSlots
@@ -678,7 +646,7 @@ definition:
   description: Update the 'name' column in the 'players' collection
   fields:
     - name: set
-      type: String_1
+      type: String_1!
       description: Set the column to this value
   graphql:
     typeName: UpdateColumnPlayersName
@@ -728,70 +696,6 @@ kind: TypePermissions
 version: v1
 definition:
   typeName: UpdateColumnPlayersNameAscii
-  permissions:
-    - role: admin
-      output:
-        allowedFields:
-          - set
-
----
-kind: ObjectType
-version: v1
-definition:
-  name: UpdateColumnPlayersNameNonascii
-  description: Update the 'name_nonascii' column in the 'players' collection
-  fields:
-    - name: set
-      type: String_1
-      description: Set the column to this value
-  graphql:
-    typeName: UpdateColumnPlayersNameNonascii
-    inputTypeName: UpdateColumnPlayersNameNonasciiInput
-  dataConnectorTypeMapping:
-    - dataConnectorName: neon_mtbl
-      dataConnectorObjectType: update_column_players_name_nonascii
-      fieldMapping:
-        set:
-          column:
-            name: _set
-
----
-kind: TypePermissions
-version: v1
-definition:
-  typeName: UpdateColumnPlayersNameNonascii
-  permissions:
-    - role: admin
-      output:
-        allowedFields:
-          - set
-
----
-kind: ObjectType
-version: v1
-definition:
-  name: UpdateColumnPlayersNickname
-  description: Update the 'nickname' column in the 'players' collection
-  fields:
-    - name: set
-      type: String_1
-      description: Set the column to this value
-  graphql:
-    typeName: UpdateColumnPlayersNickname
-    inputTypeName: UpdateColumnPlayersNicknameInput
-  dataConnectorTypeMapping:
-    - dataConnectorName: neon_mtbl
-      dataConnectorObjectType: update_column_players_nickname
-      fieldMapping:
-        set:
-          column:
-            name: _set
-
----
-kind: TypePermissions
-version: v1
-definition:
-  typeName: UpdateColumnPlayersNickname
   permissions:
     - role: admin
       output:
@@ -866,18 +770,18 @@ definition:
 kind: ObjectType
 version: v1
 definition:
-  name: UpdateColumnPlayersShortName
-  description: Update the 'short_name' column in the 'players' collection
+  name: UpdateColumnPlayersSlug
+  description: Update the 'slug' column in the 'players' collection
   fields:
     - name: set
       type: String_1
       description: Set the column to this value
   graphql:
-    typeName: UpdateColumnPlayersShortName
-    inputTypeName: UpdateColumnPlayersShortNameInput
+    typeName: UpdateColumnPlayersSlug
+    inputTypeName: UpdateColumnPlayersSlugInput
   dataConnectorTypeMapping:
     - dataConnectorName: neon_mtbl
-      dataConnectorObjectType: update_column_players_short_name
+      dataConnectorObjectType: update_column_players_slug
       fieldMapping:
         set:
           column:
@@ -887,71 +791,7 @@ definition:
 kind: TypePermissions
 version: v1
 definition:
-  typeName: UpdateColumnPlayersShortName
-  permissions:
-    - role: admin
-      output:
-        allowedFields:
-          - set
-
----
-kind: ObjectType
-version: v1
-definition:
-  name: UpdateColumnPlayersSlugEspn
-  description: Update the 'slug_espn' column in the 'players' collection
-  fields:
-    - name: set
-      type: String_1
-      description: Set the column to this value
-  graphql:
-    typeName: UpdateColumnPlayersSlugEspn
-    inputTypeName: UpdateColumnPlayersSlugEspnInput
-  dataConnectorTypeMapping:
-    - dataConnectorName: neon_mtbl
-      dataConnectorObjectType: update_column_players_slug_espn
-      fieldMapping:
-        set:
-          column:
-            name: _set
-
----
-kind: TypePermissions
-version: v1
-definition:
-  typeName: UpdateColumnPlayersSlugEspn
-  permissions:
-    - role: admin
-      output:
-        allowedFields:
-          - set
-
----
-kind: ObjectType
-version: v1
-definition:
-  name: UpdateColumnPlayersSlugFangraphs
-  description: Update the 'slug_fangraphs' column in the 'players' collection
-  fields:
-    - name: set
-      type: String_1
-      description: Set the column to this value
-  graphql:
-    typeName: UpdateColumnPlayersSlugFangraphs
-    inputTypeName: UpdateColumnPlayersSlugFangraphsInput
-  dataConnectorTypeMapping:
-    - dataConnectorName: neon_mtbl
-      dataConnectorObjectType: update_column_players_slug_fangraphs
-      fieldMapping:
-        set:
-          column:
-            name: _set
-
----
-kind: TypePermissions
-version: v1
-definition:
-  typeName: UpdateColumnPlayersSlugFangraphs
+  typeName: UpdateColumnPlayersSlug
   permissions:
     - role: admin
       output:
@@ -1026,6 +866,38 @@ definition:
 kind: ObjectType
 version: v1
 definition:
+  name: UpdateColumnPlayersUpdatedAt
+  description: Update the 'updated_at' column in the 'players' collection
+  fields:
+    - name: set
+      type: Timestamp
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayersUpdatedAt
+    inputTypeName: UpdateColumnPlayersUpdatedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_players_updated_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayersUpdatedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
   name: UpdateColumnPlayersWeight
   description: Update the 'weight' column in the 'players' collection
   fields:
@@ -1082,9 +954,6 @@ definition:
     - name: displayHeight
       type: UpdateColumnPlayersDisplayHeight
       description: Update the 'display_height' column in the 'players' collection.
-    - name: displayName
-      type: UpdateColumnPlayersDisplayName
-      description: Update the 'display_name' column in the 'players' collection.
     - name: displayWeight
       type: UpdateColumnPlayersDisplayWeight
       description: Update the 'display_weight' column in the 'players' collection.
@@ -1130,33 +999,24 @@ definition:
     - name: nameAscii
       type: UpdateColumnPlayersNameAscii
       description: Update the 'name_ascii' column in the 'players' collection.
-    - name: nameNonascii
-      type: UpdateColumnPlayersNameNonascii
-      description: Update the 'name_nonascii' column in the 'players' collection.
-    - name: nickname
-      type: UpdateColumnPlayersNickname
-      description: Update the 'nickname' column in the 'players' collection.
     - name: primaryPosition
       type: UpdateColumnPlayersPrimaryPosition
       description: Update the 'primary_position' column in the 'players' collection.
     - name: proTeam
       type: UpdateColumnPlayersProTeam
       description: Update the 'pro_team' column in the 'players' collection.
-    - name: shortName
-      type: UpdateColumnPlayersShortName
-      description: Update the 'short_name' column in the 'players' collection.
-    - name: slugEspn
-      type: UpdateColumnPlayersSlugEspn
-      description: Update the 'slug_espn' column in the 'players' collection.
-    - name: slugFangraphs
-      type: UpdateColumnPlayersSlugFangraphs
-      description: Update the 'slug_fangraphs' column in the 'players' collection.
+    - name: slug
+      type: UpdateColumnPlayersSlug
+      description: Update the 'slug' column in the 'players' collection.
     - name: status
       type: UpdateColumnPlayersStatus
       description: Update the 'status' column in the 'players' collection.
     - name: throws
       type: UpdateColumnPlayersThrows
       description: Update the 'throws' column in the 'players' collection.
+    - name: updatedAt
+      type: UpdateColumnPlayersUpdatedAt
+      description: Update the 'updated_at' column in the 'players' collection.
     - name: weight
       type: UpdateColumnPlayersWeight
       description: Update the 'weight' column in the 'players' collection.
@@ -1188,9 +1048,6 @@ definition:
         displayHeight:
           column:
             name: display_height
-        displayName:
-          column:
-            name: display_name
         displayWeight:
           column:
             name: display_weight
@@ -1236,33 +1093,24 @@ definition:
         nameAscii:
           column:
             name: name_ascii
-        nameNonascii:
-          column:
-            name: name_nonascii
-        nickname:
-          column:
-            name: nickname
         primaryPosition:
           column:
             name: primary_position
         proTeam:
           column:
             name: pro_team
-        shortName:
+        slug:
           column:
-            name: short_name
-        slugEspn:
-          column:
-            name: slug_espn
-        slugFangraphs:
-          column:
-            name: slug_fangraphs
+            name: slug
         status:
           column:
             name: status
         throws:
           column:
             name: throws
+        updatedAt:
+          column:
+            name: updated_at
         weight:
           column:
             name: weight
@@ -1283,7 +1131,6 @@ definition:
           - dateOfBirth
           - debutYear
           - displayHeight
-          - displayName
           - displayWeight
           - eligibleSlots
           - fangraphsApiRoute
@@ -1299,15 +1146,12 @@ definition:
           - lastName
           - name
           - nameAscii
-          - nameNonascii
-          - nickname
           - primaryPosition
           - proTeam
-          - shortName
-          - slugEspn
-          - slugFangraphs
+          - slug
           - status
           - throws
+          - updatedAt
           - weight
 
 ---

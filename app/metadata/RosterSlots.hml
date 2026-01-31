@@ -1,0 +1,308 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: RosterSlots
+  fields:
+    - name: acquisitionDate
+      type: Timestamp
+    - name: acquisitionType
+      type: String_1
+    - name: createdAt
+      type: Timestamp
+    - name: id
+      type: Int32!
+    - name: keeperValue
+      type: Int32
+    - name: leagueId
+      type: Int32!
+    - name: lineupSlot
+      type: String_1!
+    - name: playerId
+      type: Int32!
+    - name: seasonId
+      type: Int32!
+    - name: teamId
+      type: Int32!
+    - name: updatedAt
+      type: Timestamp
+  graphql:
+    typeName: RosterSlots
+    inputTypeName: RosterSlotsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: roster_slots
+      fieldMapping:
+        acquisitionDate:
+          column:
+            name: acquisition_date
+        acquisitionType:
+          column:
+            name: acquisition_type
+        createdAt:
+          column:
+            name: created_at
+        id:
+          column:
+            name: id
+        keeperValue:
+          column:
+            name: keeper_value
+        leagueId:
+          column:
+            name: league_id
+        lineupSlot:
+          column:
+            name: lineup_slot
+        playerId:
+          column:
+            name: player_id
+        seasonId:
+          column:
+            name: season_id
+        teamId:
+          column:
+            name: team_id
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: RosterSlots
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - acquisitionDate
+          - acquisitionType
+          - createdAt
+          - id
+          - keeperValue
+          - leagueId
+          - lineupSlot
+          - playerId
+          - seasonId
+          - teamId
+          - updatedAt
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: RosterSlotsAggExp
+  operand:
+    object:
+      aggregatedType: RosterSlots
+      aggregatableFields:
+        - fieldName: acquisitionDate
+          aggregateExpression: TimestampAggExp
+        - fieldName: acquisitionType
+          aggregateExpression: VarcharAggExp
+        - fieldName: createdAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: id
+          aggregateExpression: Int4AggExp
+        - fieldName: keeperValue
+          aggregateExpression: Int4AggExp
+        - fieldName: leagueId
+          aggregateExpression: Int4AggExp
+        - fieldName: lineupSlot
+          aggregateExpression: VarcharAggExp
+        - fieldName: playerId
+          aggregateExpression: Int4AggExp
+        - fieldName: seasonId
+          aggregateExpression: Int4AggExp
+        - fieldName: teamId
+          aggregateExpression: Int4AggExp
+        - fieldName: updatedAt
+          aggregateExpression: TimestampAggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: RosterSlotsAggExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: RosterSlots
+  objectType: RosterSlots
+  source:
+    dataConnectorName: neon_mtbl
+    collection: roster_slots
+  filterExpressionType: RosterSlotsBoolExp
+  aggregateExpression: RosterSlotsAggExp
+  orderByExpression: RosterSlotsOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: rosterSlots
+      subscription:
+        rootField: rosterSlots
+    selectUniques:
+      - queryRootField: rosterSlotsById
+        uniqueIdentifier:
+          - id
+        subscription:
+          rootField: rosterSlotsById
+      - queryRootField: rosterSlotsByRosterSlotsTeamIdPlayerIdSeasonIdKey
+        uniqueIdentifier:
+          - playerId
+          - seasonId
+          - teamId
+        subscription:
+          rootField: rosterSlotsByRosterSlotsTeamIdPlayerIdSeasonIdKey
+    filterInputTypeName: RosterSlotsFilterInput
+    aggregate:
+      queryRootField: rosterSlotsAggregate
+      subscription:
+        rootField: rosterSlotsAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: RosterSlots
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: league
+  sourceType: RosterSlots
+  target:
+    model:
+      name: Leagues
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: leagueId
+      target:
+        modelField:
+          - fieldName: leagueId
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: player
+  sourceType: RosterSlots
+  target:
+    model:
+      name: Players
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: playerId
+      target:
+        modelField:
+          - fieldName: idEspn
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: team
+  sourceType: RosterSlots
+  target:
+    model:
+      name: Teams
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: teamId
+      target:
+        modelField:
+          - fieldName: teamId
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: RosterSlotsBoolExp
+  operand:
+    object:
+      type: RosterSlots
+      comparableFields:
+        - fieldName: acquisitionDate
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: acquisitionType
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: createdAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: id
+          booleanExpressionType: Int4BoolExp
+        - fieldName: keeperValue
+          booleanExpressionType: Int4BoolExp
+        - fieldName: leagueId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: lineupSlot
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: playerId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: seasonId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: teamId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: updatedAt
+          booleanExpressionType: TimestampBoolExp
+      comparableRelationships:
+        - relationshipName: league
+        - relationshipName: player
+        - relationshipName: team
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: RosterSlotsBoolExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: RosterSlotsOrderByExp
+  operand:
+    object:
+      orderedType: RosterSlots
+      orderableFields:
+        - fieldName: acquisitionDate
+          orderByExpression: TimestampOrderByExp
+        - fieldName: acquisitionType
+          orderByExpression: String1OrderByExp
+        - fieldName: createdAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: id
+          orderByExpression: Int32OrderByExp
+        - fieldName: keeperValue
+          orderByExpression: Int32OrderByExp
+        - fieldName: leagueId
+          orderByExpression: Int32OrderByExp
+        - fieldName: lineupSlot
+          orderByExpression: String1OrderByExp
+        - fieldName: playerId
+          orderByExpression: Int32OrderByExp
+        - fieldName: seasonId
+          orderByExpression: Int32OrderByExp
+        - fieldName: teamId
+          orderByExpression: Int32OrderByExp
+        - fieldName: updatedAt
+          orderByExpression: TimestampOrderByExp
+      orderableRelationships:
+        - relationshipName: league
+        - relationshipName: player
+        - relationshipName: team
+  graphql:
+    expressionTypeName: RosterSlotsOrderByExp
+

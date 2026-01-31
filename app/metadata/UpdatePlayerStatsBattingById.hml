@@ -1,0 +1,2655 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingAb
+  description: Update the 'AB' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingAb
+    inputTypeName: UpdateColumnPlayerStatsBattingAbInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_AB
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingAb
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingAvg
+  description: Update the 'AVG' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingAvg
+    inputTypeName: UpdateColumnPlayerStatsBattingAvgInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_AVG
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingAvg
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingBabip
+  description: Update the 'BABIP' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingBabip
+    inputTypeName: UpdateColumnPlayerStatsBattingBabipInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_BABIP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingBabip
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingBb
+  description: Update the 'BB' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingBb
+    inputTypeName: UpdateColumnPlayerStatsBattingBbInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_BB
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingBb
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingBbPct
+  description: Update the 'BB_pct' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingBbPct
+    inputTypeName: UpdateColumnPlayerStatsBattingBbPctInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_BB_pct
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingBbPct
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingBBdist
+  description: Update the 'BBdist' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingBBdist
+    inputTypeName: UpdateColumnPlayerStatsBattingBBdistInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_BBdist
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingBBdist
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingCs
+  description: Update the 'CS' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingCs
+    inputTypeName: UpdateColumnPlayerStatsBattingCsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_CS
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingCs
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingG
+  description: Update the 'G' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingG
+    inputTypeName: UpdateColumnPlayerStatsBattingGInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_G
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingG
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingGdp
+  description: Update the 'GDP' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingGdp
+    inputTypeName: UpdateColumnPlayerStatsBattingGdpInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_GDP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingGdp
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingH
+  description: Update the 'H' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingH
+    inputTypeName: UpdateColumnPlayerStatsBattingHInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_H
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingH
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingHbp
+  description: Update the 'HBP' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingHbp
+    inputTypeName: UpdateColumnPlayerStatsBattingHbpInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_HBP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingHbp
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingHr
+  description: Update the 'HR' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingHr
+    inputTypeName: UpdateColumnPlayerStatsBattingHrInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_HR
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingHr
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingIbb
+  description: Update the 'IBB' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingIbb
+    inputTypeName: UpdateColumnPlayerStatsBattingIbbInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_IBB
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingIbb
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingIso
+  description: Update the 'ISO' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingIso
+    inputTypeName: UpdateColumnPlayerStatsBattingIsoInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_ISO
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingIso
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingKPct
+  description: Update the 'K_pct' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingKPct
+    inputTypeName: UpdateColumnPlayerStatsBattingKPctInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_K_pct
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingKPct
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingKdist
+  description: Update the 'Kdist' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingKdist
+    inputTypeName: UpdateColumnPlayerStatsBattingKdistInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_Kdist
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingKdist
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingObp
+  description: Update the 'OBP' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingObp
+    inputTypeName: UpdateColumnPlayerStatsBattingObpInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_OBP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingObp
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingOps
+  description: Update the 'OPS' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingOps
+    inputTypeName: UpdateColumnPlayerStatsBattingOpsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_OPS
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingOps
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingPa
+  description: Update the 'PA' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingPa
+    inputTypeName: UpdateColumnPlayerStatsBattingPaInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_PA
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingPa
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingR
+  description: Update the 'R' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingR
+    inputTypeName: UpdateColumnPlayerStatsBattingRInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_R
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingR
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingRbi
+  description: Update the 'RBI' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingRbi
+    inputTypeName: UpdateColumnPlayerStatsBattingRbiInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_RBI
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingRbi
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingSac
+  description: Update the 'SAC' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingSac
+    inputTypeName: UpdateColumnPlayerStatsBattingSacInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_SAC
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingSac
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingSb
+  description: Update the 'SB' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingSb
+    inputTypeName: UpdateColumnPlayerStatsBattingSbInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_SB
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingSb
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingSbn
+  description: Update the 'SBN' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingSbn
+    inputTypeName: UpdateColumnPlayerStatsBattingSbnInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_SBN
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingSbn
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingSf
+  description: Update the 'SF' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingSf
+    inputTypeName: UpdateColumnPlayerStatsBattingSfInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_SF
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingSf
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingSlg
+  description: Update the 'SLG' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingSlg
+    inputTypeName: UpdateColumnPlayerStatsBattingSlgInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_SLG
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingSlg
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingSo
+  description: Update the 'SO' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingSo
+    inputTypeName: UpdateColumnPlayerStatsBattingSoInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_SO
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingSo
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingTb
+  description: Update the 'TB' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingTb
+    inputTypeName: UpdateColumnPlayerStatsBattingTbInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_TB
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingTb
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingXbh
+  description: Update the 'XBH' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingXbh
+    inputTypeName: UpdateColumnPlayerStatsBattingXbhInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_XBH
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingXbh
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingAdjExitVelo
+  description: Update the 'adj_exit_velo' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingAdjExitVelo
+    inputTypeName: UpdateColumnPlayerStatsBattingAdjExitVeloInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_adj_exit_velo
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingAdjExitVelo
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingAttackAngle
+  description: Update the 'attack_angle' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingAttackAngle
+    inputTypeName: UpdateColumnPlayerStatsBattingAttackAngleInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_attack_angle
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingAttackAngle
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingAttackDir
+  description: Update the 'attack_dir' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingAttackDir
+    inputTypeName: UpdateColumnPlayerStatsBattingAttackDirInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_attack_dir
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingAttackDir
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingBarrelRate
+  description: Update the 'barrel_rate' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingBarrelRate
+    inputTypeName: UpdateColumnPlayerStatsBattingBarrelRateInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_barrel_rate
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingBarrelRate
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingBarrelsPerBbePct
+  description: Update the 'barrels_per_bbe_pct' column in the
+    'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingBarrelsPerBbePct
+    inputTypeName: UpdateColumnPlayerStatsBattingBarrelsPerBbePctInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_barrels_per_bbe_pct
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingBarrelsPerBbePct
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingBarrelsPerPaPct
+  description: Update the 'barrels_per_pa_pct' column in the
+    'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingBarrelsPerPaPct
+    inputTypeName: UpdateColumnPlayerStatsBattingBarrelsPerPaPctInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_barrels_per_pa_pct
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingBarrelsPerPaPct
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingBarrelsTotal
+  description: Update the 'barrels_total' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingBarrelsTotal
+    inputTypeName: UpdateColumnPlayerStatsBattingBarrelsTotalInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_barrels_total
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingBarrelsTotal
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingBatSpeed
+  description: Update the 'bat_speed' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingBatSpeed
+    inputTypeName: UpdateColumnPlayerStatsBattingBatSpeedInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_bat_speed
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingBatSpeed
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingBatterRunValuePer100
+  description: Update the 'batter_run_value_per_100' column in the
+    'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingBatterRunValuePer100
+    inputTypeName: UpdateColumnPlayerStatsBattingBatterRunValuePer100Input
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_batter_run_value_per_100
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingBatterRunValuePer100
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingCreatedAt
+  description: Update the 'created_at' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Timestamp
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingCreatedAt
+    inputTypeName: UpdateColumnPlayerStatsBattingCreatedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_created_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingCreatedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingDoubles
+  description: Update the 'doubles' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingDoubles
+    inputTypeName: UpdateColumnPlayerStatsBattingDoublesInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_doubles
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingDoubles
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingExitVelo
+  description: Update the 'exit_velo' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingExitVelo
+    inputTypeName: UpdateColumnPlayerStatsBattingExitVeloInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_exit_velo
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingExitVelo
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingHardHitRate
+  description: Update the 'hard_hit_rate' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingHardHitRate
+    inputTypeName: UpdateColumnPlayerStatsBattingHardHitRateInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_hard_hit_rate
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingHardHitRate
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingHardhitPct
+  description: Update the 'hardhit_pct' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingHardhitPct
+    inputTypeName: UpdateColumnPlayerStatsBattingHardhitPctInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_hardhit_pct
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingHardhitPct
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingId
+  description: Update the 'id' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingId
+    inputTypeName: UpdateColumnPlayerStatsBattingIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingLaunchAngle
+  description: Update the 'launch_angle' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingLaunchAngle
+    inputTypeName: UpdateColumnPlayerStatsBattingLaunchAngleInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_launch_angle
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingLaunchAngle
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingPlayerId
+  description: Update the 'player_id' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingPlayerId
+    inputTypeName: UpdateColumnPlayerStatsBattingPlayerIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_player_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingPlayerId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingSeasonId
+  description: Update the 'season_id' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingSeasonId
+    inputTypeName: UpdateColumnPlayerStatsBattingSeasonIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_season_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingSeasonId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingSingles
+  description: Update the 'singles' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingSingles
+    inputTypeName: UpdateColumnPlayerStatsBattingSinglesInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_singles
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingSingles
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingStatPeriod
+  description: Update the 'stat_period' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingStatPeriod
+    inputTypeName: UpdateColumnPlayerStatsBattingStatPeriodInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_stat_period
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingStatPeriod
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingSwingLength
+  description: Update the 'swing_length' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingSwingLength
+    inputTypeName: UpdateColumnPlayerStatsBattingSwingLengthInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_swing_length
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingSwingLength
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingSwingMissPct
+  description: Update the 'swing_miss_pct' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingSwingMissPct
+    inputTypeName: UpdateColumnPlayerStatsBattingSwingMissPctInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_swing_miss_pct
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingSwingMissPct
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingSwingPathTilt
+  description: Update the 'swing_path_tilt' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingSwingPathTilt
+    inputTypeName: UpdateColumnPlayerStatsBattingSwingPathTiltInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_swing_path_tilt
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingSwingPathTilt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingSwings
+  description: Update the 'swings' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingSwings
+    inputTypeName: UpdateColumnPlayerStatsBattingSwingsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_swings
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingSwings
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingTakes
+  description: Update the 'takes' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingTakes
+    inputTypeName: UpdateColumnPlayerStatsBattingTakesInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_takes
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingTakes
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingTriples
+  description: Update the 'triples' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingTriples
+    inputTypeName: UpdateColumnPlayerStatsBattingTriplesInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_triples
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingTriples
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingUpdatedAt
+  description: Update the 'updated_at' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Timestamp
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingUpdatedAt
+    inputTypeName: UpdateColumnPlayerStatsBattingUpdatedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_updated_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingUpdatedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingWOba
+  description: Update the 'wOBA' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingWOba
+    inputTypeName: UpdateColumnPlayerStatsBattingWObaInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_wOBA
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingWOba
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingWhiffs
+  description: Update the 'whiffs' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingWhiffs
+    inputTypeName: UpdateColumnPlayerStatsBattingWhiffsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_whiffs
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingWhiffs
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingXAvg
+  description: Update the 'xAVG' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingXAvg
+    inputTypeName: UpdateColumnPlayerStatsBattingXAvgInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_xAVG
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingXAvg
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingXAvGdiff
+  description: Update the 'xAVGdiff' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingXAvGdiff
+    inputTypeName: UpdateColumnPlayerStatsBattingXAvGdiffInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_xAVGdiff
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingXAvGdiff
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingXObp
+  description: Update the 'xOBP' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingXObp
+    inputTypeName: UpdateColumnPlayerStatsBattingXObpInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_xOBP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingXObp
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingXObPdiff
+  description: Update the 'xOBPdiff' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingXObPdiff
+    inputTypeName: UpdateColumnPlayerStatsBattingXObPdiffInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_xOBPdiff
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingXObPdiff
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingXSlg
+  description: Update the 'xSLG' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingXSlg
+    inputTypeName: UpdateColumnPlayerStatsBattingXSlgInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_xSLG
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingXSlg
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingXSlGdiff
+  description: Update the 'xSLGdiff' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingXSlGdiff
+    inputTypeName: UpdateColumnPlayerStatsBattingXSlGdiffInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_xSLGdiff
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingXSlGdiff
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerStatsBattingXwOba
+  description: Update the 'xwOBA' column in the 'player_stats_batting' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerStatsBattingXwOba
+    inputTypeName: UpdateColumnPlayerStatsBattingXwObaInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_stats_batting_xwOBA
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerStatsBattingXwOba
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerStatsBattingByIdUpdateColumns
+  description: Update the columns of the 'player_stats_batting' collection
+  fields:
+    - name: ab
+      type: UpdateColumnPlayerStatsBattingAb
+      description: Update the 'AB' column in the 'player_stats_batting' collection.
+    - name: avg
+      type: UpdateColumnPlayerStatsBattingAvg
+      description: Update the 'AVG' column in the 'player_stats_batting' collection.
+    - name: babip
+      type: UpdateColumnPlayerStatsBattingBabip
+      description: Update the 'BABIP' column in the 'player_stats_batting' collection.
+    - name: bb
+      type: UpdateColumnPlayerStatsBattingBb
+      description: Update the 'BB' column in the 'player_stats_batting' collection.
+    - name: bbPct
+      type: UpdateColumnPlayerStatsBattingBbPct
+      description: Update the 'BB_pct' column in the 'player_stats_batting' collection.
+    - name: bBdist
+      type: UpdateColumnPlayerStatsBattingBBdist
+      description: Update the 'BBdist' column in the 'player_stats_batting' collection.
+    - name: cs
+      type: UpdateColumnPlayerStatsBattingCs
+      description: Update the 'CS' column in the 'player_stats_batting' collection.
+    - name: g
+      type: UpdateColumnPlayerStatsBattingG
+      description: Update the 'G' column in the 'player_stats_batting' collection.
+    - name: gdp
+      type: UpdateColumnPlayerStatsBattingGdp
+      description: Update the 'GDP' column in the 'player_stats_batting' collection.
+    - name: h
+      type: UpdateColumnPlayerStatsBattingH
+      description: Update the 'H' column in the 'player_stats_batting' collection.
+    - name: hbp
+      type: UpdateColumnPlayerStatsBattingHbp
+      description: Update the 'HBP' column in the 'player_stats_batting' collection.
+    - name: hr
+      type: UpdateColumnPlayerStatsBattingHr
+      description: Update the 'HR' column in the 'player_stats_batting' collection.
+    - name: ibb
+      type: UpdateColumnPlayerStatsBattingIbb
+      description: Update the 'IBB' column in the 'player_stats_batting' collection.
+    - name: iso
+      type: UpdateColumnPlayerStatsBattingIso
+      description: Update the 'ISO' column in the 'player_stats_batting' collection.
+    - name: kPct
+      type: UpdateColumnPlayerStatsBattingKPct
+      description: Update the 'K_pct' column in the 'player_stats_batting' collection.
+    - name: kdist
+      type: UpdateColumnPlayerStatsBattingKdist
+      description: Update the 'Kdist' column in the 'player_stats_batting' collection.
+    - name: obp
+      type: UpdateColumnPlayerStatsBattingObp
+      description: Update the 'OBP' column in the 'player_stats_batting' collection.
+    - name: ops
+      type: UpdateColumnPlayerStatsBattingOps
+      description: Update the 'OPS' column in the 'player_stats_batting' collection.
+    - name: pa
+      type: UpdateColumnPlayerStatsBattingPa
+      description: Update the 'PA' column in the 'player_stats_batting' collection.
+    - name: r
+      type: UpdateColumnPlayerStatsBattingR
+      description: Update the 'R' column in the 'player_stats_batting' collection.
+    - name: rbi
+      type: UpdateColumnPlayerStatsBattingRbi
+      description: Update the 'RBI' column in the 'player_stats_batting' collection.
+    - name: sac
+      type: UpdateColumnPlayerStatsBattingSac
+      description: Update the 'SAC' column in the 'player_stats_batting' collection.
+    - name: sb
+      type: UpdateColumnPlayerStatsBattingSb
+      description: Update the 'SB' column in the 'player_stats_batting' collection.
+    - name: sbn
+      type: UpdateColumnPlayerStatsBattingSbn
+      description: Update the 'SBN' column in the 'player_stats_batting' collection.
+    - name: sf
+      type: UpdateColumnPlayerStatsBattingSf
+      description: Update the 'SF' column in the 'player_stats_batting' collection.
+    - name: slg
+      type: UpdateColumnPlayerStatsBattingSlg
+      description: Update the 'SLG' column in the 'player_stats_batting' collection.
+    - name: so
+      type: UpdateColumnPlayerStatsBattingSo
+      description: Update the 'SO' column in the 'player_stats_batting' collection.
+    - name: tb
+      type: UpdateColumnPlayerStatsBattingTb
+      description: Update the 'TB' column in the 'player_stats_batting' collection.
+    - name: xbh
+      type: UpdateColumnPlayerStatsBattingXbh
+      description: Update the 'XBH' column in the 'player_stats_batting' collection.
+    - name: adjExitVelo
+      type: UpdateColumnPlayerStatsBattingAdjExitVelo
+      description: Update the 'adj_exit_velo' column in the 'player_stats_batting'
+        collection.
+    - name: attackAngle
+      type: UpdateColumnPlayerStatsBattingAttackAngle
+      description: Update the 'attack_angle' column in the 'player_stats_batting'
+        collection.
+    - name: attackDir
+      type: UpdateColumnPlayerStatsBattingAttackDir
+      description: Update the 'attack_dir' column in the 'player_stats_batting' collection.
+    - name: barrelRate
+      type: UpdateColumnPlayerStatsBattingBarrelRate
+      description: Update the 'barrel_rate' column in the 'player_stats_batting' collection.
+    - name: barrelsPerBbePct
+      type: UpdateColumnPlayerStatsBattingBarrelsPerBbePct
+      description: Update the 'barrels_per_bbe_pct' column in the
+        'player_stats_batting' collection.
+    - name: barrelsPerPaPct
+      type: UpdateColumnPlayerStatsBattingBarrelsPerPaPct
+      description: Update the 'barrels_per_pa_pct' column in the
+        'player_stats_batting' collection.
+    - name: barrelsTotal
+      type: UpdateColumnPlayerStatsBattingBarrelsTotal
+      description: Update the 'barrels_total' column in the 'player_stats_batting'
+        collection.
+    - name: batSpeed
+      type: UpdateColumnPlayerStatsBattingBatSpeed
+      description: Update the 'bat_speed' column in the 'player_stats_batting' collection.
+    - name: batterRunValuePer100
+      type: UpdateColumnPlayerStatsBattingBatterRunValuePer100
+      description: Update the 'batter_run_value_per_100' column in the
+        'player_stats_batting' collection.
+    - name: createdAt
+      type: UpdateColumnPlayerStatsBattingCreatedAt
+      description: Update the 'created_at' column in the 'player_stats_batting' collection.
+    - name: doubles
+      type: UpdateColumnPlayerStatsBattingDoubles
+      description: Update the 'doubles' column in the 'player_stats_batting' collection.
+    - name: exitVelo
+      type: UpdateColumnPlayerStatsBattingExitVelo
+      description: Update the 'exit_velo' column in the 'player_stats_batting' collection.
+    - name: hardHitRate
+      type: UpdateColumnPlayerStatsBattingHardHitRate
+      description: Update the 'hard_hit_rate' column in the 'player_stats_batting'
+        collection.
+    - name: hardhitPct
+      type: UpdateColumnPlayerStatsBattingHardhitPct
+      description: Update the 'hardhit_pct' column in the 'player_stats_batting' collection.
+    - name: id
+      type: UpdateColumnPlayerStatsBattingId
+      description: Update the 'id' column in the 'player_stats_batting' collection.
+    - name: launchAngle
+      type: UpdateColumnPlayerStatsBattingLaunchAngle
+      description: Update the 'launch_angle' column in the 'player_stats_batting'
+        collection.
+    - name: playerId
+      type: UpdateColumnPlayerStatsBattingPlayerId
+      description: Update the 'player_id' column in the 'player_stats_batting' collection.
+    - name: seasonId
+      type: UpdateColumnPlayerStatsBattingSeasonId
+      description: Update the 'season_id' column in the 'player_stats_batting' collection.
+    - name: singles
+      type: UpdateColumnPlayerStatsBattingSingles
+      description: Update the 'singles' column in the 'player_stats_batting' collection.
+    - name: statPeriod
+      type: UpdateColumnPlayerStatsBattingStatPeriod
+      description: Update the 'stat_period' column in the 'player_stats_batting' collection.
+    - name: swingLength
+      type: UpdateColumnPlayerStatsBattingSwingLength
+      description: Update the 'swing_length' column in the 'player_stats_batting'
+        collection.
+    - name: swingMissPct
+      type: UpdateColumnPlayerStatsBattingSwingMissPct
+      description: Update the 'swing_miss_pct' column in the 'player_stats_batting'
+        collection.
+    - name: swingPathTilt
+      type: UpdateColumnPlayerStatsBattingSwingPathTilt
+      description: Update the 'swing_path_tilt' column in the 'player_stats_batting'
+        collection.
+    - name: swings
+      type: UpdateColumnPlayerStatsBattingSwings
+      description: Update the 'swings' column in the 'player_stats_batting' collection.
+    - name: takes
+      type: UpdateColumnPlayerStatsBattingTakes
+      description: Update the 'takes' column in the 'player_stats_batting' collection.
+    - name: triples
+      type: UpdateColumnPlayerStatsBattingTriples
+      description: Update the 'triples' column in the 'player_stats_batting' collection.
+    - name: updatedAt
+      type: UpdateColumnPlayerStatsBattingUpdatedAt
+      description: Update the 'updated_at' column in the 'player_stats_batting' collection.
+    - name: wOba
+      type: UpdateColumnPlayerStatsBattingWOba
+      description: Update the 'wOBA' column in the 'player_stats_batting' collection.
+    - name: whiffs
+      type: UpdateColumnPlayerStatsBattingWhiffs
+      description: Update the 'whiffs' column in the 'player_stats_batting' collection.
+    - name: xAvg
+      type: UpdateColumnPlayerStatsBattingXAvg
+      description: Update the 'xAVG' column in the 'player_stats_batting' collection.
+    - name: xAvGdiff
+      type: UpdateColumnPlayerStatsBattingXAvGdiff
+      description: Update the 'xAVGdiff' column in the 'player_stats_batting' collection.
+    - name: xObp
+      type: UpdateColumnPlayerStatsBattingXObp
+      description: Update the 'xOBP' column in the 'player_stats_batting' collection.
+    - name: xObPdiff
+      type: UpdateColumnPlayerStatsBattingXObPdiff
+      description: Update the 'xOBPdiff' column in the 'player_stats_batting' collection.
+    - name: xSlg
+      type: UpdateColumnPlayerStatsBattingXSlg
+      description: Update the 'xSLG' column in the 'player_stats_batting' collection.
+    - name: xSlGdiff
+      type: UpdateColumnPlayerStatsBattingXSlGdiff
+      description: Update the 'xSLGdiff' column in the 'player_stats_batting' collection.
+    - name: xwOba
+      type: UpdateColumnPlayerStatsBattingXwOba
+      description: Update the 'xwOBA' column in the 'player_stats_batting' collection.
+  graphql:
+    typeName: UpdatePlayerStatsBattingByIdUpdateColumns
+    inputTypeName: UpdatePlayerStatsBattingByIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_stats_batting_by_id_update_columns
+      fieldMapping:
+        ab:
+          column:
+            name: AB
+        avg:
+          column:
+            name: AVG
+        babip:
+          column:
+            name: BABIP
+        bb:
+          column:
+            name: BB
+        bbPct:
+          column:
+            name: BB_pct
+        bBdist:
+          column:
+            name: BBdist
+        cs:
+          column:
+            name: CS
+        g:
+          column:
+            name: G
+        gdp:
+          column:
+            name: GDP
+        h:
+          column:
+            name: H
+        hbp:
+          column:
+            name: HBP
+        hr:
+          column:
+            name: HR
+        ibb:
+          column:
+            name: IBB
+        iso:
+          column:
+            name: ISO
+        kPct:
+          column:
+            name: K_pct
+        kdist:
+          column:
+            name: Kdist
+        obp:
+          column:
+            name: OBP
+        ops:
+          column:
+            name: OPS
+        pa:
+          column:
+            name: PA
+        r:
+          column:
+            name: R
+        rbi:
+          column:
+            name: RBI
+        sac:
+          column:
+            name: SAC
+        sb:
+          column:
+            name: SB
+        sbn:
+          column:
+            name: SBN
+        sf:
+          column:
+            name: SF
+        slg:
+          column:
+            name: SLG
+        so:
+          column:
+            name: SO
+        tb:
+          column:
+            name: TB
+        xbh:
+          column:
+            name: XBH
+        adjExitVelo:
+          column:
+            name: adj_exit_velo
+        attackAngle:
+          column:
+            name: attack_angle
+        attackDir:
+          column:
+            name: attack_dir
+        barrelRate:
+          column:
+            name: barrel_rate
+        barrelsPerBbePct:
+          column:
+            name: barrels_per_bbe_pct
+        barrelsPerPaPct:
+          column:
+            name: barrels_per_pa_pct
+        barrelsTotal:
+          column:
+            name: barrels_total
+        batSpeed:
+          column:
+            name: bat_speed
+        batterRunValuePer100:
+          column:
+            name: batter_run_value_per_100
+        createdAt:
+          column:
+            name: created_at
+        doubles:
+          column:
+            name: doubles
+        exitVelo:
+          column:
+            name: exit_velo
+        hardHitRate:
+          column:
+            name: hard_hit_rate
+        hardhitPct:
+          column:
+            name: hardhit_pct
+        id:
+          column:
+            name: id
+        launchAngle:
+          column:
+            name: launch_angle
+        playerId:
+          column:
+            name: player_id
+        seasonId:
+          column:
+            name: season_id
+        singles:
+          column:
+            name: singles
+        statPeriod:
+          column:
+            name: stat_period
+        swingLength:
+          column:
+            name: swing_length
+        swingMissPct:
+          column:
+            name: swing_miss_pct
+        swingPathTilt:
+          column:
+            name: swing_path_tilt
+        swings:
+          column:
+            name: swings
+        takes:
+          column:
+            name: takes
+        triples:
+          column:
+            name: triples
+        updatedAt:
+          column:
+            name: updated_at
+        wOba:
+          column:
+            name: wOBA
+        whiffs:
+          column:
+            name: whiffs
+        xAvg:
+          column:
+            name: xAVG
+        xAvGdiff:
+          column:
+            name: xAVGdiff
+        xObp:
+          column:
+            name: xOBP
+        xObPdiff:
+          column:
+            name: xOBPdiff
+        xSlg:
+          column:
+            name: xSLG
+        xSlGdiff:
+          column:
+            name: xSLGdiff
+        xwOba:
+          column:
+            name: xwOBA
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerStatsBattingByIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - ab
+          - avg
+          - babip
+          - bb
+          - bbPct
+          - bBdist
+          - cs
+          - g
+          - gdp
+          - h
+          - hbp
+          - hr
+          - ibb
+          - iso
+          - kPct
+          - kdist
+          - obp
+          - ops
+          - pa
+          - r
+          - rbi
+          - sac
+          - sb
+          - sbn
+          - sf
+          - slg
+          - so
+          - tb
+          - xbh
+          - adjExitVelo
+          - attackAngle
+          - attackDir
+          - barrelRate
+          - barrelsPerBbePct
+          - barrelsPerPaPct
+          - barrelsTotal
+          - batSpeed
+          - batterRunValuePer100
+          - createdAt
+          - doubles
+          - exitVelo
+          - hardHitRate
+          - hardhitPct
+          - id
+          - launchAngle
+          - playerId
+          - seasonId
+          - singles
+          - statPeriod
+          - swingLength
+          - swingMissPct
+          - swingPathTilt
+          - swings
+          - takes
+          - triples
+          - updatedAt
+          - wOba
+          - whiffs
+          - xAvg
+          - xAvGdiff
+          - xObp
+          - xObPdiff
+          - xSlg
+          - xSlGdiff
+          - xwOba
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerStatsBattingByIdResponse
+  description: Responses from the 'update_player_stats_batting_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerStatsBatting!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdatePlayerStatsBattingByIdResponse
+    inputTypeName: UpdatePlayerStatsBattingByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_stats_batting_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerStatsBattingByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdatePlayerStatsBattingById
+  outputType: UpdatePlayerStatsBattingByIdResponse!
+  arguments:
+    - name: keyId
+      type: Int32!
+    - name: postCheck
+      type: PlayerStatsBattingBoolExp
+      description: Update permission post-condition predicate over the
+        'player_stats_batting' collection
+    - name: preCheck
+      type: PlayerStatsBattingBoolExp
+      description: Update permission pre-condition predicate over the
+        'player_stats_batting' collection
+    - name: updateColumns
+      type: UpdatePlayerStatsBattingByIdUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_player_stats_batting_by_id
+    argumentMapping:
+      keyId: key_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updatePlayerStatsBattingById
+    rootFieldKind: Mutation
+  description: Update any row on the 'player_stats_batting' collection using the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdatePlayerStatsBattingById
+  permissions:
+    - role: admin
+      allowExecution: true
+

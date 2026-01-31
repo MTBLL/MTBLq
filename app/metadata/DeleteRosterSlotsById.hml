@@ -1,0 +1,72 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeleteRosterSlotsByIdResponse
+  description: Responses from the 'delete_roster_slots_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[RosterSlots!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeleteRosterSlotsByIdResponse
+    inputTypeName: DeleteRosterSlotsByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_roster_slots_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeleteRosterSlotsByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeleteRosterSlotsById
+  outputType: DeleteRosterSlotsByIdResponse!
+  arguments:
+    - name: keyId
+      type: Int32!
+    - name: preCheck
+      type: RosterSlotsBoolExp
+      description: Delete permission predicate over the 'roster_slots' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_roster_slots_by_id
+    argumentMapping:
+      keyId: key_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deleteRosterSlotsById
+    rootFieldKind: Mutation
+  description: Delete any row on the 'roster_slots' collection using the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeleteRosterSlotsById
+  permissions:
+    - role: admin
+      allowExecution: true
+

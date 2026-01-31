@@ -1,0 +1,178 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeUpdateColumns
+  description: Update the columns of the 'league_scoring_categories' collection
+  fields:
+    - name: createdAt
+      type: UpdateColumnLeagueScoringCategoriesCreatedAt
+      description: Update the 'created_at' column in the 'league_scoring_categories'
+        collection.
+    - name: id
+      type: UpdateColumnLeagueScoringCategoriesId
+      description: Update the 'id' column in the 'league_scoring_categories' collection.
+    - name: isReverse
+      type: UpdateColumnLeagueScoringCategoriesIsReverse
+      description: Update the 'is_reverse' column in the 'league_scoring_categories'
+        collection.
+    - name: leagueId
+      type: UpdateColumnLeagueScoringCategoriesLeagueId
+      description: Update the 'league_id' column in the 'league_scoring_categories'
+        collection.
+    - name: sortOrder
+      type: UpdateColumnLeagueScoringCategoriesSortOrder
+      description: Update the 'sort_order' column in the 'league_scoring_categories'
+        collection.
+    - name: statId
+      type: UpdateColumnLeagueScoringCategoriesStatId
+      description: Update the 'stat_id' column in the 'league_scoring_categories'
+        collection.
+    - name: statName
+      type: UpdateColumnLeagueScoringCategoriesStatName
+      description: Update the 'stat_name' column in the 'league_scoring_categories'
+        collection.
+    - name: statType
+      type: UpdateColumnLeagueScoringCategoriesStatType
+      description: Update the 'stat_type' column in the 'league_scoring_categories'
+        collection.
+  graphql:
+    typeName: UpdateLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeUpdateColumns
+    inputTypeName: UpdateLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_league_scoring_categories_by_league_id_and_stat_id_and_stat_type_update_columns
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        id:
+          column:
+            name: id
+        isReverse:
+          column:
+            name: is_reverse
+        leagueId:
+          column:
+            name: league_id
+        sortOrder:
+          column:
+            name: sort_order
+        statId:
+          column:
+            name: stat_id
+        statName:
+          column:
+            name: stat_name
+        statType:
+          column:
+            name: stat_type
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - id
+          - isReverse
+          - leagueId
+          - sortOrder
+          - statId
+          - statName
+          - statType
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeResponse
+  description: Responses from the
+    'update_league_scoring_categories_by_league_id_and_stat_id_and_stat_type'
+    procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[LeagueScoringCategories!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdateLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeResponse
+    inputTypeName: UpdateLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_league_scoring_categories_by_league_id_and_stat_id_and_stat_type_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdateLeagueScoringCategoriesByLeagueIdAndStatIdAndStatType
+  outputType: UpdateLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeResponse!
+  arguments:
+    - name: keyLeagueId
+      type: Int32!
+    - name: keyStatId
+      type: Int32!
+    - name: keyStatType
+      type: String_1!
+    - name: postCheck
+      type: LeagueScoringCategoriesBoolExp
+      description: Update permission post-condition predicate over the
+        'league_scoring_categories' collection
+    - name: preCheck
+      type: LeagueScoringCategoriesBoolExp
+      description: Update permission pre-condition predicate over the
+        'league_scoring_categories' collection
+    - name: updateColumns
+      type: UpdateLeagueScoringCategoriesByLeagueIdAndStatIdAndStatTypeUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_league_scoring_categories_by_league_id_and_stat_id_and_stat_type
+    argumentMapping:
+      keyLeagueId: key_league_id
+      keyStatId: key_stat_id
+      keyStatType: key_stat_type
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updateLeagueScoringCategoriesByLeagueIdAndStatIdAndStatType
+    rootFieldKind: Mutation
+  description: Update any row on the 'league_scoring_categories' collection using
+    the 'league_id', 'stat_id' and 'stat_type' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdateLeagueScoringCategoriesByLeagueIdAndStatIdAndStatType
+  permissions:
+    - role: admin
+      allowExecution: true
+

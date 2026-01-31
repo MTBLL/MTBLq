@@ -1,0 +1,157 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPlayerFantasyAssignmentsObject
+  fields:
+    - name: createdAt
+      type: Timestamp
+    - name: draftPick
+      type: Int32
+    - name: draftRound
+      type: Int32
+    - name: draftValue
+      type: Bigdecimal
+    - name: id
+      type: Int32
+    - name: leagueId
+      type: Int32!
+    - name: playerId
+      type: Int32!
+    - name: seasonId
+      type: Int32!
+    - name: teamId
+      type: Int32
+    - name: updatedAt
+      type: Timestamp
+  graphql:
+    typeName: InsertPlayerFantasyAssignmentsObject
+    inputTypeName: InsertPlayerFantasyAssignmentsObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_player_fantasy_assignments_object
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        draftPick:
+          column:
+            name: draft_pick
+        draftRound:
+          column:
+            name: draft_round
+        draftValue:
+          column:
+            name: draft_value
+        id:
+          column:
+            name: id
+        leagueId:
+          column:
+            name: league_id
+        playerId:
+          column:
+            name: player_id
+        seasonId:
+          column:
+            name: season_id
+        teamId:
+          column:
+            name: team_id
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPlayerFantasyAssignmentsObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - draftPick
+          - draftRound
+          - draftValue
+          - id
+          - leagueId
+          - playerId
+          - seasonId
+          - teamId
+          - updatedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPlayerFantasyAssignmentsResponse
+  description: Responses from the 'insert_player_fantasy_assignments' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerFantasyAssignments!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertPlayerFantasyAssignmentsResponse
+    inputTypeName: InsertPlayerFantasyAssignmentsResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_player_fantasy_assignments_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPlayerFantasyAssignmentsResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertPlayerFantasyAssignments
+  outputType: InsertPlayerFantasyAssignmentsResponse!
+  arguments:
+    - name: objects
+      type: "[InsertPlayerFantasyAssignmentsObject!]!"
+    - name: postCheck
+      type: PlayerFantasyAssignmentsBoolExp
+      description: Insert permission predicate over the 'player_fantasy_assignments'
+        collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_player_fantasy_assignments
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertPlayerFantasyAssignments
+    rootFieldKind: Mutation
+  description: Insert into the player_fantasy_assignments table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertPlayerFantasyAssignments
+  permissions:
+    - role: admin
+      allowExecution: true
+

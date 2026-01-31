@@ -1,0 +1,150 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertLeaguesObject
+  fields:
+    - name: acquisitionBudget
+      type: Int32
+    - name: createdAt
+      type: Timestamp
+    - name: draftAuctionBudget
+      type: Int32
+    - name: leagueId
+      type: Int32!
+    - name: numTeams
+      type: Int32
+    - name: rosterSettings
+      type: Json
+    - name: scoringPeriodId
+      type: Int32
+    - name: seasonId
+      type: Int32!
+    - name: updatedAt
+      type: Timestamp
+  graphql:
+    typeName: InsertLeaguesObject
+    inputTypeName: InsertLeaguesObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_leagues_object
+      fieldMapping:
+        acquisitionBudget:
+          column:
+            name: acquisition_budget
+        createdAt:
+          column:
+            name: created_at
+        draftAuctionBudget:
+          column:
+            name: draft_auction_budget
+        leagueId:
+          column:
+            name: league_id
+        numTeams:
+          column:
+            name: num_teams
+        rosterSettings:
+          column:
+            name: roster_settings
+        scoringPeriodId:
+          column:
+            name: scoring_period_id
+        seasonId:
+          column:
+            name: season_id
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertLeaguesObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - acquisitionBudget
+          - createdAt
+          - draftAuctionBudget
+          - leagueId
+          - numTeams
+          - rosterSettings
+          - scoringPeriodId
+          - seasonId
+          - updatedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertLeaguesResponse
+  description: Responses from the 'insert_leagues' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Leagues!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertLeaguesResponse
+    inputTypeName: InsertLeaguesResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_leagues_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertLeaguesResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertLeagues
+  outputType: InsertLeaguesResponse!
+  arguments:
+    - name: objects
+      type: "[InsertLeaguesObject!]!"
+    - name: postCheck
+      type: LeaguesBoolExp
+      description: Insert permission predicate over the 'leagues' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_leagues
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertLeagues
+    rootFieldKind: Mutation
+  description: Insert into the leagues table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertLeagues
+  permissions:
+    - role: admin
+      allowExecution: true
+

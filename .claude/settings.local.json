@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl:*)",
+      "Bash(docker compose:*)",
+      "Bash(ddn connector-link update:*)",
+      "Bash(docker exec:*)",
+      "Bash(docker logs:*)",
+      "Bash(python3:*)",
+      "Bash(ddn project get:*)"
+    ]
+  }
+}

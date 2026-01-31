@@ -1,0 +1,145 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertLeagueScoringCategoriesObject
+  fields:
+    - name: createdAt
+      type: Timestamp
+    - name: id
+      type: Int32
+    - name: isReverse
+      type: Boolean_1
+    - name: leagueId
+      type: Int32!
+    - name: sortOrder
+      type: Int32
+    - name: statId
+      type: Int32!
+    - name: statName
+      type: String_1!
+    - name: statType
+      type: String_1!
+  graphql:
+    typeName: InsertLeagueScoringCategoriesObject
+    inputTypeName: InsertLeagueScoringCategoriesObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_league_scoring_categories_object
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        id:
+          column:
+            name: id
+        isReverse:
+          column:
+            name: is_reverse
+        leagueId:
+          column:
+            name: league_id
+        sortOrder:
+          column:
+            name: sort_order
+        statId:
+          column:
+            name: stat_id
+        statName:
+          column:
+            name: stat_name
+        statType:
+          column:
+            name: stat_type
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertLeagueScoringCategoriesObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - id
+          - isReverse
+          - leagueId
+          - sortOrder
+          - statId
+          - statName
+          - statType
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertLeagueScoringCategoriesResponse
+  description: Responses from the 'insert_league_scoring_categories' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[LeagueScoringCategories!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertLeagueScoringCategoriesResponse
+    inputTypeName: InsertLeagueScoringCategoriesResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_league_scoring_categories_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertLeagueScoringCategoriesResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertLeagueScoringCategories
+  outputType: InsertLeagueScoringCategoriesResponse!
+  arguments:
+    - name: objects
+      type: "[InsertLeagueScoringCategoriesObject!]!"
+    - name: postCheck
+      type: LeagueScoringCategoriesBoolExp
+      description: Insert permission predicate over the 'league_scoring_categories'
+        collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_league_scoring_categories
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertLeagueScoringCategories
+    rootFieldKind: Mutation
+  description: Insert into the league_scoring_categories table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertLeagueScoringCategories
+  permissions:
+    - role: admin
+      allowExecution: true
+

@@ -1,0 +1,496 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: Teams
+  fields:
+    - name: acquisitions
+      type: Int32
+    - name: budgetRemaining
+      type: Int32
+    - name: budgetSpent
+      type: Int32
+    - name: createdAt
+      type: Timestamp
+    - name: drops
+      type: Int32
+    - name: gamesBack
+      type: Bigdecimal
+    - name: leagueId
+      type: Int32!
+    - name: losses
+      type: Int32
+    - name: owners
+      type: Json
+    - name: primaryOwner
+      type: String_1
+    - name: seasonId
+      type: Int32!
+    - name: teamAbbrev
+      type: String_1
+    - name: teamId
+      type: Int32!
+    - name: teamLogo
+      type: String_1
+    - name: teamName
+      type: String_1
+    - name: ties
+      type: Int32
+    - name: trades
+      type: Int32
+    - name: updatedAt
+      type: Timestamp
+    - name: waiverRank
+      type: Int32
+    - name: winPercentage
+      type: Bigdecimal
+    - name: wins
+      type: Int32
+  graphql:
+    typeName: Teams
+    inputTypeName: TeamsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: teams
+      fieldMapping:
+        acquisitions:
+          column:
+            name: acquisitions
+        budgetRemaining:
+          column:
+            name: budget_remaining
+        budgetSpent:
+          column:
+            name: budget_spent
+        createdAt:
+          column:
+            name: created_at
+        drops:
+          column:
+            name: drops
+        gamesBack:
+          column:
+            name: games_back
+        leagueId:
+          column:
+            name: league_id
+        losses:
+          column:
+            name: losses
+        owners:
+          column:
+            name: owners
+        primaryOwner:
+          column:
+            name: primary_owner
+        seasonId:
+          column:
+            name: season_id
+        teamAbbrev:
+          column:
+            name: team_abbrev
+        teamId:
+          column:
+            name: team_id
+        teamLogo:
+          column:
+            name: team_logo
+        teamName:
+          column:
+            name: team_name
+        ties:
+          column:
+            name: ties
+        trades:
+          column:
+            name: trades
+        updatedAt:
+          column:
+            name: updated_at
+        waiverRank:
+          column:
+            name: waiver_rank
+        winPercentage:
+          column:
+            name: win_percentage
+        wins:
+          column:
+            name: wins
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: Teams
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - acquisitions
+          - budgetRemaining
+          - budgetSpent
+          - createdAt
+          - drops
+          - gamesBack
+          - leagueId
+          - losses
+          - owners
+          - primaryOwner
+          - seasonId
+          - teamAbbrev
+          - teamId
+          - teamLogo
+          - teamName
+          - ties
+          - trades
+          - updatedAt
+          - waiverRank
+          - winPercentage
+          - wins
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: TeamsAggExp
+  operand:
+    object:
+      aggregatedType: Teams
+      aggregatableFields:
+        - fieldName: acquisitions
+          aggregateExpression: Int4AggExp
+        - fieldName: budgetRemaining
+          aggregateExpression: Int4AggExp
+        - fieldName: budgetSpent
+          aggregateExpression: Int4AggExp
+        - fieldName: createdAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: drops
+          aggregateExpression: Int4AggExp
+        - fieldName: gamesBack
+          aggregateExpression: NumericAggExp
+        - fieldName: leagueId
+          aggregateExpression: Int4AggExp
+        - fieldName: losses
+          aggregateExpression: Int4AggExp
+        - fieldName: owners
+          aggregateExpression: JsonbAggExp
+        - fieldName: primaryOwner
+          aggregateExpression: VarcharAggExp
+        - fieldName: seasonId
+          aggregateExpression: Int4AggExp
+        - fieldName: teamAbbrev
+          aggregateExpression: VarcharAggExp
+        - fieldName: teamId
+          aggregateExpression: Int4AggExp
+        - fieldName: teamLogo
+          aggregateExpression: VarcharAggExp
+        - fieldName: teamName
+          aggregateExpression: VarcharAggExp
+        - fieldName: ties
+          aggregateExpression: Int4AggExp
+        - fieldName: trades
+          aggregateExpression: Int4AggExp
+        - fieldName: updatedAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: waiverRank
+          aggregateExpression: Int4AggExp
+        - fieldName: winPercentage
+          aggregateExpression: NumericAggExp
+        - fieldName: wins
+          aggregateExpression: Int4AggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: TeamsAggExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: Teams
+  objectType: Teams
+  source:
+    dataConnectorName: neon_mtbl
+    collection: teams
+  filterExpressionType: TeamsBoolExp
+  aggregateExpression: TeamsAggExp
+  orderByExpression: TeamsOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: teams
+      subscription:
+        rootField: teams
+    selectUniques:
+      - queryRootField: teamsByTeamId
+        uniqueIdentifier:
+          - teamId
+        subscription:
+          rootField: teamsByTeamId
+    filterInputTypeName: TeamsFilterInput
+    aggregate:
+      queryRootField: teamsAggregate
+      subscription:
+        rootField: teamsAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: Teams
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: matchups
+  sourceType: Teams
+  target:
+    model:
+      name: Matchups
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: MatchupsAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: teamId
+      target:
+        modelField:
+          - fieldName: team1Id
+  graphql:
+    aggregateFieldName: matchupsAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: matchupsByTeam2Id
+  sourceType: Teams
+  target:
+    model:
+      name: Matchups
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: MatchupsAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: teamId
+      target:
+        modelField:
+          - fieldName: team2Id
+  graphql:
+    aggregateFieldName: matchupsByTeam2IdAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: matchupsByWinnerId
+  sourceType: Teams
+  target:
+    model:
+      name: Matchups
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: MatchupsAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: teamId
+      target:
+        modelField:
+          - fieldName: winnerId
+  graphql:
+    aggregateFieldName: matchupsByWinnerIdAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: playerFantasyAssignments
+  sourceType: Teams
+  target:
+    model:
+      name: PlayerFantasyAssignments
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: PlayerFantasyAssignmentsAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: teamId
+      target:
+        modelField:
+          - fieldName: teamId
+  graphql:
+    aggregateFieldName: playerFantasyAssignmentsAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: rosterSlots
+  sourceType: Teams
+  target:
+    model:
+      name: RosterSlots
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: RosterSlotsAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: teamId
+      target:
+        modelField:
+          - fieldName: teamId
+  graphql:
+    aggregateFieldName: rosterSlotsAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: league
+  sourceType: Teams
+  target:
+    model:
+      name: Leagues
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: leagueId
+      target:
+        modelField:
+          - fieldName: leagueId
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: TeamsBoolExp
+  operand:
+    object:
+      type: Teams
+      comparableFields:
+        - fieldName: acquisitions
+          booleanExpressionType: Int4BoolExp
+        - fieldName: budgetRemaining
+          booleanExpressionType: Int4BoolExp
+        - fieldName: budgetSpent
+          booleanExpressionType: Int4BoolExp
+        - fieldName: createdAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: drops
+          booleanExpressionType: Int4BoolExp
+        - fieldName: gamesBack
+          booleanExpressionType: NumericBoolExp
+        - fieldName: leagueId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: losses
+          booleanExpressionType: Int4BoolExp
+        - fieldName: owners
+          booleanExpressionType: JsonbBoolExp
+        - fieldName: primaryOwner
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: seasonId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: teamAbbrev
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: teamId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: teamLogo
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: teamName
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: ties
+          booleanExpressionType: Int4BoolExp
+        - fieldName: trades
+          booleanExpressionType: Int4BoolExp
+        - fieldName: updatedAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: waiverRank
+          booleanExpressionType: Int4BoolExp
+        - fieldName: winPercentage
+          booleanExpressionType: NumericBoolExp
+        - fieldName: wins
+          booleanExpressionType: Int4BoolExp
+      comparableRelationships:
+        - relationshipName: matchups
+        - relationshipName: matchupsByTeam2Id
+        - relationshipName: matchupsByWinnerId
+        - relationshipName: playerFantasyAssignments
+        - relationshipName: rosterSlots
+        - relationshipName: league
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: TeamsBoolExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: TeamsOrderByExp
+  operand:
+    object:
+      orderedType: Teams
+      orderableFields:
+        - fieldName: acquisitions
+          orderByExpression: Int32OrderByExp
+        - fieldName: budgetRemaining
+          orderByExpression: Int32OrderByExp
+        - fieldName: budgetSpent
+          orderByExpression: Int32OrderByExp
+        - fieldName: createdAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: drops
+          orderByExpression: Int32OrderByExp
+        - fieldName: gamesBack
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: leagueId
+          orderByExpression: Int32OrderByExp
+        - fieldName: losses
+          orderByExpression: Int32OrderByExp
+        - fieldName: owners
+          orderByExpression: JsonOrderByExp
+        - fieldName: primaryOwner
+          orderByExpression: String1OrderByExp
+        - fieldName: seasonId
+          orderByExpression: Int32OrderByExp
+        - fieldName: teamAbbrev
+          orderByExpression: String1OrderByExp
+        - fieldName: teamId
+          orderByExpression: Int32OrderByExp
+        - fieldName: teamLogo
+          orderByExpression: String1OrderByExp
+        - fieldName: teamName
+          orderByExpression: String1OrderByExp
+        - fieldName: ties
+          orderByExpression: Int32OrderByExp
+        - fieldName: trades
+          orderByExpression: Int32OrderByExp
+        - fieldName: updatedAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: waiverRank
+          orderByExpression: Int32OrderByExp
+        - fieldName: winPercentage
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: wins
+          orderByExpression: Int32OrderByExp
+      orderableRelationships:
+        - relationshipName: league
+  graphql:
+    expressionTypeName: TeamsOrderByExp
+

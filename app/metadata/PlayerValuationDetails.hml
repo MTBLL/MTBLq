@@ -1,0 +1,195 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: PlayerValuationDetails
+  fields:
+    - name: dollarValue
+      type: Bigdecimal
+    - name: id
+      type: Int32!
+    - name: statCategory
+      type: String_1!
+    - name: valuationId
+      type: Int32!
+    - name: zScore
+      type: Bigdecimal
+  graphql:
+    typeName: PlayerValuationDetails
+    inputTypeName: PlayerValuationDetailsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: player_valuation_details
+      fieldMapping:
+        dollarValue:
+          column:
+            name: dollar_value
+        id:
+          column:
+            name: id
+        statCategory:
+          column:
+            name: stat_category
+        valuationId:
+          column:
+            name: valuation_id
+        zScore:
+          column:
+            name: z_score
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: PlayerValuationDetails
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - dollarValue
+          - id
+          - statCategory
+          - valuationId
+          - zScore
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: PlayerValuationDetailsAggExp
+  operand:
+    object:
+      aggregatedType: PlayerValuationDetails
+      aggregatableFields:
+        - fieldName: dollarValue
+          aggregateExpression: NumericAggExp
+        - fieldName: id
+          aggregateExpression: Int4AggExp
+        - fieldName: statCategory
+          aggregateExpression: VarcharAggExp
+        - fieldName: valuationId
+          aggregateExpression: Int4AggExp
+        - fieldName: zScore
+          aggregateExpression: NumericAggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: PlayerValuationDetailsAggExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: PlayerValuationDetails
+  objectType: PlayerValuationDetails
+  source:
+    dataConnectorName: neon_mtbl
+    collection: player_valuation_details
+  filterExpressionType: PlayerValuationDetailsBoolExp
+  aggregateExpression: PlayerValuationDetailsAggExp
+  orderByExpression: PlayerValuationDetailsOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: playerValuationDetails
+      subscription:
+        rootField: playerValuationDetails
+    selectUniques:
+      - queryRootField: playerValuationDetailsById
+        uniqueIdentifier:
+          - id
+        subscription:
+          rootField: playerValuationDetailsById
+      - queryRootField: playerValuationDetailsByPlayerValuationDetailsValuationIdStatCategoryKey
+        uniqueIdentifier:
+          - statCategory
+          - valuationId
+        subscription:
+          rootField: playerValuationDetailsByPlayerValuationDetailsValuationIdStatCategoryKey
+    filterInputTypeName: PlayerValuationDetailsFilterInput
+    aggregate:
+      queryRootField: playerValuationDetailsAggregate
+      subscription:
+        rootField: playerValuationDetailsAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: PlayerValuationDetails
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: playerValuation
+  sourceType: PlayerValuationDetails
+  target:
+    model:
+      name: PlayerValuations
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: valuationId
+      target:
+        modelField:
+          - fieldName: id
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: PlayerValuationDetailsBoolExp
+  operand:
+    object:
+      type: PlayerValuationDetails
+      comparableFields:
+        - fieldName: dollarValue
+          booleanExpressionType: NumericBoolExp
+        - fieldName: id
+          booleanExpressionType: Int4BoolExp
+        - fieldName: statCategory
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: valuationId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: zScore
+          booleanExpressionType: NumericBoolExp
+      comparableRelationships:
+        - relationshipName: playerValuation
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: PlayerValuationDetailsBoolExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: PlayerValuationDetailsOrderByExp
+  operand:
+    object:
+      orderedType: PlayerValuationDetails
+      orderableFields:
+        - fieldName: dollarValue
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: id
+          orderByExpression: Int32OrderByExp
+        - fieldName: statCategory
+          orderByExpression: String1OrderByExp
+        - fieldName: valuationId
+          orderByExpression: Int32OrderByExp
+        - fieldName: zScore
+          orderByExpression: BigdecimalOrderByExp
+      orderableRelationships:
+        - relationshipName: playerValuation
+  graphql:
+    expressionTypeName: PlayerValuationDetailsOrderByExp
+

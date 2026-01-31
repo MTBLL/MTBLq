@@ -1,0 +1,194 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerFantasyAssignmentsByLeagueIdAndPlayerIdAndSeasonIdUpdateColumns
+  description: Update the columns of the 'player_fantasy_assignments' collection
+  fields:
+    - name: createdAt
+      type: UpdateColumnPlayerFantasyAssignmentsCreatedAt
+      description: Update the 'created_at' column in the 'player_fantasy_assignments'
+        collection.
+    - name: draftPick
+      type: UpdateColumnPlayerFantasyAssignmentsDraftPick
+      description: Update the 'draft_pick' column in the 'player_fantasy_assignments'
+        collection.
+    - name: draftRound
+      type: UpdateColumnPlayerFantasyAssignmentsDraftRound
+      description: Update the 'draft_round' column in the 'player_fantasy_assignments'
+        collection.
+    - name: draftValue
+      type: UpdateColumnPlayerFantasyAssignmentsDraftValue
+      description: Update the 'draft_value' column in the 'player_fantasy_assignments'
+        collection.
+    - name: id
+      type: UpdateColumnPlayerFantasyAssignmentsId
+      description: Update the 'id' column in the 'player_fantasy_assignments' collection.
+    - name: leagueId
+      type: UpdateColumnPlayerFantasyAssignmentsLeagueId
+      description: Update the 'league_id' column in the 'player_fantasy_assignments'
+        collection.
+    - name: playerId
+      type: UpdateColumnPlayerFantasyAssignmentsPlayerId
+      description: Update the 'player_id' column in the 'player_fantasy_assignments'
+        collection.
+    - name: seasonId
+      type: UpdateColumnPlayerFantasyAssignmentsSeasonId
+      description: Update the 'season_id' column in the 'player_fantasy_assignments'
+        collection.
+    - name: teamId
+      type: UpdateColumnPlayerFantasyAssignmentsTeamId
+      description: Update the 'team_id' column in the 'player_fantasy_assignments'
+        collection.
+    - name: updatedAt
+      type: UpdateColumnPlayerFantasyAssignmentsUpdatedAt
+      description: Update the 'updated_at' column in the 'player_fantasy_assignments'
+        collection.
+  graphql:
+    typeName: UpdatePlayerFantasyAssignmentsByLeagueIdAndPlayerIdAndSeasonIdUpdateColumns
+    inputTypeName: UpdatePlayerFantasyAssignmentsByLeagueIdAndPlayerIdAndSeasonIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_fantasy_assignments_by_league_id_and_player_id_and_season_id_update_columns
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        draftPick:
+          column:
+            name: draft_pick
+        draftRound:
+          column:
+            name: draft_round
+        draftValue:
+          column:
+            name: draft_value
+        id:
+          column:
+            name: id
+        leagueId:
+          column:
+            name: league_id
+        playerId:
+          column:
+            name: player_id
+        seasonId:
+          column:
+            name: season_id
+        teamId:
+          column:
+            name: team_id
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerFantasyAssignmentsByLeagueIdAndPlayerIdAndSeasonIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - draftPick
+          - draftRound
+          - draftValue
+          - id
+          - leagueId
+          - playerId
+          - seasonId
+          - teamId
+          - updatedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerFantasyAssignmentsByLeagueIdAndPlayerIdAndSeasonIdResponse
+  description: Responses from the
+    'update_player_fantasy_assignments_by_league_id_and_player_id_and_season_id'
+    procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerFantasyAssignments!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdatePlayerFantasyAssignmentsByLeagueIdAndPlayerIdAndSeasonIdResponse
+    inputTypeName: UpdatePlayerFantasyAssignmentsByLeagueIdAndPlayerIdAndSeasonIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_fantasy_assignments_by_league_id_and_player_id_and_season_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerFantasyAssignmentsByLeagueIdAndPlayerIdAndSeasonIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdatePlayerFantasyAssignmentsByLeagueIdAndPlayerIdAndSeasonId
+  outputType: UpdatePlayerFantasyAssignmentsByLeagueIdAndPlayerIdAndSeasonIdResponse!
+  arguments:
+    - name: keyLeagueId
+      type: Int32!
+    - name: keyPlayerId
+      type: Int32!
+    - name: keySeasonId
+      type: Int32!
+    - name: postCheck
+      type: PlayerFantasyAssignmentsBoolExp
+      description: Update permission post-condition predicate over the
+        'player_fantasy_assignments' collection
+    - name: preCheck
+      type: PlayerFantasyAssignmentsBoolExp
+      description: Update permission pre-condition predicate over the
+        'player_fantasy_assignments' collection
+    - name: updateColumns
+      type: UpdatePlayerFantasyAssignmentsByLeagueIdAndPlayerIdAndSeasonIdUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_player_fantasy_assignments_by_league_id_and_player_id_and_season_id
+    argumentMapping:
+      keyLeagueId: key_league_id
+      keyPlayerId: key_player_id
+      keySeasonId: key_season_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updatePlayerFantasyAssignmentsByLeagueIdAndPlayerIdAndSeasonId
+    rootFieldKind: Mutation
+  description: Update any row on the 'player_fantasy_assignments' collection using
+    the 'league_id', 'player_id' and 'season_id' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdatePlayerFantasyAssignmentsByLeagueIdAndPlayerIdAndSeasonId
+  permissions:
+    - role: admin
+      allowExecution: true
+

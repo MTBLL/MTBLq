@@ -1,0 +1,508 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerFantasyAssignmentsCreatedAt
+  description: Update the 'created_at' column in the 'player_fantasy_assignments' collection
+  fields:
+    - name: set
+      type: Timestamp
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerFantasyAssignmentsCreatedAt
+    inputTypeName: UpdateColumnPlayerFantasyAssignmentsCreatedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_fantasy_assignments_created_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerFantasyAssignmentsCreatedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerFantasyAssignmentsDraftPick
+  description: Update the 'draft_pick' column in the 'player_fantasy_assignments' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerFantasyAssignmentsDraftPick
+    inputTypeName: UpdateColumnPlayerFantasyAssignmentsDraftPickInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_fantasy_assignments_draft_pick
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerFantasyAssignmentsDraftPick
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerFantasyAssignmentsDraftRound
+  description: Update the 'draft_round' column in the 'player_fantasy_assignments'
+    collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerFantasyAssignmentsDraftRound
+    inputTypeName: UpdateColumnPlayerFantasyAssignmentsDraftRoundInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_fantasy_assignments_draft_round
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerFantasyAssignmentsDraftRound
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerFantasyAssignmentsDraftValue
+  description: Update the 'draft_value' column in the 'player_fantasy_assignments'
+    collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerFantasyAssignmentsDraftValue
+    inputTypeName: UpdateColumnPlayerFantasyAssignmentsDraftValueInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_fantasy_assignments_draft_value
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerFantasyAssignmentsDraftValue
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerFantasyAssignmentsId
+  description: Update the 'id' column in the 'player_fantasy_assignments' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerFantasyAssignmentsId
+    inputTypeName: UpdateColumnPlayerFantasyAssignmentsIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_fantasy_assignments_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerFantasyAssignmentsId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerFantasyAssignmentsLeagueId
+  description: Update the 'league_id' column in the 'player_fantasy_assignments' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerFantasyAssignmentsLeagueId
+    inputTypeName: UpdateColumnPlayerFantasyAssignmentsLeagueIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_fantasy_assignments_league_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerFantasyAssignmentsLeagueId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerFantasyAssignmentsPlayerId
+  description: Update the 'player_id' column in the 'player_fantasy_assignments' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerFantasyAssignmentsPlayerId
+    inputTypeName: UpdateColumnPlayerFantasyAssignmentsPlayerIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_fantasy_assignments_player_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerFantasyAssignmentsPlayerId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerFantasyAssignmentsSeasonId
+  description: Update the 'season_id' column in the 'player_fantasy_assignments' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerFantasyAssignmentsSeasonId
+    inputTypeName: UpdateColumnPlayerFantasyAssignmentsSeasonIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_fantasy_assignments_season_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerFantasyAssignmentsSeasonId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerFantasyAssignmentsTeamId
+  description: Update the 'team_id' column in the 'player_fantasy_assignments' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerFantasyAssignmentsTeamId
+    inputTypeName: UpdateColumnPlayerFantasyAssignmentsTeamIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_fantasy_assignments_team_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerFantasyAssignmentsTeamId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPlayerFantasyAssignmentsUpdatedAt
+  description: Update the 'updated_at' column in the 'player_fantasy_assignments' collection
+  fields:
+    - name: set
+      type: Timestamp
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPlayerFantasyAssignmentsUpdatedAt
+    inputTypeName: UpdateColumnPlayerFantasyAssignmentsUpdatedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_player_fantasy_assignments_updated_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPlayerFantasyAssignmentsUpdatedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerFantasyAssignmentsByIdUpdateColumns
+  description: Update the columns of the 'player_fantasy_assignments' collection
+  fields:
+    - name: createdAt
+      type: UpdateColumnPlayerFantasyAssignmentsCreatedAt
+      description: Update the 'created_at' column in the 'player_fantasy_assignments'
+        collection.
+    - name: draftPick
+      type: UpdateColumnPlayerFantasyAssignmentsDraftPick
+      description: Update the 'draft_pick' column in the 'player_fantasy_assignments'
+        collection.
+    - name: draftRound
+      type: UpdateColumnPlayerFantasyAssignmentsDraftRound
+      description: Update the 'draft_round' column in the 'player_fantasy_assignments'
+        collection.
+    - name: draftValue
+      type: UpdateColumnPlayerFantasyAssignmentsDraftValue
+      description: Update the 'draft_value' column in the 'player_fantasy_assignments'
+        collection.
+    - name: id
+      type: UpdateColumnPlayerFantasyAssignmentsId
+      description: Update the 'id' column in the 'player_fantasy_assignments' collection.
+    - name: leagueId
+      type: UpdateColumnPlayerFantasyAssignmentsLeagueId
+      description: Update the 'league_id' column in the 'player_fantasy_assignments'
+        collection.
+    - name: playerId
+      type: UpdateColumnPlayerFantasyAssignmentsPlayerId
+      description: Update the 'player_id' column in the 'player_fantasy_assignments'
+        collection.
+    - name: seasonId
+      type: UpdateColumnPlayerFantasyAssignmentsSeasonId
+      description: Update the 'season_id' column in the 'player_fantasy_assignments'
+        collection.
+    - name: teamId
+      type: UpdateColumnPlayerFantasyAssignmentsTeamId
+      description: Update the 'team_id' column in the 'player_fantasy_assignments'
+        collection.
+    - name: updatedAt
+      type: UpdateColumnPlayerFantasyAssignmentsUpdatedAt
+      description: Update the 'updated_at' column in the 'player_fantasy_assignments'
+        collection.
+  graphql:
+    typeName: UpdatePlayerFantasyAssignmentsByIdUpdateColumns
+    inputTypeName: UpdatePlayerFantasyAssignmentsByIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_fantasy_assignments_by_id_update_columns
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        draftPick:
+          column:
+            name: draft_pick
+        draftRound:
+          column:
+            name: draft_round
+        draftValue:
+          column:
+            name: draft_value
+        id:
+          column:
+            name: id
+        leagueId:
+          column:
+            name: league_id
+        playerId:
+          column:
+            name: player_id
+        seasonId:
+          column:
+            name: season_id
+        teamId:
+          column:
+            name: team_id
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerFantasyAssignmentsByIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - draftPick
+          - draftRound
+          - draftValue
+          - id
+          - leagueId
+          - playerId
+          - seasonId
+          - teamId
+          - updatedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePlayerFantasyAssignmentsByIdResponse
+  description: Responses from the 'update_player_fantasy_assignments_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerFantasyAssignments!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdatePlayerFantasyAssignmentsByIdResponse
+    inputTypeName: UpdatePlayerFantasyAssignmentsByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_player_fantasy_assignments_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePlayerFantasyAssignmentsByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdatePlayerFantasyAssignmentsById
+  outputType: UpdatePlayerFantasyAssignmentsByIdResponse!
+  arguments:
+    - name: keyId
+      type: Int32!
+    - name: postCheck
+      type: PlayerFantasyAssignmentsBoolExp
+      description: Update permission post-condition predicate over the
+        'player_fantasy_assignments' collection
+    - name: preCheck
+      type: PlayerFantasyAssignmentsBoolExp
+      description: Update permission pre-condition predicate over the
+        'player_fantasy_assignments' collection
+    - name: updateColumns
+      type: UpdatePlayerFantasyAssignmentsByIdUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_player_fantasy_assignments_by_id
+    argumentMapping:
+      keyId: key_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updatePlayerFantasyAssignmentsById
+    rootFieldKind: Mutation
+  description: Update any row on the 'player_fantasy_assignments' collection using
+    the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdatePlayerFantasyAssignmentsById
+  permissions:
+    - role: admin
+      allowExecution: true
+

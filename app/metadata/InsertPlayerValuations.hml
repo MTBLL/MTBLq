@@ -1,0 +1,150 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPlayerValuationsObject
+  fields:
+    - name: createdAt
+      type: Timestamp
+    - name: id
+      type: Int32
+    - name: playerId
+      type: Int32!
+    - name: primaryPosition
+      type: String_1!
+    - name: seasonId
+      type: Int32!
+    - name: tier
+      type: String_1
+    - name: totalDollars
+      type: Bigdecimal
+    - name: totalZ
+      type: Bigdecimal
+    - name: updatedAt
+      type: Timestamp
+  graphql:
+    typeName: InsertPlayerValuationsObject
+    inputTypeName: InsertPlayerValuationsObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_player_valuations_object
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        id:
+          column:
+            name: id
+        playerId:
+          column:
+            name: player_id
+        primaryPosition:
+          column:
+            name: primary_position
+        seasonId:
+          column:
+            name: season_id
+        tier:
+          column:
+            name: tier
+        totalDollars:
+          column:
+            name: total_dollars
+        totalZ:
+          column:
+            name: total_z
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPlayerValuationsObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - id
+          - playerId
+          - primaryPosition
+          - seasonId
+          - tier
+          - totalDollars
+          - totalZ
+          - updatedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPlayerValuationsResponse
+  description: Responses from the 'insert_player_valuations' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerValuations!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertPlayerValuationsResponse
+    inputTypeName: InsertPlayerValuationsResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_player_valuations_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPlayerValuationsResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertPlayerValuations
+  outputType: InsertPlayerValuationsResponse!
+  arguments:
+    - name: objects
+      type: "[InsertPlayerValuationsObject!]!"
+    - name: postCheck
+      type: PlayerValuationsBoolExp
+      description: Insert permission predicate over the 'player_valuations' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_player_valuations
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertPlayerValuations
+    rootFieldKind: Mutation
+  description: Insert into the player_valuations table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertPlayerValuations
+  permissions:
+    - role: admin
+      allowExecution: true
+

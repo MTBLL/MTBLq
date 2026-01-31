@@ -1,0 +1,81 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse
+  description: Responses from the
+    'delete_player_valuations_by_player_id_and_primary_position_and_season_id'
+    procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PlayerValuations!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse
+    inputTypeName: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_player_valuations_by_player_id_and_primary_position_and_season_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonId
+  outputType: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse!
+  arguments:
+    - name: keyPlayerId
+      type: Int32!
+    - name: keyPrimaryPosition
+      type: String_1!
+    - name: keySeasonId
+      type: Int32!
+    - name: preCheck
+      type: PlayerValuationsBoolExp
+      description: Delete permission predicate over the 'player_valuations' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_player_valuations_by_player_id_and_primary_position_and_season_id
+    argumentMapping:
+      keyPlayerId: key_player_id
+      keyPrimaryPosition: key_primary_position
+      keySeasonId: key_season_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonId
+    rootFieldKind: Mutation
+  description: Delete any row on the 'player_valuations' collection using the
+    'player_id', 'primary_position' and 'season_id' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonId
+  permissions:
+    - role: admin
+      allowExecution: true
+

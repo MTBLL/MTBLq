@@ -13,17 +13,15 @@ definition:
     - name: createdAt
       type: Timestamp
     - name: dateOfBirth
-      type: String_1
+      type: Date
     - name: debutYear
       type: Int32
     - name: displayHeight
       type: String_1
-    - name: displayName
-      type: String_1
     - name: displayWeight
       type: String_1
     - name: eligibleSlots
-      type: String_1
+      type: Json
     - name: fangraphsApiRoute
       type: String_1
     - name: firstName
@@ -47,27 +45,21 @@ definition:
     - name: lastName
       type: String_1
     - name: name
-      type: String_1
+      type: String_1!
     - name: nameAscii
-      type: String_1
-    - name: nameNonascii
-      type: String_1
-    - name: nickname
       type: String_1
     - name: primaryPosition
       type: String_1
     - name: proTeam
       type: String_1
-    - name: shortName
-      type: String_1
-    - name: slugEspn
-      type: String_1
-    - name: slugFangraphs
+    - name: slug
       type: String_1
     - name: status
       type: String_1
     - name: throws
       type: String_1
+    - name: updatedAt
+      type: Timestamp
     - name: weight
       type: Bigdecimal
   graphql:
@@ -98,9 +90,6 @@ definition:
         displayHeight:
           column:
             name: display_height
-        displayName:
-          column:
-            name: display_name
         displayWeight:
           column:
             name: display_weight
@@ -146,33 +135,24 @@ definition:
         nameAscii:
           column:
             name: name_ascii
-        nameNonascii:
-          column:
-            name: name_nonascii
-        nickname:
-          column:
-            name: nickname
         primaryPosition:
           column:
             name: primary_position
         proTeam:
           column:
             name: pro_team
-        shortName:
+        slug:
           column:
-            name: short_name
-        slugEspn:
-          column:
-            name: slug_espn
-        slugFangraphs:
-          column:
-            name: slug_fangraphs
+            name: slug
         status:
           column:
             name: status
         throws:
           column:
             name: throws
+        updatedAt:
+          column:
+            name: updated_at
         weight:
           column:
             name: weight
@@ -193,7 +173,6 @@ definition:
           - dateOfBirth
           - debutYear
           - displayHeight
-          - displayName
           - displayWeight
           - eligibleSlots
           - fangraphsApiRoute
@@ -209,99 +188,13 @@ definition:
           - lastName
           - name
           - nameAscii
-          - nameNonascii
-          - nickname
           - primaryPosition
           - proTeam
-          - shortName
-          - slugEspn
-          - slugFangraphs
+          - slug
           - status
           - throws
+          - updatedAt
           - weight
-
----
-kind: BooleanExpressionType
-version: v1
-definition:
-  name: PlayersBoolExp
-  operand:
-    object:
-      type: Players
-      comparableFields:
-        - fieldName: active
-          booleanExpressionType: BoolBoolExp
-        - fieldName: bats
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: birthPlace
-          booleanExpressionType: JsonbBoolExp
-        - fieldName: createdAt
-          booleanExpressionType: TimestampBoolExp
-        - fieldName: dateOfBirth
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: debutYear
-          booleanExpressionType: Int4BoolExp
-        - fieldName: displayHeight
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: displayName
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: displayWeight
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: eligibleSlots
-          booleanExpressionType: TextBoolExp
-        - fieldName: fangraphsApiRoute
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: firstName
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: headshot
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: height
-          booleanExpressionType: Int4BoolExp
-        - fieldName: idEspn
-          booleanExpressionType: Int4BoolExp
-        - fieldName: idFangraphs
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: idXmlbam
-          booleanExpressionType: Int4BoolExp
-        - fieldName: injured
-          booleanExpressionType: BoolBoolExp
-        - fieldName: injuryStatus
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: jersey
-          booleanExpressionType: Int4BoolExp
-        - fieldName: lastName
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: name
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: nameAscii
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: nameNonascii
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: nickname
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: primaryPosition
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: proTeam
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: shortName
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: slugEspn
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: slugFangraphs
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: status
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: throws
-          booleanExpressionType: VarcharBoolExp
-        - fieldName: weight
-          booleanExpressionType: NumericBoolExp
-      comparableRelationships: []
-  logicalOperators:
-    enable: true
-  isNull:
-    enable: true
-  graphql:
-    typeName: PlayersBoolExp
 
 ---
 kind: AggregateExpression
@@ -321,17 +214,15 @@ definition:
         - fieldName: createdAt
           aggregateExpression: TimestampAggExp
         - fieldName: dateOfBirth
-          aggregateExpression: VarcharAggExp
+          aggregateExpression: DateAggExp
         - fieldName: debutYear
           aggregateExpression: Int4AggExp
         - fieldName: displayHeight
           aggregateExpression: VarcharAggExp
-        - fieldName: displayName
-          aggregateExpression: VarcharAggExp
         - fieldName: displayWeight
           aggregateExpression: VarcharAggExp
         - fieldName: eligibleSlots
-          aggregateExpression: TextAggExp
+          aggregateExpression: JsonbAggExp
         - fieldName: fangraphsApiRoute
           aggregateExpression: VarcharAggExp
         - fieldName: firstName
@@ -358,24 +249,18 @@ definition:
           aggregateExpression: VarcharAggExp
         - fieldName: nameAscii
           aggregateExpression: VarcharAggExp
-        - fieldName: nameNonascii
-          aggregateExpression: VarcharAggExp
-        - fieldName: nickname
-          aggregateExpression: VarcharAggExp
         - fieldName: primaryPosition
           aggregateExpression: VarcharAggExp
         - fieldName: proTeam
           aggregateExpression: VarcharAggExp
-        - fieldName: shortName
-          aggregateExpression: VarcharAggExp
-        - fieldName: slugEspn
-          aggregateExpression: VarcharAggExp
-        - fieldName: slugFangraphs
+        - fieldName: slug
           aggregateExpression: VarcharAggExp
         - fieldName: status
           aggregateExpression: VarcharAggExp
         - fieldName: throws
           aggregateExpression: VarcharAggExp
+        - fieldName: updatedAt
+          aggregateExpression: TimestampAggExp
         - fieldName: weight
           aggregateExpression: NumericAggExp
   count:
@@ -402,17 +287,15 @@ definition:
         - fieldName: createdAt
           orderByExpression: TimestampOrderByExp
         - fieldName: dateOfBirth
-          orderByExpression: String1OrderByExp
+          orderByExpression: DateOrderByExp
         - fieldName: debutYear
           orderByExpression: Int32OrderByExp
         - fieldName: displayHeight
           orderByExpression: String1OrderByExp
-        - fieldName: displayName
-          orderByExpression: String1OrderByExp
         - fieldName: displayWeight
           orderByExpression: String1OrderByExp
         - fieldName: eligibleSlots
-          orderByExpression: String1OrderByExp
+          orderByExpression: JsonOrderByExp
         - fieldName: fangraphsApiRoute
           orderByExpression: String1OrderByExp
         - fieldName: firstName
@@ -439,24 +322,18 @@ definition:
           orderByExpression: String1OrderByExp
         - fieldName: nameAscii
           orderByExpression: String1OrderByExp
-        - fieldName: nameNonascii
-          orderByExpression: String1OrderByExp
-        - fieldName: nickname
-          orderByExpression: String1OrderByExp
         - fieldName: primaryPosition
           orderByExpression: String1OrderByExp
         - fieldName: proTeam
           orderByExpression: String1OrderByExp
-        - fieldName: shortName
-          orderByExpression: String1OrderByExp
-        - fieldName: slugEspn
-          orderByExpression: String1OrderByExp
-        - fieldName: slugFangraphs
+        - fieldName: slug
           orderByExpression: String1OrderByExp
         - fieldName: status
           orderByExpression: String1OrderByExp
         - fieldName: throws
           orderByExpression: String1OrderByExp
+        - fieldName: updatedAt
+          orderByExpression: TimestampOrderByExp
         - fieldName: weight
           orderByExpression: BigdecimalOrderByExp
       orderableRelationships: []
@@ -502,4 +379,217 @@ definition:
       select:
         filter: null
         allowSubscriptions: true
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: playerFantasyAssignments
+  sourceType: Players
+  target:
+    model:
+      name: PlayerFantasyAssignments
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: PlayerFantasyAssignmentsAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: idEspn
+      target:
+        modelField:
+          - fieldName: playerId
+  graphql:
+    aggregateFieldName: playerFantasyAssignmentsAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: playerProjections
+  sourceType: Players
+  target:
+    model:
+      name: PlayerProjections
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: PlayerProjectionsAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: idEspn
+      target:
+        modelField:
+          - fieldName: playerId
+  graphql:
+    aggregateFieldName: playerProjectionsAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: playerStatsBattings
+  sourceType: Players
+  target:
+    model:
+      name: PlayerStatsBatting
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: PlayerStatsBattingAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: idEspn
+      target:
+        modelField:
+          - fieldName: playerId
+  graphql:
+    aggregateFieldName: playerStatsBattingsAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: playerStatsPitchings
+  sourceType: Players
+  target:
+    model:
+      name: PlayerStatsPitching
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: PlayerStatsPitchingAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: idEspn
+      target:
+        modelField:
+          - fieldName: playerId
+  graphql:
+    aggregateFieldName: playerStatsPitchingsAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: playerValuations
+  sourceType: Players
+  target:
+    model:
+      name: PlayerValuations
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: PlayerValuationsAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: idEspn
+      target:
+        modelField:
+          - fieldName: playerId
+  graphql:
+    aggregateFieldName: playerValuationsAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: rosterSlots
+  sourceType: Players
+  target:
+    model:
+      name: RosterSlots
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: RosterSlotsAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: idEspn
+      target:
+        modelField:
+          - fieldName: playerId
+  graphql:
+    aggregateFieldName: rosterSlotsAggregate
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: PlayersBoolExp
+  operand:
+    object:
+      type: Players
+      comparableFields:
+        - fieldName: active
+          booleanExpressionType: BoolBoolExp
+        - fieldName: bats
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: birthPlace
+          booleanExpressionType: JsonbBoolExp
+        - fieldName: createdAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: dateOfBirth
+          booleanExpressionType: DateBoolExp
+        - fieldName: debutYear
+          booleanExpressionType: Int4BoolExp
+        - fieldName: displayHeight
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: displayWeight
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: eligibleSlots
+          booleanExpressionType: JsonbBoolExp
+        - fieldName: fangraphsApiRoute
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: firstName
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: headshot
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: height
+          booleanExpressionType: Int4BoolExp
+        - fieldName: idEspn
+          booleanExpressionType: Int4BoolExp
+        - fieldName: idFangraphs
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: idXmlbam
+          booleanExpressionType: Int4BoolExp
+        - fieldName: injured
+          booleanExpressionType: BoolBoolExp
+        - fieldName: injuryStatus
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: jersey
+          booleanExpressionType: Int4BoolExp
+        - fieldName: lastName
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: name
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: nameAscii
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: primaryPosition
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: proTeam
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: slug
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: status
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: throws
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: updatedAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: weight
+          booleanExpressionType: NumericBoolExp
+      comparableRelationships:
+        - relationshipName: playerFantasyAssignments
+        - relationshipName: playerProjections
+        - relationshipName: playerStatsBattings
+        - relationshipName: playerStatsPitchings
+        - relationshipName: playerValuations
+        - relationshipName: rosterSlots
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: PlayersBoolExp
 

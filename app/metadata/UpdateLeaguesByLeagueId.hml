@@ -1,0 +1,455 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnLeaguesAcquisitionBudget
+  description: Update the 'acquisition_budget' column in the 'leagues' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnLeaguesAcquisitionBudget
+    inputTypeName: UpdateColumnLeaguesAcquisitionBudgetInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_leagues_acquisition_budget
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnLeaguesAcquisitionBudget
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnLeaguesCreatedAt
+  description: Update the 'created_at' column in the 'leagues' collection
+  fields:
+    - name: set
+      type: Timestamp
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnLeaguesCreatedAt
+    inputTypeName: UpdateColumnLeaguesCreatedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_leagues_created_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnLeaguesCreatedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnLeaguesDraftAuctionBudget
+  description: Update the 'draft_auction_budget' column in the 'leagues' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnLeaguesDraftAuctionBudget
+    inputTypeName: UpdateColumnLeaguesDraftAuctionBudgetInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_leagues_draft_auction_budget
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnLeaguesDraftAuctionBudget
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnLeaguesLeagueId
+  description: Update the 'league_id' column in the 'leagues' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnLeaguesLeagueId
+    inputTypeName: UpdateColumnLeaguesLeagueIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_leagues_league_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnLeaguesLeagueId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnLeaguesNumTeams
+  description: Update the 'num_teams' column in the 'leagues' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnLeaguesNumTeams
+    inputTypeName: UpdateColumnLeaguesNumTeamsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_leagues_num_teams
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnLeaguesNumTeams
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnLeaguesRosterSettings
+  description: Update the 'roster_settings' column in the 'leagues' collection
+  fields:
+    - name: set
+      type: Json
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnLeaguesRosterSettings
+    inputTypeName: UpdateColumnLeaguesRosterSettingsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_leagues_roster_settings
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnLeaguesRosterSettings
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnLeaguesScoringPeriodId
+  description: Update the 'scoring_period_id' column in the 'leagues' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnLeaguesScoringPeriodId
+    inputTypeName: UpdateColumnLeaguesScoringPeriodIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_leagues_scoring_period_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnLeaguesScoringPeriodId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnLeaguesSeasonId
+  description: Update the 'season_id' column in the 'leagues' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnLeaguesSeasonId
+    inputTypeName: UpdateColumnLeaguesSeasonIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_leagues_season_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnLeaguesSeasonId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnLeaguesUpdatedAt
+  description: Update the 'updated_at' column in the 'leagues' collection
+  fields:
+    - name: set
+      type: Timestamp
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnLeaguesUpdatedAt
+    inputTypeName: UpdateColumnLeaguesUpdatedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_leagues_updated_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnLeaguesUpdatedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateLeaguesByLeagueIdUpdateColumns
+  description: Update the columns of the 'leagues' collection
+  fields:
+    - name: acquisitionBudget
+      type: UpdateColumnLeaguesAcquisitionBudget
+      description: Update the 'acquisition_budget' column in the 'leagues' collection.
+    - name: createdAt
+      type: UpdateColumnLeaguesCreatedAt
+      description: Update the 'created_at' column in the 'leagues' collection.
+    - name: draftAuctionBudget
+      type: UpdateColumnLeaguesDraftAuctionBudget
+      description: Update the 'draft_auction_budget' column in the 'leagues' collection.
+    - name: leagueId
+      type: UpdateColumnLeaguesLeagueId
+      description: Update the 'league_id' column in the 'leagues' collection.
+    - name: numTeams
+      type: UpdateColumnLeaguesNumTeams
+      description: Update the 'num_teams' column in the 'leagues' collection.
+    - name: rosterSettings
+      type: UpdateColumnLeaguesRosterSettings
+      description: Update the 'roster_settings' column in the 'leagues' collection.
+    - name: scoringPeriodId
+      type: UpdateColumnLeaguesScoringPeriodId
+      description: Update the 'scoring_period_id' column in the 'leagues' collection.
+    - name: seasonId
+      type: UpdateColumnLeaguesSeasonId
+      description: Update the 'season_id' column in the 'leagues' collection.
+    - name: updatedAt
+      type: UpdateColumnLeaguesUpdatedAt
+      description: Update the 'updated_at' column in the 'leagues' collection.
+  graphql:
+    typeName: UpdateLeaguesByLeagueIdUpdateColumns
+    inputTypeName: UpdateLeaguesByLeagueIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_leagues_by_league_id_update_columns
+      fieldMapping:
+        acquisitionBudget:
+          column:
+            name: acquisition_budget
+        createdAt:
+          column:
+            name: created_at
+        draftAuctionBudget:
+          column:
+            name: draft_auction_budget
+        leagueId:
+          column:
+            name: league_id
+        numTeams:
+          column:
+            name: num_teams
+        rosterSettings:
+          column:
+            name: roster_settings
+        scoringPeriodId:
+          column:
+            name: scoring_period_id
+        seasonId:
+          column:
+            name: season_id
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateLeaguesByLeagueIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - acquisitionBudget
+          - createdAt
+          - draftAuctionBudget
+          - leagueId
+          - numTeams
+          - rosterSettings
+          - scoringPeriodId
+          - seasonId
+          - updatedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateLeaguesByLeagueIdResponse
+  description: Responses from the 'update_leagues_by_league_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Leagues!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdateLeaguesByLeagueIdResponse
+    inputTypeName: UpdateLeaguesByLeagueIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_leagues_by_league_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateLeaguesByLeagueIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdateLeaguesByLeagueId
+  outputType: UpdateLeaguesByLeagueIdResponse!
+  arguments:
+    - name: keyLeagueId
+      type: Int32!
+    - name: postCheck
+      type: LeaguesBoolExp
+      description: Update permission post-condition predicate over the 'leagues' collection
+    - name: preCheck
+      type: LeaguesBoolExp
+      description: Update permission pre-condition predicate over the 'leagues' collection
+    - name: updateColumns
+      type: UpdateLeaguesByLeagueIdUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_leagues_by_league_id
+    argumentMapping:
+      keyLeagueId: key_league_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updateLeaguesByLeagueId
+    rootFieldKind: Mutation
+  description: Update any row on the 'leagues' collection using the 'league_id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdateLeaguesByLeagueId
+  permissions:
+    - role: admin
+      allowExecution: true
+

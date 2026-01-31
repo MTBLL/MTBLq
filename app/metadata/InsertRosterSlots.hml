@@ -1,0 +1,162 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertRosterSlotsObject
+  fields:
+    - name: acquisitionDate
+      type: Timestamp
+    - name: acquisitionType
+      type: String_1
+    - name: createdAt
+      type: Timestamp
+    - name: id
+      type: Int32
+    - name: keeperValue
+      type: Int32
+    - name: leagueId
+      type: Int32!
+    - name: lineupSlot
+      type: String_1!
+    - name: playerId
+      type: Int32!
+    - name: seasonId
+      type: Int32!
+    - name: teamId
+      type: Int32!
+    - name: updatedAt
+      type: Timestamp
+  graphql:
+    typeName: InsertRosterSlotsObject
+    inputTypeName: InsertRosterSlotsObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_roster_slots_object
+      fieldMapping:
+        acquisitionDate:
+          column:
+            name: acquisition_date
+        acquisitionType:
+          column:
+            name: acquisition_type
+        createdAt:
+          column:
+            name: created_at
+        id:
+          column:
+            name: id
+        keeperValue:
+          column:
+            name: keeper_value
+        leagueId:
+          column:
+            name: league_id
+        lineupSlot:
+          column:
+            name: lineup_slot
+        playerId:
+          column:
+            name: player_id
+        seasonId:
+          column:
+            name: season_id
+        teamId:
+          column:
+            name: team_id
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertRosterSlotsObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - acquisitionDate
+          - acquisitionType
+          - createdAt
+          - id
+          - keeperValue
+          - leagueId
+          - lineupSlot
+          - playerId
+          - seasonId
+          - teamId
+          - updatedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertRosterSlotsResponse
+  description: Responses from the 'insert_roster_slots' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[RosterSlots!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertRosterSlotsResponse
+    inputTypeName: InsertRosterSlotsResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_roster_slots_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertRosterSlotsResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertRosterSlots
+  outputType: InsertRosterSlotsResponse!
+  arguments:
+    - name: objects
+      type: "[InsertRosterSlotsObject!]!"
+    - name: postCheck
+      type: RosterSlotsBoolExp
+      description: Insert permission predicate over the 'roster_slots' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_roster_slots
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertRosterSlots
+    rootFieldKind: Mutation
+  description: Insert into the roster_slots table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertRosterSlots
+  permissions:
+    - role: admin
+      allowExecution: true
+

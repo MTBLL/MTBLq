@@ -1,0 +1,267 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: PlayerValuations
+  fields:
+    - name: createdAt
+      type: Timestamp
+    - name: id
+      type: Int32!
+    - name: playerId
+      type: Int32!
+    - name: primaryPosition
+      type: String_1!
+    - name: seasonId
+      type: Int32!
+    - name: tier
+      type: String_1
+    - name: totalDollars
+      type: Bigdecimal
+    - name: totalZ
+      type: Bigdecimal
+    - name: updatedAt
+      type: Timestamp
+  graphql:
+    typeName: PlayerValuations
+    inputTypeName: PlayerValuationsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: player_valuations
+      fieldMapping:
+        createdAt:
+          column:
+            name: created_at
+        id:
+          column:
+            name: id
+        playerId:
+          column:
+            name: player_id
+        primaryPosition:
+          column:
+            name: primary_position
+        seasonId:
+          column:
+            name: season_id
+        tier:
+          column:
+            name: tier
+        totalDollars:
+          column:
+            name: total_dollars
+        totalZ:
+          column:
+            name: total_z
+        updatedAt:
+          column:
+            name: updated_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: PlayerValuations
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - createdAt
+          - id
+          - playerId
+          - primaryPosition
+          - seasonId
+          - tier
+          - totalDollars
+          - totalZ
+          - updatedAt
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: PlayerValuationsAggExp
+  operand:
+    object:
+      aggregatedType: PlayerValuations
+      aggregatableFields:
+        - fieldName: createdAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: id
+          aggregateExpression: Int4AggExp
+        - fieldName: playerId
+          aggregateExpression: Int4AggExp
+        - fieldName: primaryPosition
+          aggregateExpression: VarcharAggExp
+        - fieldName: seasonId
+          aggregateExpression: Int4AggExp
+        - fieldName: tier
+          aggregateExpression: VarcharAggExp
+        - fieldName: totalDollars
+          aggregateExpression: NumericAggExp
+        - fieldName: totalZ
+          aggregateExpression: NumericAggExp
+        - fieldName: updatedAt
+          aggregateExpression: TimestampAggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: PlayerValuationsAggExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: PlayerValuations
+  objectType: PlayerValuations
+  source:
+    dataConnectorName: neon_mtbl
+    collection: player_valuations
+  filterExpressionType: PlayerValuationsBoolExp
+  aggregateExpression: PlayerValuationsAggExp
+  orderByExpression: PlayerValuationsOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: playerValuations
+      subscription:
+        rootField: playerValuations
+    selectUniques:
+      - queryRootField: playerValuationsById
+        uniqueIdentifier:
+          - id
+        subscription:
+          rootField: playerValuationsById
+      - queryRootField: playerValuationsByPlayerValuationsPlayerIdSeasonIdPrimaryPositionKey
+        uniqueIdentifier:
+          - playerId
+          - primaryPosition
+          - seasonId
+        subscription:
+          rootField: playerValuationsByPlayerValuationsPlayerIdSeasonIdPrimaryPositionKey
+    filterInputTypeName: PlayerValuationsFilterInput
+    aggregate:
+      queryRootField: playerValuationsAggregate
+      subscription:
+        rootField: playerValuationsAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: PlayerValuations
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: playerValuationDetails
+  sourceType: PlayerValuations
+  target:
+    model:
+      name: PlayerValuationDetails
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: PlayerValuationDetailsAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: id
+      target:
+        modelField:
+          - fieldName: valuationId
+  graphql:
+    aggregateFieldName: playerValuationDetailsAggregate
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: player
+  sourceType: PlayerValuations
+  target:
+    model:
+      name: Players
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: playerId
+      target:
+        modelField:
+          - fieldName: idEspn
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: PlayerValuationsBoolExp
+  operand:
+    object:
+      type: PlayerValuations
+      comparableFields:
+        - fieldName: createdAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: id
+          booleanExpressionType: Int4BoolExp
+        - fieldName: playerId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: primaryPosition
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: seasonId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: tier
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: totalDollars
+          booleanExpressionType: NumericBoolExp
+        - fieldName: totalZ
+          booleanExpressionType: NumericBoolExp
+        - fieldName: updatedAt
+          booleanExpressionType: TimestampBoolExp
+      comparableRelationships:
+        - relationshipName: playerValuationDetails
+        - relationshipName: player
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: PlayerValuationsBoolExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: PlayerValuationsOrderByExp
+  operand:
+    object:
+      orderedType: PlayerValuations
+      orderableFields:
+        - fieldName: createdAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: id
+          orderByExpression: Int32OrderByExp
+        - fieldName: playerId
+          orderByExpression: Int32OrderByExp
+        - fieldName: primaryPosition
+          orderByExpression: String1OrderByExp
+        - fieldName: seasonId
+          orderByExpression: Int32OrderByExp
+        - fieldName: tier
+          orderByExpression: String1OrderByExp
+        - fieldName: totalDollars
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: totalZ
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: updatedAt
+          orderByExpression: TimestampOrderByExp
+      orderableRelationships:
+        - relationshipName: player
+  graphql:
+    expressionTypeName: PlayerValuationsOrderByExp
+

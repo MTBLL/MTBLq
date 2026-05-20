@@ -211,6 +211,53 @@ definition:
     - name: xwOba
       type: UpdateColumnPlayerStatsBattingXwOba
       description: Update the 'xwOBA' column in the 'player_stats_batting' collection.
+    - name: bip
+      type: UpdateColumnPlayerStatsBattingBip
+      description: Update the 'BIP' column in the 'player_stats_batting' collection.
+    - name: barrelsPerBbePctPctRnk
+      type: UpdateColumnPlayerStatsBattingBarrelsPerBbePctPctRnk
+      description: Update the 'barrels_per_bbe_pct_pct_rnk' column in the
+        'player_stats_batting' collection.
+    - name: barrelsPerPaPctPctRnk
+      type: UpdateColumnPlayerStatsBattingBarrelsPerPaPctPctRnk
+      description: Update the 'barrels_per_pa_pct_pct_rnk' column in the
+        'player_stats_batting' collection.
+    - name: barrelsTotalPctRnk
+      type: UpdateColumnPlayerStatsBattingBarrelsTotalPctRnk
+      description: Update the 'barrels_total_pct_rnk' column in the
+        'player_stats_batting' collection.
+    - name: hardhitPctPctRnk
+      type: UpdateColumnPlayerStatsBattingHardhitPctPctRnk
+      description: Update the 'hardhit_pct_pct_rnk' column in the
+        'player_stats_batting' collection.
+    - name: percievedVelo
+      type: UpdateColumnPlayerStatsBattingPercievedVelo
+      description: Update the 'percieved_velo' column in the 'player_stats_batting'
+        collection.
+    - name: pitchPercent
+      type: UpdateColumnPlayerStatsBattingPitchPercent
+      description: Update the 'pitch_percent' column in the 'player_stats_batting'
+        collection.
+    - name: pitchVelo
+      type: UpdateColumnPlayerStatsBattingPitchVelo
+      description: Update the 'pitch_velo' column in the 'player_stats_batting' collection.
+    - name: pitches
+      type: UpdateColumnPlayerStatsBattingPitches
+      description: Update the 'pitches' column in the 'player_stats_batting' collection.
+    - name: rateIdealAttackAngle
+      type: UpdateColumnPlayerStatsBattingRateIdealAttackAngle
+      description: Update the 'rate_ideal_attack_angle' column in the
+        'player_stats_batting' collection.
+    - name: runExp
+      type: UpdateColumnPlayerStatsBattingRunExp
+      description: Update the 'run_exp' column in the 'player_stats_batting' collection.
+    - name: totalPitches
+      type: UpdateColumnPlayerStatsBattingTotalPitches
+      description: Update the 'total_pitches' column in the 'player_stats_batting'
+        collection.
+    - name: wObAdiff
+      type: UpdateColumnPlayerStatsBattingWObAdiff
+      description: Update the 'wOBAdiff' column in the 'player_stats_batting' collection.
   graphql:
     typeName: UpdatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodUpdateColumns
     inputTypeName: UpdatePlayerStatsBattingByPlayerIdAndSeasonIdAndStatPeriodUpdateColumnsInput
@@ -413,6 +460,45 @@ definition:
         xwOba:
           column:
             name: xwOBA
+        bip:
+          column:
+            name: BIP
+        barrelsPerBbePctPctRnk:
+          column:
+            name: barrels_per_bbe_pct_pct_rnk
+        barrelsPerPaPctPctRnk:
+          column:
+            name: barrels_per_pa_pct_pct_rnk
+        barrelsTotalPctRnk:
+          column:
+            name: barrels_total_pct_rnk
+        hardhitPctPctRnk:
+          column:
+            name: hardhit_pct_pct_rnk
+        percievedVelo:
+          column:
+            name: percieved_velo
+        pitchPercent:
+          column:
+            name: pitch_percent
+        pitchVelo:
+          column:
+            name: pitch_velo
+        pitches:
+          column:
+            name: pitches
+        rateIdealAttackAngle:
+          column:
+            name: rate_ideal_attack_angle
+        runExp:
+          column:
+            name: run_exp
+        totalPitches:
+          column:
+            name: total_pitches
+        wObAdiff:
+          column:
+            name: wOBAdiff
 
 ---
 kind: TypePermissions
@@ -488,6 +574,19 @@ definition:
           - xSlg
           - xSlGdiff
           - xwOba
+          - bip
+          - barrelsPerBbePctPctRnk
+          - barrelsPerPaPctPctRnk
+          - barrelsTotalPctRnk
+          - hardhitPctPctRnk
+          - percievedVelo
+          - pitchPercent
+          - pitchVelo
+          - pitches
+          - rateIdealAttackAngle
+          - runExp
+          - totalPitches
+          - wObAdiff
 
 ---
 kind: ObjectType

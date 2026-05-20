@@ -13,13 +13,15 @@ definition:
     - name: playerType
       type: String_1!
     - name: projectionSource
-      type: String_1
+      type: String_1!
     - name: projections
       type: Json!
     - name: seasonId
       type: Int32!
     - name: updatedAt
       type: Timestamp
+    - name: projectionPeriod
+      type: String_1
   graphql:
     typeName: InsertPlayerProjectionsObject
     inputTypeName: InsertPlayerProjectionsObjectInput
@@ -51,6 +53,9 @@ definition:
         updatedAt:
           column:
             name: updated_at
+        projectionPeriod:
+          column:
+            name: projection_period
 
 ---
 kind: TypePermissions
@@ -69,6 +74,7 @@ definition:
           - projections
           - seasonId
           - updatedAt
+          - projectionPeriod
 
 ---
 kind: ObjectType

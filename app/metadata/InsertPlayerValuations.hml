@@ -22,6 +22,8 @@ definition:
       type: Bigdecimal
     - name: updatedAt
       type: Timestamp
+    - name: valuationType
+      type: String_1!
   graphql:
     typeName: InsertPlayerValuationsObject
     inputTypeName: InsertPlayerValuationsObjectInput
@@ -56,6 +58,9 @@ definition:
         updatedAt:
           column:
             name: updated_at
+        valuationType:
+          column:
+            name: valuation_type
 
 ---
 kind: TypePermissions
@@ -75,6 +80,7 @@ definition:
           - totalDollars
           - totalZ
           - updatedAt
+          - valuationType
 
 ---
 kind: ObjectType

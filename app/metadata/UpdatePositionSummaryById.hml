@@ -1,0 +1,2374 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryBudgetEra
+  description: Update the 'budget_ERA' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryBudgetEra
+    inputTypeName: UpdateColumnPositionSummaryBudgetEraInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_budget_ERA
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryBudgetEra
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryBudgetHr
+  description: Update the 'budget_HR' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryBudgetHr
+    inputTypeName: UpdateColumnPositionSummaryBudgetHrInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_budget_HR
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryBudgetHr
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryBudgetIp
+  description: Update the 'budget_IP' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryBudgetIp
+    inputTypeName: UpdateColumnPositionSummaryBudgetIpInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_budget_IP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryBudgetIp
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryBudgetK9
+  description: Update the 'budget_K/9' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryBudgetK9
+    inputTypeName: UpdateColumnPositionSummaryBudgetK9Input
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_budget_K/9
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryBudgetK9
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryBudgetObp
+  description: Update the 'budget_OBP' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryBudgetObp
+    inputTypeName: UpdateColumnPositionSummaryBudgetObpInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_budget_OBP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryBudgetObp
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryBudgetQs
+  description: Update the 'budget_QS' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryBudgetQs
+    inputTypeName: UpdateColumnPositionSummaryBudgetQsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_budget_QS
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryBudgetQs
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryBudgetR
+  description: Update the 'budget_R' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryBudgetR
+    inputTypeName: UpdateColumnPositionSummaryBudgetRInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_budget_R
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryBudgetR
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryBudgetRbi
+  description: Update the 'budget_RBI' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryBudgetRbi
+    inputTypeName: UpdateColumnPositionSummaryBudgetRbiInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_budget_RBI
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryBudgetRbi
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryBudgetSbn
+  description: Update the 'budget_SBN' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryBudgetSbn
+    inputTypeName: UpdateColumnPositionSummaryBudgetSbnInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_budget_SBN
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryBudgetSbn
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryBudgetSlg
+  description: Update the 'budget_SLG' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryBudgetSlg
+    inputTypeName: UpdateColumnPositionSummaryBudgetSlgInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_budget_SLG
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryBudgetSlg
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryBudgetSvhd
+  description: Update the 'budget_SVHD' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryBudgetSvhd
+    inputTypeName: UpdateColumnPositionSummaryBudgetSvhdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_budget_SVHD
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryBudgetSvhd
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryBudgetWhip
+  description: Update the 'budget_WHIP' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryBudgetWhip
+    inputTypeName: UpdateColumnPositionSummaryBudgetWhipInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_budget_WHIP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryBudgetWhip
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryCreatedAt
+  description: Update the 'created_at' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Timestamp
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryCreatedAt
+    inputTypeName: UpdateColumnPositionSummaryCreatedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_created_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryCreatedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryDollarsPerZEra
+  description: Update the 'dollars_per_z_ERA' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryDollarsPerZEra
+    inputTypeName: UpdateColumnPositionSummaryDollarsPerZEraInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_dollars_per_z_ERA
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryDollarsPerZEra
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryDollarsPerZHr
+  description: Update the 'dollars_per_z_HR' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryDollarsPerZHr
+    inputTypeName: UpdateColumnPositionSummaryDollarsPerZHrInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_dollars_per_z_HR
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryDollarsPerZHr
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryDollarsPerZIp
+  description: Update the 'dollars_per_z_IP' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryDollarsPerZIp
+    inputTypeName: UpdateColumnPositionSummaryDollarsPerZIpInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_dollars_per_z_IP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryDollarsPerZIp
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryDollarsPerZK9
+  description: Update the 'dollars_per_z_K/9' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryDollarsPerZk9
+    inputTypeName: UpdateColumnPositionSummaryDollarsPerZk9Input
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_dollars_per_z_K/9
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryDollarsPerZK9
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryDollarsPerZObp
+  description: Update the 'dollars_per_z_OBP' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryDollarsPerZObp
+    inputTypeName: UpdateColumnPositionSummaryDollarsPerZObpInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_dollars_per_z_OBP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryDollarsPerZObp
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryDollarsPerZQs
+  description: Update the 'dollars_per_z_QS' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryDollarsPerZQs
+    inputTypeName: UpdateColumnPositionSummaryDollarsPerZQsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_dollars_per_z_QS
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryDollarsPerZQs
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryDollarsPerZR
+  description: Update the 'dollars_per_z_R' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryDollarsPerZr
+    inputTypeName: UpdateColumnPositionSummaryDollarsPerZrInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_dollars_per_z_R
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryDollarsPerZR
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryDollarsPerZRbi
+  description: Update the 'dollars_per_z_RBI' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryDollarsPerZRbi
+    inputTypeName: UpdateColumnPositionSummaryDollarsPerZRbiInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_dollars_per_z_RBI
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryDollarsPerZRbi
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryDollarsPerZSbn
+  description: Update the 'dollars_per_z_SBN' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryDollarsPerZSbn
+    inputTypeName: UpdateColumnPositionSummaryDollarsPerZSbnInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_dollars_per_z_SBN
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryDollarsPerZSbn
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryDollarsPerZSlg
+  description: Update the 'dollars_per_z_SLG' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryDollarsPerZSlg
+    inputTypeName: UpdateColumnPositionSummaryDollarsPerZSlgInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_dollars_per_z_SLG
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryDollarsPerZSlg
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryDollarsPerZSvhd
+  description: Update the 'dollars_per_z_SVHD' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryDollarsPerZSvhd
+    inputTypeName: UpdateColumnPositionSummaryDollarsPerZSvhdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_dollars_per_z_SVHD
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryDollarsPerZSvhd
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryDollarsPerZWhip
+  description: Update the 'dollars_per_z_WHIP' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryDollarsPerZWhip
+    inputTypeName: UpdateColumnPositionSummaryDollarsPerZWhipInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_dollars_per_z_WHIP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryDollarsPerZWhip
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryId
+  description: Update the 'id' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryId
+    inputTypeName: UpdateColumnPositionSummaryIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryPoolTotalZEra
+  description: Update the 'pool_total_z_ERA' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryPoolTotalZEra
+    inputTypeName: UpdateColumnPositionSummaryPoolTotalZEraInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_pool_total_z_ERA
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryPoolTotalZEra
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryPoolTotalZHr
+  description: Update the 'pool_total_z_HR' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryPoolTotalZHr
+    inputTypeName: UpdateColumnPositionSummaryPoolTotalZHrInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_pool_total_z_HR
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryPoolTotalZHr
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryPoolTotalZIp
+  description: Update the 'pool_total_z_IP' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryPoolTotalZIp
+    inputTypeName: UpdateColumnPositionSummaryPoolTotalZIpInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_pool_total_z_IP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryPoolTotalZIp
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryPoolTotalZK9
+  description: Update the 'pool_total_z_K/9' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryPoolTotalZk9
+    inputTypeName: UpdateColumnPositionSummaryPoolTotalZk9Input
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_pool_total_z_K/9
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryPoolTotalZK9
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryPoolTotalZObp
+  description: Update the 'pool_total_z_OBP' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryPoolTotalZObp
+    inputTypeName: UpdateColumnPositionSummaryPoolTotalZObpInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_pool_total_z_OBP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryPoolTotalZObp
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryPoolTotalZQs
+  description: Update the 'pool_total_z_QS' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryPoolTotalZQs
+    inputTypeName: UpdateColumnPositionSummaryPoolTotalZQsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_pool_total_z_QS
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryPoolTotalZQs
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryPoolTotalZR
+  description: Update the 'pool_total_z_R' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryPoolTotalZr
+    inputTypeName: UpdateColumnPositionSummaryPoolTotalZrInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_pool_total_z_R
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryPoolTotalZR
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryPoolTotalZRbi
+  description: Update the 'pool_total_z_RBI' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryPoolTotalZRbi
+    inputTypeName: UpdateColumnPositionSummaryPoolTotalZRbiInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_pool_total_z_RBI
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryPoolTotalZRbi
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryPoolTotalZSbn
+  description: Update the 'pool_total_z_SBN' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryPoolTotalZSbn
+    inputTypeName: UpdateColumnPositionSummaryPoolTotalZSbnInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_pool_total_z_SBN
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryPoolTotalZSbn
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryPoolTotalZSlg
+  description: Update the 'pool_total_z_SLG' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryPoolTotalZSlg
+    inputTypeName: UpdateColumnPositionSummaryPoolTotalZSlgInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_pool_total_z_SLG
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryPoolTotalZSlg
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryPoolTotalZSvhd
+  description: Update the 'pool_total_z_SVHD' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryPoolTotalZSvhd
+    inputTypeName: UpdateColumnPositionSummaryPoolTotalZSvhdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_pool_total_z_SVHD
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryPoolTotalZSvhd
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryPoolTotalZWhip
+  description: Update the 'pool_total_z_WHIP' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryPoolTotalZWhip
+    inputTypeName: UpdateColumnPositionSummaryPoolTotalZWhipInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_pool_total_z_WHIP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryPoolTotalZWhip
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryPosition
+  description: Update the 'position' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: String_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryPosition
+    inputTypeName: UpdateColumnPositionSummaryPositionInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_position
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryPosition
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryReplacementBaselineEra
+  description: Update the 'replacement_baseline_ERA' column in the
+    'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryReplacementBaselineEra
+    inputTypeName: UpdateColumnPositionSummaryReplacementBaselineEraInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_replacement_baseline_ERA
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryReplacementBaselineEra
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryReplacementBaselineHr
+  description: Update the 'replacement_baseline_HR' column in the
+    'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryReplacementBaselineHr
+    inputTypeName: UpdateColumnPositionSummaryReplacementBaselineHrInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_replacement_baseline_HR
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryReplacementBaselineHr
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryReplacementBaselineIp
+  description: Update the 'replacement_baseline_IP' column in the
+    'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryReplacementBaselineIp
+    inputTypeName: UpdateColumnPositionSummaryReplacementBaselineIpInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_replacement_baseline_IP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryReplacementBaselineIp
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryReplacementBaselineK9
+  description: Update the 'replacement_baseline_K/9' column in the
+    'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryReplacementBaselineK9
+    inputTypeName: UpdateColumnPositionSummaryReplacementBaselineK9Input
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_replacement_baseline_K/9
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryReplacementBaselineK9
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryReplacementBaselineObp
+  description: Update the 'replacement_baseline_OBP' column in the
+    'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryReplacementBaselineObp
+    inputTypeName: UpdateColumnPositionSummaryReplacementBaselineObpInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_replacement_baseline_OBP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryReplacementBaselineObp
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryReplacementBaselineQs
+  description: Update the 'replacement_baseline_QS' column in the
+    'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryReplacementBaselineQs
+    inputTypeName: UpdateColumnPositionSummaryReplacementBaselineQsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_replacement_baseline_QS
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryReplacementBaselineQs
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryReplacementBaselineR
+  description: Update the 'replacement_baseline_R' column in the
+    'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryReplacementBaselineR
+    inputTypeName: UpdateColumnPositionSummaryReplacementBaselineRInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_replacement_baseline_R
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryReplacementBaselineR
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryReplacementBaselineRbi
+  description: Update the 'replacement_baseline_RBI' column in the
+    'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryReplacementBaselineRbi
+    inputTypeName: UpdateColumnPositionSummaryReplacementBaselineRbiInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_replacement_baseline_RBI
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryReplacementBaselineRbi
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryReplacementBaselineSbn
+  description: Update the 'replacement_baseline_SBN' column in the
+    'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryReplacementBaselineSbn
+    inputTypeName: UpdateColumnPositionSummaryReplacementBaselineSbnInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_replacement_baseline_SBN
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryReplacementBaselineSbn
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryReplacementBaselineSlg
+  description: Update the 'replacement_baseline_SLG' column in the
+    'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryReplacementBaselineSlg
+    inputTypeName: UpdateColumnPositionSummaryReplacementBaselineSlgInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_replacement_baseline_SLG
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryReplacementBaselineSlg
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryReplacementBaselineSvhd
+  description: Update the 'replacement_baseline_SVHD' column in the
+    'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryReplacementBaselineSvhd
+    inputTypeName: UpdateColumnPositionSummaryReplacementBaselineSvhdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_replacement_baseline_SVHD
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryReplacementBaselineSvhd
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryReplacementBaselineWhip
+  description: Update the 'replacement_baseline_WHIP' column in the
+    'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryReplacementBaselineWhip
+    inputTypeName: UpdateColumnPositionSummaryReplacementBaselineWhipInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_replacement_baseline_WHIP
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryReplacementBaselineWhip
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryReplacementTierCount
+  description: Update the 'replacement_tier_count' column in the
+    'position_summary' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryReplacementTierCount
+    inputTypeName: UpdateColumnPositionSummaryReplacementTierCountInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_replacement_tier_count
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryReplacementTierCount
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryRole
+  description: Update the 'role' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: String_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryRole
+    inputTypeName: UpdateColumnPositionSummaryRoleInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_role
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryRole
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryRosteredCount
+  description: Update the 'rostered_count' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryRosteredCount
+    inputTypeName: UpdateColumnPositionSummaryRosteredCountInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_rostered_count
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryRosteredCount
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryTotalBudget
+  description: Update the 'total_budget' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryTotalBudget
+    inputTypeName: UpdateColumnPositionSummaryTotalBudgetInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_total_budget
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryTotalBudget
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryUpdatedAt
+  description: Update the 'updated_at' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: Timestamp
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryUpdatedAt
+    inputTypeName: UpdateColumnPositionSummaryUpdatedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_updated_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryUpdatedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnPositionSummaryValuationType
+  description: Update the 'valuation_type' column in the 'position_summary' collection
+  fields:
+    - name: set
+      type: String_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnPositionSummaryValuationType
+    inputTypeName: UpdateColumnPositionSummaryValuationTypeInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_position_summary_valuation_type
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnPositionSummaryValuationType
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePositionSummaryByIdUpdateColumns
+  description: Update the columns of the 'position_summary' collection
+  fields:
+    - name: budgetEra
+      type: UpdateColumnPositionSummaryBudgetEra
+      description: Update the 'budget_ERA' column in the 'position_summary' collection.
+    - name: budgetHr
+      type: UpdateColumnPositionSummaryBudgetHr
+      description: Update the 'budget_HR' column in the 'position_summary' collection.
+    - name: budgetIp
+      type: UpdateColumnPositionSummaryBudgetIp
+      description: Update the 'budget_IP' column in the 'position_summary' collection.
+    - name: budgetK9
+      type: UpdateColumnPositionSummaryBudgetK9
+      description: Update the 'budget_K/9' column in the 'position_summary' collection.
+    - name: budgetObp
+      type: UpdateColumnPositionSummaryBudgetObp
+      description: Update the 'budget_OBP' column in the 'position_summary' collection.
+    - name: budgetQs
+      type: UpdateColumnPositionSummaryBudgetQs
+      description: Update the 'budget_QS' column in the 'position_summary' collection.
+    - name: budgetR
+      type: UpdateColumnPositionSummaryBudgetR
+      description: Update the 'budget_R' column in the 'position_summary' collection.
+    - name: budgetRbi
+      type: UpdateColumnPositionSummaryBudgetRbi
+      description: Update the 'budget_RBI' column in the 'position_summary' collection.
+    - name: budgetSbn
+      type: UpdateColumnPositionSummaryBudgetSbn
+      description: Update the 'budget_SBN' column in the 'position_summary' collection.
+    - name: budgetSlg
+      type: UpdateColumnPositionSummaryBudgetSlg
+      description: Update the 'budget_SLG' column in the 'position_summary' collection.
+    - name: budgetSvhd
+      type: UpdateColumnPositionSummaryBudgetSvhd
+      description: Update the 'budget_SVHD' column in the 'position_summary' collection.
+    - name: budgetWhip
+      type: UpdateColumnPositionSummaryBudgetWhip
+      description: Update the 'budget_WHIP' column in the 'position_summary' collection.
+    - name: createdAt
+      type: UpdateColumnPositionSummaryCreatedAt
+      description: Update the 'created_at' column in the 'position_summary' collection.
+    - name: dollarsPerZEra
+      type: UpdateColumnPositionSummaryDollarsPerZEra
+      description: Update the 'dollars_per_z_ERA' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZHr
+      type: UpdateColumnPositionSummaryDollarsPerZHr
+      description: Update the 'dollars_per_z_HR' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZIp
+      type: UpdateColumnPositionSummaryDollarsPerZIp
+      description: Update the 'dollars_per_z_IP' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZK9
+      type: UpdateColumnPositionSummaryDollarsPerZK9
+      description: Update the 'dollars_per_z_K/9' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZObp
+      type: UpdateColumnPositionSummaryDollarsPerZObp
+      description: Update the 'dollars_per_z_OBP' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZQs
+      type: UpdateColumnPositionSummaryDollarsPerZQs
+      description: Update the 'dollars_per_z_QS' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZR
+      type: UpdateColumnPositionSummaryDollarsPerZR
+      description: Update the 'dollars_per_z_R' column in the 'position_summary' collection.
+    - name: dollarsPerZRbi
+      type: UpdateColumnPositionSummaryDollarsPerZRbi
+      description: Update the 'dollars_per_z_RBI' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZSbn
+      type: UpdateColumnPositionSummaryDollarsPerZSbn
+      description: Update the 'dollars_per_z_SBN' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZSlg
+      type: UpdateColumnPositionSummaryDollarsPerZSlg
+      description: Update the 'dollars_per_z_SLG' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZSvhd
+      type: UpdateColumnPositionSummaryDollarsPerZSvhd
+      description: Update the 'dollars_per_z_SVHD' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZWhip
+      type: UpdateColumnPositionSummaryDollarsPerZWhip
+      description: Update the 'dollars_per_z_WHIP' column in the 'position_summary'
+        collection.
+    - name: id
+      type: UpdateColumnPositionSummaryId
+      description: Update the 'id' column in the 'position_summary' collection.
+    - name: poolTotalZEra
+      type: UpdateColumnPositionSummaryPoolTotalZEra
+      description: Update the 'pool_total_z_ERA' column in the 'position_summary'
+        collection.
+    - name: poolTotalZHr
+      type: UpdateColumnPositionSummaryPoolTotalZHr
+      description: Update the 'pool_total_z_HR' column in the 'position_summary' collection.
+    - name: poolTotalZIp
+      type: UpdateColumnPositionSummaryPoolTotalZIp
+      description: Update the 'pool_total_z_IP' column in the 'position_summary' collection.
+    - name: poolTotalZK9
+      type: UpdateColumnPositionSummaryPoolTotalZK9
+      description: Update the 'pool_total_z_K/9' column in the 'position_summary'
+        collection.
+    - name: poolTotalZObp
+      type: UpdateColumnPositionSummaryPoolTotalZObp
+      description: Update the 'pool_total_z_OBP' column in the 'position_summary'
+        collection.
+    - name: poolTotalZQs
+      type: UpdateColumnPositionSummaryPoolTotalZQs
+      description: Update the 'pool_total_z_QS' column in the 'position_summary' collection.
+    - name: poolTotalZR
+      type: UpdateColumnPositionSummaryPoolTotalZR
+      description: Update the 'pool_total_z_R' column in the 'position_summary' collection.
+    - name: poolTotalZRbi
+      type: UpdateColumnPositionSummaryPoolTotalZRbi
+      description: Update the 'pool_total_z_RBI' column in the 'position_summary'
+        collection.
+    - name: poolTotalZSbn
+      type: UpdateColumnPositionSummaryPoolTotalZSbn
+      description: Update the 'pool_total_z_SBN' column in the 'position_summary'
+        collection.
+    - name: poolTotalZSlg
+      type: UpdateColumnPositionSummaryPoolTotalZSlg
+      description: Update the 'pool_total_z_SLG' column in the 'position_summary'
+        collection.
+    - name: poolTotalZSvhd
+      type: UpdateColumnPositionSummaryPoolTotalZSvhd
+      description: Update the 'pool_total_z_SVHD' column in the 'position_summary'
+        collection.
+    - name: poolTotalZWhip
+      type: UpdateColumnPositionSummaryPoolTotalZWhip
+      description: Update the 'pool_total_z_WHIP' column in the 'position_summary'
+        collection.
+    - name: position
+      type: UpdateColumnPositionSummaryPosition
+      description: Update the 'position' column in the 'position_summary' collection.
+    - name: replacementBaselineEra
+      type: UpdateColumnPositionSummaryReplacementBaselineEra
+      description: Update the 'replacement_baseline_ERA' column in the
+        'position_summary' collection.
+    - name: replacementBaselineHr
+      type: UpdateColumnPositionSummaryReplacementBaselineHr
+      description: Update the 'replacement_baseline_HR' column in the
+        'position_summary' collection.
+    - name: replacementBaselineIp
+      type: UpdateColumnPositionSummaryReplacementBaselineIp
+      description: Update the 'replacement_baseline_IP' column in the
+        'position_summary' collection.
+    - name: replacementBaselineK9
+      type: UpdateColumnPositionSummaryReplacementBaselineK9
+      description: Update the 'replacement_baseline_K/9' column in the
+        'position_summary' collection.
+    - name: replacementBaselineObp
+      type: UpdateColumnPositionSummaryReplacementBaselineObp
+      description: Update the 'replacement_baseline_OBP' column in the
+        'position_summary' collection.
+    - name: replacementBaselineQs
+      type: UpdateColumnPositionSummaryReplacementBaselineQs
+      description: Update the 'replacement_baseline_QS' column in the
+        'position_summary' collection.
+    - name: replacementBaselineR
+      type: UpdateColumnPositionSummaryReplacementBaselineR
+      description: Update the 'replacement_baseline_R' column in the
+        'position_summary' collection.
+    - name: replacementBaselineRbi
+      type: UpdateColumnPositionSummaryReplacementBaselineRbi
+      description: Update the 'replacement_baseline_RBI' column in the
+        'position_summary' collection.
+    - name: replacementBaselineSbn
+      type: UpdateColumnPositionSummaryReplacementBaselineSbn
+      description: Update the 'replacement_baseline_SBN' column in the
+        'position_summary' collection.
+    - name: replacementBaselineSlg
+      type: UpdateColumnPositionSummaryReplacementBaselineSlg
+      description: Update the 'replacement_baseline_SLG' column in the
+        'position_summary' collection.
+    - name: replacementBaselineSvhd
+      type: UpdateColumnPositionSummaryReplacementBaselineSvhd
+      description: Update the 'replacement_baseline_SVHD' column in the
+        'position_summary' collection.
+    - name: replacementBaselineWhip
+      type: UpdateColumnPositionSummaryReplacementBaselineWhip
+      description: Update the 'replacement_baseline_WHIP' column in the
+        'position_summary' collection.
+    - name: replacementTierCount
+      type: UpdateColumnPositionSummaryReplacementTierCount
+      description: Update the 'replacement_tier_count' column in the
+        'position_summary' collection.
+    - name: role
+      type: UpdateColumnPositionSummaryRole
+      description: Update the 'role' column in the 'position_summary' collection.
+    - name: rosteredCount
+      type: UpdateColumnPositionSummaryRosteredCount
+      description: Update the 'rostered_count' column in the 'position_summary' collection.
+    - name: totalBudget
+      type: UpdateColumnPositionSummaryTotalBudget
+      description: Update the 'total_budget' column in the 'position_summary' collection.
+    - name: updatedAt
+      type: UpdateColumnPositionSummaryUpdatedAt
+      description: Update the 'updated_at' column in the 'position_summary' collection.
+    - name: valuationType
+      type: UpdateColumnPositionSummaryValuationType
+      description: Update the 'valuation_type' column in the 'position_summary' collection.
+  graphql:
+    typeName: UpdatePositionSummaryByIdUpdateColumns
+    inputTypeName: UpdatePositionSummaryByIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_position_summary_by_id_update_columns
+      fieldMapping:
+        budgetEra:
+          column:
+            name: budget_ERA
+        budgetHr:
+          column:
+            name: budget_HR
+        budgetIp:
+          column:
+            name: budget_IP
+        budgetK9:
+          column:
+            name: budget_K/9
+        budgetObp:
+          column:
+            name: budget_OBP
+        budgetQs:
+          column:
+            name: budget_QS
+        budgetR:
+          column:
+            name: budget_R
+        budgetRbi:
+          column:
+            name: budget_RBI
+        budgetSbn:
+          column:
+            name: budget_SBN
+        budgetSlg:
+          column:
+            name: budget_SLG
+        budgetSvhd:
+          column:
+            name: budget_SVHD
+        budgetWhip:
+          column:
+            name: budget_WHIP
+        createdAt:
+          column:
+            name: created_at
+        dollarsPerZEra:
+          column:
+            name: dollars_per_z_ERA
+        dollarsPerZHr:
+          column:
+            name: dollars_per_z_HR
+        dollarsPerZIp:
+          column:
+            name: dollars_per_z_IP
+        dollarsPerZK9:
+          column:
+            name: dollars_per_z_K/9
+        dollarsPerZObp:
+          column:
+            name: dollars_per_z_OBP
+        dollarsPerZQs:
+          column:
+            name: dollars_per_z_QS
+        dollarsPerZR:
+          column:
+            name: dollars_per_z_R
+        dollarsPerZRbi:
+          column:
+            name: dollars_per_z_RBI
+        dollarsPerZSbn:
+          column:
+            name: dollars_per_z_SBN
+        dollarsPerZSlg:
+          column:
+            name: dollars_per_z_SLG
+        dollarsPerZSvhd:
+          column:
+            name: dollars_per_z_SVHD
+        dollarsPerZWhip:
+          column:
+            name: dollars_per_z_WHIP
+        id:
+          column:
+            name: id
+        poolTotalZEra:
+          column:
+            name: pool_total_z_ERA
+        poolTotalZHr:
+          column:
+            name: pool_total_z_HR
+        poolTotalZIp:
+          column:
+            name: pool_total_z_IP
+        poolTotalZK9:
+          column:
+            name: pool_total_z_K/9
+        poolTotalZObp:
+          column:
+            name: pool_total_z_OBP
+        poolTotalZQs:
+          column:
+            name: pool_total_z_QS
+        poolTotalZR:
+          column:
+            name: pool_total_z_R
+        poolTotalZRbi:
+          column:
+            name: pool_total_z_RBI
+        poolTotalZSbn:
+          column:
+            name: pool_total_z_SBN
+        poolTotalZSlg:
+          column:
+            name: pool_total_z_SLG
+        poolTotalZSvhd:
+          column:
+            name: pool_total_z_SVHD
+        poolTotalZWhip:
+          column:
+            name: pool_total_z_WHIP
+        position:
+          column:
+            name: position
+        replacementBaselineEra:
+          column:
+            name: replacement_baseline_ERA
+        replacementBaselineHr:
+          column:
+            name: replacement_baseline_HR
+        replacementBaselineIp:
+          column:
+            name: replacement_baseline_IP
+        replacementBaselineK9:
+          column:
+            name: replacement_baseline_K/9
+        replacementBaselineObp:
+          column:
+            name: replacement_baseline_OBP
+        replacementBaselineQs:
+          column:
+            name: replacement_baseline_QS
+        replacementBaselineR:
+          column:
+            name: replacement_baseline_R
+        replacementBaselineRbi:
+          column:
+            name: replacement_baseline_RBI
+        replacementBaselineSbn:
+          column:
+            name: replacement_baseline_SBN
+        replacementBaselineSlg:
+          column:
+            name: replacement_baseline_SLG
+        replacementBaselineSvhd:
+          column:
+            name: replacement_baseline_SVHD
+        replacementBaselineWhip:
+          column:
+            name: replacement_baseline_WHIP
+        replacementTierCount:
+          column:
+            name: replacement_tier_count
+        role:
+          column:
+            name: role
+        rosteredCount:
+          column:
+            name: rostered_count
+        totalBudget:
+          column:
+            name: total_budget
+        updatedAt:
+          column:
+            name: updated_at
+        valuationType:
+          column:
+            name: valuation_type
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePositionSummaryByIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - budgetEra
+          - budgetHr
+          - budgetIp
+          - budgetK9
+          - budgetObp
+          - budgetQs
+          - budgetR
+          - budgetRbi
+          - budgetSbn
+          - budgetSlg
+          - budgetSvhd
+          - budgetWhip
+          - createdAt
+          - dollarsPerZEra
+          - dollarsPerZHr
+          - dollarsPerZIp
+          - dollarsPerZK9
+          - dollarsPerZObp
+          - dollarsPerZQs
+          - dollarsPerZR
+          - dollarsPerZRbi
+          - dollarsPerZSbn
+          - dollarsPerZSlg
+          - dollarsPerZSvhd
+          - dollarsPerZWhip
+          - id
+          - poolTotalZEra
+          - poolTotalZHr
+          - poolTotalZIp
+          - poolTotalZK9
+          - poolTotalZObp
+          - poolTotalZQs
+          - poolTotalZR
+          - poolTotalZRbi
+          - poolTotalZSbn
+          - poolTotalZSlg
+          - poolTotalZSvhd
+          - poolTotalZWhip
+          - position
+          - replacementBaselineEra
+          - replacementBaselineHr
+          - replacementBaselineIp
+          - replacementBaselineK9
+          - replacementBaselineObp
+          - replacementBaselineQs
+          - replacementBaselineR
+          - replacementBaselineRbi
+          - replacementBaselineSbn
+          - replacementBaselineSlg
+          - replacementBaselineSvhd
+          - replacementBaselineWhip
+          - replacementTierCount
+          - role
+          - rosteredCount
+          - totalBudget
+          - updatedAt
+          - valuationType
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePositionSummaryByIdResponse
+  description: Responses from the 'update_position_summary_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PositionSummary!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdatePositionSummaryByIdResponse
+    inputTypeName: UpdatePositionSummaryByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_position_summary_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePositionSummaryByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdatePositionSummaryById
+  outputType: UpdatePositionSummaryByIdResponse!
+  arguments:
+    - name: keyId
+      type: Int32!
+    - name: postCheck
+      type: PositionSummaryBoolExp
+      description: Update permission post-condition predicate over the
+        'position_summary' collection
+    - name: preCheck
+      type: PositionSummaryBoolExp
+      description: Update permission pre-condition predicate over the
+        'position_summary' collection
+    - name: updateColumns
+      type: UpdatePositionSummaryByIdUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_position_summary_by_id
+    argumentMapping:
+      keyId: key_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updatePositionSummaryById
+    rootFieldKind: Mutation
+  description: Update any row on the 'position_summary' collection using the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdatePositionSummaryById
+  permissions:
+    - role: admin
+      allowExecution: true
+

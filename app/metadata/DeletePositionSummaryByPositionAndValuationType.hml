@@ -1,0 +1,77 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeletePositionSummaryByPositionAndValuationTypeResponse
+  description: Responses from the
+    'delete_position_summary_by_position_and_valuation_type' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PositionSummary!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeletePositionSummaryByPositionAndValuationTypeResponse
+    inputTypeName: DeletePositionSummaryByPositionAndValuationTypeResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_position_summary_by_position_and_valuation_type_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeletePositionSummaryByPositionAndValuationTypeResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeletePositionSummaryByPositionAndValuationType
+  outputType: DeletePositionSummaryByPositionAndValuationTypeResponse!
+  arguments:
+    - name: keyPosition
+      type: String_1!
+    - name: keyValuationType
+      type: String_1!
+    - name: preCheck
+      type: PositionSummaryBoolExp
+      description: Delete permission predicate over the 'position_summary' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_position_summary_by_position_and_valuation_type
+    argumentMapping:
+      keyPosition: key_position
+      keyValuationType: key_valuation_type
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deletePositionSummaryByPositionAndValuationType
+    rootFieldKind: Mutation
+  description: Delete any row on the 'position_summary' collection using the
+    'position' and 'valuation_type' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeletePositionSummaryByPositionAndValuationType
+  permissions:
+    - role: admin
+      allowExecution: true
+

@@ -2,7 +2,7 @@
 kind: ObjectType
 version: v1
 definition:
-  name: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdUpdateColumns
+  name: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeUpdateColumns
   description: Update the columns of the 'player_valuations' collection
   fields:
     - name: createdAt
@@ -33,12 +33,15 @@ definition:
     - name: updatedAt
       type: UpdateColumnPlayerValuationsUpdatedAt
       description: Update the 'updated_at' column in the 'player_valuations' collection.
+    - name: valuationType
+      type: UpdateColumnPlayerValuationsValuationType
+      description: Update the 'valuation_type' column in the 'player_valuations' collection.
   graphql:
-    typeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdUpdateColumns
-    inputTypeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdUpdateColumnsInput
+    typeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeUpdateColumns
+    inputTypeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeUpdateColumnsInput
   dataConnectorTypeMapping:
     - dataConnectorName: neon_mtbl
-      dataConnectorObjectType: update_player_valuations_by_player_id_and_primary_position_and_season_id_update_columns
+      dataConnectorObjectType: update_player_valuations_by_player_id_and_primary_position_and_season_id_and_valuation_type_update_columns
       fieldMapping:
         createdAt:
           column:
@@ -67,12 +70,15 @@ definition:
         updatedAt:
           column:
             name: updated_at
+        valuationType:
+          column:
+            name: valuation_type
 
 ---
 kind: TypePermissions
 version: v1
 definition:
-  typeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdUpdateColumns
+  typeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeUpdateColumns
   permissions:
     - role: admin
       output:
@@ -86,14 +92,15 @@ definition:
           - totalDollars
           - totalZ
           - updatedAt
+          - valuationType
 
 ---
 kind: ObjectType
 version: v1
 definition:
-  name: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse
+  name: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeResponse
   description: Responses from the
-    'update_player_valuations_by_player_id_and_primary_position_and_season_id'
+    'update_player_valuations_by_player_id_and_primary_position_and_season_id_and_valuation_type'
     procedure
   fields:
     - name: affectedRows
@@ -103,11 +110,11 @@ definition:
       type: "[PlayerValuations!]!"
       description: Data from rows affected by the mutation
   graphql:
-    typeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse
-    inputTypeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponseInput
+    typeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeResponse
+    inputTypeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeResponseInput
   dataConnectorTypeMapping:
     - dataConnectorName: neon_mtbl
-      dataConnectorObjectType: update_player_valuations_by_player_id_and_primary_position_and_season_id_response
+      dataConnectorObjectType: update_player_valuations_by_player_id_and_primary_position_and_season_id_and_valuation_type_response
       fieldMapping:
         affectedRows:
           column:
@@ -120,7 +127,7 @@ definition:
 kind: TypePermissions
 version: v1
 definition:
-  typeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse
+  typeName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeResponse
   permissions:
     - role: admin
       output:
@@ -132,8 +139,8 @@ definition:
 kind: Command
 version: v1
 definition:
-  name: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonId
-  outputType: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse!
+  name: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationType
+  outputType: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeResponse!
   arguments:
     - name: keyPlayerId
       type: Int32!
@@ -141,6 +148,8 @@ definition:
       type: String_1!
     - name: keySeasonId
       type: Int32!
+    - name: keyValuationType
+      type: String_1!
     - name: postCheck
       type: PlayerValuationsBoolExp
       description: Update permission post-condition predicate over the
@@ -150,29 +159,30 @@ definition:
       description: Update permission pre-condition predicate over the
         'player_valuations' collection
     - name: updateColumns
-      type: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdUpdateColumns!
+      type: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeUpdateColumns!
   source:
     dataConnectorName: neon_mtbl
     dataConnectorCommand:
-      procedure: update_player_valuations_by_player_id_and_primary_position_and_season_id
+      procedure: update_player_valuations_by_player_id_and_primary_position_and_season_id_and_valuation_type
     argumentMapping:
       keyPlayerId: key_player_id
       keyPrimaryPosition: key_primary_position
       keySeasonId: key_season_id
+      keyValuationType: key_valuation_type
       postCheck: post_check
       preCheck: pre_check
       updateColumns: update_columns
   graphql:
-    rootFieldName: updatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonId
+    rootFieldName: updatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationType
     rootFieldKind: Mutation
   description: Update any row on the 'player_valuations' collection using the
-    'player_id', 'primary_position' and 'season_id' keys
+    'player_id', 'primary_position', 'season_id' and 'valuation_type' keys
 
 ---
 kind: CommandPermissions
 version: v1
 definition:
-  commandName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonId
+  commandName: UpdatePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationType
   permissions:
     - role: admin
       allowExecution: true

@@ -1,0 +1,73 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeleteParquetArtifactsByTableNameResponse
+  description: Responses from the 'delete_parquet_artifacts_by_table_name' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[ParquetArtifacts!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeleteParquetArtifactsByTableNameResponse
+    inputTypeName: DeleteParquetArtifactsByTableNameResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_parquet_artifacts_by_table_name_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeleteParquetArtifactsByTableNameResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeleteParquetArtifactsByTableName
+  outputType: DeleteParquetArtifactsByTableNameResponse!
+  arguments:
+    - name: keyTableName
+      type: String_1!
+    - name: preCheck
+      type: ParquetArtifactsBoolExp
+      description: Delete permission predicate over the 'parquet_artifacts' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_parquet_artifacts_by_table_name
+    argumentMapping:
+      keyTableName: key_table_name
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deleteParquetArtifactsByTableName
+    rootFieldKind: Mutation
+  description: Delete any row on the 'parquet_artifacts' collection using the
+    'table_name' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeleteParquetArtifactsByTableName
+  permissions:
+    - role: admin
+      allowExecution: true
+

@@ -22,6 +22,8 @@ definition:
       type: Bigdecimal
     - name: updatedAt
       type: Timestamp
+    - name: valuationType
+      type: String_1!
   graphql:
     typeName: PlayerValuations
     inputTypeName: PlayerValuationsInput
@@ -56,6 +58,9 @@ definition:
         updatedAt:
           column:
             name: updated_at
+        valuationType:
+          column:
+            name: valuation_type
 
 ---
 kind: TypePermissions
@@ -75,6 +80,7 @@ definition:
           - totalDollars
           - totalZ
           - updatedAt
+          - valuationType
 
 ---
 kind: AggregateExpression
@@ -103,6 +109,8 @@ definition:
           aggregateExpression: NumericAggExp
         - fieldName: updatedAt
           aggregateExpression: TimestampAggExp
+        - fieldName: valuationType
+          aggregateExpression: VarcharAggExp
   count:
     enable: true
     returnType: Int64
@@ -132,13 +140,14 @@ definition:
           - id
         subscription:
           rootField: playerValuationsById
-      - queryRootField: playerValuationsByPlayerValuationsPlayerIdSeasonIdPrimaryPositionKey
+      - queryRootField: playerValuationsByPlayerValuationsPlayerIdSeasonIdPrimaryPositionValuKey
         uniqueIdentifier:
           - playerId
           - primaryPosition
           - seasonId
+          - valuationType
         subscription:
-          rootField: playerValuationsByPlayerValuationsPlayerIdSeasonIdPrimaryPositionKey
+          rootField: playerValuationsByPlayerValuationsPlayerIdSeasonIdPrimaryPositionValuKey
     filterInputTypeName: PlayerValuationsFilterInput
     aggregate:
       queryRootField: playerValuationsAggregate
@@ -223,6 +232,8 @@ definition:
           booleanExpressionType: NumericBoolExp
         - fieldName: updatedAt
           booleanExpressionType: TimestampBoolExp
+        - fieldName: valuationType
+          booleanExpressionType: VarcharBoolExp
       comparableRelationships:
         - relationshipName: playerValuationDetails
         - relationshipName: player
@@ -260,6 +271,8 @@ definition:
           orderByExpression: BigdecimalOrderByExp
         - fieldName: updatedAt
           orderByExpression: TimestampOrderByExp
+        - fieldName: valuationType
+          orderByExpression: String1OrderByExp
       orderableRelationships:
         - relationshipName: player
   graphql:

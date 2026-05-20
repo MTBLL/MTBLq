@@ -1,0 +1,72 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeletePositionSummaryByIdResponse
+  description: Responses from the 'delete_position_summary_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PositionSummary!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeletePositionSummaryByIdResponse
+    inputTypeName: DeletePositionSummaryByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_position_summary_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeletePositionSummaryByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeletePositionSummaryById
+  outputType: DeletePositionSummaryByIdResponse!
+  arguments:
+    - name: keyId
+      type: Int32!
+    - name: preCheck
+      type: PositionSummaryBoolExp
+      description: Delete permission predicate over the 'position_summary' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_position_summary_by_id
+    argumentMapping:
+      keyId: key_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deletePositionSummaryById
+    rootFieldKind: Mutation
+  description: Delete any row on the 'position_summary' collection using the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeletePositionSummaryById
+  permissions:
+    - role: admin
+      allowExecution: true
+

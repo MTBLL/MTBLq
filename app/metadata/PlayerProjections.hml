@@ -13,13 +13,15 @@ definition:
     - name: playerType
       type: String_1!
     - name: projectionSource
-      type: String_1
+      type: String_1!
     - name: projections
       type: Json!
     - name: seasonId
       type: Int32!
     - name: updatedAt
       type: Timestamp
+    - name: projectionPeriod
+      type: String_1!
   graphql:
     typeName: PlayerProjections
     inputTypeName: PlayerProjectionsInput
@@ -51,6 +53,9 @@ definition:
         updatedAt:
           column:
             name: updated_at
+        projectionPeriod:
+          column:
+            name: projection_period
 
 ---
 kind: TypePermissions
@@ -69,6 +74,7 @@ definition:
           - projections
           - seasonId
           - updatedAt
+          - projectionPeriod
 
 ---
 kind: AggregateExpression
@@ -95,6 +101,8 @@ definition:
           aggregateExpression: Int4AggExp
         - fieldName: updatedAt
           aggregateExpression: TimestampAggExp
+        - fieldName: projectionPeriod
+          aggregateExpression: VarcharAggExp
   count:
     enable: true
     returnType: Int64
@@ -124,14 +132,15 @@ definition:
           - id
         subscription:
           rootField: playerProjectionsById
-      - queryRootField: playerProjectionsByPlayerProjectionsPlayerIdSeasonIdProjectionSourcePlKey
+      - queryRootField: playerProjectionsByPlayerProjectionsPlayerIdSeasonIdProjectionSourcePrKey
         uniqueIdentifier:
           - playerId
           - playerType
+          - projectionPeriod
           - projectionSource
           - seasonId
         subscription:
-          rootField: playerProjectionsByPlayerProjectionsPlayerIdSeasonIdProjectionSourcePlKey
+          rootField: playerProjectionsByPlayerProjectionsPlayerIdSeasonIdProjectionSourcePrKey
     filterInputTypeName: PlayerProjectionsFilterInput
     aggregate:
       queryRootField: playerProjectionsAggregate
@@ -192,6 +201,8 @@ definition:
           booleanExpressionType: Int4BoolExp
         - fieldName: updatedAt
           booleanExpressionType: TimestampBoolExp
+        - fieldName: projectionPeriod
+          booleanExpressionType: VarcharBoolExp
       comparableRelationships:
         - relationshipName: player
   logicalOperators:
@@ -226,6 +237,8 @@ definition:
           orderByExpression: Int32OrderByExp
         - fieldName: updatedAt
           orderByExpression: TimestampOrderByExp
+        - fieldName: projectionPeriod
+          orderByExpression: String1OrderByExp
       orderableRelationships:
         - relationshipName: player
   graphql:

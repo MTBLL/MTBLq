@@ -136,6 +136,56 @@ definition:
       type: Bigdecimal
     - name: xwOba
       type: Bigdecimal
+    - name: avg
+      type: Bigdecimal
+    - name: babip
+      type: Bigdecimal
+    - name: bbPct
+      type: Bigdecimal
+    - name: bBdist
+      type: Bigdecimal
+    - name: bip
+      type: Bigdecimal
+    - name: iso
+      type: Bigdecimal
+    - name: kPct
+      type: Bigdecimal
+    - name: obp
+      type: Bigdecimal
+    - name: pa
+      type: Bigdecimal
+    - name: slg
+      type: Bigdecimal
+    - name: barrelsPerBbePct
+      type: Bigdecimal
+    - name: barrelsPerBbePctPctRnk
+      type: Bigdecimal
+    - name: barrelsPerPaPct
+      type: Bigdecimal
+    - name: barrelsPerPaPctPctRnk
+      type: Bigdecimal
+    - name: barrelsTotal
+      type: Bigdecimal
+    - name: barrelsTotalPctRnk
+      type: Bigdecimal
+    - name: hardhitPct
+      type: Bigdecimal
+    - name: hardhitPctPctRnk
+      type: Bigdecimal
+    - name: pitchPercent
+      type: Bigdecimal
+    - name: pitches
+      type: Bigdecimal
+    - name: rateIdealAttackAngle
+      type: Bigdecimal
+    - name: runExp
+      type: Bigdecimal
+    - name: totalPitches
+      type: Bigdecimal
+    - name: wOba
+      type: Bigdecimal
+    - name: wObAdiff
+      type: Bigdecimal
   graphql:
     typeName: InsertPlayerStatsPitchingObject
     inputTypeName: InsertPlayerStatsPitchingObjectInput
@@ -341,6 +391,81 @@ definition:
         xwOba:
           column:
             name: xwOBA
+        avg:
+          column:
+            name: AVG
+        babip:
+          column:
+            name: BABIP
+        bbPct:
+          column:
+            name: BB_pct
+        bBdist:
+          column:
+            name: BBdist
+        bip:
+          column:
+            name: BIP
+        iso:
+          column:
+            name: ISO
+        kPct:
+          column:
+            name: K_pct
+        obp:
+          column:
+            name: OBP
+        pa:
+          column:
+            name: PA
+        slg:
+          column:
+            name: SLG
+        barrelsPerBbePct:
+          column:
+            name: barrels_per_bbe_pct
+        barrelsPerBbePctPctRnk:
+          column:
+            name: barrels_per_bbe_pct_pct_rnk
+        barrelsPerPaPct:
+          column:
+            name: barrels_per_pa_pct
+        barrelsPerPaPctPctRnk:
+          column:
+            name: barrels_per_pa_pct_pct_rnk
+        barrelsTotal:
+          column:
+            name: barrels_total
+        barrelsTotalPctRnk:
+          column:
+            name: barrels_total_pct_rnk
+        hardhitPct:
+          column:
+            name: hardhit_pct
+        hardhitPctPctRnk:
+          column:
+            name: hardhit_pct_pct_rnk
+        pitchPercent:
+          column:
+            name: pitch_percent
+        pitches:
+          column:
+            name: pitches
+        rateIdealAttackAngle:
+          column:
+            name: rate_ideal_attack_angle
+        runExp:
+          column:
+            name: run_exp
+        totalPitches:
+          column:
+            name: total_pitches
+        wOba:
+          column:
+            name: wOBA
+        wObAdiff:
+          column:
+            name: wOBAdiff
 
 ---
 kind: TypePermissions
@@ -417,6 +542,31 @@ definition:
           - xSlg
           - xSlGdiff
           - xwOba
+          - avg
+          - babip
+          - bbPct
+          - bBdist
+          - bip
+          - iso
+          - kPct
+          - obp
+          - pa
+          - slg
+          - barrelsPerBbePct
+          - barrelsPerBbePctPctRnk
+          - barrelsPerPaPct
+          - barrelsPerPaPctPctRnk
+          - barrelsTotal
+          - barrelsTotalPctRnk
+          - hardhitPct
+          - hardhitPctPctRnk
+          - pitchPercent
+          - pitches
+          - rateIdealAttackAngle
+          - runExp
+          - totalPitches
+          - wOba
+          - wObAdiff
 
 ---
 kind: ObjectType

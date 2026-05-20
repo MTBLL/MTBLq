@@ -2,9 +2,9 @@
 kind: ObjectType
 version: v1
 definition:
-  name: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse
+  name: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeResponse
   description: Responses from the
-    'delete_player_valuations_by_player_id_and_primary_position_and_season_id'
+    'delete_player_valuations_by_player_id_and_primary_position_and_season_id_and_valuation_type'
     procedure
   fields:
     - name: affectedRows
@@ -14,11 +14,11 @@ definition:
       type: "[PlayerValuations!]!"
       description: Data from rows affected by the mutation
   graphql:
-    typeName: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse
-    inputTypeName: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponseInput
+    typeName: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeResponse
+    inputTypeName: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeResponseInput
   dataConnectorTypeMapping:
     - dataConnectorName: neon_mtbl
-      dataConnectorObjectType: delete_player_valuations_by_player_id_and_primary_position_and_season_id_response
+      dataConnectorObjectType: delete_player_valuations_by_player_id_and_primary_position_and_season_id_and_valuation_type_response
       fieldMapping:
         affectedRows:
           column:
@@ -31,7 +31,7 @@ definition:
 kind: TypePermissions
 version: v1
 definition:
-  typeName: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse
+  typeName: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeResponse
   permissions:
     - role: admin
       output:
@@ -43,8 +43,8 @@ definition:
 kind: Command
 version: v1
 definition:
-  name: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonId
-  outputType: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdResponse!
+  name: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationType
+  outputType: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationTypeResponse!
   arguments:
     - name: keyPlayerId
       type: Int32!
@@ -52,29 +52,32 @@ definition:
       type: String_1!
     - name: keySeasonId
       type: Int32!
+    - name: keyValuationType
+      type: String_1!
     - name: preCheck
       type: PlayerValuationsBoolExp
       description: Delete permission predicate over the 'player_valuations' collection
   source:
     dataConnectorName: neon_mtbl
     dataConnectorCommand:
-      procedure: delete_player_valuations_by_player_id_and_primary_position_and_season_id
+      procedure: delete_player_valuations_by_player_id_and_primary_position_and_season_id_and_valuation_type
     argumentMapping:
       keyPlayerId: key_player_id
       keyPrimaryPosition: key_primary_position
       keySeasonId: key_season_id
+      keyValuationType: key_valuation_type
       preCheck: pre_check
   graphql:
-    rootFieldName: deletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonId
+    rootFieldName: deletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationType
     rootFieldKind: Mutation
   description: Delete any row on the 'player_valuations' collection using the
-    'player_id', 'primary_position' and 'season_id' keys
+    'player_id', 'primary_position', 'season_id' and 'valuation_type' keys
 
 ---
 kind: CommandPermissions
 version: v1
 definition:
-  commandName: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonId
+  commandName: DeletePlayerValuationsByPlayerIdAndPrimaryPositionAndSeasonIdAndValuationType
   permissions:
     - role: admin
       allowExecution: true

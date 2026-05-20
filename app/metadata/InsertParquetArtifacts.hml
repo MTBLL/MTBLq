@@ -1,0 +1,156 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertParquetArtifactsObject
+  fields:
+    - name: bucket
+      type: String_1!
+    - name: endpoint
+      type: String_1!
+    - name: etag
+      type: String_1
+    - name: id
+      type: Int32
+    - name: objectKey
+      type: String_1!
+    - name: rowCount
+      type: Int64
+    - name: sha256
+      type: String_1!
+    - name: sizeBytes
+      type: Int64!
+    - name: tableName
+      type: String_1!
+    - name: uploadedAt
+      type: Timestamp
+  graphql:
+    typeName: InsertParquetArtifactsObject
+    inputTypeName: InsertParquetArtifactsObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_parquet_artifacts_object
+      fieldMapping:
+        bucket:
+          column:
+            name: bucket
+        endpoint:
+          column:
+            name: endpoint
+        etag:
+          column:
+            name: etag
+        id:
+          column:
+            name: id
+        objectKey:
+          column:
+            name: object_key
+        rowCount:
+          column:
+            name: row_count
+        sha256:
+          column:
+            name: sha256
+        sizeBytes:
+          column:
+            name: size_bytes
+        tableName:
+          column:
+            name: table_name
+        uploadedAt:
+          column:
+            name: uploaded_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertParquetArtifactsObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - bucket
+          - endpoint
+          - etag
+          - id
+          - objectKey
+          - rowCount
+          - sha256
+          - sizeBytes
+          - tableName
+          - uploadedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertParquetArtifactsResponse
+  description: Responses from the 'insert_parquet_artifacts' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[ParquetArtifacts!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertParquetArtifactsResponse
+    inputTypeName: InsertParquetArtifactsResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_parquet_artifacts_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertParquetArtifactsResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertParquetArtifacts
+  outputType: InsertParquetArtifactsResponse!
+  arguments:
+    - name: objects
+      type: "[InsertParquetArtifactsObject!]!"
+    - name: postCheck
+      type: ParquetArtifactsBoolExp
+      description: Insert permission predicate over the 'parquet_artifacts' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_parquet_artifacts
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertParquetArtifacts
+    rootFieldKind: Mutation
+  description: Insert into the parquet_artifacts table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertParquetArtifacts
+  permissions:
+    - role: admin
+      allowExecution: true
+

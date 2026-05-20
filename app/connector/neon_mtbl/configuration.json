@@ -414,6 +414,104 @@
         "foreignRelations": {},
         "description": null
       },
+      "parquet_artifacts": {
+        "schemaName": "public",
+        "tableName": "parquet_artifacts",
+        "columns": {
+          "bucket": {
+            "name": "bucket",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "endpoint": {
+            "name": "endpoint",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "etag": {
+            "name": "etag",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "object_key": {
+            "name": "object_key",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "row_count": {
+            "name": "row_count",
+            "type": {
+              "scalarType": "int8"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "sha256": {
+            "name": "sha256",
+            "type": {
+              "scalarType": "bpchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "size_bytes": {
+            "name": "size_bytes",
+            "type": {
+              "scalarType": "int8"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "table_name": {
+            "name": "table_name",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "uploaded_at": {
+            "name": "uploaded_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nonNullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "parquet_artifacts_pkey": [
+            "id"
+          ],
+          "parquet_artifacts_table_name_key": [
+            "table_name"
+          ]
+        },
+        "foreignRelations": {},
+        "description": null
+      },
       "player_fantasy_assignments": {
         "schemaName": "public",
         "tableName": "player_fantasy_assignments",
@@ -575,13 +673,21 @@
             "nullable": "nonNullable",
             "description": null
           },
+          "projection_period": {
+            "name": "projection_period",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
           "projection_source": {
             "name": "projection_source",
             "type": {
               "scalarType": "varchar"
             },
-            "nullable": "nullable",
-            "hasDefault": "hasDefault",
+            "nullable": "nonNullable",
             "description": null
           },
           "projections": {
@@ -614,9 +720,10 @@
           "player_projections_pkey": [
             "id"
           ],
-          "player_projections_player_id_season_id_projection_source_pl_key": [
+          "player_projections_player_id_season_id_projection_source_pr_key": [
             "player_id",
             "player_type",
+            "projection_period",
             "projection_source",
             "season_id"
           ]
@@ -679,7 +786,15 @@
           "BBdist": {
             "name": "BBdist",
             "type": {
-              "scalarType": "int4"
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "BIP": {
+            "name": "BIP",
+            "type": {
+              "scalarType": "numeric"
             },
             "nullable": "nullable",
             "description": null
@@ -759,7 +874,7 @@
           "Kdist": {
             "name": "Kdist",
             "type": {
-              "scalarType": "int4"
+              "scalarType": "numeric"
             },
             "nullable": "nullable",
             "description": null
@@ -908,8 +1023,24 @@
             "nullable": "nullable",
             "description": null
           },
+          "barrels_per_bbe_pct_pct_rnk": {
+            "name": "barrels_per_bbe_pct_pct_rnk",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "barrels_per_pa_pct": {
             "name": "barrels_per_pa_pct",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "barrels_per_pa_pct_pct_rnk": {
+            "name": "barrels_per_pa_pct_pct_rnk",
             "type": {
               "scalarType": "numeric"
             },
@@ -920,6 +1051,14 @@
             "name": "barrels_total",
             "type": {
               "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "barrels_total_pct_rnk": {
+            "name": "barrels_total_pct_rnk",
+            "type": {
+              "scalarType": "numeric"
             },
             "nullable": "nullable",
             "description": null
@@ -981,6 +1120,14 @@
             "nullable": "nullable",
             "description": null
           },
+          "hardhit_pct_pct_rnk": {
+            "name": "hardhit_pct_pct_rnk",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "id": {
             "name": "id",
             "type": {
@@ -998,12 +1145,60 @@
             "nullable": "nullable",
             "description": null
           },
+          "percieved_velo": {
+            "name": "percieved_velo",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pitch_percent": {
+            "name": "pitch_percent",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pitch_velo": {
+            "name": "pitch_velo",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pitches": {
+            "name": "pitches",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "player_id": {
             "name": "player_id",
             "type": {
               "scalarType": "int4"
             },
             "nullable": "nonNullable",
+            "description": null
+          },
+          "rate_ideal_attack_angle": {
+            "name": "rate_ideal_attack_angle",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "run_exp": {
+            "name": "run_exp",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
             "description": null
           },
           "season_id": {
@@ -1071,6 +1266,14 @@
             "nullable": "nullable",
             "description": null
           },
+          "total_pitches": {
+            "name": "total_pitches",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "triples": {
             "name": "triples",
             "type": {
@@ -1090,6 +1293,14 @@
           },
           "wOBA": {
             "name": "wOBA",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "wOBAdiff": {
+            "name": "wOBAdiff",
             "type": {
               "scalarType": "numeric"
             },
@@ -1186,8 +1397,48 @@
         "schemaName": "public",
         "tableName": "player_stats_pitching",
         "columns": {
+          "AVG": {
+            "name": "AVG",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "BABIP": {
+            "name": "BABIP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "BB": {
             "name": "BB",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "BB_pct": {
+            "name": "BB_pct",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "BBdist": {
+            "name": "BBdist",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "BIP": {
+            "name": "BIP",
             "type": {
               "scalarType": "numeric"
             },
@@ -1290,8 +1541,24 @@
             "nullable": "nullable",
             "description": null
           },
+          "ISO": {
+            "name": "ISO",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "K": {
             "name": "K",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "K_pct": {
+            "name": "K_pct",
             "type": {
               "scalarType": "numeric"
             },
@@ -1314,6 +1581,14 @@
             "nullable": "nullable",
             "description": null
           },
+          "OBP": {
+            "name": "OBP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "OOBP": {
             "name": "OOBP",
             "type": {
@@ -1330,6 +1605,14 @@
             "nullable": "nullable",
             "description": null
           },
+          "PA": {
+            "name": "PA",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "QS": {
             "name": "QS",
             "type": {
@@ -1340,6 +1623,14 @@
           },
           "R": {
             "name": "R",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "SLG": {
+            "name": "SLG",
             "type": {
               "scalarType": "numeric"
             },
@@ -1434,6 +1725,54 @@
             "nullable": "nullable",
             "description": null
           },
+          "barrels_per_bbe_pct": {
+            "name": "barrels_per_bbe_pct",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "barrels_per_bbe_pct_pct_rnk": {
+            "name": "barrels_per_bbe_pct_pct_rnk",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "barrels_per_pa_pct": {
+            "name": "barrels_per_pa_pct",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "barrels_per_pa_pct_pct_rnk": {
+            "name": "barrels_per_pa_pct_pct_rnk",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "barrels_total": {
+            "name": "barrels_total",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "barrels_total_pct_rnk": {
+            "name": "barrels_total_pct_rnk",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "bb_per_9": {
             "name": "bb_per_9",
             "type": {
@@ -1491,6 +1830,22 @@
             "nullable": "nullable",
             "description": null
           },
+          "hardhit_pct": {
+            "name": "hardhit_pct",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "hardhit_pct_pct_rnk": {
+            "name": "hardhit_pct_pct_rnk",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "id": {
             "name": "id",
             "type": {
@@ -1540,6 +1895,14 @@
             "nullable": "nullable",
             "description": null
           },
+          "pitch_percent": {
+            "name": "pitch_percent",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "pitcher_run_exp": {
             "name": "pitcher_run_exp",
             "type": {
@@ -1556,12 +1919,28 @@
             "nullable": "nullable",
             "description": null
           },
+          "pitches": {
+            "name": "pitches",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "player_id": {
             "name": "player_id",
             "type": {
               "scalarType": "int4"
             },
             "nullable": "nonNullable",
+            "description": null
+          },
+          "rate_ideal_attack_angle": {
+            "name": "rate_ideal_attack_angle",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
             "description": null
           },
           "release_extension": {
@@ -1582,6 +1961,14 @@
           },
           "release_pos_z": {
             "name": "release_pos_z",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "run_exp": {
+            "name": "run_exp",
             "type": {
               "scalarType": "numeric"
             },
@@ -1637,6 +2024,14 @@
             "nullable": "nullable",
             "description": null
           },
+          "total_pitches": {
+            "name": "total_pitches",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "updated_at": {
             "name": "updated_at",
             "type": {
@@ -1648,6 +2043,22 @@
           },
           "velo": {
             "name": "velo",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "wOBA": {
+            "name": "wOBA",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "wOBAdiff": {
+            "name": "wOBAdiff",
             "type": {
               "scalarType": "numeric"
             },
@@ -1884,16 +2295,25 @@
             "nullable": "nullable",
             "hasDefault": "hasDefault",
             "description": null
+          },
+          "valuation_type": {
+            "name": "valuation_type",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
           }
         },
         "uniquenessConstraints": {
           "player_valuations_pkey": [
             "id"
           ],
-          "player_valuations_player_id_season_id_primary_position_key": [
+          "player_valuations_player_id_season_id_primary_position_valu_key": [
             "player_id",
             "primary_position",
-            "season_id"
+            "season_id",
+            "valuation_type"
           ]
         },
         "foreignRelations": {
@@ -2149,6 +2569,482 @@
         "uniquenessConstraints": {
           "players_pkey": [
             "id_espn"
+          ]
+        },
+        "foreignRelations": {},
+        "description": null
+      },
+      "position_summary": {
+        "schemaName": "public",
+        "tableName": "position_summary",
+        "columns": {
+          "budget_ERA": {
+            "name": "budget_ERA",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "budget_HR": {
+            "name": "budget_HR",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "budget_IP": {
+            "name": "budget_IP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "budget_K/9": {
+            "name": "budget_K/9",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "budget_OBP": {
+            "name": "budget_OBP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "budget_QS": {
+            "name": "budget_QS",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "budget_R": {
+            "name": "budget_R",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "budget_RBI": {
+            "name": "budget_RBI",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "budget_SBN": {
+            "name": "budget_SBN",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "budget_SLG": {
+            "name": "budget_SLG",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "budget_SVHD": {
+            "name": "budget_SVHD",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "budget_WHIP": {
+            "name": "budget_WHIP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "created_at": {
+            "name": "created_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "dollars_per_z_ERA": {
+            "name": "dollars_per_z_ERA",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "dollars_per_z_HR": {
+            "name": "dollars_per_z_HR",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "dollars_per_z_IP": {
+            "name": "dollars_per_z_IP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "dollars_per_z_K/9": {
+            "name": "dollars_per_z_K/9",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "dollars_per_z_OBP": {
+            "name": "dollars_per_z_OBP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "dollars_per_z_QS": {
+            "name": "dollars_per_z_QS",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "dollars_per_z_R": {
+            "name": "dollars_per_z_R",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "dollars_per_z_RBI": {
+            "name": "dollars_per_z_RBI",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "dollars_per_z_SBN": {
+            "name": "dollars_per_z_SBN",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "dollars_per_z_SLG": {
+            "name": "dollars_per_z_SLG",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "dollars_per_z_SVHD": {
+            "name": "dollars_per_z_SVHD",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "dollars_per_z_WHIP": {
+            "name": "dollars_per_z_WHIP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "pool_total_z_ERA": {
+            "name": "pool_total_z_ERA",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pool_total_z_HR": {
+            "name": "pool_total_z_HR",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pool_total_z_IP": {
+            "name": "pool_total_z_IP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pool_total_z_K/9": {
+            "name": "pool_total_z_K/9",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pool_total_z_OBP": {
+            "name": "pool_total_z_OBP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pool_total_z_QS": {
+            "name": "pool_total_z_QS",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pool_total_z_R": {
+            "name": "pool_total_z_R",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pool_total_z_RBI": {
+            "name": "pool_total_z_RBI",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pool_total_z_SBN": {
+            "name": "pool_total_z_SBN",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pool_total_z_SLG": {
+            "name": "pool_total_z_SLG",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pool_total_z_SVHD": {
+            "name": "pool_total_z_SVHD",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "pool_total_z_WHIP": {
+            "name": "pool_total_z_WHIP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "position": {
+            "name": "position",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "replacement_baseline_ERA": {
+            "name": "replacement_baseline_ERA",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "replacement_baseline_HR": {
+            "name": "replacement_baseline_HR",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "replacement_baseline_IP": {
+            "name": "replacement_baseline_IP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "replacement_baseline_K/9": {
+            "name": "replacement_baseline_K/9",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "replacement_baseline_OBP": {
+            "name": "replacement_baseline_OBP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "replacement_baseline_QS": {
+            "name": "replacement_baseline_QS",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "replacement_baseline_R": {
+            "name": "replacement_baseline_R",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "replacement_baseline_RBI": {
+            "name": "replacement_baseline_RBI",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "replacement_baseline_SBN": {
+            "name": "replacement_baseline_SBN",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "replacement_baseline_SLG": {
+            "name": "replacement_baseline_SLG",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "replacement_baseline_SVHD": {
+            "name": "replacement_baseline_SVHD",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "replacement_baseline_WHIP": {
+            "name": "replacement_baseline_WHIP",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "replacement_tier_count": {
+            "name": "replacement_tier_count",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "role": {
+            "name": "role",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "rostered_count": {
+            "name": "rostered_count",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "total_budget": {
+            "name": "total_budget",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "updated_at": {
+            "name": "updated_at",
+            "type": {
+              "scalarType": "timestamp"
+            },
+            "nullable": "nullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "valuation_type": {
+            "name": "valuation_type",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "position_summary_pkey": [
+            "id"
+          ],
+          "position_summary_position_valuation_type_key": [
+            "position",
+            "valuation_type"
           ]
         },
         "foreignRelations": {},
@@ -2546,6 +3442,124 @@
             }
           },
           "typeRepresentation": "boolean"
+        },
+        "bpchar": {
+          "typeName": "bpchar",
+          "schemaName": "pg_catalog",
+          "description": null,
+          "aggregateFunctions": {
+            "max": {
+              "returnType": "bpchar"
+            },
+            "min": {
+              "returnType": "bpchar"
+            }
+          },
+          "comparisonOperators": {
+            "_eq": {
+              "operatorName": "=",
+              "operatorKind": "equal",
+              "argumentType": "bpchar",
+              "isInfix": true
+            },
+            "_gt": {
+              "operatorName": ">",
+              "operatorKind": "greaterThan",
+              "argumentType": "bpchar",
+              "isInfix": true
+            },
+            "_gte": {
+              "operatorName": ">=",
+              "operatorKind": "greaterThanOrEqual",
+              "argumentType": "bpchar",
+              "isInfix": true
+            },
+            "_ilike": {
+              "operatorName": "~~*",
+              "operatorKind": "custom",
+              "argumentType": "text",
+              "isInfix": true
+            },
+            "_in": {
+              "operatorName": "IN",
+              "operatorKind": "in",
+              "argumentType": "bpchar",
+              "isInfix": true
+            },
+            "_iregex": {
+              "operatorName": "~*",
+              "operatorKind": "custom",
+              "argumentType": "text",
+              "isInfix": true
+            },
+            "_like": {
+              "operatorName": "~~",
+              "operatorKind": "custom",
+              "argumentType": "text",
+              "isInfix": true
+            },
+            "_lt": {
+              "operatorName": "<",
+              "operatorKind": "lessThan",
+              "argumentType": "bpchar",
+              "isInfix": true
+            },
+            "_lte": {
+              "operatorName": "<=",
+              "operatorKind": "lessThanOrEqual",
+              "argumentType": "bpchar",
+              "isInfix": true
+            },
+            "_neq": {
+              "operatorName": "<>",
+              "operatorKind": "custom",
+              "argumentType": "bpchar",
+              "isInfix": true
+            },
+            "_nilike": {
+              "operatorName": "!~~*",
+              "operatorKind": "custom",
+              "argumentType": "text",
+              "isInfix": true
+            },
+            "_niregex": {
+              "operatorName": "!~*",
+              "operatorKind": "custom",
+              "argumentType": "text",
+              "isInfix": true
+            },
+            "_nlike": {
+              "operatorName": "!~~",
+              "operatorKind": "custom",
+              "argumentType": "text",
+              "isInfix": true
+            },
+            "_nregex": {
+              "operatorName": "!~",
+              "operatorKind": "custom",
+              "argumentType": "text",
+              "isInfix": true
+            },
+            "_regex": {
+              "operatorName": "~",
+              "operatorKind": "custom",
+              "argumentType": "text",
+              "isInfix": true
+            },
+            "starts_with": {
+              "operatorName": "starts_with",
+              "operatorKind": "custom",
+              "argumentType": "bpchar",
+              "isInfix": false
+            },
+            "ts_match_tt": {
+              "operatorName": "ts_match_tt",
+              "operatorKind": "custom",
+              "argumentType": "bpchar",
+              "isInfix": false
+            }
+          },
+          "typeRepresentation": "string"
         },
         "date": {
           "typeName": "date",

@@ -1,0 +1,234 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: ParquetArtifacts
+  fields:
+    - name: bucket
+      type: String_1!
+    - name: endpoint
+      type: String_1!
+    - name: etag
+      type: String_1
+    - name: id
+      type: Int32!
+    - name: objectKey
+      type: String_1!
+    - name: rowCount
+      type: Int64
+    - name: sha256
+      type: String_1!
+    - name: sizeBytes
+      type: Int64!
+    - name: tableName
+      type: String_1!
+    - name: uploadedAt
+      type: Timestamp!
+  graphql:
+    typeName: ParquetArtifacts
+    inputTypeName: ParquetArtifactsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: parquet_artifacts
+      fieldMapping:
+        bucket:
+          column:
+            name: bucket
+        endpoint:
+          column:
+            name: endpoint
+        etag:
+          column:
+            name: etag
+        id:
+          column:
+            name: id
+        objectKey:
+          column:
+            name: object_key
+        rowCount:
+          column:
+            name: row_count
+        sha256:
+          column:
+            name: sha256
+        sizeBytes:
+          column:
+            name: size_bytes
+        tableName:
+          column:
+            name: table_name
+        uploadedAt:
+          column:
+            name: uploaded_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: ParquetArtifacts
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - bucket
+          - endpoint
+          - etag
+          - id
+          - objectKey
+          - rowCount
+          - sha256
+          - sizeBytes
+          - tableName
+          - uploadedAt
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: ParquetArtifactsBoolExp
+  operand:
+    object:
+      type: ParquetArtifacts
+      comparableFields:
+        - fieldName: bucket
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: endpoint
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: etag
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: id
+          booleanExpressionType: Int4BoolExp
+        - fieldName: objectKey
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: rowCount
+          booleanExpressionType: Int8BoolExp
+        - fieldName: sha256
+          booleanExpressionType: BpcharBoolExp
+        - fieldName: sizeBytes
+          booleanExpressionType: Int8BoolExp
+        - fieldName: tableName
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: uploadedAt
+          booleanExpressionType: TimestampBoolExp
+      comparableRelationships: []
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: ParquetArtifactsBoolExp
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: ParquetArtifactsAggExp
+  operand:
+    object:
+      aggregatedType: ParquetArtifacts
+      aggregatableFields:
+        - fieldName: bucket
+          aggregateExpression: VarcharAggExp
+        - fieldName: endpoint
+          aggregateExpression: VarcharAggExp
+        - fieldName: etag
+          aggregateExpression: VarcharAggExp
+        - fieldName: id
+          aggregateExpression: Int4AggExp
+        - fieldName: objectKey
+          aggregateExpression: VarcharAggExp
+        - fieldName: rowCount
+          aggregateExpression: Int8AggExp
+        - fieldName: sha256
+          aggregateExpression: BpcharAggExp
+        - fieldName: sizeBytes
+          aggregateExpression: Int8AggExp
+        - fieldName: tableName
+          aggregateExpression: VarcharAggExp
+        - fieldName: uploadedAt
+          aggregateExpression: TimestampAggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: ParquetArtifactsAggExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: ParquetArtifactsOrderByExp
+  operand:
+    object:
+      orderedType: ParquetArtifacts
+      orderableFields:
+        - fieldName: bucket
+          orderByExpression: String1OrderByExp
+        - fieldName: endpoint
+          orderByExpression: String1OrderByExp
+        - fieldName: etag
+          orderByExpression: String1OrderByExp
+        - fieldName: id
+          orderByExpression: Int32OrderByExp
+        - fieldName: objectKey
+          orderByExpression: String1OrderByExp
+        - fieldName: rowCount
+          orderByExpression: Int64OrderByExp
+        - fieldName: sha256
+          orderByExpression: String1OrderByExp
+        - fieldName: sizeBytes
+          orderByExpression: Int64OrderByExp
+        - fieldName: tableName
+          orderByExpression: String1OrderByExp
+        - fieldName: uploadedAt
+          orderByExpression: TimestampOrderByExp
+      orderableRelationships: []
+  graphql:
+    expressionTypeName: ParquetArtifactsOrderByExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: ParquetArtifacts
+  objectType: ParquetArtifacts
+  source:
+    dataConnectorName: neon_mtbl
+    collection: parquet_artifacts
+  filterExpressionType: ParquetArtifactsBoolExp
+  aggregateExpression: ParquetArtifactsAggExp
+  orderByExpression: ParquetArtifactsOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: parquetArtifacts
+      subscription:
+        rootField: parquetArtifacts
+    selectUniques:
+      - queryRootField: parquetArtifactsById
+        uniqueIdentifier:
+          - id
+        subscription:
+          rootField: parquetArtifactsById
+      - queryRootField: parquetArtifactsByTableName
+        uniqueIdentifier:
+          - tableName
+        subscription:
+          rootField: parquetArtifactsByTableName
+    filterInputTypeName: ParquetArtifactsFilterInput
+    aggregate:
+      queryRootField: parquetArtifactsAggregate
+      subscription:
+        rootField: parquetArtifactsAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: ParquetArtifacts
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+

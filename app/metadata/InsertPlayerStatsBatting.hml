@@ -15,7 +15,7 @@ definition:
     - name: bbPct
       type: Bigdecimal
     - name: bBdist
-      type: Int32
+      type: Bigdecimal
     - name: cs
       type: Bigdecimal
     - name: g
@@ -35,7 +35,7 @@ definition:
     - name: kPct
       type: Bigdecimal
     - name: kdist
-      type: Int32
+      type: Bigdecimal
     - name: obp
       type: Bigdecimal
     - name: ops
@@ -133,6 +133,32 @@ definition:
     - name: xSlGdiff
       type: Bigdecimal
     - name: xwOba
+      type: Bigdecimal
+    - name: bip
+      type: Bigdecimal
+    - name: barrelsPerBbePctPctRnk
+      type: Bigdecimal
+    - name: barrelsPerPaPctPctRnk
+      type: Bigdecimal
+    - name: barrelsTotalPctRnk
+      type: Bigdecimal
+    - name: hardhitPctPctRnk
+      type: Bigdecimal
+    - name: percievedVelo
+      type: Bigdecimal
+    - name: pitchPercent
+      type: Bigdecimal
+    - name: pitchVelo
+      type: Bigdecimal
+    - name: pitches
+      type: Bigdecimal
+    - name: rateIdealAttackAngle
+      type: Bigdecimal
+    - name: runExp
+      type: Bigdecimal
+    - name: totalPitches
+      type: Bigdecimal
+    - name: wObAdiff
       type: Bigdecimal
   graphql:
     typeName: InsertPlayerStatsBattingObject
@@ -336,6 +362,45 @@ definition:
         xwOba:
           column:
             name: xwOBA
+        bip:
+          column:
+            name: BIP
+        barrelsPerBbePctPctRnk:
+          column:
+            name: barrels_per_bbe_pct_pct_rnk
+        barrelsPerPaPctPctRnk:
+          column:
+            name: barrels_per_pa_pct_pct_rnk
+        barrelsTotalPctRnk:
+          column:
+            name: barrels_total_pct_rnk
+        hardhitPctPctRnk:
+          column:
+            name: hardhit_pct_pct_rnk
+        percievedVelo:
+          column:
+            name: percieved_velo
+        pitchPercent:
+          column:
+            name: pitch_percent
+        pitchVelo:
+          column:
+            name: pitch_velo
+        pitches:
+          column:
+            name: pitches
+        rateIdealAttackAngle:
+          column:
+            name: rate_ideal_attack_angle
+        runExp:
+          column:
+            name: run_exp
+        totalPitches:
+          column:
+            name: total_pitches
+        wObAdiff:
+          column:
+            name: wOBAdiff
 
 ---
 kind: TypePermissions
@@ -411,6 +476,19 @@ definition:
           - xSlg
           - xSlGdiff
           - xwOba
+          - bip
+          - barrelsPerBbePctPctRnk
+          - barrelsPerPaPctPctRnk
+          - barrelsTotalPctRnk
+          - hardhitPctPctRnk
+          - percievedVelo
+          - pitchPercent
+          - pitchVelo
+          - pitches
+          - rateIdealAttackAngle
+          - runExp
+          - totalPitches
+          - wObAdiff
 
 ---
 kind: ObjectType

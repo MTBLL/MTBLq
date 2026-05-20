@@ -136,6 +136,56 @@ definition:
       type: Bigdecimal
     - name: xwOba
       type: Bigdecimal
+    - name: avg
+      type: Bigdecimal
+    - name: babip
+      type: Bigdecimal
+    - name: bbPct
+      type: Bigdecimal
+    - name: bBdist
+      type: Bigdecimal
+    - name: bip
+      type: Bigdecimal
+    - name: iso
+      type: Bigdecimal
+    - name: kPct
+      type: Bigdecimal
+    - name: obp
+      type: Bigdecimal
+    - name: pa
+      type: Bigdecimal
+    - name: slg
+      type: Bigdecimal
+    - name: barrelsPerBbePct
+      type: Bigdecimal
+    - name: barrelsPerBbePctPctRnk
+      type: Bigdecimal
+    - name: barrelsPerPaPct
+      type: Bigdecimal
+    - name: barrelsPerPaPctPctRnk
+      type: Bigdecimal
+    - name: barrelsTotal
+      type: Bigdecimal
+    - name: barrelsTotalPctRnk
+      type: Bigdecimal
+    - name: hardhitPct
+      type: Bigdecimal
+    - name: hardhitPctPctRnk
+      type: Bigdecimal
+    - name: pitchPercent
+      type: Bigdecimal
+    - name: pitches
+      type: Bigdecimal
+    - name: rateIdealAttackAngle
+      type: Bigdecimal
+    - name: runExp
+      type: Bigdecimal
+    - name: totalPitches
+      type: Bigdecimal
+    - name: wOba
+      type: Bigdecimal
+    - name: wObAdiff
+      type: Bigdecimal
   graphql:
     typeName: PlayerStatsPitching
     inputTypeName: PlayerStatsPitchingInput
@@ -341,6 +391,81 @@ definition:
         xwOba:
           column:
             name: xwOBA
+        avg:
+          column:
+            name: AVG
+        babip:
+          column:
+            name: BABIP
+        bbPct:
+          column:
+            name: BB_pct
+        bBdist:
+          column:
+            name: BBdist
+        bip:
+          column:
+            name: BIP
+        iso:
+          column:
+            name: ISO
+        kPct:
+          column:
+            name: K_pct
+        obp:
+          column:
+            name: OBP
+        pa:
+          column:
+            name: PA
+        slg:
+          column:
+            name: SLG
+        barrelsPerBbePct:
+          column:
+            name: barrels_per_bbe_pct
+        barrelsPerBbePctPctRnk:
+          column:
+            name: barrels_per_bbe_pct_pct_rnk
+        barrelsPerPaPct:
+          column:
+            name: barrels_per_pa_pct
+        barrelsPerPaPctPctRnk:
+          column:
+            name: barrels_per_pa_pct_pct_rnk
+        barrelsTotal:
+          column:
+            name: barrels_total
+        barrelsTotalPctRnk:
+          column:
+            name: barrels_total_pct_rnk
+        hardhitPct:
+          column:
+            name: hardhit_pct
+        hardhitPctPctRnk:
+          column:
+            name: hardhit_pct_pct_rnk
+        pitchPercent:
+          column:
+            name: pitch_percent
+        pitches:
+          column:
+            name: pitches
+        rateIdealAttackAngle:
+          column:
+            name: rate_ideal_attack_angle
+        runExp:
+          column:
+            name: run_exp
+        totalPitches:
+          column:
+            name: total_pitches
+        wOba:
+          column:
+            name: wOBA
+        wObAdiff:
+          column:
+            name: wOBAdiff
 
 ---
 kind: TypePermissions
@@ -417,6 +542,31 @@ definition:
           - xSlg
           - xSlGdiff
           - xwOba
+          - avg
+          - babip
+          - bbPct
+          - bBdist
+          - bip
+          - iso
+          - kPct
+          - obp
+          - pa
+          - slg
+          - barrelsPerBbePct
+          - barrelsPerBbePctPctRnk
+          - barrelsPerPaPct
+          - barrelsPerPaPctPctRnk
+          - barrelsTotal
+          - barrelsTotalPctRnk
+          - hardhitPct
+          - hardhitPctPctRnk
+          - pitchPercent
+          - pitches
+          - rateIdealAttackAngle
+          - runExp
+          - totalPitches
+          - wOba
+          - wObAdiff
 
 ---
 kind: AggregateExpression
@@ -558,6 +708,56 @@ definition:
         - fieldName: xSlGdiff
           aggregateExpression: NumericAggExp
         - fieldName: xwOba
+          aggregateExpression: NumericAggExp
+        - fieldName: avg
+          aggregateExpression: NumericAggExp
+        - fieldName: babip
+          aggregateExpression: NumericAggExp
+        - fieldName: bbPct
+          aggregateExpression: NumericAggExp
+        - fieldName: bBdist
+          aggregateExpression: NumericAggExp
+        - fieldName: bip
+          aggregateExpression: NumericAggExp
+        - fieldName: iso
+          aggregateExpression: NumericAggExp
+        - fieldName: kPct
+          aggregateExpression: NumericAggExp
+        - fieldName: obp
+          aggregateExpression: NumericAggExp
+        - fieldName: pa
+          aggregateExpression: NumericAggExp
+        - fieldName: slg
+          aggregateExpression: NumericAggExp
+        - fieldName: barrelsPerBbePct
+          aggregateExpression: NumericAggExp
+        - fieldName: barrelsPerBbePctPctRnk
+          aggregateExpression: NumericAggExp
+        - fieldName: barrelsPerPaPct
+          aggregateExpression: NumericAggExp
+        - fieldName: barrelsPerPaPctPctRnk
+          aggregateExpression: NumericAggExp
+        - fieldName: barrelsTotal
+          aggregateExpression: NumericAggExp
+        - fieldName: barrelsTotalPctRnk
+          aggregateExpression: NumericAggExp
+        - fieldName: hardhitPct
+          aggregateExpression: NumericAggExp
+        - fieldName: hardhitPctPctRnk
+          aggregateExpression: NumericAggExp
+        - fieldName: pitchPercent
+          aggregateExpression: NumericAggExp
+        - fieldName: pitches
+          aggregateExpression: NumericAggExp
+        - fieldName: rateIdealAttackAngle
+          aggregateExpression: NumericAggExp
+        - fieldName: runExp
+          aggregateExpression: NumericAggExp
+        - fieldName: totalPitches
+          aggregateExpression: NumericAggExp
+        - fieldName: wOba
+          aggregateExpression: NumericAggExp
+        - fieldName: wObAdiff
           aggregateExpression: NumericAggExp
   count:
     enable: true
@@ -771,6 +971,56 @@ definition:
           booleanExpressionType: NumericBoolExp
         - fieldName: xwOba
           booleanExpressionType: NumericBoolExp
+        - fieldName: avg
+          booleanExpressionType: NumericBoolExp
+        - fieldName: babip
+          booleanExpressionType: NumericBoolExp
+        - fieldName: bbPct
+          booleanExpressionType: NumericBoolExp
+        - fieldName: bBdist
+          booleanExpressionType: NumericBoolExp
+        - fieldName: bip
+          booleanExpressionType: NumericBoolExp
+        - fieldName: iso
+          booleanExpressionType: NumericBoolExp
+        - fieldName: kPct
+          booleanExpressionType: NumericBoolExp
+        - fieldName: obp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: pa
+          booleanExpressionType: NumericBoolExp
+        - fieldName: slg
+          booleanExpressionType: NumericBoolExp
+        - fieldName: barrelsPerBbePct
+          booleanExpressionType: NumericBoolExp
+        - fieldName: barrelsPerBbePctPctRnk
+          booleanExpressionType: NumericBoolExp
+        - fieldName: barrelsPerPaPct
+          booleanExpressionType: NumericBoolExp
+        - fieldName: barrelsPerPaPctPctRnk
+          booleanExpressionType: NumericBoolExp
+        - fieldName: barrelsTotal
+          booleanExpressionType: NumericBoolExp
+        - fieldName: barrelsTotalPctRnk
+          booleanExpressionType: NumericBoolExp
+        - fieldName: hardhitPct
+          booleanExpressionType: NumericBoolExp
+        - fieldName: hardhitPctPctRnk
+          booleanExpressionType: NumericBoolExp
+        - fieldName: pitchPercent
+          booleanExpressionType: NumericBoolExp
+        - fieldName: pitches
+          booleanExpressionType: NumericBoolExp
+        - fieldName: rateIdealAttackAngle
+          booleanExpressionType: NumericBoolExp
+        - fieldName: runExp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: totalPitches
+          booleanExpressionType: NumericBoolExp
+        - fieldName: wOba
+          booleanExpressionType: NumericBoolExp
+        - fieldName: wObAdiff
+          booleanExpressionType: NumericBoolExp
       comparableRelationships:
         - relationshipName: player
   logicalOperators:
@@ -920,6 +1170,56 @@ definition:
         - fieldName: xSlGdiff
           orderByExpression: BigdecimalOrderByExp
         - fieldName: xwOba
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: avg
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: babip
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: bbPct
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: bBdist
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: bip
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: iso
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: kPct
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: obp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: pa
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: slg
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: barrelsPerBbePct
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: barrelsPerBbePctPctRnk
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: barrelsPerPaPct
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: barrelsPerPaPctPctRnk
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: barrelsTotal
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: barrelsTotalPctRnk
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: hardhitPct
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: hardhitPctPctRnk
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: pitchPercent
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: pitches
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: rateIdealAttackAngle
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: runExp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: totalPitches
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: wOba
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: wObAdiff
           orderByExpression: BigdecimalOrderByExp
       orderableRelationships:
         - relationshipName: player

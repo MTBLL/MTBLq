@@ -1,0 +1,438 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPositionSummaryObject
+  fields:
+    - name: budgetEra
+      type: Bigdecimal
+    - name: budgetHr
+      type: Bigdecimal
+    - name: budgetIp
+      type: Bigdecimal
+    - name: budgetK9
+      type: Bigdecimal
+    - name: budgetObp
+      type: Bigdecimal
+    - name: budgetQs
+      type: Bigdecimal
+    - name: budgetR
+      type: Bigdecimal
+    - name: budgetRbi
+      type: Bigdecimal
+    - name: budgetSbn
+      type: Bigdecimal
+    - name: budgetSlg
+      type: Bigdecimal
+    - name: budgetSvhd
+      type: Bigdecimal
+    - name: budgetWhip
+      type: Bigdecimal
+    - name: createdAt
+      type: Timestamp
+    - name: dollarsPerZEra
+      type: Bigdecimal
+    - name: dollarsPerZHr
+      type: Bigdecimal
+    - name: dollarsPerZIp
+      type: Bigdecimal
+    - name: dollarsPerZK9
+      type: Bigdecimal
+    - name: dollarsPerZObp
+      type: Bigdecimal
+    - name: dollarsPerZQs
+      type: Bigdecimal
+    - name: dollarsPerZR
+      type: Bigdecimal
+    - name: dollarsPerZRbi
+      type: Bigdecimal
+    - name: dollarsPerZSbn
+      type: Bigdecimal
+    - name: dollarsPerZSlg
+      type: Bigdecimal
+    - name: dollarsPerZSvhd
+      type: Bigdecimal
+    - name: dollarsPerZWhip
+      type: Bigdecimal
+    - name: id
+      type: Int32
+    - name: poolTotalZEra
+      type: Bigdecimal
+    - name: poolTotalZHr
+      type: Bigdecimal
+    - name: poolTotalZIp
+      type: Bigdecimal
+    - name: poolTotalZK9
+      type: Bigdecimal
+    - name: poolTotalZObp
+      type: Bigdecimal
+    - name: poolTotalZQs
+      type: Bigdecimal
+    - name: poolTotalZR
+      type: Bigdecimal
+    - name: poolTotalZRbi
+      type: Bigdecimal
+    - name: poolTotalZSbn
+      type: Bigdecimal
+    - name: poolTotalZSlg
+      type: Bigdecimal
+    - name: poolTotalZSvhd
+      type: Bigdecimal
+    - name: poolTotalZWhip
+      type: Bigdecimal
+    - name: position
+      type: String_1!
+    - name: replacementBaselineEra
+      type: Bigdecimal
+    - name: replacementBaselineHr
+      type: Bigdecimal
+    - name: replacementBaselineIp
+      type: Bigdecimal
+    - name: replacementBaselineK9
+      type: Bigdecimal
+    - name: replacementBaselineObp
+      type: Bigdecimal
+    - name: replacementBaselineQs
+      type: Bigdecimal
+    - name: replacementBaselineR
+      type: Bigdecimal
+    - name: replacementBaselineRbi
+      type: Bigdecimal
+    - name: replacementBaselineSbn
+      type: Bigdecimal
+    - name: replacementBaselineSlg
+      type: Bigdecimal
+    - name: replacementBaselineSvhd
+      type: Bigdecimal
+    - name: replacementBaselineWhip
+      type: Bigdecimal
+    - name: replacementTierCount
+      type: Int32
+    - name: role
+      type: String_1!
+    - name: rosteredCount
+      type: Int32
+    - name: totalBudget
+      type: Bigdecimal
+    - name: updatedAt
+      type: Timestamp
+    - name: valuationType
+      type: String_1!
+  graphql:
+    typeName: InsertPositionSummaryObject
+    inputTypeName: InsertPositionSummaryObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_position_summary_object
+      fieldMapping:
+        budgetEra:
+          column:
+            name: budget_ERA
+        budgetHr:
+          column:
+            name: budget_HR
+        budgetIp:
+          column:
+            name: budget_IP
+        budgetK9:
+          column:
+            name: budget_K/9
+        budgetObp:
+          column:
+            name: budget_OBP
+        budgetQs:
+          column:
+            name: budget_QS
+        budgetR:
+          column:
+            name: budget_R
+        budgetRbi:
+          column:
+            name: budget_RBI
+        budgetSbn:
+          column:
+            name: budget_SBN
+        budgetSlg:
+          column:
+            name: budget_SLG
+        budgetSvhd:
+          column:
+            name: budget_SVHD
+        budgetWhip:
+          column:
+            name: budget_WHIP
+        createdAt:
+          column:
+            name: created_at
+        dollarsPerZEra:
+          column:
+            name: dollars_per_z_ERA
+        dollarsPerZHr:
+          column:
+            name: dollars_per_z_HR
+        dollarsPerZIp:
+          column:
+            name: dollars_per_z_IP
+        dollarsPerZK9:
+          column:
+            name: dollars_per_z_K/9
+        dollarsPerZObp:
+          column:
+            name: dollars_per_z_OBP
+        dollarsPerZQs:
+          column:
+            name: dollars_per_z_QS
+        dollarsPerZR:
+          column:
+            name: dollars_per_z_R
+        dollarsPerZRbi:
+          column:
+            name: dollars_per_z_RBI
+        dollarsPerZSbn:
+          column:
+            name: dollars_per_z_SBN
+        dollarsPerZSlg:
+          column:
+            name: dollars_per_z_SLG
+        dollarsPerZSvhd:
+          column:
+            name: dollars_per_z_SVHD
+        dollarsPerZWhip:
+          column:
+            name: dollars_per_z_WHIP
+        id:
+          column:
+            name: id
+        poolTotalZEra:
+          column:
+            name: pool_total_z_ERA
+        poolTotalZHr:
+          column:
+            name: pool_total_z_HR
+        poolTotalZIp:
+          column:
+            name: pool_total_z_IP
+        poolTotalZK9:
+          column:
+            name: pool_total_z_K/9
+        poolTotalZObp:
+          column:
+            name: pool_total_z_OBP
+        poolTotalZQs:
+          column:
+            name: pool_total_z_QS
+        poolTotalZR:
+          column:
+            name: pool_total_z_R
+        poolTotalZRbi:
+          column:
+            name: pool_total_z_RBI
+        poolTotalZSbn:
+          column:
+            name: pool_total_z_SBN
+        poolTotalZSlg:
+          column:
+            name: pool_total_z_SLG
+        poolTotalZSvhd:
+          column:
+            name: pool_total_z_SVHD
+        poolTotalZWhip:
+          column:
+            name: pool_total_z_WHIP
+        position:
+          column:
+            name: position
+        replacementBaselineEra:
+          column:
+            name: replacement_baseline_ERA
+        replacementBaselineHr:
+          column:
+            name: replacement_baseline_HR
+        replacementBaselineIp:
+          column:
+            name: replacement_baseline_IP
+        replacementBaselineK9:
+          column:
+            name: replacement_baseline_K/9
+        replacementBaselineObp:
+          column:
+            name: replacement_baseline_OBP
+        replacementBaselineQs:
+          column:
+            name: replacement_baseline_QS
+        replacementBaselineR:
+          column:
+            name: replacement_baseline_R
+        replacementBaselineRbi:
+          column:
+            name: replacement_baseline_RBI
+        replacementBaselineSbn:
+          column:
+            name: replacement_baseline_SBN
+        replacementBaselineSlg:
+          column:
+            name: replacement_baseline_SLG
+        replacementBaselineSvhd:
+          column:
+            name: replacement_baseline_SVHD
+        replacementBaselineWhip:
+          column:
+            name: replacement_baseline_WHIP
+        replacementTierCount:
+          column:
+            name: replacement_tier_count
+        role:
+          column:
+            name: role
+        rosteredCount:
+          column:
+            name: rostered_count
+        totalBudget:
+          column:
+            name: total_budget
+        updatedAt:
+          column:
+            name: updated_at
+        valuationType:
+          column:
+            name: valuation_type
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPositionSummaryObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - budgetEra
+          - budgetHr
+          - budgetIp
+          - budgetK9
+          - budgetObp
+          - budgetQs
+          - budgetR
+          - budgetRbi
+          - budgetSbn
+          - budgetSlg
+          - budgetSvhd
+          - budgetWhip
+          - createdAt
+          - dollarsPerZEra
+          - dollarsPerZHr
+          - dollarsPerZIp
+          - dollarsPerZK9
+          - dollarsPerZObp
+          - dollarsPerZQs
+          - dollarsPerZR
+          - dollarsPerZRbi
+          - dollarsPerZSbn
+          - dollarsPerZSlg
+          - dollarsPerZSvhd
+          - dollarsPerZWhip
+          - id
+          - poolTotalZEra
+          - poolTotalZHr
+          - poolTotalZIp
+          - poolTotalZK9
+          - poolTotalZObp
+          - poolTotalZQs
+          - poolTotalZR
+          - poolTotalZRbi
+          - poolTotalZSbn
+          - poolTotalZSlg
+          - poolTotalZSvhd
+          - poolTotalZWhip
+          - position
+          - replacementBaselineEra
+          - replacementBaselineHr
+          - replacementBaselineIp
+          - replacementBaselineK9
+          - replacementBaselineObp
+          - replacementBaselineQs
+          - replacementBaselineR
+          - replacementBaselineRbi
+          - replacementBaselineSbn
+          - replacementBaselineSlg
+          - replacementBaselineSvhd
+          - replacementBaselineWhip
+          - replacementTierCount
+          - role
+          - rosteredCount
+          - totalBudget
+          - updatedAt
+          - valuationType
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPositionSummaryResponse
+  description: Responses from the 'insert_position_summary' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PositionSummary!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertPositionSummaryResponse
+    inputTypeName: InsertPositionSummaryResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_position_summary_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPositionSummaryResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertPositionSummary
+  outputType: InsertPositionSummaryResponse!
+  arguments:
+    - name: objects
+      type: "[InsertPositionSummaryObject!]!"
+    - name: postCheck
+      type: PositionSummaryBoolExp
+      description: Insert permission predicate over the 'position_summary' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_position_summary
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertPositionSummary
+    rootFieldKind: Mutation
+  description: Insert into the position_summary table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertPositionSummary
+  permissions:
+    - role: admin
+      allowExecution: true
+

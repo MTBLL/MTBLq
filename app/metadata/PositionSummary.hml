@@ -1,0 +1,799 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: PositionSummary
+  fields:
+    - name: budgetEra
+      type: Bigdecimal
+    - name: budgetHr
+      type: Bigdecimal
+    - name: budgetIp
+      type: Bigdecimal
+    - name: budgetK9
+      type: Bigdecimal
+    - name: budgetObp
+      type: Bigdecimal
+    - name: budgetQs
+      type: Bigdecimal
+    - name: budgetR
+      type: Bigdecimal
+    - name: budgetRbi
+      type: Bigdecimal
+    - name: budgetSbn
+      type: Bigdecimal
+    - name: budgetSlg
+      type: Bigdecimal
+    - name: budgetSvhd
+      type: Bigdecimal
+    - name: budgetWhip
+      type: Bigdecimal
+    - name: createdAt
+      type: Timestamp
+    - name: dollarsPerZEra
+      type: Bigdecimal
+    - name: dollarsPerZHr
+      type: Bigdecimal
+    - name: dollarsPerZIp
+      type: Bigdecimal
+    - name: dollarsPerZK9
+      type: Bigdecimal
+    - name: dollarsPerZObp
+      type: Bigdecimal
+    - name: dollarsPerZQs
+      type: Bigdecimal
+    - name: dollarsPerZR
+      type: Bigdecimal
+    - name: dollarsPerZRbi
+      type: Bigdecimal
+    - name: dollarsPerZSbn
+      type: Bigdecimal
+    - name: dollarsPerZSlg
+      type: Bigdecimal
+    - name: dollarsPerZSvhd
+      type: Bigdecimal
+    - name: dollarsPerZWhip
+      type: Bigdecimal
+    - name: id
+      type: Int32!
+    - name: poolTotalZEra
+      type: Bigdecimal
+    - name: poolTotalZHr
+      type: Bigdecimal
+    - name: poolTotalZIp
+      type: Bigdecimal
+    - name: poolTotalZK9
+      type: Bigdecimal
+    - name: poolTotalZObp
+      type: Bigdecimal
+    - name: poolTotalZQs
+      type: Bigdecimal
+    - name: poolTotalZR
+      type: Bigdecimal
+    - name: poolTotalZRbi
+      type: Bigdecimal
+    - name: poolTotalZSbn
+      type: Bigdecimal
+    - name: poolTotalZSlg
+      type: Bigdecimal
+    - name: poolTotalZSvhd
+      type: Bigdecimal
+    - name: poolTotalZWhip
+      type: Bigdecimal
+    - name: position
+      type: String_1!
+    - name: replacementBaselineEra
+      type: Bigdecimal
+    - name: replacementBaselineHr
+      type: Bigdecimal
+    - name: replacementBaselineIp
+      type: Bigdecimal
+    - name: replacementBaselineK9
+      type: Bigdecimal
+    - name: replacementBaselineObp
+      type: Bigdecimal
+    - name: replacementBaselineQs
+      type: Bigdecimal
+    - name: replacementBaselineR
+      type: Bigdecimal
+    - name: replacementBaselineRbi
+      type: Bigdecimal
+    - name: replacementBaselineSbn
+      type: Bigdecimal
+    - name: replacementBaselineSlg
+      type: Bigdecimal
+    - name: replacementBaselineSvhd
+      type: Bigdecimal
+    - name: replacementBaselineWhip
+      type: Bigdecimal
+    - name: replacementTierCount
+      type: Int32
+    - name: role
+      type: String_1!
+    - name: rosteredCount
+      type: Int32
+    - name: totalBudget
+      type: Bigdecimal
+    - name: updatedAt
+      type: Timestamp
+    - name: valuationType
+      type: String_1!
+  graphql:
+    typeName: PositionSummary
+    inputTypeName: PositionSummaryInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: position_summary
+      fieldMapping:
+        budgetEra:
+          column:
+            name: budget_ERA
+        budgetHr:
+          column:
+            name: budget_HR
+        budgetIp:
+          column:
+            name: budget_IP
+        budgetK9:
+          column:
+            name: budget_K/9
+        budgetObp:
+          column:
+            name: budget_OBP
+        budgetQs:
+          column:
+            name: budget_QS
+        budgetR:
+          column:
+            name: budget_R
+        budgetRbi:
+          column:
+            name: budget_RBI
+        budgetSbn:
+          column:
+            name: budget_SBN
+        budgetSlg:
+          column:
+            name: budget_SLG
+        budgetSvhd:
+          column:
+            name: budget_SVHD
+        budgetWhip:
+          column:
+            name: budget_WHIP
+        createdAt:
+          column:
+            name: created_at
+        dollarsPerZEra:
+          column:
+            name: dollars_per_z_ERA
+        dollarsPerZHr:
+          column:
+            name: dollars_per_z_HR
+        dollarsPerZIp:
+          column:
+            name: dollars_per_z_IP
+        dollarsPerZK9:
+          column:
+            name: dollars_per_z_K/9
+        dollarsPerZObp:
+          column:
+            name: dollars_per_z_OBP
+        dollarsPerZQs:
+          column:
+            name: dollars_per_z_QS
+        dollarsPerZR:
+          column:
+            name: dollars_per_z_R
+        dollarsPerZRbi:
+          column:
+            name: dollars_per_z_RBI
+        dollarsPerZSbn:
+          column:
+            name: dollars_per_z_SBN
+        dollarsPerZSlg:
+          column:
+            name: dollars_per_z_SLG
+        dollarsPerZSvhd:
+          column:
+            name: dollars_per_z_SVHD
+        dollarsPerZWhip:
+          column:
+            name: dollars_per_z_WHIP
+        id:
+          column:
+            name: id
+        poolTotalZEra:
+          column:
+            name: pool_total_z_ERA
+        poolTotalZHr:
+          column:
+            name: pool_total_z_HR
+        poolTotalZIp:
+          column:
+            name: pool_total_z_IP
+        poolTotalZK9:
+          column:
+            name: pool_total_z_K/9
+        poolTotalZObp:
+          column:
+            name: pool_total_z_OBP
+        poolTotalZQs:
+          column:
+            name: pool_total_z_QS
+        poolTotalZR:
+          column:
+            name: pool_total_z_R
+        poolTotalZRbi:
+          column:
+            name: pool_total_z_RBI
+        poolTotalZSbn:
+          column:
+            name: pool_total_z_SBN
+        poolTotalZSlg:
+          column:
+            name: pool_total_z_SLG
+        poolTotalZSvhd:
+          column:
+            name: pool_total_z_SVHD
+        poolTotalZWhip:
+          column:
+            name: pool_total_z_WHIP
+        position:
+          column:
+            name: position
+        replacementBaselineEra:
+          column:
+            name: replacement_baseline_ERA
+        replacementBaselineHr:
+          column:
+            name: replacement_baseline_HR
+        replacementBaselineIp:
+          column:
+            name: replacement_baseline_IP
+        replacementBaselineK9:
+          column:
+            name: replacement_baseline_K/9
+        replacementBaselineObp:
+          column:
+            name: replacement_baseline_OBP
+        replacementBaselineQs:
+          column:
+            name: replacement_baseline_QS
+        replacementBaselineR:
+          column:
+            name: replacement_baseline_R
+        replacementBaselineRbi:
+          column:
+            name: replacement_baseline_RBI
+        replacementBaselineSbn:
+          column:
+            name: replacement_baseline_SBN
+        replacementBaselineSlg:
+          column:
+            name: replacement_baseline_SLG
+        replacementBaselineSvhd:
+          column:
+            name: replacement_baseline_SVHD
+        replacementBaselineWhip:
+          column:
+            name: replacement_baseline_WHIP
+        replacementTierCount:
+          column:
+            name: replacement_tier_count
+        role:
+          column:
+            name: role
+        rosteredCount:
+          column:
+            name: rostered_count
+        totalBudget:
+          column:
+            name: total_budget
+        updatedAt:
+          column:
+            name: updated_at
+        valuationType:
+          column:
+            name: valuation_type
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: PositionSummary
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - budgetEra
+          - budgetHr
+          - budgetIp
+          - budgetK9
+          - budgetObp
+          - budgetQs
+          - budgetR
+          - budgetRbi
+          - budgetSbn
+          - budgetSlg
+          - budgetSvhd
+          - budgetWhip
+          - createdAt
+          - dollarsPerZEra
+          - dollarsPerZHr
+          - dollarsPerZIp
+          - dollarsPerZK9
+          - dollarsPerZObp
+          - dollarsPerZQs
+          - dollarsPerZR
+          - dollarsPerZRbi
+          - dollarsPerZSbn
+          - dollarsPerZSlg
+          - dollarsPerZSvhd
+          - dollarsPerZWhip
+          - id
+          - poolTotalZEra
+          - poolTotalZHr
+          - poolTotalZIp
+          - poolTotalZK9
+          - poolTotalZObp
+          - poolTotalZQs
+          - poolTotalZR
+          - poolTotalZRbi
+          - poolTotalZSbn
+          - poolTotalZSlg
+          - poolTotalZSvhd
+          - poolTotalZWhip
+          - position
+          - replacementBaselineEra
+          - replacementBaselineHr
+          - replacementBaselineIp
+          - replacementBaselineK9
+          - replacementBaselineObp
+          - replacementBaselineQs
+          - replacementBaselineR
+          - replacementBaselineRbi
+          - replacementBaselineSbn
+          - replacementBaselineSlg
+          - replacementBaselineSvhd
+          - replacementBaselineWhip
+          - replacementTierCount
+          - role
+          - rosteredCount
+          - totalBudget
+          - updatedAt
+          - valuationType
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: PositionSummaryBoolExp
+  operand:
+    object:
+      type: PositionSummary
+      comparableFields:
+        - fieldName: budgetEra
+          booleanExpressionType: NumericBoolExp
+        - fieldName: budgetHr
+          booleanExpressionType: NumericBoolExp
+        - fieldName: budgetIp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: budgetK9
+          booleanExpressionType: NumericBoolExp
+        - fieldName: budgetObp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: budgetQs
+          booleanExpressionType: NumericBoolExp
+        - fieldName: budgetR
+          booleanExpressionType: NumericBoolExp
+        - fieldName: budgetRbi
+          booleanExpressionType: NumericBoolExp
+        - fieldName: budgetSbn
+          booleanExpressionType: NumericBoolExp
+        - fieldName: budgetSlg
+          booleanExpressionType: NumericBoolExp
+        - fieldName: budgetSvhd
+          booleanExpressionType: NumericBoolExp
+        - fieldName: budgetWhip
+          booleanExpressionType: NumericBoolExp
+        - fieldName: createdAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: dollarsPerZEra
+          booleanExpressionType: NumericBoolExp
+        - fieldName: dollarsPerZHr
+          booleanExpressionType: NumericBoolExp
+        - fieldName: dollarsPerZIp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: dollarsPerZK9
+          booleanExpressionType: NumericBoolExp
+        - fieldName: dollarsPerZObp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: dollarsPerZQs
+          booleanExpressionType: NumericBoolExp
+        - fieldName: dollarsPerZR
+          booleanExpressionType: NumericBoolExp
+        - fieldName: dollarsPerZRbi
+          booleanExpressionType: NumericBoolExp
+        - fieldName: dollarsPerZSbn
+          booleanExpressionType: NumericBoolExp
+        - fieldName: dollarsPerZSlg
+          booleanExpressionType: NumericBoolExp
+        - fieldName: dollarsPerZSvhd
+          booleanExpressionType: NumericBoolExp
+        - fieldName: dollarsPerZWhip
+          booleanExpressionType: NumericBoolExp
+        - fieldName: id
+          booleanExpressionType: Int4BoolExp
+        - fieldName: poolTotalZEra
+          booleanExpressionType: NumericBoolExp
+        - fieldName: poolTotalZHr
+          booleanExpressionType: NumericBoolExp
+        - fieldName: poolTotalZIp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: poolTotalZK9
+          booleanExpressionType: NumericBoolExp
+        - fieldName: poolTotalZObp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: poolTotalZQs
+          booleanExpressionType: NumericBoolExp
+        - fieldName: poolTotalZR
+          booleanExpressionType: NumericBoolExp
+        - fieldName: poolTotalZRbi
+          booleanExpressionType: NumericBoolExp
+        - fieldName: poolTotalZSbn
+          booleanExpressionType: NumericBoolExp
+        - fieldName: poolTotalZSlg
+          booleanExpressionType: NumericBoolExp
+        - fieldName: poolTotalZSvhd
+          booleanExpressionType: NumericBoolExp
+        - fieldName: poolTotalZWhip
+          booleanExpressionType: NumericBoolExp
+        - fieldName: position
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: replacementBaselineEra
+          booleanExpressionType: NumericBoolExp
+        - fieldName: replacementBaselineHr
+          booleanExpressionType: NumericBoolExp
+        - fieldName: replacementBaselineIp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: replacementBaselineK9
+          booleanExpressionType: NumericBoolExp
+        - fieldName: replacementBaselineObp
+          booleanExpressionType: NumericBoolExp
+        - fieldName: replacementBaselineQs
+          booleanExpressionType: NumericBoolExp
+        - fieldName: replacementBaselineR
+          booleanExpressionType: NumericBoolExp
+        - fieldName: replacementBaselineRbi
+          booleanExpressionType: NumericBoolExp
+        - fieldName: replacementBaselineSbn
+          booleanExpressionType: NumericBoolExp
+        - fieldName: replacementBaselineSlg
+          booleanExpressionType: NumericBoolExp
+        - fieldName: replacementBaselineSvhd
+          booleanExpressionType: NumericBoolExp
+        - fieldName: replacementBaselineWhip
+          booleanExpressionType: NumericBoolExp
+        - fieldName: replacementTierCount
+          booleanExpressionType: Int4BoolExp
+        - fieldName: role
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: rosteredCount
+          booleanExpressionType: Int4BoolExp
+        - fieldName: totalBudget
+          booleanExpressionType: NumericBoolExp
+        - fieldName: updatedAt
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: valuationType
+          booleanExpressionType: VarcharBoolExp
+      comparableRelationships: []
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: PositionSummaryBoolExp
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: PositionSummaryAggExp
+  operand:
+    object:
+      aggregatedType: PositionSummary
+      aggregatableFields:
+        - fieldName: budgetEra
+          aggregateExpression: NumericAggExp
+        - fieldName: budgetHr
+          aggregateExpression: NumericAggExp
+        - fieldName: budgetIp
+          aggregateExpression: NumericAggExp
+        - fieldName: budgetK9
+          aggregateExpression: NumericAggExp
+        - fieldName: budgetObp
+          aggregateExpression: NumericAggExp
+        - fieldName: budgetQs
+          aggregateExpression: NumericAggExp
+        - fieldName: budgetR
+          aggregateExpression: NumericAggExp
+        - fieldName: budgetRbi
+          aggregateExpression: NumericAggExp
+        - fieldName: budgetSbn
+          aggregateExpression: NumericAggExp
+        - fieldName: budgetSlg
+          aggregateExpression: NumericAggExp
+        - fieldName: budgetSvhd
+          aggregateExpression: NumericAggExp
+        - fieldName: budgetWhip
+          aggregateExpression: NumericAggExp
+        - fieldName: createdAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: dollarsPerZEra
+          aggregateExpression: NumericAggExp
+        - fieldName: dollarsPerZHr
+          aggregateExpression: NumericAggExp
+        - fieldName: dollarsPerZIp
+          aggregateExpression: NumericAggExp
+        - fieldName: dollarsPerZK9
+          aggregateExpression: NumericAggExp
+        - fieldName: dollarsPerZObp
+          aggregateExpression: NumericAggExp
+        - fieldName: dollarsPerZQs
+          aggregateExpression: NumericAggExp
+        - fieldName: dollarsPerZR
+          aggregateExpression: NumericAggExp
+        - fieldName: dollarsPerZRbi
+          aggregateExpression: NumericAggExp
+        - fieldName: dollarsPerZSbn
+          aggregateExpression: NumericAggExp
+        - fieldName: dollarsPerZSlg
+          aggregateExpression: NumericAggExp
+        - fieldName: dollarsPerZSvhd
+          aggregateExpression: NumericAggExp
+        - fieldName: dollarsPerZWhip
+          aggregateExpression: NumericAggExp
+        - fieldName: id
+          aggregateExpression: Int4AggExp
+        - fieldName: poolTotalZEra
+          aggregateExpression: NumericAggExp
+        - fieldName: poolTotalZHr
+          aggregateExpression: NumericAggExp
+        - fieldName: poolTotalZIp
+          aggregateExpression: NumericAggExp
+        - fieldName: poolTotalZK9
+          aggregateExpression: NumericAggExp
+        - fieldName: poolTotalZObp
+          aggregateExpression: NumericAggExp
+        - fieldName: poolTotalZQs
+          aggregateExpression: NumericAggExp
+        - fieldName: poolTotalZR
+          aggregateExpression: NumericAggExp
+        - fieldName: poolTotalZRbi
+          aggregateExpression: NumericAggExp
+        - fieldName: poolTotalZSbn
+          aggregateExpression: NumericAggExp
+        - fieldName: poolTotalZSlg
+          aggregateExpression: NumericAggExp
+        - fieldName: poolTotalZSvhd
+          aggregateExpression: NumericAggExp
+        - fieldName: poolTotalZWhip
+          aggregateExpression: NumericAggExp
+        - fieldName: position
+          aggregateExpression: VarcharAggExp
+        - fieldName: replacementBaselineEra
+          aggregateExpression: NumericAggExp
+        - fieldName: replacementBaselineHr
+          aggregateExpression: NumericAggExp
+        - fieldName: replacementBaselineIp
+          aggregateExpression: NumericAggExp
+        - fieldName: replacementBaselineK9
+          aggregateExpression: NumericAggExp
+        - fieldName: replacementBaselineObp
+          aggregateExpression: NumericAggExp
+        - fieldName: replacementBaselineQs
+          aggregateExpression: NumericAggExp
+        - fieldName: replacementBaselineR
+          aggregateExpression: NumericAggExp
+        - fieldName: replacementBaselineRbi
+          aggregateExpression: NumericAggExp
+        - fieldName: replacementBaselineSbn
+          aggregateExpression: NumericAggExp
+        - fieldName: replacementBaselineSlg
+          aggregateExpression: NumericAggExp
+        - fieldName: replacementBaselineSvhd
+          aggregateExpression: NumericAggExp
+        - fieldName: replacementBaselineWhip
+          aggregateExpression: NumericAggExp
+        - fieldName: replacementTierCount
+          aggregateExpression: Int4AggExp
+        - fieldName: role
+          aggregateExpression: VarcharAggExp
+        - fieldName: rosteredCount
+          aggregateExpression: Int4AggExp
+        - fieldName: totalBudget
+          aggregateExpression: NumericAggExp
+        - fieldName: updatedAt
+          aggregateExpression: TimestampAggExp
+        - fieldName: valuationType
+          aggregateExpression: VarcharAggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: PositionSummaryAggExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: PositionSummaryOrderByExp
+  operand:
+    object:
+      orderedType: PositionSummary
+      orderableFields:
+        - fieldName: budgetEra
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: budgetHr
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: budgetIp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: budgetK9
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: budgetObp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: budgetQs
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: budgetR
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: budgetRbi
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: budgetSbn
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: budgetSlg
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: budgetSvhd
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: budgetWhip
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: createdAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: dollarsPerZEra
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: dollarsPerZHr
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: dollarsPerZIp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: dollarsPerZK9
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: dollarsPerZObp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: dollarsPerZQs
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: dollarsPerZR
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: dollarsPerZRbi
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: dollarsPerZSbn
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: dollarsPerZSlg
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: dollarsPerZSvhd
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: dollarsPerZWhip
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: id
+          orderByExpression: Int32OrderByExp
+        - fieldName: poolTotalZEra
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: poolTotalZHr
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: poolTotalZIp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: poolTotalZK9
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: poolTotalZObp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: poolTotalZQs
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: poolTotalZR
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: poolTotalZRbi
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: poolTotalZSbn
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: poolTotalZSlg
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: poolTotalZSvhd
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: poolTotalZWhip
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: position
+          orderByExpression: String1OrderByExp
+        - fieldName: replacementBaselineEra
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: replacementBaselineHr
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: replacementBaselineIp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: replacementBaselineK9
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: replacementBaselineObp
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: replacementBaselineQs
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: replacementBaselineR
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: replacementBaselineRbi
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: replacementBaselineSbn
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: replacementBaselineSlg
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: replacementBaselineSvhd
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: replacementBaselineWhip
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: replacementTierCount
+          orderByExpression: Int32OrderByExp
+        - fieldName: role
+          orderByExpression: String1OrderByExp
+        - fieldName: rosteredCount
+          orderByExpression: Int32OrderByExp
+        - fieldName: totalBudget
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: updatedAt
+          orderByExpression: TimestampOrderByExp
+        - fieldName: valuationType
+          orderByExpression: String1OrderByExp
+      orderableRelationships: []
+  graphql:
+    expressionTypeName: PositionSummaryOrderByExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: PositionSummary
+  objectType: PositionSummary
+  source:
+    dataConnectorName: neon_mtbl
+    collection: position_summary
+  filterExpressionType: PositionSummaryBoolExp
+  aggregateExpression: PositionSummaryAggExp
+  orderByExpression: PositionSummaryOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: positionSummary
+      subscription:
+        rootField: positionSummary
+    selectUniques:
+      - queryRootField: positionSummaryById
+        uniqueIdentifier:
+          - id
+        subscription:
+          rootField: positionSummaryById
+      - queryRootField: positionSummaryByPositionSummaryPositionValuationTypeKey
+        uniqueIdentifier:
+          - position
+          - valuationType
+        subscription:
+          rootField: positionSummaryByPositionSummaryPositionValuationTypeKey
+    filterInputTypeName: PositionSummaryFilterInput
+    aggregate:
+      queryRootField: positionSummaryAggregate
+      subscription:
+        rootField: positionSummaryAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: PositionSummary
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+

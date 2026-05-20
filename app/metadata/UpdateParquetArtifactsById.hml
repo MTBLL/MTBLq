@@ -1,0 +1,496 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnParquetArtifactsBucket
+  description: Update the 'bucket' column in the 'parquet_artifacts' collection
+  fields:
+    - name: set
+      type: String_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnParquetArtifactsBucket
+    inputTypeName: UpdateColumnParquetArtifactsBucketInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_parquet_artifacts_bucket
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnParquetArtifactsBucket
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnParquetArtifactsEndpoint
+  description: Update the 'endpoint' column in the 'parquet_artifacts' collection
+  fields:
+    - name: set
+      type: String_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnParquetArtifactsEndpoint
+    inputTypeName: UpdateColumnParquetArtifactsEndpointInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_parquet_artifacts_endpoint
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnParquetArtifactsEndpoint
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnParquetArtifactsEtag
+  description: Update the 'etag' column in the 'parquet_artifacts' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnParquetArtifactsEtag
+    inputTypeName: UpdateColumnParquetArtifactsEtagInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_parquet_artifacts_etag
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnParquetArtifactsEtag
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnParquetArtifactsId
+  description: Update the 'id' column in the 'parquet_artifacts' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnParquetArtifactsId
+    inputTypeName: UpdateColumnParquetArtifactsIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_parquet_artifacts_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnParquetArtifactsId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnParquetArtifactsObjectKey
+  description: Update the 'object_key' column in the 'parquet_artifacts' collection
+  fields:
+    - name: set
+      type: String_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnParquetArtifactsObjectKey
+    inputTypeName: UpdateColumnParquetArtifactsObjectKeyInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_parquet_artifacts_object_key
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnParquetArtifactsObjectKey
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnParquetArtifactsRowCount
+  description: Update the 'row_count' column in the 'parquet_artifacts' collection
+  fields:
+    - name: set
+      type: Int64
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnParquetArtifactsRowCount
+    inputTypeName: UpdateColumnParquetArtifactsRowCountInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_parquet_artifacts_row_count
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnParquetArtifactsRowCount
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnParquetArtifactsSha256
+  description: Update the 'sha256' column in the 'parquet_artifacts' collection
+  fields:
+    - name: set
+      type: String_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnParquetArtifactsSha256
+    inputTypeName: UpdateColumnParquetArtifactsSha256Input
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_parquet_artifacts_sha256
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnParquetArtifactsSha256
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnParquetArtifactsSizeBytes
+  description: Update the 'size_bytes' column in the 'parquet_artifacts' collection
+  fields:
+    - name: set
+      type: Int64!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnParquetArtifactsSizeBytes
+    inputTypeName: UpdateColumnParquetArtifactsSizeBytesInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_parquet_artifacts_size_bytes
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnParquetArtifactsSizeBytes
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnParquetArtifactsTableName
+  description: Update the 'table_name' column in the 'parquet_artifacts' collection
+  fields:
+    - name: set
+      type: String_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnParquetArtifactsTableName
+    inputTypeName: UpdateColumnParquetArtifactsTableNameInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_parquet_artifacts_table_name
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnParquetArtifactsTableName
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnParquetArtifactsUploadedAt
+  description: Update the 'uploaded_at' column in the 'parquet_artifacts' collection
+  fields:
+    - name: set
+      type: Timestamp!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnParquetArtifactsUploadedAt
+    inputTypeName: UpdateColumnParquetArtifactsUploadedAtInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_parquet_artifacts_uploaded_at
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnParquetArtifactsUploadedAt
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateParquetArtifactsByIdUpdateColumns
+  description: Update the columns of the 'parquet_artifacts' collection
+  fields:
+    - name: bucket
+      type: UpdateColumnParquetArtifactsBucket
+      description: Update the 'bucket' column in the 'parquet_artifacts' collection.
+    - name: endpoint
+      type: UpdateColumnParquetArtifactsEndpoint
+      description: Update the 'endpoint' column in the 'parquet_artifacts' collection.
+    - name: etag
+      type: UpdateColumnParquetArtifactsEtag
+      description: Update the 'etag' column in the 'parquet_artifacts' collection.
+    - name: id
+      type: UpdateColumnParquetArtifactsId
+      description: Update the 'id' column in the 'parquet_artifacts' collection.
+    - name: objectKey
+      type: UpdateColumnParquetArtifactsObjectKey
+      description: Update the 'object_key' column in the 'parquet_artifacts' collection.
+    - name: rowCount
+      type: UpdateColumnParquetArtifactsRowCount
+      description: Update the 'row_count' column in the 'parquet_artifacts' collection.
+    - name: sha256
+      type: UpdateColumnParquetArtifactsSha256
+      description: Update the 'sha256' column in the 'parquet_artifacts' collection.
+    - name: sizeBytes
+      type: UpdateColumnParquetArtifactsSizeBytes
+      description: Update the 'size_bytes' column in the 'parquet_artifacts' collection.
+    - name: tableName
+      type: UpdateColumnParquetArtifactsTableName
+      description: Update the 'table_name' column in the 'parquet_artifacts' collection.
+    - name: uploadedAt
+      type: UpdateColumnParquetArtifactsUploadedAt
+      description: Update the 'uploaded_at' column in the 'parquet_artifacts' collection.
+  graphql:
+    typeName: UpdateParquetArtifactsByIdUpdateColumns
+    inputTypeName: UpdateParquetArtifactsByIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_parquet_artifacts_by_id_update_columns
+      fieldMapping:
+        bucket:
+          column:
+            name: bucket
+        endpoint:
+          column:
+            name: endpoint
+        etag:
+          column:
+            name: etag
+        id:
+          column:
+            name: id
+        objectKey:
+          column:
+            name: object_key
+        rowCount:
+          column:
+            name: row_count
+        sha256:
+          column:
+            name: sha256
+        sizeBytes:
+          column:
+            name: size_bytes
+        tableName:
+          column:
+            name: table_name
+        uploadedAt:
+          column:
+            name: uploaded_at
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateParquetArtifactsByIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - bucket
+          - endpoint
+          - etag
+          - id
+          - objectKey
+          - rowCount
+          - sha256
+          - sizeBytes
+          - tableName
+          - uploadedAt
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateParquetArtifactsByIdResponse
+  description: Responses from the 'update_parquet_artifacts_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[ParquetArtifacts!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdateParquetArtifactsByIdResponse
+    inputTypeName: UpdateParquetArtifactsByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_parquet_artifacts_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateParquetArtifactsByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdateParquetArtifactsById
+  outputType: UpdateParquetArtifactsByIdResponse!
+  arguments:
+    - name: keyId
+      type: Int32!
+    - name: postCheck
+      type: ParquetArtifactsBoolExp
+      description: Update permission post-condition predicate over the
+        'parquet_artifacts' collection
+    - name: preCheck
+      type: ParquetArtifactsBoolExp
+      description: Update permission pre-condition predicate over the
+        'parquet_artifacts' collection
+    - name: updateColumns
+      type: UpdateParquetArtifactsByIdUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_parquet_artifacts_by_id
+    argumentMapping:
+      keyId: key_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updateParquetArtifactsById
+    rootFieldKind: Mutation
+  description: Update any row on the 'parquet_artifacts' collection using the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdateParquetArtifactsById
+  permissions:
+    - role: admin
+      allowExecution: true
+

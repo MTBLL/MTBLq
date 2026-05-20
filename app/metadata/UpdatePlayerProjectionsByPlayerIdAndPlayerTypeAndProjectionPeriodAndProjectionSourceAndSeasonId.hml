@@ -2,7 +2,7 @@
 kind: ObjectType
 version: v1
 definition:
-  name: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdUpdateColumns
+  name: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionPeriodAndProjectionSourceAndSeasonIdUpdateColumns
   description: Update the columns of the 'player_projections' collection
   fields:
     - name: createdAt
@@ -17,6 +17,10 @@ definition:
     - name: playerType
       type: UpdateColumnPlayerProjectionsPlayerType
       description: Update the 'player_type' column in the 'player_projections' collection.
+    - name: projectionPeriod
+      type: UpdateColumnPlayerProjectionsProjectionPeriod
+      description: Update the 'projection_period' column in the 'player_projections'
+        collection.
     - name: projectionSource
       type: UpdateColumnPlayerProjectionsProjectionSource
       description: Update the 'projection_source' column in the 'player_projections'
@@ -31,11 +35,11 @@ definition:
       type: UpdateColumnPlayerProjectionsUpdatedAt
       description: Update the 'updated_at' column in the 'player_projections' collection.
   graphql:
-    typeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdUpdateColumns
-    inputTypeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdUpdateColumnsInput
+    typeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionPeriodAndProjectionSourceAndSeasonIdUpdateColumns
+    inputTypeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionPeriodAndProjectionSourceAndSeasonIdUpdateColumnsInput
   dataConnectorTypeMapping:
     - dataConnectorName: neon_mtbl
-      dataConnectorObjectType: update_player_projections_by_player_id_and_player_type_and_projection_source_and_season_id_update_columns
+      dataConnectorObjectType: update_player_projections_by_player_id_and_player_type_and_projection_period_and_projection_source_and_season_id_update_columns
       fieldMapping:
         createdAt:
           column:
@@ -49,6 +53,9 @@ definition:
         playerType:
           column:
             name: player_type
+        projectionPeriod:
+          column:
+            name: projection_period
         projectionSource:
           column:
             name: projection_source
@@ -66,7 +73,7 @@ definition:
 kind: TypePermissions
 version: v1
 definition:
-  typeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdUpdateColumns
+  typeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionPeriodAndProjectionSourceAndSeasonIdUpdateColumns
   permissions:
     - role: admin
       output:
@@ -75,6 +82,7 @@ definition:
           - id
           - playerId
           - playerType
+          - projectionPeriod
           - projectionSource
           - projections
           - seasonId
@@ -84,9 +92,9 @@ definition:
 kind: ObjectType
 version: v1
 definition:
-  name: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponse
+  name: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionPeriodAndProjectionSourceAndSeasonIdResponse
   description: Responses from the
-    'update_player_projections_by_player_id_and_player_type_and_projection_source_and_season_id'
+    'update_player_projections_by_player_id_and_player_type_and_projection_period_and_projection_source_and_season_id'
     procedure
   fields:
     - name: affectedRows
@@ -96,11 +104,11 @@ definition:
       type: "[PlayerProjections!]!"
       description: Data from rows affected by the mutation
   graphql:
-    typeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponse
-    inputTypeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponseInput
+    typeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionPeriodAndProjectionSourceAndSeasonIdResponse
+    inputTypeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionPeriodAndProjectionSourceAndSeasonIdResponseInput
   dataConnectorTypeMapping:
     - dataConnectorName: neon_mtbl
-      dataConnectorObjectType: update_player_projections_by_player_id_and_player_type_and_projection_source_and_season_id_response
+      dataConnectorObjectType: update_player_projections_by_player_id_and_player_type_and_projection_period_and_projection_source_and_season_id_response
       fieldMapping:
         affectedRows:
           column:
@@ -113,7 +121,7 @@ definition:
 kind: TypePermissions
 version: v1
 definition:
-  typeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponse
+  typeName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionPeriodAndProjectionSourceAndSeasonIdResponse
   permissions:
     - role: admin
       output:
@@ -125,15 +133,17 @@ definition:
 kind: Command
 version: v1
 definition:
-  name: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonId
-  outputType: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdResponse!
+  name: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionPeriodAndProjectionSourceAndSeasonId
+  outputType: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionPeriodAndProjectionSourceAndSeasonIdResponse!
   arguments:
     - name: keyPlayerId
       type: Int32!
     - name: keyPlayerType
       type: String_1!
+    - name: keyProjectionPeriod
+      type: String_1!
     - name: keyProjectionSource
-      type: String_1
+      type: String_1!
     - name: keySeasonId
       type: Int32!
     - name: postCheck
@@ -145,30 +155,32 @@ definition:
       description: Update permission pre-condition predicate over the
         'player_projections' collection
     - name: updateColumns
-      type: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonIdUpdateColumns!
+      type: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionPeriodAndProjectionSourceAndSeasonIdUpdateColumns!
   source:
     dataConnectorName: neon_mtbl
     dataConnectorCommand:
-      procedure: update_player_projections_by_player_id_and_player_type_and_projection_source_and_season_id
+      procedure: update_player_projections_by_player_id_and_player_type_and_projection_period_and_projection_source_and_season_id
     argumentMapping:
       keyPlayerId: key_player_id
       keyPlayerType: key_player_type
+      keyProjectionPeriod: key_projection_period
       keyProjectionSource: key_projection_source
       keySeasonId: key_season_id
       postCheck: post_check
       preCheck: pre_check
       updateColumns: update_columns
   graphql:
-    rootFieldName: updatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonId
+    rootFieldName: updatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionPeriodAndProjectionSourceAndSeasonId
     rootFieldKind: Mutation
   description: Update any row on the 'player_projections' collection using the
-    'player_id', 'player_type', 'projection_source' and 'season_id' keys
+    'player_id', 'player_type', 'projection_period', 'projection_source' and
+    'season_id' keys
 
 ---
 kind: CommandPermissions
 version: v1
 definition:
-  commandName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionSourceAndSeasonId
+  commandName: UpdatePlayerProjectionsByPlayerIdAndPlayerTypeAndProjectionPeriodAndProjectionSourceAndSeasonId
   permissions:
     - role: admin
       allowExecution: true

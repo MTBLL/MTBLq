@@ -1,0 +1,542 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePositionSummaryByPositionAndValuationTypeUpdateColumns
+  description: Update the columns of the 'position_summary' collection
+  fields:
+    - name: budgetEra
+      type: UpdateColumnPositionSummaryBudgetEra
+      description: Update the 'budget_ERA' column in the 'position_summary' collection.
+    - name: budgetHr
+      type: UpdateColumnPositionSummaryBudgetHr
+      description: Update the 'budget_HR' column in the 'position_summary' collection.
+    - name: budgetIp
+      type: UpdateColumnPositionSummaryBudgetIp
+      description: Update the 'budget_IP' column in the 'position_summary' collection.
+    - name: budgetK9
+      type: UpdateColumnPositionSummaryBudgetK9
+      description: Update the 'budget_K/9' column in the 'position_summary' collection.
+    - name: budgetObp
+      type: UpdateColumnPositionSummaryBudgetObp
+      description: Update the 'budget_OBP' column in the 'position_summary' collection.
+    - name: budgetQs
+      type: UpdateColumnPositionSummaryBudgetQs
+      description: Update the 'budget_QS' column in the 'position_summary' collection.
+    - name: budgetR
+      type: UpdateColumnPositionSummaryBudgetR
+      description: Update the 'budget_R' column in the 'position_summary' collection.
+    - name: budgetRbi
+      type: UpdateColumnPositionSummaryBudgetRbi
+      description: Update the 'budget_RBI' column in the 'position_summary' collection.
+    - name: budgetSbn
+      type: UpdateColumnPositionSummaryBudgetSbn
+      description: Update the 'budget_SBN' column in the 'position_summary' collection.
+    - name: budgetSlg
+      type: UpdateColumnPositionSummaryBudgetSlg
+      description: Update the 'budget_SLG' column in the 'position_summary' collection.
+    - name: budgetSvhd
+      type: UpdateColumnPositionSummaryBudgetSvhd
+      description: Update the 'budget_SVHD' column in the 'position_summary' collection.
+    - name: budgetWhip
+      type: UpdateColumnPositionSummaryBudgetWhip
+      description: Update the 'budget_WHIP' column in the 'position_summary' collection.
+    - name: createdAt
+      type: UpdateColumnPositionSummaryCreatedAt
+      description: Update the 'created_at' column in the 'position_summary' collection.
+    - name: dollarsPerZEra
+      type: UpdateColumnPositionSummaryDollarsPerZEra
+      description: Update the 'dollars_per_z_ERA' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZHr
+      type: UpdateColumnPositionSummaryDollarsPerZHr
+      description: Update the 'dollars_per_z_HR' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZIp
+      type: UpdateColumnPositionSummaryDollarsPerZIp
+      description: Update the 'dollars_per_z_IP' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZK9
+      type: UpdateColumnPositionSummaryDollarsPerZK9
+      description: Update the 'dollars_per_z_K/9' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZObp
+      type: UpdateColumnPositionSummaryDollarsPerZObp
+      description: Update the 'dollars_per_z_OBP' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZQs
+      type: UpdateColumnPositionSummaryDollarsPerZQs
+      description: Update the 'dollars_per_z_QS' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZR
+      type: UpdateColumnPositionSummaryDollarsPerZR
+      description: Update the 'dollars_per_z_R' column in the 'position_summary' collection.
+    - name: dollarsPerZRbi
+      type: UpdateColumnPositionSummaryDollarsPerZRbi
+      description: Update the 'dollars_per_z_RBI' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZSbn
+      type: UpdateColumnPositionSummaryDollarsPerZSbn
+      description: Update the 'dollars_per_z_SBN' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZSlg
+      type: UpdateColumnPositionSummaryDollarsPerZSlg
+      description: Update the 'dollars_per_z_SLG' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZSvhd
+      type: UpdateColumnPositionSummaryDollarsPerZSvhd
+      description: Update the 'dollars_per_z_SVHD' column in the 'position_summary'
+        collection.
+    - name: dollarsPerZWhip
+      type: UpdateColumnPositionSummaryDollarsPerZWhip
+      description: Update the 'dollars_per_z_WHIP' column in the 'position_summary'
+        collection.
+    - name: id
+      type: UpdateColumnPositionSummaryId
+      description: Update the 'id' column in the 'position_summary' collection.
+    - name: poolTotalZEra
+      type: UpdateColumnPositionSummaryPoolTotalZEra
+      description: Update the 'pool_total_z_ERA' column in the 'position_summary'
+        collection.
+    - name: poolTotalZHr
+      type: UpdateColumnPositionSummaryPoolTotalZHr
+      description: Update the 'pool_total_z_HR' column in the 'position_summary' collection.
+    - name: poolTotalZIp
+      type: UpdateColumnPositionSummaryPoolTotalZIp
+      description: Update the 'pool_total_z_IP' column in the 'position_summary' collection.
+    - name: poolTotalZK9
+      type: UpdateColumnPositionSummaryPoolTotalZK9
+      description: Update the 'pool_total_z_K/9' column in the 'position_summary'
+        collection.
+    - name: poolTotalZObp
+      type: UpdateColumnPositionSummaryPoolTotalZObp
+      description: Update the 'pool_total_z_OBP' column in the 'position_summary'
+        collection.
+    - name: poolTotalZQs
+      type: UpdateColumnPositionSummaryPoolTotalZQs
+      description: Update the 'pool_total_z_QS' column in the 'position_summary' collection.
+    - name: poolTotalZR
+      type: UpdateColumnPositionSummaryPoolTotalZR
+      description: Update the 'pool_total_z_R' column in the 'position_summary' collection.
+    - name: poolTotalZRbi
+      type: UpdateColumnPositionSummaryPoolTotalZRbi
+      description: Update the 'pool_total_z_RBI' column in the 'position_summary'
+        collection.
+    - name: poolTotalZSbn
+      type: UpdateColumnPositionSummaryPoolTotalZSbn
+      description: Update the 'pool_total_z_SBN' column in the 'position_summary'
+        collection.
+    - name: poolTotalZSlg
+      type: UpdateColumnPositionSummaryPoolTotalZSlg
+      description: Update the 'pool_total_z_SLG' column in the 'position_summary'
+        collection.
+    - name: poolTotalZSvhd
+      type: UpdateColumnPositionSummaryPoolTotalZSvhd
+      description: Update the 'pool_total_z_SVHD' column in the 'position_summary'
+        collection.
+    - name: poolTotalZWhip
+      type: UpdateColumnPositionSummaryPoolTotalZWhip
+      description: Update the 'pool_total_z_WHIP' column in the 'position_summary'
+        collection.
+    - name: position
+      type: UpdateColumnPositionSummaryPosition
+      description: Update the 'position' column in the 'position_summary' collection.
+    - name: replacementBaselineEra
+      type: UpdateColumnPositionSummaryReplacementBaselineEra
+      description: Update the 'replacement_baseline_ERA' column in the
+        'position_summary' collection.
+    - name: replacementBaselineHr
+      type: UpdateColumnPositionSummaryReplacementBaselineHr
+      description: Update the 'replacement_baseline_HR' column in the
+        'position_summary' collection.
+    - name: replacementBaselineIp
+      type: UpdateColumnPositionSummaryReplacementBaselineIp
+      description: Update the 'replacement_baseline_IP' column in the
+        'position_summary' collection.
+    - name: replacementBaselineK9
+      type: UpdateColumnPositionSummaryReplacementBaselineK9
+      description: Update the 'replacement_baseline_K/9' column in the
+        'position_summary' collection.
+    - name: replacementBaselineObp
+      type: UpdateColumnPositionSummaryReplacementBaselineObp
+      description: Update the 'replacement_baseline_OBP' column in the
+        'position_summary' collection.
+    - name: replacementBaselineQs
+      type: UpdateColumnPositionSummaryReplacementBaselineQs
+      description: Update the 'replacement_baseline_QS' column in the
+        'position_summary' collection.
+    - name: replacementBaselineR
+      type: UpdateColumnPositionSummaryReplacementBaselineR
+      description: Update the 'replacement_baseline_R' column in the
+        'position_summary' collection.
+    - name: replacementBaselineRbi
+      type: UpdateColumnPositionSummaryReplacementBaselineRbi
+      description: Update the 'replacement_baseline_RBI' column in the
+        'position_summary' collection.
+    - name: replacementBaselineSbn
+      type: UpdateColumnPositionSummaryReplacementBaselineSbn
+      description: Update the 'replacement_baseline_SBN' column in the
+        'position_summary' collection.
+    - name: replacementBaselineSlg
+      type: UpdateColumnPositionSummaryReplacementBaselineSlg
+      description: Update the 'replacement_baseline_SLG' column in the
+        'position_summary' collection.
+    - name: replacementBaselineSvhd
+      type: UpdateColumnPositionSummaryReplacementBaselineSvhd
+      description: Update the 'replacement_baseline_SVHD' column in the
+        'position_summary' collection.
+    - name: replacementBaselineWhip
+      type: UpdateColumnPositionSummaryReplacementBaselineWhip
+      description: Update the 'replacement_baseline_WHIP' column in the
+        'position_summary' collection.
+    - name: replacementTierCount
+      type: UpdateColumnPositionSummaryReplacementTierCount
+      description: Update the 'replacement_tier_count' column in the
+        'position_summary' collection.
+    - name: role
+      type: UpdateColumnPositionSummaryRole
+      description: Update the 'role' column in the 'position_summary' collection.
+    - name: rosteredCount
+      type: UpdateColumnPositionSummaryRosteredCount
+      description: Update the 'rostered_count' column in the 'position_summary' collection.
+    - name: totalBudget
+      type: UpdateColumnPositionSummaryTotalBudget
+      description: Update the 'total_budget' column in the 'position_summary' collection.
+    - name: updatedAt
+      type: UpdateColumnPositionSummaryUpdatedAt
+      description: Update the 'updated_at' column in the 'position_summary' collection.
+    - name: valuationType
+      type: UpdateColumnPositionSummaryValuationType
+      description: Update the 'valuation_type' column in the 'position_summary' collection.
+  graphql:
+    typeName: UpdatePositionSummaryByPositionAndValuationTypeUpdateColumns
+    inputTypeName: UpdatePositionSummaryByPositionAndValuationTypeUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_position_summary_by_position_and_valuation_type_update_columns
+      fieldMapping:
+        budgetEra:
+          column:
+            name: budget_ERA
+        budgetHr:
+          column:
+            name: budget_HR
+        budgetIp:
+          column:
+            name: budget_IP
+        budgetK9:
+          column:
+            name: budget_K/9
+        budgetObp:
+          column:
+            name: budget_OBP
+        budgetQs:
+          column:
+            name: budget_QS
+        budgetR:
+          column:
+            name: budget_R
+        budgetRbi:
+          column:
+            name: budget_RBI
+        budgetSbn:
+          column:
+            name: budget_SBN
+        budgetSlg:
+          column:
+            name: budget_SLG
+        budgetSvhd:
+          column:
+            name: budget_SVHD
+        budgetWhip:
+          column:
+            name: budget_WHIP
+        createdAt:
+          column:
+            name: created_at
+        dollarsPerZEra:
+          column:
+            name: dollars_per_z_ERA
+        dollarsPerZHr:
+          column:
+            name: dollars_per_z_HR
+        dollarsPerZIp:
+          column:
+            name: dollars_per_z_IP
+        dollarsPerZK9:
+          column:
+            name: dollars_per_z_K/9
+        dollarsPerZObp:
+          column:
+            name: dollars_per_z_OBP
+        dollarsPerZQs:
+          column:
+            name: dollars_per_z_QS
+        dollarsPerZR:
+          column:
+            name: dollars_per_z_R
+        dollarsPerZRbi:
+          column:
+            name: dollars_per_z_RBI
+        dollarsPerZSbn:
+          column:
+            name: dollars_per_z_SBN
+        dollarsPerZSlg:
+          column:
+            name: dollars_per_z_SLG
+        dollarsPerZSvhd:
+          column:
+            name: dollars_per_z_SVHD
+        dollarsPerZWhip:
+          column:
+            name: dollars_per_z_WHIP
+        id:
+          column:
+            name: id
+        poolTotalZEra:
+          column:
+            name: pool_total_z_ERA
+        poolTotalZHr:
+          column:
+            name: pool_total_z_HR
+        poolTotalZIp:
+          column:
+            name: pool_total_z_IP
+        poolTotalZK9:
+          column:
+            name: pool_total_z_K/9
+        poolTotalZObp:
+          column:
+            name: pool_total_z_OBP
+        poolTotalZQs:
+          column:
+            name: pool_total_z_QS
+        poolTotalZR:
+          column:
+            name: pool_total_z_R
+        poolTotalZRbi:
+          column:
+            name: pool_total_z_RBI
+        poolTotalZSbn:
+          column:
+            name: pool_total_z_SBN
+        poolTotalZSlg:
+          column:
+            name: pool_total_z_SLG
+        poolTotalZSvhd:
+          column:
+            name: pool_total_z_SVHD
+        poolTotalZWhip:
+          column:
+            name: pool_total_z_WHIP
+        position:
+          column:
+            name: position
+        replacementBaselineEra:
+          column:
+            name: replacement_baseline_ERA
+        replacementBaselineHr:
+          column:
+            name: replacement_baseline_HR
+        replacementBaselineIp:
+          column:
+            name: replacement_baseline_IP
+        replacementBaselineK9:
+          column:
+            name: replacement_baseline_K/9
+        replacementBaselineObp:
+          column:
+            name: replacement_baseline_OBP
+        replacementBaselineQs:
+          column:
+            name: replacement_baseline_QS
+        replacementBaselineR:
+          column:
+            name: replacement_baseline_R
+        replacementBaselineRbi:
+          column:
+            name: replacement_baseline_RBI
+        replacementBaselineSbn:
+          column:
+            name: replacement_baseline_SBN
+        replacementBaselineSlg:
+          column:
+            name: replacement_baseline_SLG
+        replacementBaselineSvhd:
+          column:
+            name: replacement_baseline_SVHD
+        replacementBaselineWhip:
+          column:
+            name: replacement_baseline_WHIP
+        replacementTierCount:
+          column:
+            name: replacement_tier_count
+        role:
+          column:
+            name: role
+        rosteredCount:
+          column:
+            name: rostered_count
+        totalBudget:
+          column:
+            name: total_budget
+        updatedAt:
+          column:
+            name: updated_at
+        valuationType:
+          column:
+            name: valuation_type
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePositionSummaryByPositionAndValuationTypeUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - budgetEra
+          - budgetHr
+          - budgetIp
+          - budgetK9
+          - budgetObp
+          - budgetQs
+          - budgetR
+          - budgetRbi
+          - budgetSbn
+          - budgetSlg
+          - budgetSvhd
+          - budgetWhip
+          - createdAt
+          - dollarsPerZEra
+          - dollarsPerZHr
+          - dollarsPerZIp
+          - dollarsPerZK9
+          - dollarsPerZObp
+          - dollarsPerZQs
+          - dollarsPerZR
+          - dollarsPerZRbi
+          - dollarsPerZSbn
+          - dollarsPerZSlg
+          - dollarsPerZSvhd
+          - dollarsPerZWhip
+          - id
+          - poolTotalZEra
+          - poolTotalZHr
+          - poolTotalZIp
+          - poolTotalZK9
+          - poolTotalZObp
+          - poolTotalZQs
+          - poolTotalZR
+          - poolTotalZRbi
+          - poolTotalZSbn
+          - poolTotalZSlg
+          - poolTotalZSvhd
+          - poolTotalZWhip
+          - position
+          - replacementBaselineEra
+          - replacementBaselineHr
+          - replacementBaselineIp
+          - replacementBaselineK9
+          - replacementBaselineObp
+          - replacementBaselineQs
+          - replacementBaselineR
+          - replacementBaselineRbi
+          - replacementBaselineSbn
+          - replacementBaselineSlg
+          - replacementBaselineSvhd
+          - replacementBaselineWhip
+          - replacementTierCount
+          - role
+          - rosteredCount
+          - totalBudget
+          - updatedAt
+          - valuationType
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdatePositionSummaryByPositionAndValuationTypeResponse
+  description: Responses from the
+    'update_position_summary_by_position_and_valuation_type' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[PositionSummary!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdatePositionSummaryByPositionAndValuationTypeResponse
+    inputTypeName: UpdatePositionSummaryByPositionAndValuationTypeResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_position_summary_by_position_and_valuation_type_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdatePositionSummaryByPositionAndValuationTypeResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdatePositionSummaryByPositionAndValuationType
+  outputType: UpdatePositionSummaryByPositionAndValuationTypeResponse!
+  arguments:
+    - name: keyPosition
+      type: String_1!
+    - name: keyValuationType
+      type: String_1!
+    - name: postCheck
+      type: PositionSummaryBoolExp
+      description: Update permission post-condition predicate over the
+        'position_summary' collection
+    - name: preCheck
+      type: PositionSummaryBoolExp
+      description: Update permission pre-condition predicate over the
+        'position_summary' collection
+    - name: updateColumns
+      type: UpdatePositionSummaryByPositionAndValuationTypeUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_position_summary_by_position_and_valuation_type
+    argumentMapping:
+      keyPosition: key_position
+      keyValuationType: key_valuation_type
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updatePositionSummaryByPositionAndValuationType
+    rootFieldKind: Mutation
+  description: Update any row on the 'position_summary' collection using the
+    'position' and 'valuation_type' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdatePositionSummaryByPositionAndValuationType
+  permissions:
+    - role: admin
+      allowExecution: true
+

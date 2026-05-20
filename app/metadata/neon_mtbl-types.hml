@@ -1002,3 +1002,184 @@ definition:
   graphql:
     expressionTypeName: DateOrderByExp
 
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: BpcharBoolExp
+  operand:
+    scalar:
+      type: String_1
+      comparisonOperators:
+        - name: _eq
+          argumentType: String_1!
+        - name: _gt
+          argumentType: String_1!
+        - name: _gte
+          argumentType: String_1!
+        - name: _ilike
+          argumentType: String_1!
+        - name: _in
+          argumentType: "[String_1!]!"
+        - name: _iregex
+          argumentType: String_1!
+        - name: _like
+          argumentType: String_1!
+        - name: _lt
+          argumentType: String_1!
+        - name: _lte
+          argumentType: String_1!
+        - name: _neq
+          argumentType: String_1!
+        - name: _nilike
+          argumentType: String_1!
+        - name: _niregex
+          argumentType: String_1!
+        - name: _nlike
+          argumentType: String_1!
+        - name: _nregex
+          argumentType: String_1!
+        - name: _regex
+          argumentType: String_1!
+        - name: starts_with
+          argumentType: String_1!
+        - name: ts_match_tt
+          argumentType: String_1!
+      dataConnectorOperatorMapping:
+        - dataConnectorName: neon_mtbl
+          dataConnectorScalarType: bpchar
+          operatorMapping: {}
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: BpcharBoolExp
+
+---
+kind: DataConnectorScalarRepresentation
+version: v1
+definition:
+  dataConnectorName: neon_mtbl
+  dataConnectorScalarType: bpchar
+  representation: String_1
+  graphql:
+    comparisonExpressionTypeName: String1ComparisonExp_2
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: Int8AggExp
+  operand:
+    scalar:
+      aggregatedType: Int64
+      aggregationFunctions:
+        - name: avg
+          returnType: Bigdecimal
+        - name: bit_and
+          returnType: Int64
+        - name: bit_or
+          returnType: Int64
+        - name: bit_xor
+          returnType: Int64
+        - name: max
+          returnType: Int64
+        - name: min
+          returnType: Int64
+        - name: stddev
+          returnType: Bigdecimal
+        - name: stddev_pop
+          returnType: Bigdecimal
+        - name: stddev_samp
+          returnType: Bigdecimal
+        - name: sum
+          returnType: Bigdecimal
+        - name: var_pop
+          returnType: Bigdecimal
+        - name: var_samp
+          returnType: Bigdecimal
+        - name: variance
+          returnType: Bigdecimal
+      dataConnectorAggregationFunctionMapping:
+        - dataConnectorName: neon_mtbl
+          dataConnectorScalarType: int8
+          functionMapping:
+            avg:
+              name: avg
+            bit_and:
+              name: bit_and
+            bit_or:
+              name: bit_or
+            bit_xor:
+              name: bit_xor
+            max:
+              name: max
+            min:
+              name: min
+            stddev:
+              name: stddev
+            stddev_pop:
+              name: stddev_pop
+            stddev_samp:
+              name: stddev_samp
+            sum:
+              name: sum
+            var_pop:
+              name: var_pop
+            var_samp:
+              name: var_samp
+            variance:
+              name: variance
+  count:
+    enable: true
+    returnType: Int64
+  countDistinct:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: Int8AggExp
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: BpcharAggExp
+  operand:
+    scalar:
+      aggregatedType: String_1
+      aggregationFunctions:
+        - name: max
+          returnType: String_1
+        - name: min
+          returnType: String_1
+      dataConnectorAggregationFunctionMapping:
+        - dataConnectorName: neon_mtbl
+          dataConnectorScalarType: bpchar
+          functionMapping:
+            max:
+              name: max
+            min:
+              name: min
+  count:
+    enable: true
+    returnType: Int64
+  countDistinct:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: BpcharAggExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: Int64OrderByExp
+  operand:
+    scalar:
+      orderedType: Int64
+      enableOrderByDirections:
+        enableAll: true
+  graphql:
+    expressionTypeName: Int64OrderByExp
+

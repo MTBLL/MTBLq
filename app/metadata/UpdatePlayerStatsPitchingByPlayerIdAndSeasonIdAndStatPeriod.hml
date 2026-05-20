@@ -217,6 +217,92 @@ definition:
     - name: xwOba
       type: UpdateColumnPlayerStatsPitchingXwOba
       description: Update the 'xwOBA' column in the 'player_stats_pitching' collection.
+    - name: avg
+      type: UpdateColumnPlayerStatsPitchingAvg
+      description: Update the 'AVG' column in the 'player_stats_pitching' collection.
+    - name: babip
+      type: UpdateColumnPlayerStatsPitchingBabip
+      description: Update the 'BABIP' column in the 'player_stats_pitching' collection.
+    - name: bbPct
+      type: UpdateColumnPlayerStatsPitchingBbPct
+      description: Update the 'BB_pct' column in the 'player_stats_pitching' collection.
+    - name: bBdist
+      type: UpdateColumnPlayerStatsPitchingBBdist
+      description: Update the 'BBdist' column in the 'player_stats_pitching' collection.
+    - name: bip
+      type: UpdateColumnPlayerStatsPitchingBip
+      description: Update the 'BIP' column in the 'player_stats_pitching' collection.
+    - name: iso
+      type: UpdateColumnPlayerStatsPitchingIso
+      description: Update the 'ISO' column in the 'player_stats_pitching' collection.
+    - name: kPct
+      type: UpdateColumnPlayerStatsPitchingKPct
+      description: Update the 'K_pct' column in the 'player_stats_pitching' collection.
+    - name: obp
+      type: UpdateColumnPlayerStatsPitchingObp
+      description: Update the 'OBP' column in the 'player_stats_pitching' collection.
+    - name: pa
+      type: UpdateColumnPlayerStatsPitchingPa
+      description: Update the 'PA' column in the 'player_stats_pitching' collection.
+    - name: slg
+      type: UpdateColumnPlayerStatsPitchingSlg
+      description: Update the 'SLG' column in the 'player_stats_pitching' collection.
+    - name: barrelsPerBbePct
+      type: UpdateColumnPlayerStatsPitchingBarrelsPerBbePct
+      description: Update the 'barrels_per_bbe_pct' column in the
+        'player_stats_pitching' collection.
+    - name: barrelsPerBbePctPctRnk
+      type: UpdateColumnPlayerStatsPitchingBarrelsPerBbePctPctRnk
+      description: Update the 'barrels_per_bbe_pct_pct_rnk' column in the
+        'player_stats_pitching' collection.
+    - name: barrelsPerPaPct
+      type: UpdateColumnPlayerStatsPitchingBarrelsPerPaPct
+      description: Update the 'barrels_per_pa_pct' column in the
+        'player_stats_pitching' collection.
+    - name: barrelsPerPaPctPctRnk
+      type: UpdateColumnPlayerStatsPitchingBarrelsPerPaPctPctRnk
+      description: Update the 'barrels_per_pa_pct_pct_rnk' column in the
+        'player_stats_pitching' collection.
+    - name: barrelsTotal
+      type: UpdateColumnPlayerStatsPitchingBarrelsTotal
+      description: Update the 'barrels_total' column in the 'player_stats_pitching'
+        collection.
+    - name: barrelsTotalPctRnk
+      type: UpdateColumnPlayerStatsPitchingBarrelsTotalPctRnk
+      description: Update the 'barrels_total_pct_rnk' column in the
+        'player_stats_pitching' collection.
+    - name: hardhitPct
+      type: UpdateColumnPlayerStatsPitchingHardhitPct
+      description: Update the 'hardhit_pct' column in the 'player_stats_pitching'
+        collection.
+    - name: hardhitPctPctRnk
+      type: UpdateColumnPlayerStatsPitchingHardhitPctPctRnk
+      description: Update the 'hardhit_pct_pct_rnk' column in the
+        'player_stats_pitching' collection.
+    - name: pitchPercent
+      type: UpdateColumnPlayerStatsPitchingPitchPercent
+      description: Update the 'pitch_percent' column in the 'player_stats_pitching'
+        collection.
+    - name: pitches
+      type: UpdateColumnPlayerStatsPitchingPitches
+      description: Update the 'pitches' column in the 'player_stats_pitching' collection.
+    - name: rateIdealAttackAngle
+      type: UpdateColumnPlayerStatsPitchingRateIdealAttackAngle
+      description: Update the 'rate_ideal_attack_angle' column in the
+        'player_stats_pitching' collection.
+    - name: runExp
+      type: UpdateColumnPlayerStatsPitchingRunExp
+      description: Update the 'run_exp' column in the 'player_stats_pitching' collection.
+    - name: totalPitches
+      type: UpdateColumnPlayerStatsPitchingTotalPitches
+      description: Update the 'total_pitches' column in the 'player_stats_pitching'
+        collection.
+    - name: wOba
+      type: UpdateColumnPlayerStatsPitchingWOba
+      description: Update the 'wOBA' column in the 'player_stats_pitching' collection.
+    - name: wObAdiff
+      type: UpdateColumnPlayerStatsPitchingWObAdiff
+      description: Update the 'wOBAdiff' column in the 'player_stats_pitching' collection.
   graphql:
     typeName: UpdatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriodUpdateColumns
     inputTypeName: UpdatePlayerStatsPitchingByPlayerIdAndSeasonIdAndStatPeriodUpdateColumnsInput
@@ -422,6 +508,81 @@ definition:
         xwOba:
           column:
             name: xwOBA
+        avg:
+          column:
+            name: AVG
+        babip:
+          column:
+            name: BABIP
+        bbPct:
+          column:
+            name: BB_pct
+        bBdist:
+          column:
+            name: BBdist
+        bip:
+          column:
+            name: BIP
+        iso:
+          column:
+            name: ISO
+        kPct:
+          column:
+            name: K_pct
+        obp:
+          column:
+            name: OBP
+        pa:
+          column:
+            name: PA
+        slg:
+          column:
+            name: SLG
+        barrelsPerBbePct:
+          column:
+            name: barrels_per_bbe_pct
+        barrelsPerBbePctPctRnk:
+          column:
+            name: barrels_per_bbe_pct_pct_rnk
+        barrelsPerPaPct:
+          column:
+            name: barrels_per_pa_pct
+        barrelsPerPaPctPctRnk:
+          column:
+            name: barrels_per_pa_pct_pct_rnk
+        barrelsTotal:
+          column:
+            name: barrels_total
+        barrelsTotalPctRnk:
+          column:
+            name: barrels_total_pct_rnk
+        hardhitPct:
+          column:
+            name: hardhit_pct
+        hardhitPctPctRnk:
+          column:
+            name: hardhit_pct_pct_rnk
+        pitchPercent:
+          column:
+            name: pitch_percent
+        pitches:
+          column:
+            name: pitches
+        rateIdealAttackAngle:
+          column:
+            name: rate_ideal_attack_angle
+        runExp:
+          column:
+            name: run_exp
+        totalPitches:
+          column:
+            name: total_pitches
+        wOba:
+          column:
+            name: wOBA
+        wObAdiff:
+          column:
+            name: wOBAdiff
 
 ---
 kind: TypePermissions
@@ -498,6 +659,31 @@ definition:
           - xSlg
           - xSlGdiff
           - xwOba
+          - avg
+          - babip
+          - bbPct
+          - bBdist
+          - bip
+          - iso
+          - kPct
+          - obp
+          - pa
+          - slg
+          - barrelsPerBbePct
+          - barrelsPerBbePctPctRnk
+          - barrelsPerPaPct
+          - barrelsPerPaPctPctRnk
+          - barrelsTotal
+          - barrelsTotalPctRnk
+          - hardhitPct
+          - hardhitPctPctRnk
+          - pitchPercent
+          - pitches
+          - rateIdealAttackAngle
+          - runExp
+          - totalPitches
+          - wOba
+          - wObAdiff
 
 ---
 kind: ObjectType

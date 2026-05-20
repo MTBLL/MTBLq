@@ -140,13 +140,6 @@ definition:
           - id
         subscription:
           rootField: playerValuationsById
-      - queryRootField: playerValuationsByPlayerValuationsPlayerIdSeasonIdPrimaryPositionKey
-        uniqueIdentifier:
-          - playerId
-          - primaryPosition
-          - seasonId
-        subscription:
-          rootField: playerValuationsByPlayerValuationsPlayerIdSeasonIdPrimaryPositionKey
       - queryRootField: playerValuationsByPlayerValuationsPlayerIdSeasonIdPrimaryPositionValuKey
         uniqueIdentifier:
           - playerId

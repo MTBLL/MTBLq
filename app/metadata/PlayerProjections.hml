@@ -132,14 +132,6 @@ definition:
           - id
         subscription:
           rootField: playerProjectionsById
-      - queryRootField: playerProjectionsByPlayerProjectionsPlayerIdSeasonIdProjectionSourcePlKey
-        uniqueIdentifier:
-          - playerId
-          - playerType
-          - projectionSource
-          - seasonId
-        subscription:
-          rootField: playerProjectionsByPlayerProjectionsPlayerIdSeasonIdProjectionSourcePlKey
       - queryRootField: playerProjectionsByPlayerProjectionsPlayerIdSeasonIdProjectionSourcePrKey
         uniqueIdentifier:
           - playerId

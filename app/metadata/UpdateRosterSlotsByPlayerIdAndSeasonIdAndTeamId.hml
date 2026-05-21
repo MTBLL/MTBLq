@@ -38,6 +38,10 @@ definition:
     - name: updatedAt
       type: UpdateColumnRosterSlotsUpdatedAt
       description: Update the 'updated_at' column in the 'roster_slots' collection.
+    - name: eligibleDateByPosition
+      type: UpdateColumnRosterSlotsEligibleDateByPosition
+      description: Update the 'eligible_date_by_position' column in the 'roster_slots'
+        collection.
   graphql:
     typeName: UpdateRosterSlotsByPlayerIdAndSeasonIdAndTeamIdUpdateColumns
     inputTypeName: UpdateRosterSlotsByPlayerIdAndSeasonIdAndTeamIdUpdateColumnsInput
@@ -78,6 +82,9 @@ definition:
         updatedAt:
           column:
             name: updated_at
+        eligibleDateByPosition:
+          column:
+            name: eligible_date_by_position
 
 ---
 kind: TypePermissions
@@ -99,6 +106,7 @@ definition:
           - seasonId
           - teamId
           - updatedAt
+          - eligibleDateByPosition
 
 ---
 kind: ObjectType

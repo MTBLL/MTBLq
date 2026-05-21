@@ -425,6 +425,26 @@ definition:
     - name: winnerId
       type: UpdateColumnMatchupsWinnerId
       description: Update the 'winner_id' column in the 'matchups' collection.
+    - name: team1GsExceededOnScoringPeriod
+      type: UpdateColumnMatchupsTeam1GsExceededOnScoringPeriod
+      description: Update the 'team1_gs_exceeded_on_scoring_period' column in the
+        'matchups' collection.
+    - name: team1GsLimitExceeded
+      type: UpdateColumnMatchupsTeam1GsLimitExceeded
+      description: Update the 'team1_gs_limit_exceeded' column in the 'matchups' collection.
+    - name: team1GsValue
+      type: UpdateColumnMatchupsTeam1GsValue
+      description: Update the 'team1_gs_value' column in the 'matchups' collection.
+    - name: team2GsExceededOnScoringPeriod
+      type: UpdateColumnMatchupsTeam2GsExceededOnScoringPeriod
+      description: Update the 'team2_gs_exceeded_on_scoring_period' column in the
+        'matchups' collection.
+    - name: team2GsLimitExceeded
+      type: UpdateColumnMatchupsTeam2GsLimitExceeded
+      description: Update the 'team2_gs_limit_exceeded' column in the 'matchups' collection.
+    - name: team2GsValue
+      type: UpdateColumnMatchupsTeam2GsValue
+      description: Update the 'team2_gs_value' column in the 'matchups' collection.
   graphql:
     typeName: UpdateMatchupsByMatchupIdUpdateColumns
     inputTypeName: UpdateMatchupsByMatchupIdUpdateColumnsInput
@@ -468,6 +488,24 @@ definition:
         winnerId:
           column:
             name: winner_id
+        team1GsExceededOnScoringPeriod:
+          column:
+            name: team1_gs_exceeded_on_scoring_period
+        team1GsLimitExceeded:
+          column:
+            name: team1_gs_limit_exceeded
+        team1GsValue:
+          column:
+            name: team1_gs_value
+        team2GsExceededOnScoringPeriod:
+          column:
+            name: team2_gs_exceeded_on_scoring_period
+        team2GsLimitExceeded:
+          column:
+            name: team2_gs_limit_exceeded
+        team2GsValue:
+          column:
+            name: team2_gs_value
 
 ---
 kind: TypePermissions
@@ -490,6 +528,12 @@ definition:
           - team2Id
           - team2Score
           - winnerId
+          - team1GsExceededOnScoringPeriod
+          - team1GsLimitExceeded
+          - team1GsValue
+          - team2GsExceededOnScoringPeriod
+          - team2GsLimitExceeded
+          - team2GsValue
 
 ---
 kind: ObjectType
@@ -569,4 +613,198 @@ definition:
   permissions:
     - role: admin
       allowExecution: true
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsTeam1GsExceededOnScoringPeriod
+  description: Update the 'team1_gs_exceeded_on_scoring_period' column in the
+    'matchups' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsTeam1GsExceededOnScoringPeriod
+    inputTypeName: UpdateColumnMatchupsTeam1GsExceededOnScoringPeriodInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_team1_gs_exceeded_on_scoring_period
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsTeam1GsExceededOnScoringPeriod
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsTeam1GsLimitExceeded
+  description: Update the 'team1_gs_limit_exceeded' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: Boolean_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsTeam1GsLimitExceeded
+    inputTypeName: UpdateColumnMatchupsTeam1GsLimitExceededInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_team1_gs_limit_exceeded
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsTeam1GsLimitExceeded
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsTeam1GsValue
+  description: Update the 'team1_gs_value' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsTeam1GsValue
+    inputTypeName: UpdateColumnMatchupsTeam1GsValueInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_team1_gs_value
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsTeam1GsValue
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsTeam2GsExceededOnScoringPeriod
+  description: Update the 'team2_gs_exceeded_on_scoring_period' column in the
+    'matchups' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsTeam2GsExceededOnScoringPeriod
+    inputTypeName: UpdateColumnMatchupsTeam2GsExceededOnScoringPeriodInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_team2_gs_exceeded_on_scoring_period
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsTeam2GsExceededOnScoringPeriod
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsTeam2GsLimitExceeded
+  description: Update the 'team2_gs_limit_exceeded' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: Boolean_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsTeam2GsLimitExceeded
+    inputTypeName: UpdateColumnMatchupsTeam2GsLimitExceededInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_team2_gs_limit_exceeded
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsTeam2GsLimitExceeded
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnMatchupsTeam2GsValue
+  description: Update the 'team2_gs_value' column in the 'matchups' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnMatchupsTeam2GsValue
+    inputTypeName: UpdateColumnMatchupsTeam2GsValueInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_matchups_team2_gs_value
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnMatchupsTeam2GsValue
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
 

@@ -24,6 +24,14 @@ definition:
       type: Timestamp
     - name: leagueName
       type: String_1
+    - name: gslMaxPerMatchup
+      type: Bigdecimal
+    - name: gslMaxPerScoringPeriod
+      type: Bigdecimal
+    - name: gslMin
+      type: Bigdecimal
+    - name: gslStatId
+      type: Int32
   graphql:
     typeName: InsertLeaguesObject
     inputTypeName: InsertLeaguesObjectInput
@@ -61,6 +69,18 @@ definition:
         leagueName:
           column:
             name: league_name
+        gslMaxPerMatchup:
+          column:
+            name: gsl_max_per_matchup
+        gslMaxPerScoringPeriod:
+          column:
+            name: gsl_max_per_scoring_period
+        gslMin:
+          column:
+            name: gsl_min
+        gslStatId:
+          column:
+            name: gsl_stat_id
 
 ---
 kind: TypePermissions
@@ -81,6 +101,10 @@ definition:
           - seasonId
           - updatedAt
           - leagueName
+          - gslMaxPerMatchup
+          - gslMaxPerScoringPeriod
+          - gslMin
+          - gslStatId
 
 ---
 kind: ObjectType

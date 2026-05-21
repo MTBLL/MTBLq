@@ -698,6 +698,30 @@ definition:
                 underlying_type:
                   name: int4
                   type: named
+            gsl_max_per_matchup:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+            gsl_max_per_scoring_period:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+            gsl_min:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+            gsl_stat_id:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
             league_id:
               type:
                 name: int4
@@ -840,6 +864,24 @@ definition:
               type:
                 name: int4
                 type: named
+            team1_gs_exceeded_on_scoring_period:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            team1_gs_limit_exceeded:
+              type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+            team1_gs_value:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
             team1_id:
               type:
                 type: nullable
@@ -851,6 +893,24 @@ definition:
                 type: nullable
                 underlying_type:
                   name: varchar
+                  type: named
+            team2_gs_exceeded_on_scoring_period:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            team2_gs_limit_exceeded:
+              type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+            team2_gs_value:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
                   type: named
             team2_id:
               type:
@@ -2849,6 +2909,12 @@ definition:
                 underlying_type:
                   name: timestamp
                   type: named
+            eligible_date_by_position:
+              type:
+                type: nullable
+                underlying_type:
+                  name: jsonb
+                  type: named
             id:
               type:
                 type: nullable
@@ -3109,6 +3175,30 @@ definition:
                 underlying_type:
                   name: int4
                   type: named
+            gsl_max_per_matchup:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+            gsl_max_per_scoring_period:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+            gsl_min:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+            gsl_stat_id:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
             league_id:
               type:
                 name: int4
@@ -3227,6 +3317,24 @@ definition:
               type:
                 name: int4
                 type: named
+            team1_gs_exceeded_on_scoring_period:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            team1_gs_limit_exceeded:
+              type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+            team1_gs_value:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
             team1_id:
               type:
                 type: nullable
@@ -3238,6 +3346,24 @@ definition:
                 type: nullable
                 underlying_type:
                   name: varchar
+                  type: named
+            team2_gs_exceeded_on_scoring_period:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            team2_gs_limit_exceeded:
+              type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+            team2_gs_value:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
                   type: named
             team2_id:
               type:
@@ -5122,6 +5248,12 @@ definition:
                 underlying_type:
                   name: timestamp
                   type: named
+            eligible_date_by_position:
+              type:
+                type: nullable
+                underlying_type:
+                  name: jsonb
+                  type: named
             id:
               type:
                 name: int4
@@ -5413,6 +5545,50 @@ definition:
                   name: int4
                   type: named
           foreign_keys: {}
+        update_column_leagues_gsl_max_per_matchup:
+          description: Update the 'gsl_max_per_matchup' column in the 'leagues' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+          foreign_keys: {}
+        update_column_leagues_gsl_max_per_scoring_period:
+          description: Update the 'gsl_max_per_scoring_period' column in the 'leagues' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+          foreign_keys: {}
+        update_column_leagues_gsl_min:
+          description: Update the 'gsl_min' column in the 'leagues' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+          foreign_keys: {}
+        update_column_leagues_gsl_stat_id:
+          description: Update the 'gsl_stat_id' column in the 'leagues' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+          foreign_keys: {}
         update_column_leagues_league_id:
           description: Update the 'league_id' column in the 'leagues' collection
           fields:
@@ -5615,6 +5791,39 @@ definition:
                 name: int4
                 type: named
           foreign_keys: {}
+        update_column_matchups_team1_gs_exceeded_on_scoring_period:
+          description: Update the 'team1_gs_exceeded_on_scoring_period' column in the 'matchups' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+          foreign_keys: {}
+        update_column_matchups_team1_gs_limit_exceeded:
+          description: Update the 'team1_gs_limit_exceeded' column in the 'matchups' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+          foreign_keys: {}
+        update_column_matchups_team1_gs_value:
+          description: Update the 'team1_gs_value' column in the 'matchups' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+          foreign_keys: {}
         update_column_matchups_team1_id:
           description: Update the 'team1_id' column in the 'matchups' collection
           fields:
@@ -5635,6 +5844,39 @@ definition:
                 type: nullable
                 underlying_type:
                   name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_matchups_team2_gs_exceeded_on_scoring_period:
+          description: Update the 'team2_gs_exceeded_on_scoring_period' column in the 'matchups' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+          foreign_keys: {}
+        update_column_matchups_team2_gs_limit_exceeded:
+          description: Update the 'team2_gs_limit_exceeded' column in the 'matchups' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+          foreign_keys: {}
+        update_column_matchups_team2_gs_value:
+          description: Update the 'team2_gs_value' column in the 'matchups' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
                   type: named
           foreign_keys: {}
         update_column_matchups_team2_id:
@@ -8945,6 +9187,17 @@ definition:
                   name: timestamp
                   type: named
           foreign_keys: {}
+        update_column_roster_slots_eligible_date_by_position:
+          description: Update the 'eligible_date_by_position' column in the 'roster_slots' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: jsonb
+                  type: named
+          foreign_keys: {}
         update_column_roster_slots_id:
           description: Update the 'id' column in the 'roster_slots' collection
           fields:
@@ -9438,6 +9691,34 @@ definition:
                 underlying_type:
                   name: update_column_leagues_draft_auction_budget
                   type: named
+            gsl_max_per_matchup:
+              description: Update the 'gsl_max_per_matchup' column in the 'leagues' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_leagues_gsl_max_per_matchup
+                  type: named
+            gsl_max_per_scoring_period:
+              description: Update the 'gsl_max_per_scoring_period' column in the 'leagues' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_leagues_gsl_max_per_scoring_period
+                  type: named
+            gsl_min:
+              description: Update the 'gsl_min' column in the 'leagues' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_leagues_gsl_min
+                  type: named
+            gsl_stat_id:
+              description: Update the 'gsl_stat_id' column in the 'leagues' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_leagues_gsl_stat_id
+                  type: named
             league_id:
               description: Update the 'league_id' column in the 'leagues' collection.
               type:
@@ -9680,6 +9961,27 @@ definition:
                 underlying_type:
                   name: update_column_matchups_season_id
                   type: named
+            team1_gs_exceeded_on_scoring_period:
+              description: Update the 'team1_gs_exceeded_on_scoring_period' column in the 'matchups' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchups_team1_gs_exceeded_on_scoring_period
+                  type: named
+            team1_gs_limit_exceeded:
+              description: Update the 'team1_gs_limit_exceeded' column in the 'matchups' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchups_team1_gs_limit_exceeded
+                  type: named
+            team1_gs_value:
+              description: Update the 'team1_gs_value' column in the 'matchups' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchups_team1_gs_value
+                  type: named
             team1_id:
               description: Update the 'team1_id' column in the 'matchups' collection.
               type:
@@ -9693,6 +9995,27 @@ definition:
                 type: nullable
                 underlying_type:
                   name: update_column_matchups_team1_score
+                  type: named
+            team2_gs_exceeded_on_scoring_period:
+              description: Update the 'team2_gs_exceeded_on_scoring_period' column in the 'matchups' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchups_team2_gs_exceeded_on_scoring_period
+                  type: named
+            team2_gs_limit_exceeded:
+              description: Update the 'team2_gs_limit_exceeded' column in the 'matchups' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchups_team2_gs_limit_exceeded
+                  type: named
+            team2_gs_value:
+              description: Update the 'team2_gs_value' column in the 'matchups' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchups_team2_gs_value
                   type: named
             team2_id:
               description: Update the 'team2_id' column in the 'matchups' collection.
@@ -14120,6 +14443,13 @@ definition:
                 underlying_type:
                   name: update_column_roster_slots_created_at
                   type: named
+            eligible_date_by_position:
+              description: Update the 'eligible_date_by_position' column in the 'roster_slots' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_roster_slots_eligible_date_by_position
+                  type: named
             id:
               description: Update the 'id' column in the 'roster_slots' collection.
               type:
@@ -14216,6 +14546,13 @@ definition:
                 type: nullable
                 underlying_type:
                   name: update_column_roster_slots_created_at
+                  type: named
+            eligible_date_by_position:
+              description: Update the 'eligible_date_by_position' column in the 'roster_slots' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_roster_slots_eligible_date_by_position
                   type: named
             id:
               description: Update the 'id' column in the 'roster_slots' collection.

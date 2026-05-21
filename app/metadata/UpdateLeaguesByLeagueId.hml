@@ -323,6 +323,19 @@ definition:
     - name: leagueName
       type: UpdateColumnLeaguesLeagueName
       description: Update the 'league_name' column in the 'leagues' collection.
+    - name: gslMaxPerMatchup
+      type: UpdateColumnLeaguesGslMaxPerMatchup
+      description: Update the 'gsl_max_per_matchup' column in the 'leagues' collection.
+    - name: gslMaxPerScoringPeriod
+      type: UpdateColumnLeaguesGslMaxPerScoringPeriod
+      description: Update the 'gsl_max_per_scoring_period' column in the 'leagues'
+        collection.
+    - name: gslMin
+      type: UpdateColumnLeaguesGslMin
+      description: Update the 'gsl_min' column in the 'leagues' collection.
+    - name: gslStatId
+      type: UpdateColumnLeaguesGslStatId
+      description: Update the 'gsl_stat_id' column in the 'leagues' collection.
   graphql:
     typeName: UpdateLeaguesByLeagueIdUpdateColumns
     inputTypeName: UpdateLeaguesByLeagueIdUpdateColumnsInput
@@ -360,6 +373,18 @@ definition:
         leagueName:
           column:
             name: league_name
+        gslMaxPerMatchup:
+          column:
+            name: gsl_max_per_matchup
+        gslMaxPerScoringPeriod:
+          column:
+            name: gsl_max_per_scoring_period
+        gslMin:
+          column:
+            name: gsl_min
+        gslStatId:
+          column:
+            name: gsl_stat_id
 
 ---
 kind: TypePermissions
@@ -380,6 +405,10 @@ definition:
           - seasonId
           - updatedAt
           - leagueName
+          - gslMaxPerMatchup
+          - gslMaxPerScoringPeriod
+          - gslMin
+          - gslStatId
 
 ---
 kind: ObjectType
@@ -486,6 +515,134 @@ kind: TypePermissions
 version: v1
 definition:
   typeName: UpdateColumnLeaguesLeagueName
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnLeaguesGslMaxPerMatchup
+  description: Update the 'gsl_max_per_matchup' column in the 'leagues' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnLeaguesGslMaxPerMatchup
+    inputTypeName: UpdateColumnLeaguesGslMaxPerMatchupInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_leagues_gsl_max_per_matchup
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnLeaguesGslMaxPerMatchup
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnLeaguesGslMaxPerScoringPeriod
+  description: Update the 'gsl_max_per_scoring_period' column in the 'leagues' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnLeaguesGslMaxPerScoringPeriod
+    inputTypeName: UpdateColumnLeaguesGslMaxPerScoringPeriodInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_leagues_gsl_max_per_scoring_period
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnLeaguesGslMaxPerScoringPeriod
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnLeaguesGslMin
+  description: Update the 'gsl_min' column in the 'leagues' collection
+  fields:
+    - name: set
+      type: Bigdecimal
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnLeaguesGslMin
+    inputTypeName: UpdateColumnLeaguesGslMinInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_leagues_gsl_min
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnLeaguesGslMin
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnLeaguesGslStatId
+  description: Update the 'gsl_stat_id' column in the 'leagues' collection
+  fields:
+    - name: set
+      type: Int32
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnLeaguesGslStatId
+    inputTypeName: UpdateColumnLeaguesGslStatIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_column_leagues_gsl_stat_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnLeaguesGslStatId
   permissions:
     - role: admin
       output:

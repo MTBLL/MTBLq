@@ -28,6 +28,18 @@ definition:
       type: String_1
     - name: winnerId
       type: Int32
+    - name: team1GsExceededOnScoringPeriod
+      type: Int32
+    - name: team1GsLimitExceeded
+      type: Boolean_1
+    - name: team1GsValue
+      type: Bigdecimal
+    - name: team2GsExceededOnScoringPeriod
+      type: Int32
+    - name: team2GsLimitExceeded
+      type: Boolean_1
+    - name: team2GsValue
+      type: Bigdecimal
   graphql:
     typeName: Matchups
     inputTypeName: MatchupsInput
@@ -71,6 +83,24 @@ definition:
         winnerId:
           column:
             name: winner_id
+        team1GsExceededOnScoringPeriod:
+          column:
+            name: team1_gs_exceeded_on_scoring_period
+        team1GsLimitExceeded:
+          column:
+            name: team1_gs_limit_exceeded
+        team1GsValue:
+          column:
+            name: team1_gs_value
+        team2GsExceededOnScoringPeriod:
+          column:
+            name: team2_gs_exceeded_on_scoring_period
+        team2GsLimitExceeded:
+          column:
+            name: team2_gs_limit_exceeded
+        team2GsValue:
+          column:
+            name: team2_gs_value
 
 ---
 kind: TypePermissions
@@ -93,6 +123,12 @@ definition:
           - team2Id
           - team2Score
           - winnerId
+          - team1GsExceededOnScoringPeriod
+          - team1GsLimitExceeded
+          - team1GsValue
+          - team2GsExceededOnScoringPeriod
+          - team2GsLimitExceeded
+          - team2GsValue
 
 ---
 kind: AggregateExpression
@@ -127,6 +163,18 @@ definition:
           aggregateExpression: VarcharAggExp
         - fieldName: winnerId
           aggregateExpression: Int4AggExp
+        - fieldName: team1GsExceededOnScoringPeriod
+          aggregateExpression: Int4AggExp
+        - fieldName: team1GsLimitExceeded
+          aggregateExpression: BoolAggExp
+        - fieldName: team1GsValue
+          aggregateExpression: NumericAggExp
+        - fieldName: team2GsExceededOnScoringPeriod
+          aggregateExpression: Int4AggExp
+        - fieldName: team2GsLimitExceeded
+          aggregateExpression: BoolAggExp
+        - fieldName: team2GsValue
+          aggregateExpression: NumericAggExp
   count:
     enable: true
     returnType: Int64
@@ -278,6 +326,18 @@ definition:
           booleanExpressionType: VarcharBoolExp
         - fieldName: winnerId
           booleanExpressionType: Int4BoolExp
+        - fieldName: team1GsExceededOnScoringPeriod
+          booleanExpressionType: Int4BoolExp
+        - fieldName: team1GsLimitExceeded
+          booleanExpressionType: BoolBoolExp
+        - fieldName: team1GsValue
+          booleanExpressionType: NumericBoolExp
+        - fieldName: team2GsExceededOnScoringPeriod
+          booleanExpressionType: Int4BoolExp
+        - fieldName: team2GsLimitExceeded
+          booleanExpressionType: BoolBoolExp
+        - fieldName: team2GsValue
+          booleanExpressionType: NumericBoolExp
       comparableRelationships:
         - relationshipName: league
         - relationshipName: team
@@ -324,6 +384,18 @@ definition:
           orderByExpression: String1OrderByExp
         - fieldName: winnerId
           orderByExpression: Int32OrderByExp
+        - fieldName: team1GsExceededOnScoringPeriod
+          orderByExpression: Int32OrderByExp
+        - fieldName: team1GsLimitExceeded
+          orderByExpression: Boolean1OrderByExp
+        - fieldName: team1GsValue
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: team2GsExceededOnScoringPeriod
+          orderByExpression: Int32OrderByExp
+        - fieldName: team2GsLimitExceeded
+          orderByExpression: Boolean1OrderByExp
+        - fieldName: team2GsValue
+          orderByExpression: BigdecimalOrderByExp
       orderableRelationships:
         - relationshipName: league
         - relationshipName: team

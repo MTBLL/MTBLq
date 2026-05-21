@@ -431,6 +431,7 @@ definition:
         - relationshipName: playerFantasyAssignments
         - relationshipName: rosterSlots
         - relationshipName: league
+        - relationshipName: matchupCategories
   logicalOperators:
     enable: true
   isNull:
@@ -493,4 +494,26 @@ definition:
         - relationshipName: league
   graphql:
     expressionTypeName: TeamsOrderByExp
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: matchupCategories
+  sourceType: Teams
+  target:
+    model:
+      name: MatchupCategories
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: MatchupCategoriesAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: teamId
+      target:
+        modelField:
+          - fieldName: teamId
+  graphql:
+    aggregateFieldName: matchupCategoriesAggregate
 

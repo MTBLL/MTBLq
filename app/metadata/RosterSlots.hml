@@ -26,6 +26,8 @@ definition:
       type: Int32!
     - name: updatedAt
       type: Timestamp
+    - name: eligibleDateByPosition
+      type: Json
   graphql:
     typeName: RosterSlots
     inputTypeName: RosterSlotsInput
@@ -66,6 +68,9 @@ definition:
         updatedAt:
           column:
             name: updated_at
+        eligibleDateByPosition:
+          column:
+            name: eligible_date_by_position
 
 ---
 kind: TypePermissions
@@ -87,6 +92,7 @@ definition:
           - seasonId
           - teamId
           - updatedAt
+          - eligibleDateByPosition
 
 ---
 kind: AggregateExpression
@@ -119,6 +125,8 @@ definition:
           aggregateExpression: Int4AggExp
         - fieldName: updatedAt
           aggregateExpression: TimestampAggExp
+        - fieldName: eligibleDateByPosition
+          aggregateExpression: JsonbAggExp
   count:
     enable: true
     returnType: Int64
@@ -257,6 +265,8 @@ definition:
           booleanExpressionType: Int4BoolExp
         - fieldName: updatedAt
           booleanExpressionType: TimestampBoolExp
+        - fieldName: eligibleDateByPosition
+          booleanExpressionType: JsonbBoolExp
       comparableRelationships:
         - relationshipName: league
         - relationshipName: player
@@ -299,6 +309,8 @@ definition:
           orderByExpression: Int32OrderByExp
         - fieldName: updatedAt
           orderByExpression: TimestampOrderByExp
+        - fieldName: eligibleDateByPosition
+          orderByExpression: JsonOrderByExp
       orderableRelationships:
         - relationshipName: league
         - relationshipName: player

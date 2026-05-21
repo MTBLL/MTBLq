@@ -22,6 +22,16 @@ definition:
       type: Int32!
     - name: updatedAt
       type: Timestamp
+    - name: leagueName
+      type: String_1
+    - name: gslMaxPerMatchup
+      type: Bigdecimal
+    - name: gslMaxPerScoringPeriod
+      type: Bigdecimal
+    - name: gslMin
+      type: Bigdecimal
+    - name: gslStatId
+      type: Int32
   graphql:
     typeName: Leagues
     inputTypeName: LeaguesInput
@@ -56,6 +66,21 @@ definition:
         updatedAt:
           column:
             name: updated_at
+        leagueName:
+          column:
+            name: league_name
+        gslMaxPerMatchup:
+          column:
+            name: gsl_max_per_matchup
+        gslMaxPerScoringPeriod:
+          column:
+            name: gsl_max_per_scoring_period
+        gslMin:
+          column:
+            name: gsl_min
+        gslStatId:
+          column:
+            name: gsl_stat_id
 
 ---
 kind: TypePermissions
@@ -75,6 +100,11 @@ definition:
           - scoringPeriodId
           - seasonId
           - updatedAt
+          - leagueName
+          - gslMaxPerMatchup
+          - gslMaxPerScoringPeriod
+          - gslMin
+          - gslStatId
 
 ---
 kind: AggregateExpression
@@ -103,6 +133,16 @@ definition:
           aggregateExpression: Int4AggExp
         - fieldName: updatedAt
           aggregateExpression: TimestampAggExp
+        - fieldName: leagueName
+          aggregateExpression: VarcharAggExp
+        - fieldName: gslMaxPerMatchup
+          aggregateExpression: NumericAggExp
+        - fieldName: gslMaxPerScoringPeriod
+          aggregateExpression: NumericAggExp
+        - fieldName: gslMin
+          aggregateExpression: NumericAggExp
+        - fieldName: gslStatId
+          aggregateExpression: Int4AggExp
   count:
     enable: true
     returnType: Int64
@@ -136,6 +176,16 @@ definition:
           orderByExpression: Int32OrderByExp
         - fieldName: updatedAt
           orderByExpression: TimestampOrderByExp
+        - fieldName: leagueName
+          orderByExpression: String1OrderByExp
+        - fieldName: gslMaxPerMatchup
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: gslMaxPerScoringPeriod
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: gslMin
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: gslStatId
+          orderByExpression: Int32OrderByExp
       orderableRelationships: []
   graphql:
     expressionTypeName: LeaguesOrderByExp
@@ -317,6 +367,16 @@ definition:
           booleanExpressionType: Int4BoolExp
         - fieldName: updatedAt
           booleanExpressionType: TimestampBoolExp
+        - fieldName: leagueName
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: gslMaxPerMatchup
+          booleanExpressionType: NumericBoolExp
+        - fieldName: gslMaxPerScoringPeriod
+          booleanExpressionType: NumericBoolExp
+        - fieldName: gslMin
+          booleanExpressionType: NumericBoolExp
+        - fieldName: gslStatId
+          booleanExpressionType: Int4BoolExp
       comparableRelationships:
         - relationshipName: leagueScoringCategories
         - relationshipName: matchups

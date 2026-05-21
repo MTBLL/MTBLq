@@ -138,12 +138,52 @@
             "nullable": "nullable",
             "description": null
           },
+          "gsl_max_per_matchup": {
+            "name": "gsl_max_per_matchup",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "gsl_max_per_scoring_period": {
+            "name": "gsl_max_per_scoring_period",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "gsl_min": {
+            "name": "gsl_min",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "gsl_stat_id": {
+            "name": "gsl_stat_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "league_id": {
             "name": "league_id",
             "type": {
               "scalarType": "int4"
             },
             "nullable": "nonNullable",
+            "description": null
+          },
+          "league_name": {
+            "name": "league_name",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
             "description": null
           },
           "num_teams": {
@@ -194,6 +234,88 @@
           ]
         },
         "foreignRelations": {},
+        "description": null
+      },
+      "matchup_categories": {
+        "schemaName": "public",
+        "tableName": "matchup_categories",
+        "columns": {
+          "category": {
+            "name": "category",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "matchup_id": {
+            "name": "matchup_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "result": {
+            "name": "result",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "team_id": {
+            "name": "team_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "value": {
+            "name": "value",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "matchup_categories_matchup_id_team_id_category_key": [
+            "category",
+            "matchup_id",
+            "team_id"
+          ],
+          "matchup_categories_pkey": [
+            "id"
+          ]
+        },
+        "foreignRelations": {
+          "matchup_categories_matchup_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "matchups",
+            "columnMapping": {
+              "matchup_id": "matchup_id"
+            }
+          },
+          "matchup_categories_team_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "teams",
+            "columnMapping": {
+              "team_id": "team_id"
+            }
+          }
+        },
         "description": null
       },
       "matchups": {
@@ -259,6 +381,30 @@
             "nullable": "nonNullable",
             "description": null
           },
+          "team1_gs_exceeded_on_scoring_period": {
+            "name": "team1_gs_exceeded_on_scoring_period",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "team1_gs_limit_exceeded": {
+            "name": "team1_gs_limit_exceeded",
+            "type": {
+              "scalarType": "bool"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "team1_gs_value": {
+            "name": "team1_gs_value",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "team1_id": {
             "name": "team1_id",
             "type": {
@@ -271,6 +417,30 @@
             "name": "team1_score",
             "type": {
               "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "team2_gs_exceeded_on_scoring_period": {
+            "name": "team2_gs_exceeded_on_scoring_period",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "team2_gs_limit_exceeded": {
+            "name": "team2_gs_limit_exceeded",
+            "type": {
+              "scalarType": "bool"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "team2_gs_value": {
+            "name": "team2_gs_value",
+            "type": {
+              "scalarType": "numeric"
             },
             "nullable": "nullable",
             "description": null
@@ -3077,6 +3247,14 @@
             },
             "nullable": "nullable",
             "hasDefault": "hasDefault",
+            "description": null
+          },
+          "eligible_date_by_position": {
+            "name": "eligible_date_by_position",
+            "type": {
+              "scalarType": "jsonb"
+            },
+            "nullable": "nullable",
             "description": null
           },
           "id": {

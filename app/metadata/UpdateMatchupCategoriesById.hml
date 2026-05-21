@@ -1,0 +1,148 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateMatchupCategoriesByIdUpdateColumns
+  description: Update the columns of the 'matchup_categories' collection
+  fields:
+    - name: category
+      type: UpdateColumnMatchupCategoriesCategory
+      description: Update the 'category' column in the 'matchup_categories' collection.
+    - name: id
+      type: UpdateColumnMatchupCategoriesId
+      description: Update the 'id' column in the 'matchup_categories' collection.
+    - name: matchupId
+      type: UpdateColumnMatchupCategoriesMatchupId
+      description: Update the 'matchup_id' column in the 'matchup_categories' collection.
+    - name: result
+      type: UpdateColumnMatchupCategoriesResult
+      description: Update the 'result' column in the 'matchup_categories' collection.
+    - name: teamId
+      type: UpdateColumnMatchupCategoriesTeamId
+      description: Update the 'team_id' column in the 'matchup_categories' collection.
+    - name: value
+      type: UpdateColumnMatchupCategoriesValue
+      description: Update the 'value' column in the 'matchup_categories' collection.
+  graphql:
+    typeName: UpdateMatchupCategoriesByIdUpdateColumns
+    inputTypeName: UpdateMatchupCategoriesByIdUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_matchup_categories_by_id_update_columns
+      fieldMapping:
+        category:
+          column:
+            name: category
+        id:
+          column:
+            name: id
+        matchupId:
+          column:
+            name: matchup_id
+        result:
+          column:
+            name: result
+        teamId:
+          column:
+            name: team_id
+        value:
+          column:
+            name: value
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateMatchupCategoriesByIdUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - category
+          - id
+          - matchupId
+          - result
+          - teamId
+          - value
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateMatchupCategoriesByIdResponse
+  description: Responses from the 'update_matchup_categories_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[MatchupCategories!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdateMatchupCategoriesByIdResponse
+    inputTypeName: UpdateMatchupCategoriesByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: update_matchup_categories_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateMatchupCategoriesByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdateMatchupCategoriesById
+  outputType: UpdateMatchupCategoriesByIdResponse!
+  arguments:
+    - name: keyId
+      type: Int32!
+    - name: postCheck
+      type: MatchupCategoriesBoolExp
+      description: Update permission post-condition predicate over the
+        'matchup_categories' collection
+    - name: preCheck
+      type: MatchupCategoriesBoolExp
+      description: Update permission pre-condition predicate over the
+        'matchup_categories' collection
+    - name: updateColumns
+      type: UpdateMatchupCategoriesByIdUpdateColumns!
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: update_matchup_categories_by_id
+    argumentMapping:
+      keyId: key_id
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updateMatchupCategoriesById
+    rootFieldKind: Mutation
+  description: Update any row on the 'matchup_categories' collection using the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdateMatchupCategoriesById
+  permissions:
+    - role: admin
+      allowExecution: true
+

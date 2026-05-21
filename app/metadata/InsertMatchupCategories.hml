@@ -1,0 +1,132 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertMatchupCategoriesObject
+  fields:
+    - name: category
+      type: String_1!
+    - name: id
+      type: Int32
+    - name: matchupId
+      type: Int32!
+    - name: result
+      type: String_1
+    - name: teamId
+      type: Int32
+    - name: value
+      type: Bigdecimal
+  graphql:
+    typeName: InsertMatchupCategoriesObject
+    inputTypeName: InsertMatchupCategoriesObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_matchup_categories_object
+      fieldMapping:
+        category:
+          column:
+            name: category
+        id:
+          column:
+            name: id
+        matchupId:
+          column:
+            name: matchup_id
+        result:
+          column:
+            name: result
+        teamId:
+          column:
+            name: team_id
+        value:
+          column:
+            name: value
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertMatchupCategoriesObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - category
+          - id
+          - matchupId
+          - result
+          - teamId
+          - value
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertMatchupCategoriesResponse
+  description: Responses from the 'insert_matchup_categories' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[MatchupCategories!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertMatchupCategoriesResponse
+    inputTypeName: InsertMatchupCategoriesResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: insert_matchup_categories_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertMatchupCategoriesResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertMatchupCategories
+  outputType: InsertMatchupCategoriesResponse!
+  arguments:
+    - name: objects
+      type: "[InsertMatchupCategoriesObject!]!"
+    - name: postCheck
+      type: MatchupCategoriesBoolExp
+      description: Insert permission predicate over the 'matchup_categories' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: insert_matchup_categories
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertMatchupCategories
+    rootFieldKind: Mutation
+  description: Insert into the matchup_categories table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertMatchupCategories
+  permissions:
+    - role: admin
+      allowExecution: true
+

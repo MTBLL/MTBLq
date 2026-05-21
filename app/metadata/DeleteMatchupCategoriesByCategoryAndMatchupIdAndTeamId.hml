@@ -1,0 +1,80 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeleteMatchupCategoriesByCategoryAndMatchupIdAndTeamIdResponse
+  description: Responses from the
+    'delete_matchup_categories_by_category_and_matchup_id_and_team_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[MatchupCategories!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeleteMatchupCategoriesByCategoryAndMatchupIdAndTeamIdResponse
+    inputTypeName: DeleteMatchupCategoriesByCategoryAndMatchupIdAndTeamIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_matchup_categories_by_category_and_matchup_id_and_team_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeleteMatchupCategoriesByCategoryAndMatchupIdAndTeamIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeleteMatchupCategoriesByCategoryAndMatchupIdAndTeamId
+  outputType: DeleteMatchupCategoriesByCategoryAndMatchupIdAndTeamIdResponse!
+  arguments:
+    - name: keyCategory
+      type: String_1!
+    - name: keyMatchupId
+      type: Int32!
+    - name: keyTeamId
+      type: Int32
+    - name: preCheck
+      type: MatchupCategoriesBoolExp
+      description: Delete permission predicate over the 'matchup_categories' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_matchup_categories_by_category_and_matchup_id_and_team_id
+    argumentMapping:
+      keyCategory: key_category
+      keyMatchupId: key_matchup_id
+      keyTeamId: key_team_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deleteMatchupCategoriesByCategoryAndMatchupIdAndTeamId
+    rootFieldKind: Mutation
+  description: Delete any row on the 'matchup_categories' collection using the
+    'category', 'matchup_id' and 'team_id' keys
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeleteMatchupCategoriesByCategoryAndMatchupIdAndTeamId
+  permissions:
+    - role: admin
+      allowExecution: true
+

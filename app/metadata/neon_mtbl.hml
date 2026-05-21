@@ -39,6 +39,18 @@ definition:
               unique_columns:
                 - league_id
         - arguments: {}
+          name: matchup_categories
+          type: matchup_categories
+          uniqueness_constraints:
+            matchup_categories_matchup_id_team_id_category_key:
+              unique_columns:
+                - category
+                - matchup_id
+                - team_id
+            matchup_categories_pkey:
+              unique_columns:
+                - id
+        - arguments: {}
           name: matchups
           type: matchups
           uniqueness_constraints:
@@ -220,6 +232,38 @@ definition:
               type:
                 element_type:
                   name: leagues
+                  type: named
+                type: array
+          foreign_keys: {}
+        delete_matchup_categories_by_category_and_matchup_id_and_team_id_response:
+          description: Responses from the 'delete_matchup_categories_by_category_and_matchup_id_and_team_id' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                name: int4
+                type: named
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                element_type:
+                  name: matchup_categories
+                  type: named
+                type: array
+          foreign_keys: {}
+        delete_matchup_categories_by_id_response:
+          description: Responses from the 'delete_matchup_categories_by_id' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                name: int4
+                type: named
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                element_type:
+                  name: matchup_categories
                   type: named
                 type: array
           foreign_keys: {}
@@ -658,6 +702,12 @@ definition:
               type:
                 name: int4
                 type: named
+            league_name:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
             num_teams:
               type:
                 type: nullable
@@ -700,6 +750,57 @@ definition:
               type:
                 element_type:
                   name: leagues
+                  type: named
+                type: array
+          foreign_keys: {}
+        insert_matchup_categories_object:
+          fields:
+            category:
+              type:
+                name: varchar
+                type: named
+            id:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            matchup_id:
+              type:
+                name: int4
+                type: named
+            result:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            team_id:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            value:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+          foreign_keys: {}
+        insert_matchup_categories_response:
+          description: Responses from the 'insert_matchup_categories' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                name: int4
+                type: named
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                element_type:
+                  name: matchup_categories
                   type: named
                 type: array
           foreign_keys: {}
@@ -3012,6 +3113,12 @@ definition:
               type:
                 name: int4
                 type: named
+            league_name:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
             num_teams:
               type:
                 type: nullable
@@ -3041,6 +3148,49 @@ definition:
                   name: timestamp
                   type: named
           foreign_keys: {}
+        matchup_categories:
+          fields:
+            category:
+              type:
+                name: varchar
+                type: named
+            id:
+              type:
+                name: int4
+                type: named
+            matchup_id:
+              type:
+                name: int4
+                type: named
+            result:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+            team_id:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            value:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+          foreign_keys:
+            matchup_categories_matchup_id_fkey:
+              column_mapping:
+                matchup_id:
+                  - matchup_id
+              foreign_collection: matchups
+            matchup_categories_team_id_fkey:
+              column_mapping:
+                team_id:
+                  - team_id
+              foreign_collection: teams
         matchups:
           fields:
             created_at:
@@ -5272,6 +5422,17 @@ definition:
                 name: int4
                 type: named
           foreign_keys: {}
+        update_column_leagues_league_name:
+          description: Update the 'league_name' column in the 'leagues' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
         update_column_leagues_num_teams:
           description: Update the 'num_teams' column in the 'leagues' collection
           fields:
@@ -5323,6 +5484,66 @@ definition:
                 type: nullable
                 underlying_type:
                   name: timestamp
+                  type: named
+          foreign_keys: {}
+        update_column_matchup_categories_category:
+          description: Update the 'category' column in the 'matchup_categories' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                name: varchar
+                type: named
+          foreign_keys: {}
+        update_column_matchup_categories_id:
+          description: Update the 'id' column in the 'matchup_categories' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                name: int4
+                type: named
+          foreign_keys: {}
+        update_column_matchup_categories_matchup_id:
+          description: Update the 'matchup_id' column in the 'matchup_categories' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                name: int4
+                type: named
+          foreign_keys: {}
+        update_column_matchup_categories_result:
+          description: Update the 'result' column in the 'matchup_categories' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        update_column_matchup_categories_team_id:
+          description: Update the 'team_id' column in the 'matchup_categories' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+          foreign_keys: {}
+        update_column_matchup_categories_value:
+          description: Update the 'value' column in the 'matchup_categories' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
                   type: named
           foreign_keys: {}
         update_column_matchups_created_at:
@@ -9224,6 +9445,13 @@ definition:
                 underlying_type:
                   name: update_column_leagues_league_id
                   type: named
+            league_name:
+              description: Update the 'league_name' column in the 'leagues' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_leagues_league_name
+                  type: named
             num_teams:
               description: Update the 'num_teams' column in the 'leagues' collection.
               type:
@@ -9258,6 +9486,130 @@ definition:
                 type: nullable
                 underlying_type:
                   name: update_column_leagues_updated_at
+                  type: named
+          foreign_keys: {}
+        update_matchup_categories_by_category_and_matchup_id_and_team_id_response:
+          description: Responses from the 'update_matchup_categories_by_category_and_matchup_id_and_team_id' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                name: int4
+                type: named
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                element_type:
+                  name: matchup_categories
+                  type: named
+                type: array
+          foreign_keys: {}
+        update_matchup_categories_by_category_and_matchup_id_and_team_id_update_columns:
+          description: Update the columns of the 'matchup_categories' collection
+          fields:
+            category:
+              description: Update the 'category' column in the 'matchup_categories' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchup_categories_category
+                  type: named
+            id:
+              description: Update the 'id' column in the 'matchup_categories' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchup_categories_id
+                  type: named
+            matchup_id:
+              description: Update the 'matchup_id' column in the 'matchup_categories' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchup_categories_matchup_id
+                  type: named
+            result:
+              description: Update the 'result' column in the 'matchup_categories' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchup_categories_result
+                  type: named
+            team_id:
+              description: Update the 'team_id' column in the 'matchup_categories' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchup_categories_team_id
+                  type: named
+            value:
+              description: Update the 'value' column in the 'matchup_categories' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchup_categories_value
+                  type: named
+          foreign_keys: {}
+        update_matchup_categories_by_id_response:
+          description: Responses from the 'update_matchup_categories_by_id' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                name: int4
+                type: named
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                element_type:
+                  name: matchup_categories
+                  type: named
+                type: array
+          foreign_keys: {}
+        update_matchup_categories_by_id_update_columns:
+          description: Update the columns of the 'matchup_categories' collection
+          fields:
+            category:
+              description: Update the 'category' column in the 'matchup_categories' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchup_categories_category
+                  type: named
+            id:
+              description: Update the 'id' column in the 'matchup_categories' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchup_categories_id
+                  type: named
+            matchup_id:
+              description: Update the 'matchup_id' column in the 'matchup_categories' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchup_categories_matchup_id
+                  type: named
+            result:
+              description: Update the 'result' column in the 'matchup_categories' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchup_categories_result
+                  type: named
+            team_id:
+              description: Update the 'team_id' column in the 'matchup_categories' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchup_categories_team_id
+                  type: named
+            value:
+              description: Update the 'value' column in the 'matchup_categories' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_matchup_categories_value
                   type: named
           foreign_keys: {}
         update_matchups_by_matchup_id_response:
@@ -14150,6 +14502,50 @@ definition:
             name: delete_leagues_by_league_id_response
             type: named
         - arguments:
+            key_category:
+              type:
+                name: varchar
+                type: named
+            key_matchup_id:
+              type:
+                name: int4
+                type: named
+            key_team_id:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            pre_check:
+              description: Delete permission predicate over the 'matchup_categories' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: matchup_categories
+                  type: predicate
+          description: Delete any row on the 'matchup_categories' collection using the 'category', 'matchup_id' and 'team_id' keys
+          name: delete_matchup_categories_by_category_and_matchup_id_and_team_id
+          result_type:
+            name: delete_matchup_categories_by_category_and_matchup_id_and_team_id_response
+            type: named
+        - arguments:
+            key_id:
+              type:
+                name: int4
+                type: named
+            pre_check:
+              description: Delete permission predicate over the 'matchup_categories' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: matchup_categories
+                  type: predicate
+          description: Delete any row on the 'matchup_categories' collection using the 'id' key
+          name: delete_matchup_categories_by_id
+          result_type:
+            name: delete_matchup_categories_by_id_response
+            type: named
+        - arguments:
             key_matchup_id:
               type:
                 name: int4
@@ -14637,6 +15033,25 @@ definition:
             objects:
               type:
                 element_type:
+                  name: insert_matchup_categories_object
+                  type: named
+                type: array
+            post_check:
+              description: Insert permission predicate over the 'matchup_categories' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: matchup_categories
+                  type: predicate
+          description: Insert into the matchup_categories table
+          name: insert_matchup_categories
+          result_type:
+            name: insert_matchup_categories_response
+            type: named
+        - arguments:
+            objects:
+              type:
+                element_type:
                   name: insert_matchups_object
                   type: named
                 type: array
@@ -14971,6 +15386,72 @@ definition:
           name: update_leagues_by_league_id
           result_type:
             name: update_leagues_by_league_id_response
+            type: named
+        - arguments:
+            key_category:
+              type:
+                name: varchar
+                type: named
+            key_matchup_id:
+              type:
+                name: int4
+                type: named
+            key_team_id:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            post_check:
+              description: Update permission post-condition predicate over the 'matchup_categories' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: matchup_categories
+                  type: predicate
+            pre_check:
+              description: Update permission pre-condition predicate over the 'matchup_categories' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: matchup_categories
+                  type: predicate
+            update_columns:
+              type:
+                name: update_matchup_categories_by_category_and_matchup_id_and_team_id_update_columns
+                type: named
+          description: Update any row on the 'matchup_categories' collection using the 'category', 'matchup_id' and 'team_id' keys
+          name: update_matchup_categories_by_category_and_matchup_id_and_team_id
+          result_type:
+            name: update_matchup_categories_by_category_and_matchup_id_and_team_id_response
+            type: named
+        - arguments:
+            key_id:
+              type:
+                name: int4
+                type: named
+            post_check:
+              description: Update permission post-condition predicate over the 'matchup_categories' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: matchup_categories
+                  type: predicate
+            pre_check:
+              description: Update permission pre-condition predicate over the 'matchup_categories' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: matchup_categories
+                  type: predicate
+            update_columns:
+              type:
+                name: update_matchup_categories_by_id_update_columns
+                type: named
+          description: Update any row on the 'matchup_categories' collection using the 'id' key
+          name: update_matchup_categories_by_id
+          result_type:
+            name: update_matchup_categories_by_id_response
             type: named
         - arguments:
             key_matchup_id:

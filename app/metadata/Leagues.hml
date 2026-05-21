@@ -22,6 +22,8 @@ definition:
       type: Int32!
     - name: updatedAt
       type: Timestamp
+    - name: leagueName
+      type: String_1
   graphql:
     typeName: Leagues
     inputTypeName: LeaguesInput
@@ -56,6 +58,9 @@ definition:
         updatedAt:
           column:
             name: updated_at
+        leagueName:
+          column:
+            name: league_name
 
 ---
 kind: TypePermissions
@@ -75,6 +80,7 @@ definition:
           - scoringPeriodId
           - seasonId
           - updatedAt
+          - leagueName
 
 ---
 kind: AggregateExpression
@@ -103,6 +109,8 @@ definition:
           aggregateExpression: Int4AggExp
         - fieldName: updatedAt
           aggregateExpression: TimestampAggExp
+        - fieldName: leagueName
+          aggregateExpression: VarcharAggExp
   count:
     enable: true
     returnType: Int64
@@ -136,6 +144,8 @@ definition:
           orderByExpression: Int32OrderByExp
         - fieldName: updatedAt
           orderByExpression: TimestampOrderByExp
+        - fieldName: leagueName
+          orderByExpression: String1OrderByExp
       orderableRelationships: []
   graphql:
     expressionTypeName: LeaguesOrderByExp
@@ -317,6 +327,8 @@ definition:
           booleanExpressionType: Int4BoolExp
         - fieldName: updatedAt
           booleanExpressionType: TimestampBoolExp
+        - fieldName: leagueName
+          booleanExpressionType: VarcharBoolExp
       comparableRelationships:
         - relationshipName: leagueScoringCategories
         - relationshipName: matchups

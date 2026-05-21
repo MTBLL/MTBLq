@@ -1,0 +1,228 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: MatchupCategories
+  fields:
+    - name: category
+      type: String_1!
+    - name: id
+      type: Int32!
+    - name: matchupId
+      type: Int32!
+    - name: result
+      type: String_1
+    - name: teamId
+      type: Int32
+    - name: value
+      type: Bigdecimal
+  graphql:
+    typeName: MatchupCategories
+    inputTypeName: MatchupCategoriesInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: matchup_categories
+      fieldMapping:
+        category:
+          column:
+            name: category
+        id:
+          column:
+            name: id
+        matchupId:
+          column:
+            name: matchup_id
+        result:
+          column:
+            name: result
+        teamId:
+          column:
+            name: team_id
+        value:
+          column:
+            name: value
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: MatchupCategories
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - category
+          - id
+          - matchupId
+          - result
+          - teamId
+          - value
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: MatchupCategoriesAggExp
+  operand:
+    object:
+      aggregatedType: MatchupCategories
+      aggregatableFields:
+        - fieldName: category
+          aggregateExpression: VarcharAggExp
+        - fieldName: id
+          aggregateExpression: Int4AggExp
+        - fieldName: matchupId
+          aggregateExpression: Int4AggExp
+        - fieldName: result
+          aggregateExpression: VarcharAggExp
+        - fieldName: teamId
+          aggregateExpression: Int4AggExp
+        - fieldName: value
+          aggregateExpression: NumericAggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: MatchupCategoriesAggExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: MatchupCategories
+  objectType: MatchupCategories
+  source:
+    dataConnectorName: neon_mtbl
+    collection: matchup_categories
+  filterExpressionType: MatchupCategoriesBoolExp
+  aggregateExpression: MatchupCategoriesAggExp
+  orderByExpression: MatchupCategoriesOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: matchupCategories
+      subscription:
+        rootField: matchupCategories
+    selectUniques:
+      - queryRootField: matchupCategoriesByMatchupCategoriesMatchupIdTeamIdCategoryKey
+        uniqueIdentifier:
+          - category
+          - matchupId
+          - teamId
+        subscription:
+          rootField: matchupCategoriesByMatchupCategoriesMatchupIdTeamIdCategoryKey
+      - queryRootField: matchupCategoriesById
+        uniqueIdentifier:
+          - id
+        subscription:
+          rootField: matchupCategoriesById
+    filterInputTypeName: MatchupCategoriesFilterInput
+    aggregate:
+      queryRootField: matchupCategoriesAggregate
+      subscription:
+        rootField: matchupCategoriesAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: MatchupCategories
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: matchup
+  sourceType: MatchupCategories
+  target:
+    model:
+      name: Matchups
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: matchupId
+      target:
+        modelField:
+          - fieldName: matchupId
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: team
+  sourceType: MatchupCategories
+  target:
+    model:
+      name: Teams
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: teamId
+      target:
+        modelField:
+          - fieldName: teamId
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: MatchupCategoriesBoolExp
+  operand:
+    object:
+      type: MatchupCategories
+      comparableFields:
+        - fieldName: category
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: id
+          booleanExpressionType: Int4BoolExp
+        - fieldName: matchupId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: result
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: teamId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: value
+          booleanExpressionType: NumericBoolExp
+      comparableRelationships:
+        - relationshipName: matchup
+        - relationshipName: team
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: MatchupCategoriesBoolExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: MatchupCategoriesOrderByExp
+  operand:
+    object:
+      orderedType: MatchupCategories
+      orderableFields:
+        - fieldName: category
+          orderByExpression: String1OrderByExp
+        - fieldName: id
+          orderByExpression: Int32OrderByExp
+        - fieldName: matchupId
+          orderByExpression: Int32OrderByExp
+        - fieldName: result
+          orderByExpression: String1OrderByExp
+        - fieldName: teamId
+          orderByExpression: Int32OrderByExp
+        - fieldName: value
+          orderByExpression: BigdecimalOrderByExp
+      orderableRelationships:
+        - relationshipName: matchup
+        - relationshipName: team
+  graphql:
+    expressionTypeName: MatchupCategoriesOrderByExp
+

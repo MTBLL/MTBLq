@@ -283,6 +283,7 @@ definition:
         - relationshipName: team
         - relationshipName: teamByTeam2Id
         - relationshipName: teamByWinnerId
+        - relationshipName: matchupCategories
   logicalOperators:
     enable: true
   isNull:
@@ -330,4 +331,26 @@ definition:
         - relationshipName: teamByWinnerId
   graphql:
     expressionTypeName: MatchupsOrderByExp
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: matchupCategories
+  sourceType: Matchups
+  target:
+    model:
+      name: MatchupCategories
+      relationshipType: Array
+      aggregate:
+        aggregateExpression: MatchupCategoriesAggExp
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: matchupId
+      target:
+        modelField:
+          - fieldName: matchupId
+  graphql:
+    aggregateFieldName: matchupCategoriesAggregate
 

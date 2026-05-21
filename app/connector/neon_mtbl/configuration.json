@@ -146,6 +146,14 @@
             "nullable": "nonNullable",
             "description": null
           },
+          "league_name": {
+            "name": "league_name",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "num_teams": {
             "name": "num_teams",
             "type": {
@@ -194,6 +202,88 @@
           ]
         },
         "foreignRelations": {},
+        "description": null
+      },
+      "matchup_categories": {
+        "schemaName": "public",
+        "tableName": "matchup_categories",
+        "columns": {
+          "category": {
+            "name": "category",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "id": {
+            "name": "id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "hasDefault": "hasDefault",
+            "description": null
+          },
+          "matchup_id": {
+            "name": "matchup_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nonNullable",
+            "description": null
+          },
+          "result": {
+            "name": "result",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "team_id": {
+            "name": "team_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "value": {
+            "name": "value",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {
+          "matchup_categories_matchup_id_team_id_category_key": [
+            "category",
+            "matchup_id",
+            "team_id"
+          ],
+          "matchup_categories_pkey": [
+            "id"
+          ]
+        },
+        "foreignRelations": {
+          "matchup_categories_matchup_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "matchups",
+            "columnMapping": {
+              "matchup_id": "matchup_id"
+            }
+          },
+          "matchup_categories_team_id_fkey": {
+            "foreignSchema": "public",
+            "foreignTable": "teams",
+            "columnMapping": {
+              "team_id": "team_id"
+            }
+          }
+        },
         "description": null
       },
       "matchups": {

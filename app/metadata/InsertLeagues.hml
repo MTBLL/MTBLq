@@ -22,6 +22,8 @@ definition:
       type: Int32!
     - name: updatedAt
       type: Timestamp
+    - name: leagueName
+      type: String_1
   graphql:
     typeName: InsertLeaguesObject
     inputTypeName: InsertLeaguesObjectInput
@@ -56,6 +58,9 @@ definition:
         updatedAt:
           column:
             name: updated_at
+        leagueName:
+          column:
+            name: league_name
 
 ---
 kind: TypePermissions
@@ -75,6 +80,7 @@ definition:
           - scoringPeriodId
           - seasonId
           - updatedAt
+          - leagueName
 
 ---
 kind: ObjectType

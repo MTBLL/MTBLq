@@ -1,0 +1,72 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeleteMatchupCategoriesByIdResponse
+  description: Responses from the 'delete_matchup_categories_by_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[MatchupCategories!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeleteMatchupCategoriesByIdResponse
+    inputTypeName: DeleteMatchupCategoriesByIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: delete_matchup_categories_by_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeleteMatchupCategoriesByIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeleteMatchupCategoriesById
+  outputType: DeleteMatchupCategoriesByIdResponse!
+  arguments:
+    - name: keyId
+      type: Int32!
+    - name: preCheck
+      type: MatchupCategoriesBoolExp
+      description: Delete permission predicate over the 'matchup_categories' collection
+  source:
+    dataConnectorName: neon_mtbl
+    dataConnectorCommand:
+      procedure: delete_matchup_categories_by_id
+    argumentMapping:
+      keyId: key_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deleteMatchupCategoriesById
+    rootFieldKind: Mutation
+  description: Delete any row on the 'matchup_categories' collection using the 'id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeleteMatchupCategoriesById
+  permissions:
+    - role: admin
+      allowExecution: true
+

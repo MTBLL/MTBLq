@@ -2391,6 +2391,14 @@
         "schemaName": "public",
         "tableName": "player_valuations",
         "columns": {
+          "by_position": {
+            "name": "by_position",
+            "type": {
+              "scalarType": "jsonb"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
           "created_at": {
             "name": "created_at",
             "type": {
@@ -3555,6 +3563,79 @@
             }
           }
         },
+        "description": null
+      },
+      "v_player_valuation_by_position": {
+        "schemaName": "public",
+        "tableName": "v_player_valuation_by_position",
+        "columns": {
+          "player_id": {
+            "name": "player_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "position": {
+            "name": "position",
+            "type": {
+              "scalarType": "text"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "season_id": {
+            "name": "season_id",
+            "type": {
+              "scalarType": "int4"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "shadow": {
+            "name": "shadow",
+            "type": {
+              "scalarType": "bool"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "tier": {
+            "name": "tier",
+            "type": {
+              "scalarType": "text"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "total_dollars": {
+            "name": "total_dollars",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "total_z": {
+            "name": "total_z",
+            "type": {
+              "scalarType": "numeric"
+            },
+            "nullable": "nullable",
+            "description": null
+          },
+          "valuation_type": {
+            "name": "valuation_type",
+            "type": {
+              "scalarType": "varchar"
+            },
+            "nullable": "nullable",
+            "description": null
+          }
+        },
+        "uniquenessConstraints": {},
+        "foreignRelations": {},
         "description": null
       }
     },

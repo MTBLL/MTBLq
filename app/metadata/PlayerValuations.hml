@@ -4,6 +4,8 @@ version: v1
 definition:
   name: PlayerValuations
   fields:
+    - name: byPosition
+      type: Json
     - name: createdAt
       type: Timestamp
     - name: id
@@ -31,6 +33,9 @@ definition:
     - dataConnectorName: neon_mtbl
       dataConnectorObjectType: player_valuations
       fieldMapping:
+        byPosition:
+          column:
+            name: by_position
         createdAt:
           column:
             name: created_at
@@ -71,6 +76,7 @@ definition:
     - role: admin
       output:
         allowedFields:
+          - byPosition
           - createdAt
           - id
           - playerId
@@ -91,6 +97,8 @@ definition:
     object:
       aggregatedType: PlayerValuations
       aggregatableFields:
+        - fieldName: byPosition
+          aggregateExpression: JsonbAggExp
         - fieldName: createdAt
           aggregateExpression: TimestampAggExp
         - fieldName: id
@@ -214,6 +222,8 @@ definition:
     object:
       type: PlayerValuations
       comparableFields:
+        - fieldName: byPosition
+          booleanExpressionType: JsonbBoolExp
         - fieldName: createdAt
           booleanExpressionType: TimestampBoolExp
         - fieldName: id
@@ -253,6 +263,8 @@ definition:
     object:
       orderedType: PlayerValuations
       orderableFields:
+        - fieldName: byPosition
+          orderByExpression: JsonOrderByExp
         - fieldName: createdAt
           orderByExpression: TimestampOrderByExp
         - fieldName: id

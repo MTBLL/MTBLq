@@ -185,6 +185,10 @@ definition:
             teams_pkey:
               unique_columns:
                 - team_id
+        - arguments: {}
+          name: v_player_valuation_by_position
+          type: v_player_valuation_by_position
+          uniqueness_constraints: {}
       functions: []
       object_types:
         delete_league_scoring_categories_by_id_response:
@@ -2276,6 +2280,12 @@ definition:
           foreign_keys: {}
         insert_player_valuations_object:
           fields:
+            by_position:
+              type:
+                type: nullable
+                underlying_type:
+                  name: jsonb
+                  type: named
             created_at:
               type:
                 type: nullable
@@ -3106,6 +3116,73 @@ definition:
               type:
                 element_type:
                   name: teams
+                  type: named
+                type: array
+          foreign_keys: {}
+        insert_v_player_valuation_by_position_object:
+          fields:
+            player_id:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            position:
+              type:
+                type: nullable
+                underlying_type:
+                  name: text
+                  type: named
+            season_id:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            shadow:
+              type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+            tier:
+              type:
+                type: nullable
+                underlying_type:
+                  name: text
+                  type: named
+            total_dollars:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+            total_z:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+            valuation_type:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
+        insert_v_player_valuation_by_position_response:
+          description: Responses from the 'insert_v_player_valuation_by_position' procedure
+          fields:
+            affected_rows:
+              description: The number of rows affected by the mutation
+              type:
+                name: int4
+                type: named
+            returning:
+              description: Data from rows affected by the mutation
+              type:
+                element_type:
+                  name: v_player_valuation_by_position
                   type: named
                 type: array
           foreign_keys: {}
@@ -4662,6 +4739,12 @@ definition:
               foreign_collection: player_valuations
         player_valuations:
           fields:
+            by_position:
+              type:
+                type: nullable
+                underlying_type:
+                  name: jsonb
+                  type: named
             created_at:
               type:
                 type: nullable
@@ -8118,6 +8201,17 @@ definition:
                 type: nullable
                 underlying_type:
                   name: numeric
+                  type: named
+          foreign_keys: {}
+        update_column_player_valuations_by_position:
+          description: Update the 'by_position' column in the 'player_valuations' collection
+          fields:
+            _set:
+              description: Set the column to this value
+              type:
+                type: nullable
+                underlying_type:
+                  name: jsonb
                   type: named
           foreign_keys: {}
         update_column_player_valuations_created_at:
@@ -13181,6 +13275,13 @@ definition:
         update_player_valuations_by_id_update_columns:
           description: Update the columns of the 'player_valuations' collection
           fields:
+            by_position:
+              description: Update the 'by_position' column in the 'player_valuations' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_player_valuations_by_position
+                  type: named
             created_at:
               description: Update the 'created_at' column in the 'player_valuations' collection.
               type:
@@ -13271,6 +13372,13 @@ definition:
         update_player_valuations_by_player_id_and_primary_position_and_season_id_and_valuation_type_update_columns:
           description: Update the columns of the 'player_valuations' collection
           fields:
+            by_position:
+              description: Update the 'by_position' column in the 'player_valuations' collection.
+              type:
+                type: nullable
+                underlying_type:
+                  name: update_column_player_valuations_by_position
+                  type: named
             created_at:
               description: Update the 'created_at' column in the 'player_valuations' collection.
               type:
@@ -14778,6 +14886,57 @@ definition:
                   name: update_column_teams_wins
                   type: named
           foreign_keys: {}
+        v_player_valuation_by_position:
+          fields:
+            player_id:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            position:
+              type:
+                type: nullable
+                underlying_type:
+                  name: text
+                  type: named
+            season_id:
+              type:
+                type: nullable
+                underlying_type:
+                  name: int4
+                  type: named
+            shadow:
+              type:
+                type: nullable
+                underlying_type:
+                  name: bool
+                  type: named
+            tier:
+              type:
+                type: nullable
+                underlying_type:
+                  name: text
+                  type: named
+            total_dollars:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+            total_z:
+              type:
+                type: nullable
+                underlying_type:
+                  name: numeric
+                  type: named
+            valuation_type:
+              type:
+                type: nullable
+                underlying_type:
+                  name: varchar
+                  type: named
+          foreign_keys: {}
       procedures:
         - arguments:
             key_id:
@@ -15631,6 +15790,25 @@ definition:
           name: insert_teams
           result_type:
             name: insert_teams_response
+            type: named
+        - arguments:
+            objects:
+              type:
+                element_type:
+                  name: insert_v_player_valuation_by_position_object
+                  type: named
+                type: array
+            post_check:
+              description: Insert permission predicate over the 'v_player_valuation_by_position' collection
+              type:
+                type: nullable
+                underlying_type:
+                  object_type_name: v_player_valuation_by_position
+                  type: predicate
+          description: Insert into the v_player_valuation_by_position table
+          name: insert_v_player_valuation_by_position
+          result_type:
+            name: insert_v_player_valuation_by_position_response
             type: named
         - arguments:
             key_id:

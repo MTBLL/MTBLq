@@ -1,0 +1,200 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: VPlayerValuationByPosition
+  fields:
+    - name: playerId
+      type: Int32
+    - name: position
+      type: String_1
+    - name: seasonId
+      type: Int32
+    - name: shadow
+      type: Boolean_1
+    - name: tier
+      type: String_1
+    - name: totalDollars
+      type: Bigdecimal
+    - name: totalZ
+      type: Bigdecimal
+    - name: valuationType
+      type: String_1
+  graphql:
+    typeName: VPlayerValuationByPosition
+    inputTypeName: VPlayerValuationByPositionInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: neon_mtbl
+      dataConnectorObjectType: v_player_valuation_by_position
+      fieldMapping:
+        playerId:
+          column:
+            name: player_id
+        position:
+          column:
+            name: position
+        seasonId:
+          column:
+            name: season_id
+        shadow:
+          column:
+            name: shadow
+        tier:
+          column:
+            name: tier
+        totalDollars:
+          column:
+            name: total_dollars
+        totalZ:
+          column:
+            name: total_z
+        valuationType:
+          column:
+            name: valuation_type
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: VPlayerValuationByPosition
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - playerId
+          - position
+          - seasonId
+          - shadow
+          - tier
+          - totalDollars
+          - totalZ
+          - valuationType
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: VPlayerValuationByPositionBoolExp
+  operand:
+    object:
+      type: VPlayerValuationByPosition
+      comparableFields:
+        - fieldName: playerId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: position
+          booleanExpressionType: TextBoolExp
+        - fieldName: seasonId
+          booleanExpressionType: Int4BoolExp
+        - fieldName: shadow
+          booleanExpressionType: BoolBoolExp
+        - fieldName: tier
+          booleanExpressionType: TextBoolExp
+        - fieldName: totalDollars
+          booleanExpressionType: NumericBoolExp
+        - fieldName: totalZ
+          booleanExpressionType: NumericBoolExp
+        - fieldName: valuationType
+          booleanExpressionType: VarcharBoolExp
+      comparableRelationships: []
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: VPlayerValuationByPositionBoolExp
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: VPlayerValuationByPositionAggExp
+  operand:
+    object:
+      aggregatedType: VPlayerValuationByPosition
+      aggregatableFields:
+        - fieldName: playerId
+          aggregateExpression: Int4AggExp
+        - fieldName: position
+          aggregateExpression: TextAggExp
+        - fieldName: seasonId
+          aggregateExpression: Int4AggExp
+        - fieldName: shadow
+          aggregateExpression: BoolAggExp
+        - fieldName: tier
+          aggregateExpression: TextAggExp
+        - fieldName: totalDollars
+          aggregateExpression: NumericAggExp
+        - fieldName: totalZ
+          aggregateExpression: NumericAggExp
+        - fieldName: valuationType
+          aggregateExpression: VarcharAggExp
+  count:
+    enable: true
+    returnType: Int64
+  graphql:
+    selectTypeName: VPlayerValuationByPositionAggExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: VPlayerValuationByPositionOrderByExp
+  operand:
+    object:
+      orderedType: VPlayerValuationByPosition
+      orderableFields:
+        - fieldName: playerId
+          orderByExpression: Int32OrderByExp
+        - fieldName: position
+          orderByExpression: String1OrderByExp
+        - fieldName: seasonId
+          orderByExpression: Int32OrderByExp
+        - fieldName: shadow
+          orderByExpression: Boolean1OrderByExp
+        - fieldName: tier
+          orderByExpression: String1OrderByExp
+        - fieldName: totalDollars
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: totalZ
+          orderByExpression: BigdecimalOrderByExp
+        - fieldName: valuationType
+          orderByExpression: String1OrderByExp
+      orderableRelationships: []
+  graphql:
+    expressionTypeName: VPlayerValuationByPositionOrderByExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: VPlayerValuationByPosition
+  objectType: VPlayerValuationByPosition
+  source:
+    dataConnectorName: neon_mtbl
+    collection: v_player_valuation_by_position
+  filterExpressionType: VPlayerValuationByPositionBoolExp
+  aggregateExpression: VPlayerValuationByPositionAggExp
+  orderByExpression: VPlayerValuationByPositionOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: vPlayerValuationByPosition
+      subscription:
+        rootField: vPlayerValuationByPosition
+    selectUniques: []
+    filterInputTypeName: VPlayerValuationByPositionFilterInput
+    aggregate:
+      queryRootField: vPlayerValuationByPositionAggregate
+      subscription:
+        rootField: vPlayerValuationByPositionAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: VPlayerValuationByPosition
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+
